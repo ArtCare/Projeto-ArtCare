@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudify - Página inicial</title>
+    <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body onscroll="changeNav()">
+    <div id="Content">
+    <div id="Inicio">
+        <div id="nav" class="navBar">
+            <img src="./src/assets/logoWhite.svg" id="logo" class="logo">
+            <ul class="navlist">
+                <li href="#Sobre" class="navItem">Sobre</li>
+                <li href="#Inicio" class="navItem">Serviços</li>
+                <li href="" class="navItem">Equipe</li>
+                <li href="" class="navItem">Projeto</li>
+                <li href="" class="navItem">Cadastre-se</li>
+            </ul>
+        </div>
+    </div>
+    <div id="Sobre">
+   
+    </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function changeNav(){
+        nav.classList.toggle('active', scrollY > 0)
+
+        if(scrollY === 0){
+            logo.setAttribute('src','./src/assets/logoWhite.svg')
+        } else{
+            logo.setAttribute('src','./src/assets/logoBlue.svg')
+        }
+    }
+</script>

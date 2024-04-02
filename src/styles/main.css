@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+}
+
+.logo {
+    width: 250px;
+    height: 100px;
+    padding: 10px;
+}
+
+.navBar {
+    background-color: transparent;
+    width: 100%;
+    height: 120px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    transition: all .4s ease-in-out;
+    color: #FFF;
+    
+}
+
+.navBar.active {
+    background-color: #ffffffce;
+    color: rgba(166, 204, 230, 1);
+}
+
+.navlist {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.navItem {
+    font-family: "Poppins";
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    transition: all .2s ease-in-out;
+    font-size: 17px;
+
+}
+
+.navItem::before {
+    transition: all .6s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    border-radius: 2.5px;
+  
+    bottom: -2px;
+    background-color: #4a4a4a;
+}
+
+.navItem:hover::before {
+    transform: scaleX(1);
+   }
+
+   .navItem:hover{
+    color: #4a4a4a;
+
+   }
+
+#Inicio {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%, rgba(166, 204, 230, 1) 80%);
+}
+
+#Sobre {
+    height: 100vh;
+    width: 100%;
+
+}
