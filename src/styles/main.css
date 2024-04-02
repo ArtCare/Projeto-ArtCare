@@ -1,8 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
 }
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #2B2929;
+    border-radius: 30px;
+}
+
 
 .logo {
     width: 250px;
@@ -76,7 +94,8 @@ body {
 }
 
 .StartContainer{
-    height: 100%;
+    padding-top: 50px;
+    height: 80%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -111,8 +130,46 @@ body {
     width: 400px;
 }
 
+.buttonDiv{
+    display: flex;
+    justify-content: center;
+    
+}
+@keyframes up-down {
+    0% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+.btn{
+    height: 60px;
+    width: 300px;
+    border-radius: 60px;
+    border: 4px solid #fff;
+    background-color: transparent;
+    font-family: "Poppins";
+    font-weight: 500;
+    color: #2B2929;
+    font-size: 22px; 
+    animation: up-down 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin-top: -30px;
+    cursor: pointer;
+    box-shadow: #464646 0 5px 10px;
+    transition: all .4 ease-in-out;
+}
+
+.btn:hover{
+    background-color: #2B2929;
+    color: #FFF;
+    transition: all .4 ease-in-out;
+}
+
 #Sobre {
     height: 100vh;
     width: 100%;
-
 }
