@@ -19,7 +19,7 @@ body {
     justify-content: space-around;
     align-items: center;
     position: fixed;
-    transition: all .4s ease-in-out;
+    transition: all .3s ease-in-out;
     color: #FFF;
     
 }
@@ -73,6 +73,42 @@ body {
     height: 100vh;
     width: 100%;
     background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%, rgba(166, 204, 230, 1) 80%);
+}
+
+.StartContainer{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.presentation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title{
+    font-family: "Poppins";
+    font-weight: 600;
+    color: #2B2929;
+    font-size: 40px;
+}
+.Enterprise{
+    font-family: "Montserrat";
+    font-weight: 600;
+    color: #fff;
+    font-size: 78px;
+}
+.text{
+    font-family: "Poppins";
+    font-weight: 500;
+    color: #fff;
+    font-size: 22px; 
+}
+
+.startImage{
+    height: 400px;
+    width: 400px;
 }
 
 #Sobre {
