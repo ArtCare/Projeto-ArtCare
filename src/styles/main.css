@@ -38,14 +38,11 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     position: fixed;
     transition: all .3s ease-in-out;
-    color: #FFF;
-    
+
+    z-index: 1;
+
 }
 
-.navBar.active {
-    background-color: #ffffffce;
-    color: rgba(166, 204, 230, 1);
-}
 
 .navlist {
     display: flex;
@@ -61,10 +58,16 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     transition: all .2s ease-in-out;
     font-size: 17px;
+    font-weight: 600;
 
 }
 
-.navItem::before {
+.navLink {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.navLink::before {
     transition: all .6s ease-in-out;
     transform: scaleX(0);
     transform-origin: left;
@@ -73,19 +76,30 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     height: 3px;
     border-radius: 2.5px;
-  
+
     bottom: -2px;
     background-color: #4a4a4a;
 }
 
-.navItem:hover::before {
+.navLink:hover::before {
     transform: scaleX(1);
-   }
+}
 
-   .navItem:hover{
+.navLink:hover {
     color: #4a4a4a;
 
-   }
+}
+
+.navBar.active {
+    background-color: #ffffffce;
+    box-shadow: #464646 0 2px 15px;
+
+}
+
+.navBar.active .navLink {
+    color: #4a4a4a;
+}
+
 
 #Inicio {
     height: 100vh;
@@ -93,48 +107,52 @@ body::-webkit-scrollbar-thumb {
     background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%, rgba(166, 204, 230, 1) 80%);
 }
 
-.StartContainer{
+.StartContainer {
     padding-top: 50px;
     height: 80%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-.presentation{
+
+.presentation {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.title{
+.title {
     font-family: "Poppins";
     font-weight: 600;
     color: #2B2929;
     font-size: 40px;
 }
-.Enterprise{
+
+.Enterprise {
     font-family: "Montserrat";
     font-weight: 600;
     color: #fff;
     font-size: 78px;
 }
-.text{
+
+.text {
     font-family: "Poppins";
     font-weight: 500;
     color: #fff;
-    font-size: 22px; 
+    font-size: 22px;
 }
 
-.startImage{
+.startImage {
     height: 400px;
     width: 400px;
 }
 
-.buttonDiv{
+.buttonDiv {
     display: flex;
     justify-content: center;
-    
+
 }
+
 @keyframes up-down {
     0% {
         transform: translateY(20px);
@@ -144,7 +162,8 @@ body::-webkit-scrollbar-thumb {
         transform: translateY(0);
     }
 }
-.btn{
+
+.btn {
     height: 60px;
     width: 300px;
     border-radius: 60px;
@@ -153,7 +172,7 @@ body::-webkit-scrollbar-thumb {
     font-family: "Poppins";
     font-weight: 500;
     color: #2B2929;
-    font-size: 22px; 
+    font-size: 22px;
     animation: up-down 2s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -163,7 +182,7 @@ body::-webkit-scrollbar-thumb {
     transition: all .4 ease-in-out;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #2B2929;
     color: #FFF;
     transition: all .4 ease-in-out;
@@ -172,4 +191,45 @@ body::-webkit-scrollbar-thumb {
 #Sobre {
     height: 100vh;
     width: 100%;
+    display: flex;
+
+}
+
+.assetsContainer {
+    background-color: rgba(166, 204, 230, 1);
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.logoSobre {
+    width: 500px;
+    height: 150px;
+    margin-left: 20%;
+}
+
+.sobreContainer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+
+}
+
+.blueTitle{
+    font-family: "Poppins";
+    font-weight: 600;
+    color: rgba(166, 204, 230, 1);
+    font-size: 40px;
+}
+
+.mainText{
+    font-family: "Poppins";
+    font-weight: 500;
+    color: #2B2929;
+    font-size: 18px;
 }

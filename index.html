@@ -1,53 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloudify - Página inicial</title>
     <link rel="stylesheet" href="./src/styles/main.css">
 </head>
+
 <body onscroll="changeNav()">
     <div id="Content">
-    <div id="Inicio">
-        <div id="nav" class="navBar">
-            <img src="./src/assets/logoWhite.svg" id="logo" class="logo">
-            <ul class="navlist">
-                <li href="#Sobre" class="navItem">Sobre</li>
-                <li href="#Inicio" class="navItem">Serviços</li>
-                <li href="" class="navItem">Equipe</li>
-                <li href="" class="navItem">Projeto</li>
-                <li href="" class="navItem">Cadastre-se</li>
-            </ul>
-        </div>
-
-        <div class="StartContainer">
-            <div class="presentation">
-                <span class="title">Eleve seu negócio com a</span>
-                <span class="Enterprise">Cloudify</span>
-                <p class="text">Mirando as alturas da tecnologia <br> para solucionar seus problemas com <br> excelência e precisão!</p>
+        <div id="Inicio">
+            <div id="nav" class="navBar">
+                <img src="./src/assets/logoWhite.svg" id="logo" class="logo">
+                <ul class="navlist">
+                    <li class="navItem"><a href="#Sobre" class="navLink">Sobre</a></li>
+                    <li class="navItem"><a href="#Sobre" class="navLink">Equipe</a></li>
+                    <li class="navItem"><a href="#Sobre" class="navLink">Projeto</a></li>
+                    <li class="navItem"><a href="#Sobre" class="navLink">Cadastre-se</a></li>
+                </ul>
             </div>
 
-            <img src="./src/assets/office.svg" class="startImage">
+            <div class="StartContainer">
+                <div class="presentation">
+                    <span class="title">Eleve seu negócio com a</span>
+                    <span class="Enterprise">Cloudify</span>
+                    <p class="text">Mirando as alturas da tecnologia <br> para solucionar seus problemas com <br>
+                        excelência e precisão!</p>
+                </div>
+
+                <img src="./src/assets/office.svg" class="startImage">
+            </div>
+            <div class="buttonDiv">
+                <button class="btn">Saiba mais!</button>
+            </div>
         </div>
-        <div class="buttonDiv">
-            <button class="btn">Saiba mais!</button>
+        <div id="Sobre">
+            <div class="assetsContainer">
+                <div class="cloud">
+                    <img src="./src/assets/logoWhite.svg" class="logoSobre">
+                    <img src="./src/assets/nuvem.svg">
+                </div>
+            </div>
+            <div class="sobreContainer">
+
+                <div class="textContainer">
+                    <span class="blueTitle">Sobre nós</span>
+                    <p class="mainText">
+                        Somos uma empresa de desenvolvimento de sistemas com o <br>
+                        objetivo de trazer soluções eficazes e tecnológicas para os mais <br>
+                        variados problemas de nossos clientes. Temos como foco o <br>
+                        desenvolvimento para empresas de pequeno e médio porte. <br>
+                        Confira abaixo os serviços que oferecemos.
+                    </p>
+    
+                </div>
+            </div>
         </div>
-    </div>
-    <div id="Sobre">
-   
-    </div>
     </div>
 </body>
+
 </html>
 
 <script>
-    function changeNav(){
+    function changeNav() {
         nav.classList.toggle('active', scrollY > 0)
 
-        if(scrollY === 0){
-            logo.setAttribute('src','./src/assets/logoWhite.svg')
-        } else{
-            logo.setAttribute('src','./src/assets/logoBlue.svg')
+        if (scrollY == 0) {
+            logo.setAttribute('src', './src/assets/logoWhite.svg')
+        } else {
+            logo.setAttribute('src', './src/assets/logoBlue.svg')
         }
     }
 </script>
