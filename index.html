@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloudify - Página inicial</title>
     <link rel="stylesheet" href="./src/styles/main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
 </head>
 
 <body onscroll="changeNav()">
@@ -15,7 +17,7 @@
                 <img src="./src/assets/logoWhite.svg" id="logo" class="logo">
                 <ul class="navlist">
                     <li class="navItem"><a href="#Sobre" class="navLink">Sobre</a></li>
-                    <li class="navItem"><a href="#Sobre" class="navLink">Equipe</a></li>
+                    <li class="navItem"><a href="#Equipe" class="navLink">Equipe</a></li>
                     <li class="navItem"><a href="#Sobre" class="navLink">Projeto</a></li>
                     <li class="navItem"><a href="#Sobre" class="navLink">Cadastre-se</a></li>
                 </ul>
@@ -32,7 +34,7 @@
                 <img src="./src/assets/office.svg" class="startImage">
             </div>
             <div class="buttonDiv">
-                <button class="btn">Saiba mais!</button>
+                <a href="#Sobre" class="btnLink"><button class="btn">Saiba Mais!</button></a>
             </div>
         </div>
         <div id="Sobre">
@@ -44,7 +46,7 @@
             </div>
             <div class="sobreContainer">
 
-                <div class="textContainer">
+                <div class="textContainer" data-aos="fade-left" data-aos-duration="1500">
                     <span class="blueTitle">Sobre nós</span>
                     <p class="mainText">
                         Somos uma empresa de desenvolvimento de sistemas com o <br>
@@ -56,6 +58,77 @@
     
                 </div>
             </div>
+        </div>
+
+        <div id="Equipe">
+            <div class="upperCloud"> <img src="./src/assets/nuvemCima.svg"></div>
+            <div class="equipeCloud">
+                <div class="equipeUpper" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="membro">
+                        <span class="nameMember">Gabriel Dantas</span>
+                        <img src="./src/assets/membros/gabriel.jpg" class="memberPhoto">
+                        <span class="memberFunction">Dev. Full-Stack</span>
+                        <div class="social">
+                           <a href="" ><img src="./src/assets/svg/mdi_instagram.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_linkedin.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_github.svg" class="socialBtn"></a>
+                        </div>
+                    </div>
+                    <div class="membro">
+                        <span class="nameMember">Joselin</span>
+                        <img src="./src/assets/membros/joselin.jpg" class="memberPhoto">
+                        <span class="memberFunction">Dev. Full-Stack</span>
+                        <div class="social">
+                           <a href="" ><img src="./src/assets/svg/mdi_instagram.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_linkedin.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_github.svg" class="socialBtn"></a>
+                        </div>
+                    </div>
+                    <div class="membro">
+                        <span class="nameMember">Pedro Miguel</span>
+                        <img src="./src/assets/membros/miguel.jpg" class="memberPhoto">
+                        <span class="memberFunction">Dev. Full-Stack</span>
+                        <div class="social">
+                           <a href="" ><img src="./src/assets/svg/mdi_instagram.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_linkedin.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_github.svg" class="socialBtn"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="equipeLower" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="membro">
+                        <span class="nameMember">Ryan Torres</span>
+                        <img src="./src/assets/membros/ryan.jpg" class="memberPhoto">
+                        <span class="memberFunction">Dev. Full-Stack</span>
+                        <div class="social">
+                           <a href="" ><img src="./src/assets/svg/mdi_instagram.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_linkedin.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_github.svg" class="socialBtn"></a>
+                        </div>
+                    </div>
+                    <div class="membro">
+                        <span class="nameMember">Nathan Nolacio</span>
+                        <img src="./src/assets/membros/nathan.jpg" class="memberPhoto">
+                        <span class="memberFunction">Dev. Full-Stack</span>
+                        <div class="social">
+                           <a href="" ><img src="./src/assets/svg/mdi_instagram.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_linkedin.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_github.svg" class="socialBtn"></a>
+                        </div>
+                    </div>
+                    <div class="membro">
+                        <span class="nameMember">Kaique Sotero</span>
+                        <img src="./src/assets/membros/kaique.jpg" class="memberPhoto">
+                        <span class="memberFunction">Dev. Full-Stack</span>
+                        <div class="social">
+                           <a href="" ><img src="./src/assets/svg/mdi_instagram.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_linkedin.svg" class="socialBtn"></a>
+                           <a href=""><img src="./src/assets/svg/mdi_github.svg" class="socialBtn"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lowerCloud"><img src="./src/assets/nuvem.svg"></div>
         </div>
     </div>
 </body>
@@ -73,3 +146,7 @@
         }
     }
 </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>

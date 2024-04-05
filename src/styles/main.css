@@ -23,15 +23,15 @@ body::-webkit-scrollbar-thumb {
 
 
 .logo {
-    width: 250px;
-    height: 100px;
+    width: 220px;
+    height: 90px;
     padding: 10px;
 }
 
 .navBar {
     background-color: transparent;
     width: 100%;
-    height: 120px;
+    height: 100px;
 
     display: flex;
     justify-content: space-around;
@@ -163,15 +163,19 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
+.btnLink {
+    text-decoration: none;
+}
+
 .btn {
+    color: #fff;
+    font-family: "Poppins";
+    font-weight: 500;
     height: 60px;
     width: 300px;
     border-radius: 60px;
     border: 4px solid #fff;
     background-color: transparent;
-    font-family: "Poppins";
-    font-weight: 500;
-    color: #2B2929;
     font-size: 22px;
     animation: up-down 2s;
     animation-iteration-count: infinite;
@@ -179,13 +183,12 @@ body::-webkit-scrollbar-thumb {
     margin-top: -30px;
     cursor: pointer;
     box-shadow: #464646 0 5px 10px;
-    transition: all .4 ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
 .btn:hover {
-    background-color: #2B2929;
-    color: #FFF;
-    transition: all .4 ease-in-out;
+    background-color: rgba(166, 204, 230, 1) ;
+    border-color: rgba(166, 204, 230, 1);
 }
 
 #Sobre {
@@ -196,7 +199,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .assetsContainer {
-    background-color: rgba(166, 204, 230, 1);
+    background: linear-gradient(360deg, rgba(166, 204, 230, 1) 0%, rgba(218, 241, 255, 1) 80%);
+
     height: 100%;
     width: 50%;
     display: flex;
@@ -220,16 +224,103 @@ body::-webkit-scrollbar-thumb {
 
 }
 
-.blueTitle{
+.blueTitle {
     font-family: "Poppins";
     font-weight: 600;
     color: rgba(166, 204, 230, 1);
     font-size: 40px;
 }
 
-.mainText{
+.mainText {
     font-family: "Poppins";
     font-weight: 500;
     color: #2B2929;
-    font-size: 18px;
+    font-size: 17px;
+}
+
+#Equipe {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%, rgba(166, 204, 230, 1) 80%);
+
+}
+
+.upperCloud {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -10px;
+}
+
+.equipeCloud {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+}
+
+.equipeUpper {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin-top: 70px;
+
+}
+
+.membro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.memberPhoto {
+    border-radius: 30px;
+    height: 180px;
+    width: 180px;
+    border: 4px #fff solid;
+    box-shadow: #464646 0 5px 5px;
+}
+
+.nameMember {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 24px;
+    color: #fff;
+}
+
+.memberFunction {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 17px;
+    color: #464646;
+    margin-top: 10px;
+}
+
+.equipeLower {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin-top: 20px;
+}
+
+.social {
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 90%;
+}
+
+.socialBtn {
+    height: 30px;
+    width: 30px;
+    transition: all .3s ease-in-out;
+}
+
+.socialBtn:hover {
+    transform: scale(1.16);
 }
