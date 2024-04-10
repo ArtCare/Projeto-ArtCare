@@ -334,7 +334,8 @@ body::-webkit-scrollbar-thumb {
 #Simulador {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.300) 45%, rgba(41, 41, 41, 0.300) 100%), url("../assets/background/bgSimulador.svg");
+    background:  url("../assets/background/bgSimulador.svg");
+    background-color: #292929;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -375,20 +376,6 @@ body::-webkit-scrollbar-thumb {
     background-color: #ffffffa5;
 }
 
-.campo {
-    width: 100px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.campoRadio {
-    display: flex;
-    flex-direction: column;
-}
-
-.inputRadio {
-    accent-color: #A9927D;
-}
 
 .form {
     width: 100%;
