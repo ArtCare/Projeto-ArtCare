@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArtCare - Login</title>
     <link rel="stylesheet" href="./src/styles/login.css">
+    <link rel="icon" href="./src/assets/svg/artcareLogoMini.svg">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
-    <div id="Login">
-        <div class="header"></div>
-      <div class="form">
+    <div class="header">
+        <img src="./src/assets/svg/artcareLogo.svg" class="logo">
+    </div>
+    <div class="form" data-aos="fade-up" data-aos-duration="1000">
         <span class="title">Faça seu login para acessar a plataforma!</span>
 
-        <input id="registroMuseu" class="inputForm">
-        <input id="senha" class="inputForm">
+        <div class="inputDiv">
+            <span class="inputTitle">Registro de Museu (RM)</span>
+            <input id="registroMuseu" class="inputForm" placeholder="ex: @MademoiseilleFernandaCaramico">
 
+            <span class="inputTitle">Senha</span>
+            <input id="senha" class="inputForm" placeholder="ex: Louvre123">
+        </div>
         <button class="btn" onclick="ValidarLogin()">Acessar!</button>
-      </div>
     </div>
+    <a href="./index.html" style="text-decoration: none;">
+        <button class="goBack"><i class="fa-solid fa-arrow-left arrow fa-2x"></i></button>
+    </a>
 </body>
+
 </html>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="https://kit.fontawesome.com/77b47374b3.js" crossorigin="anonymous"></script>

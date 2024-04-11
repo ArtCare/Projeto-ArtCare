@@ -2,9 +2,6 @@
 
 body{
     margin: 0;
-}
-
-#Login {
     height: 100vh;
     width: 100%;
     background:  url("../assets/background/bgSimulador.svg");
@@ -12,5 +9,106 @@ body{
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    }
+
+    
+.header{
+    padding: 30px;
 }
+.logo{
+    height: 100px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+}
+
+.title{
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 26px;
+    color: #FFF;
+    margin-bottom: 20px;
+}
+
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputTitle{
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+}
+
+.inputForm {
+    height: 40px;
+    width: 400px;
+    border-radius: 20px;
+    padding-left: 20px;
+    border: none;
+    margin-top: 5px;
+    transition: all .4s ease-in-out;
+}
+
+.inputForm:focus {
+    box-shadow: #000000 0 0 10px;
+    outline: none;
+}
+
+.btn {
+    color: #FFF;
+    font-family: "Poppins";
+    font-weight: 500;
+    height: 40px;
+    width: 200px;
+    border-radius: 60px;
+    border: 2px solid #fff;
+    background-color: #464646b8;
+    font-size: 15px;
+    margin-top: 30px;
+    cursor: pointer;
+    box-shadow: #464646 0 5px 10px;
+    transition: all .4s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #A9927D;
+    border-color: #A9927D;
+}
+
+.btn:active {
+    transform: scale(.9);
+}
+
+.goBack{
+       border: 2px #A9927D solid;
+       border-radius:70px ;
+       width: 50px;
+       height: 50px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       margin: 30px;
+       background-color: #a9927d74;
+       transition: all .4s ease-in-out;
+      
+}
+
+.goBack:hover{
+      background-color: #a9927d;
+}
+.goBack:active {
+    transform: scale(.9);
+}
+
+.arrow{
+    color: #FFF;
+   }
