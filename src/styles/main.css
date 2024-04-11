@@ -501,3 +501,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 16px;
     text-align: center;
 }
+.cloud{
+    margin-bottom: -10px;
+}
