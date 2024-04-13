@@ -52,13 +52,47 @@
             </button>
         </div>
 
-        <div class="chartInfo">
-            <div class="chartHeader" id="chartHeader">
-                <span class="headerTitle">Temperatura</span>
-                <button class="chartChangeButton" onclick="changeChartUmi()">Ver Umidade</button>
+        <div class="statusDiv">
+            <div class="status">
+                <span class="statusTitle">STATUS</span>
+                <span class="statusValue">POSITIVO</span>
             </div>
-            <div class="chart">
-                <canvas id="chart" width="300" height="100" ></canvas>
+        </div>
+        <div class="museum">
+            <div class="museumInfo">
+                <div class="infoDiv">
+                    <span class="infoTitle">Temperatura média</span>
+                    <div class="info">
+                        <span class="infoValue">19°C</span>
+                        <i class="fa-solid fa-temperature-quarter fa-2xl infoIcon"></i>
+                    </div>
+                </div>
+
+                <div class="infoDiv">
+                    <span class="infoTitle">Umidade média</span>
+                    <div class="info">
+                        <span class="infoValue">42%</span>
+                        <i class="fa-solid fa-droplet fa-2xl infoIcon"></i>
+                    </div>
+                </div>
+
+                <div class="infoDiv">
+                    <span class="infoTitle">Quantidade de setores</span>
+                    <div class="info">
+                        <span class="infoValue">5</span>
+                        <i class="fa-solid fa-vector-square fa-2xl infoIcon"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chartInfo">
+                <div class="chartHeader" id="chartHeader">
+                    <span class="headerTitle">Temperatura</span>
+                    <button class="chartChangeButton" onclick="changeChartUmi()" id="btn">Ver Umidade</button>
+                </div>
+                <div class="chart">
+                    <canvas id="chart" width="300" height="100"></canvas>
+                </div>
             </div>
         </div>
     </div>

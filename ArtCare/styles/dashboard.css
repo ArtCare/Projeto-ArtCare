@@ -144,6 +144,7 @@ body {
     height: 60px;
 
     margin-right: 50px;
+    margin-bottom: -10px;
 }
 
 .optionLogout {
@@ -185,7 +186,7 @@ body {
     margin-right: 50px;
     display: flex;
     align-items: center;
-    width: 150px;
+    width: 170px;
     justify-content: center;
 
     border: none;
@@ -210,3 +211,94 @@ body {
 .chartChangeButton:active{
     transform: scale(.95);
 }
+.statusDiv{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+  
+
+}
+.status{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 70px;
+    background-color: #fff;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.statusTitle{
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: -10px;   
+
+    color: #666666;
+}
+.statusValue{
+    font-family: "Poppins";
+    font-size: 26px;
+    font-weight: 700;
+
+    color: #028d29;
+}
+.museum{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.museumInfo{
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infoDiv{
+    width: 390px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FFF;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.info{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.infoTitle{
+    font-family: "Poppins";
+    font-size: 20px;
+    font-weight: 700;
+    color: #666666;
+}
+
+.infoValue{
+    font-family: "Poppins";
+    font-size: 30px;
+    font-weight: 700;
+    color: #B08067;
+}
+
+.infoIcon{
+    color: #666666;
+
+}
+
+
