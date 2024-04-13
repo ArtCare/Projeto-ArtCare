@@ -165,7 +165,7 @@
                         </div>
 
                     </div>
-                    <button class="btnForm" onclick="simulator()">Calcular</button>
+                    <button class="btnForm" onclick="simulador()">Calcular</button>
                 </div>
             </div>
 
@@ -255,79 +255,7 @@
 </html>
 
 <script src="https://kit.fontawesome.com/77b47374b3.js" crossorigin="anonymous"></script>
-<script>
-    function changeNav() {
-        nav.classList.toggle('active', scrollY > 0)
-
-        if (scrollY == 0) {
-            logo.setAttribute('src', './src/assets/svg/logoWhite.svg')
-        } else {
-            logo.setAttribute('src', './src/assets/svg/logoBlue.svg')
-        }
-    }
-
-    function reload() {
-        location.reload()
-    }
-    function simulator() {
-        const custoTotal = Number(manutencao.value)
-        const period = Number(periodo.value)
-        const porcentagem = Number(porcentagemPerda.value)
-
-        let custo = custoTotal * period
-        let custoComArtCare = custo - (custo * (porcentagem / 100))
-
-        let economia = custo - custoComArtCare
-
-
-        content.innerHTML = `
-        <div class="tableContent" data-aos="fade-up" data-aos-duration="1500">
-        <div class="table">
-            <div class="tableHead">
-               
-                    <p>Custo de manutenção</p>
-                    <p>Periodo</p>
-                    <p>Gasto sem ArtCare</p>   
-               
-            </div>
-            
-            <div class="line">
-            <p> ${custo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-            <p>${period} meses</p>
-            <p style="color: #FF3636; font-weight: bold">${custo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-            
-            </div>
-            </tbody>
-            </table>
-            
-            <div class="tableHead">
-
-                 <p>Custo de manutenção</p>
-                    <p>Periodo</p>
-                    <p>Gasto com ArtCare</p>   
-           
-        </div>
-        <div class="line">
-            <p> ${custo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-            <p>${period} meses</p>
-            <p style="color: #00B336; font-weight: bold">${custoComArtCare.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-
-            </div>
-        </div>
-            <br>
-        <div class='titleDiv'>
-            <p class="description">É possivel economizar aproximadamente <span style="color: #00B336; font-weight: bold">
-                ${economia.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>,
-                 que equivale à ${porcentagem}% em reparos de obra, caso utilize nossa solução.</p>
-        </div>
-        <button class="btnForm" onclick="reload()">Voltar ao simulador!</button>
-        </div>
-
-        `
-    }
-</script>
-
+<script src="./src/js/main.js"></script>
+<script src="./src/js/simuladorFinanceiro.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
+<script> AOS.init(); </script>
