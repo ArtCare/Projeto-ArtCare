@@ -1,15 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArtCare - Dashboard</title>
-    <link rel="stylesheet" href="../src/styles/dashboard.css">
+    <link rel="stylesheet" href="./styles/dashboard.css">
     <link rel="icon" href="../src/assets/svg/artcareLogoMini.svg">
 </head>
+
 <body>
-    <div class="header">
-        <img src="../src/assets/svg/menu.svg" class="menu">
+    <div class="menu">
+        <img src="./assets/artcareBrownLogo.svg" class="logo">
+
+
+        <div class="divOptions">
+            <div class="PrimaryScreens">
+                <button class="option onScreen">
+                    <i class="fa-solid fa-house fa-xl menuicon onScreenColors"></i> <span
+                        class="menuOption onScreenColors">Dashboard</span>
+                </button>
+
+                <button class="option">
+                    <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Perfil</span>
+                </button>
+
+                <button class="option">
+                    <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
+                </button>
+            </div>
+            <div class="secondaryOptions">
+                <button class="option">
+                    <i class="fa-solid fa-circle-question fa-xl menuicon"></i> <span class="menuOption">Ajuda</span>
+                </button>
+
+                <button class="option">
+                    <i class="fa-solid fa-gear fa-xl menuicon"></i> <span class="menuOption">Configurações</span>
+                </button>
+
+              
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="header">
+            <span class="headerTitle">DASHBOARD</span>
+            
+            <button class="option logout" onclick="logout()">
+                    <i class="fa-solid fa-right-from-bracket fa-xl menuicon"></i> <span class="optionLogout">Sair</span>
+            </button>
+        </div>
     </div>
 </body>
+
 </html>
+
+<script src="https://kit.fontawesome.com/77b47374b3.js" crossorigin="anonymous"></script>
+
+<script>
+    function logout(){
+        window.location.href = "../login.html"
+    }
+</script>
