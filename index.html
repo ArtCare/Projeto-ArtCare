@@ -19,8 +19,9 @@
                 <ul class="navlist">
                     <li class="navItem"><a href="#Sobre" class="navLink">Sobre</a></li>
                     <li class="navItem"><a href="#Equipe" class="navLink">Equipe</a></li>
-                    <li class="navItem"><a href="#Sobre" class="navLink">Projeto</a></li>
-                    <li class="navItem"><a href="#Sobre" class="navLink">Cadastre-se</a></li>
+                    <li class="navItem"><a href="#Projeto" class="navLink">Projeto</a></li>
+                    <li class="navItem"><a href="#Cadastro" class="navLink">Cadastre-se</a></li>
+                    <li class="navItem"><a href="#Contato" class="navLink">Fale Conosco</a></li>
                 </ul>
             </div>
 
@@ -137,7 +138,7 @@
             <div class="content" id="content">
                 <div class="context" data-aos="fade-up" data-aos-duration="1500">
                     <p class="titleContext">Funcionamento do Simulador</p>
-                    <p class="mainText">A pesquisa realizada pelo Instituto Brasileiro de Museus <br>
+                    <p class="mainText caladea">A pesquisa realizada pelo Instituto Brasileiro de Museus <br>
                         (Ibram) revelou que o gasto anual médio com <br>
                         restauração e acervos nos museus pesquisados foi de R$ <br>
                         3.094.102,07, representando aproximadamente 17,86% dos<br>
@@ -146,7 +147,7 @@
                 </div>
                 <div class="simulador" data-aos="fade-up" data-aos-duration="1500">
                     <p class="titleContext">Simulador</p>
-                   
+
                     <div class="form">
                         <div class="formInputContainer">
                             <p class="inputText">Qual o gasto mensal com manutenção geral?</p>
@@ -167,7 +168,42 @@
                     <button class="btnForm" onclick="simulator()">Calcular</button>
                 </div>
             </div>
-         
+
+        </div>
+
+        <div id="Cadastro">
+
+        </div>
+        <div id="Contato">
+            <div class="FormContainer">
+                <span class="blueTitle">FALE CONOSCO</span>
+
+                <div class="form">
+                    <div class="userInfo">
+                        <div class="inputDiv">
+                            <span class="inputTitle">Nome</span>
+                            <input class="input"></input>
+                        </div>
+
+                        <div class="inputDiv">
+                            <span class="inputTitle">E-mail</span>
+                            <input class="input"></input>
+                        </div>
+
+                        <div class="inputDiv">
+                            <span class="inputTitle">Assunto</span>
+                            <input class="input"></input>
+                        </div>
+                    </div>
+
+                    <div class="descContact">
+                        <span class="inputTitle">Assunto</span>
+                        <textarea class="inputDesc"></textarea>
+                    </div>
+                </div>
+
+                <button class="btnForm blue" onclick="simulator()">ENVIAR</button>
+            </div>
         </div>
     </div>
 </body>
@@ -185,18 +221,18 @@
         }
     }
 
-    function reload(){
+    function reload() {
         location.reload()
     }
-    function simulator(){
-    const custoTotal = Number(manutencao.value)
-    const period = Number(periodo.value)
-    const porcentagem = Number(porcentagemPerda.value)
+    function simulator() {
+        const custoTotal = Number(manutencao.value)
+        const period = Number(periodo.value)
+        const porcentagem = Number(porcentagemPerda.value)
 
-    let custo = custoTotal * period
-    let custoComArtCare = custo - (custo * (porcentagem / 100))
-    
-    let economia = custo - custoComArtCare
+        let custo = custoTotal * period
+        let custoComArtCare = custo - (custo * (porcentagem / 100))
+
+        let economia = custo - custoComArtCare
 
 
         content.innerHTML = `
@@ -250,4 +286,3 @@
 <script>
     AOS.init();
 </script>
-

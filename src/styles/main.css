@@ -104,7 +104,7 @@ body::-webkit-scrollbar-thumb {
 #Inicio {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%, rgba(166, 204, 230, 1) 80%);
+    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%,#A6CCE6 80%);
 }
 
 .StartContainer {
@@ -187,8 +187,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .btn:hover {
-    background-color: rgba(166, 204, 230, 1);
-    border-color: rgba(166, 204, 230, 1);
+    background-color:#A6CCE6;
+    border-color:#A6CCE6;
 }
 
 #Sobre {
@@ -199,7 +199,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .assetsContainer {
-    background: linear-gradient(360deg, rgba(166, 204, 230, 1) 0%, rgba(218, 241, 255, 1) 80%);
+    background: linear-gradient(360deg,#A6CCE6 0%, rgba(218, 241, 255, 1) 80%);
 
     height: 100%;
     width: 50%;
@@ -227,7 +227,7 @@ body::-webkit-scrollbar-thumb {
 .blueTitle {
     font-family: "Poppins";
     font-weight: 600;
-    color: rgba(166, 204, 230, 1);
+    color:#A6CCE6;
     font-size: 40px;
 }
 
@@ -235,7 +235,7 @@ body::-webkit-scrollbar-thumb {
     font-family: "Poppins";
     font-weight: 500;
     color: #2B2929;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 #Equipe {
@@ -244,7 +244,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%, rgba(166, 204, 230, 1) 80%);
+    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%,#A6CCE6 80%);
 
 }
 
@@ -334,7 +334,7 @@ body::-webkit-scrollbar-thumb {
 #Simulador {
     height: 100vh;
     width: 100%;
-    background:  url("../assets/background/bgSimulador.svg");
+    background: url("../assets/background/bgSimulador.svg");
     background-color: #292929;
     background-size: cover;
     display: flex;
@@ -359,12 +359,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 .titleContext {
-    font-family: "Poppins";
-    font-weight: 600;
+    font-family: "Caladea";
+    font-weight: 700;
     color: #2B2929;
     font-size: 30px;
 }
-
+.caladea{
+    font-family: "Caladea";
+}
 .simulador {
 
     width: 850px;
@@ -391,10 +393,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 .inputText {
-    font-family: "Poppins";
-    font-weight: 600;
-    color: #2B2929;
-    font-size: 13px;
+    font-family: "Caladea";
+    font-weight: 700;
+    color: #4a4a4a;
+    font-size: 15px;
     text-align: center;
 }
 
@@ -408,7 +410,7 @@ body::-webkit-scrollbar-thumb {
 
 .inputForm:focus {
     transition: all .4s ease-in-out;
-    box-shadow: #464646 0 0 5px;
+    box-shadow: #4a4a4a 0 0 5px;
     outline: none;
 }
 
@@ -420,11 +422,11 @@ body::-webkit-scrollbar-thumb {
     width: 200px;
     border-radius: 60px;
     border: 2px solid #fff;
-    background-color: #464646b8;
+    background-color: #4a4a4a;
     font-size: 15px;
     margin-top: 50px;
     cursor: pointer;
-    box-shadow: #464646 0 5px 10px;
+    box-shadow: #4a4a4a 0 5px 10px;
     transition: all .4s ease-in-out;
 }
 
@@ -456,7 +458,7 @@ body::-webkit-scrollbar-thumb {
 .titleDiv {
     width: 600px;
 }
- 
+
 .perda {
     color: #FF3636
 }
@@ -495,6 +497,92 @@ body::-webkit-scrollbar-thumb {
     font-size: 16px;
     text-align: center;
 }
-.cloud{
+
+.cloud {
     margin-bottom: -10px;
+}
+
+#Cadastro {
+    height: 100vh;
+    width: 100%;
+}
+
+#Contato {
+    height: 100vh;
+    width: 100%;
+    background-color: #A6CCE6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FormContainer{
+    background-color: #FFF;
+    width: 900px;
+    height: 500px;
+
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+
+    box-shadow: #4a4a4a -4px 10px 20px;
+
+}
+
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputTitle{
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 22px;
+    color: #4a4a4a;
+    margin: 20px 0 0 10px;
+}
+
+.input {
+    height: 40px;
+    width: 300px;
+    border-radius: 20px;
+    padding-left: 20px;
+    border: #A6CCE6 2px solid;
+    margin-top: 5px;
+    transition: all .4s ease-in-out;
+    font-family: "Poppins";
+    font-weight: 500;
+}
+
+.input:focus {
+    box-shadow: #4a4a4a 0 0 10px;
+    outline: none;
+}
+.descContact{
+    display: flex;
+    flex-direction: column;
+}
+.inputDesc {
+    height: 100%;
+    width: 300px;
+    border-radius: 20px;
+    padding: 20px 20px;
+    border: #A6CCE6 2px solid;
+    margin-top: 5px;
+    transition: all .4s ease-in-out;
+    font-family: "Poppins";
+    font-weight: 500;
+   
+}
+
+.inputDesc:focus {
+    box-shadow: #4a4a4a 0 0 10px;
+    outline: none;
+}
+
+.blue:hover {
+    background-color: #A6CCE6;
+    border-color: #A6CCE6;
 }
