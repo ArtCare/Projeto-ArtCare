@@ -28,7 +28,7 @@ body {
 .PrimaryScreens {
     display: flex;
     flex-direction: column;
-    height: 25%;
+    height: 30%;
     width: 90%;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +43,7 @@ body {
 
     width: 100%;
     height: 100%;
-    margin-top: 20%;
+    margin-top: 30%;
     margin-bottom: 20%;
     background-color: transparent;
 }
@@ -165,12 +165,13 @@ body {
 
 .chartInfo {
     width: 1200px;
-    height: 450px;
+    height: 350px;
     background-color: #fff;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    box-shadow: #666666 0 5px 10px;
 }
 
 
@@ -179,7 +180,7 @@ body {
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .chartChangeButton {
@@ -229,6 +230,7 @@ body {
     border-bottom-left-radius: 20px;
     justify-content: center;
     padding-left: 20px;
+    box-shadow: #666666 0 5px 10px;
 }
 
 .statusTitle{
@@ -263,7 +265,7 @@ body {
 
 .infoDiv{
     width: 390px;
-    height: 150px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -272,6 +274,7 @@ body {
     background-color: #FFF;
     border-radius: 30px;
     margin-bottom: 20px;
+    box-shadow: #666666 0 5px 10px;
 }
 
 .info{

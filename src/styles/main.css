@@ -47,7 +47,7 @@ body::-webkit-scrollbar-thumb {
 .navlist {
     display: flex;
     list-style: none;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 50%;
 }
 
