@@ -104,7 +104,7 @@ body::-webkit-scrollbar-thumb {
 #Inicio {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%,#A6CCE6 80%);
+    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%, #A6CCE6 80%);
 }
 
 .StartContainer {
@@ -187,8 +187,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .btn:hover {
-    background-color:#A6CCE6;
-    border-color:#A6CCE6;
+    background-color: #A6CCE6;
+    border-color: #A6CCE6;
 }
 
 #Sobre {
@@ -199,7 +199,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .assetsContainer {
-    background: linear-gradient(360deg,#A6CCE6 0%, rgba(218, 241, 255, 1) 80%);
+    background: linear-gradient(360deg, #A6CCE6 0%, rgba(218, 241, 255, 1) 80%);
 
     height: 100%;
     width: 50%;
@@ -227,7 +227,7 @@ body::-webkit-scrollbar-thumb {
 .blueTitle {
     font-family: "Poppins";
     font-weight: 600;
-    color:#A6CCE6;
+    color: #A6CCE6;
     font-size: 40px;
 }
 
@@ -244,7 +244,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%,#A6CCE6 80%);
+    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%, #A6CCE6 80%);
 
 }
 
@@ -364,9 +364,11 @@ body::-webkit-scrollbar-thumb {
     color: #2B2929;
     font-size: 30px;
 }
-.caladea{
+
+.caladea {
     font-family: "Caladea";
 }
+
 .simulador {
 
     width: 850px;
@@ -516,7 +518,7 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
 }
 
-.FormContainer{
+.FormContainer {
     background-color: #FFF;
     width: 900px;
     height: 500px;
@@ -531,12 +533,12 @@ body::-webkit-scrollbar-thumb {
 
 }
 
-.inputDiv{
+.inputDiv {
     display: flex;
     flex-direction: column;
 }
 
-.inputTitle{
+.inputTitle {
     font-family: "Poppins";
     font-weight: 400;
     font-size: 22px;
@@ -560,10 +562,12 @@ body::-webkit-scrollbar-thumb {
     box-shadow: #4a4a4a 0 0 10px;
     outline: none;
 }
-.descContact{
+
+.descContact {
     display: flex;
     flex-direction: column;
 }
+
 .inputDesc {
     height: 100%;
     width: 300px;
@@ -574,7 +578,7 @@ body::-webkit-scrollbar-thumb {
     transition: all .4s ease-in-out;
     font-family: "Poppins";
     font-weight: 500;
-   
+
 }
 
 .inputDesc:focus {
@@ -586,3 +590,62 @@ body::-webkit-scrollbar-thumb {
     background-color: #A6CCE6;
     border-color: #A6CCE6;
 }
+
+.footer {
+    box-shadow: #4a4a4a 10px 0 10px;
+    background-color: #4a4a4a;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    height: 200px;
+    width: 100%;
+}
+
+.Cloudify {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerText {
+    font-family: "Poppins";
+    font-weight: 400;
+    color: #FFF;
+    font-size: 14px;
+}
+
+.logoWhite {
+    height: 100px;
+}
+
+.footerlist {
+    list-style: none;
+}
+
+.footerItem {
+    font-family: "Poppins";
+    text-transform: uppercase;
+    cursor: pointer;
+   font-size: 16px;
+    font-weight: 500;
+}
+
+.footerLink {
+    text-decoration: none;
+    color: #FFF;
+    transition: all .4s ease-in-out;
+}
+
+.footerLink:hover {
+    text-decoration: none;
+    color: #A6CCE6;
+}
+
+
+.infos{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
