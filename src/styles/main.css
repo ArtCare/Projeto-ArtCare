@@ -649,3 +649,157 @@ body::-webkit-scrollbar-thumb {
     margin-bottom: 10px;
 }
 
+.container {
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.container-2 {
+    
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.retangulo {
+
+width: 479px;
+height: 363px;
+background: rgba(169, 146, 125, 0.7);
+border-radius: 40px;
+margin-top: 5%;
+
+
+}
+
+.logo-white {
+
+    margin-top: 10%;
+    margin-left: 9%;
+    width: 253px;
+    height: 73px;
+}
+
+.flex-container{
+
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;    
+
+}
+
+.retangulo1 {
+
+width: 40%;
+height: 730px;
+background: linear-gradient(349.48deg, #F5F5F5 -23.43%, #A9927D 81.27%);
+
+}
+
+
+.cadastro {
+
+    font-family: 'Poppins';
+    color: #F5F5F5;
+    font-size: 27px;
+}
+
+.vertical-space {
+
+    margin-top: 5%;
+}
+
+
+.box-input {
+
+    margin-top: 5%;
+    font-family: 'Poppins';
+    color: white;
+    margin-left:14%;
+    margin-right: 0%;
+    font-size: 20px;
+}
+
+.input{
+
+    border-radius: 20px; 
+    border-color: white;
+    width: 70%;
+    height: 32px;
+    box-shadow: 0 4px 0px -1px gray;
+}
+
+.box-children-input{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10%;
+    width: 85%;
+}
+
+
+.botao-cadastro {
+
+    border-radius: 20px;
+    border-color: white;
+    width: 125px;
+    height: 30px;
+    background-color: white;
+    margin-left: 29%;
+    box-shadow: 0 4px 2px -2px gray;
+
+}
+
+
+.box-opcao {
+
+    display: flex;
+    align-items: center;
+    margin-top: 4%;
+   
+}
+
+.box-opcao1 {
+
+
+    border-color: silver;
+    width: 44px;
+    height: 2px;
+    color: silver;
+    background-color: silver;
+    margin-left: 31%;
+}
+
+.box-opcao2 {
+    
+    border-color: white;
+    width: 44px;
+    height: 2px;
+    color: white;
+    background-color: white;
+    margin-left: 5%;
+
+}
+
+.possuiConta {
+
+    margin-top: 2%;
+    font-family: 'Poppins';
+    font-size: 23px;  
+    margin-left: 4%; 
+}
+
+.box-login {
+
+    color: rgb(136, 128, 103)
+}
+
+
+
