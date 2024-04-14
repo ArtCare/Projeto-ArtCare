@@ -328,8 +328,76 @@ body::-webkit-scrollbar-thumb {
 #Projeto {
     height: 100vh;
     width: 100%;
-
+    position: relative;
 }
+
+.container-principal {
+    display: flex;
+}
+
+.ProjetoPtRyan {
+    color: #464646;
+    position: absolute;
+
+    left: 300px;
+    top: 200px;
+}
+
+.titulo-projeto {
+    font-size: 70px;
+    color: #5e3c24;
+}
+
+.texto-projeto {
+    font-size: 20px;
+}
+
+.container-projeto {
+    margin-left: 20px;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 40px;
+}
+
+.button1 {
+    margin-right: 40px;
+}
+
+.box-image {
+    margin-bottom: 80px;
+}
+
+
+.button-saiba {
+    padding: 10px;
+    border-radius: 20px;
+    width: 160px;
+    border: 1px solid #110b07;
+    font-weight: 700;
+    color: #4e331f;
+    font-family: "Poppins";
+    
+}
+
+.button-cadastre {
+    padding: 10px;
+    border-radius: 20px;
+    width: 160px;
+    border: 1px solid black;
+    color: white;
+    background-color: #94734d;
+    font-weight: bold;
+    font-family: "Poppins";
+    
+}
+
+.imagem-projeto {
+    width: 500px;
+    margin-left: 200px;
+}
+
 
 #Simulador {
     height: 100vh;
