@@ -21,7 +21,7 @@ body {
 }
 
 .logo {
-    width: 200px;
+    width: 180px;
     margin-top: 20px;
 }
 
@@ -109,7 +109,7 @@ body {
 
 .header {
     width: 100%;
-    height: 150px;
+    height: 120px;
 
     background-color: #fff;
     display: flex;
@@ -171,7 +171,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    box-shadow: #666666 0 5px 10px;
+    box-shadow: #8d8d8d 0 3px 3px;
 }
 
 
@@ -216,7 +216,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-top: 40px;
+    margin-top: 20px;
   
 
 }
@@ -230,7 +230,7 @@ body {
     border-bottom-left-radius: 20px;
     justify-content: center;
     padding-left: 20px;
-    box-shadow: #666666 0 5px 10px;
+    box-shadow: #8d8d8d 0 3px 3px;
 }
 
 .statusTitle{
@@ -274,7 +274,7 @@ body {
     background-color: #FFF;
     border-radius: 30px;
     margin-bottom: 20px;
-    box-shadow: #666666 0 5px 10px;
+    box-shadow: #8d8d8d 0 3px 3px;
 }
 
 .info{

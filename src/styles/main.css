@@ -327,34 +327,29 @@ body::-webkit-scrollbar-thumb {
 
 #Projeto {
     height: 100vh;
-    width: 100%;
-    position: relative;
-}
-
-.container-principal {
     display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+
 }
 
-.ProjetoPtRyan {
-    color: #464646;
-    position: absolute;
-
-    left: 300px;
-    top: 200px;
-}
-
-.titulo-projeto {
-    font-size: 70px;
-    color: #5e3c24;
-}
+    .titulo-projeto {
+        font-family: "Caladea";
+        font-size: 70px;
+        font-weight: 700;
+        color: #5e3c24;
+    }
 
 .texto-projeto {
     font-size: 20px;
 }
 
 .container-projeto {
-    margin-left: 20px;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    }
 
 .buttons {
     display: flex;
@@ -365,9 +360,7 @@ body::-webkit-scrollbar-thumb {
     margin-right: 40px;
 }
 
-.box-image {
-    margin-bottom: 80px;
-}
+
 
 
 .button-saiba {
@@ -394,8 +387,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .imagem-projeto {
-    width: 500px;
-    margin-left: 200px;
+    width: 450px;
 }
 
 
@@ -577,6 +569,10 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
 }
 
+.logoArtcare{
+    height: 200px;
+}
+
 #Contato {
     height: 100vh;
     width: 100%;
@@ -718,7 +714,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container {
-
+    height: 100%;
     display: flex;
     align-items: center;
     width: 100%;
@@ -727,6 +723,7 @@ body::-webkit-scrollbar-thumb {
 .container-2 {
     
     width: 60%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -765,7 +762,7 @@ margin-top: 5%;
 .retangulo1 {
 
 width: 40%;
-height: 730px;
+height: 100%;
 background: linear-gradient(349.48deg, #F5F5F5 -23.43%, #A9927D 81.27%);
 
 }
@@ -776,10 +773,10 @@ background: linear-gradient(349.48deg, #F5F5F5 -23.43%, #A9927D 81.27%);
     font-family: 'Poppins';
     color: #F5F5F5;
     font-size: 27px;
+    text-align: center;
 }
 
 .vertical-space {
-
     margin-top: 5%;
 }
 
@@ -794,7 +791,7 @@ background: linear-gradient(349.48deg, #F5F5F5 -23.43%, #A9927D 81.27%);
     font-size: 20px;
 }
 
-.input{
+.input-Cadastro{
 
     border-radius: 20px; 
     border-color: white;
@@ -816,7 +813,7 @@ background: linear-gradient(349.48deg, #F5F5F5 -23.43%, #A9927D 81.27%);
 .botao-cadastro {
 
     border-radius: 20px;
-    border-color: white;
+    border: none;
     width: 125px;
     height: 30px;
     background-color: white;
