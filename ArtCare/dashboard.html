@@ -14,7 +14,6 @@
     <div class="menu">
         <img src="./assets/artcareBrownLogo.svg" class="logo">
 
-
         <div class="divOptions">
             <div class="PrimaryScreens">
                 <button class="option onScreen">
@@ -91,7 +90,8 @@
                     <button class="chartChangeButton" onclick="changeChartUmi()" id="btn">Ver Umidade</button>
                 </div>
                 <div class="chart">
-                    <canvas id="chart" width="100" height="30"></canvas>
+                        <canvas id="dht11Umidade" ></canvas>
+                        <canvas id="dht11Temperatura" ></canvas>
                 </div>
             </div>
         </div>
@@ -130,11 +130,13 @@
         { time: "21:00", count: 47 },
     ];
 
-    let chartTemp = new Chart(
-        document.getElementById('chart'),
+    let chartTemperature = new Chart(
+        document.getElementById('dht11Temperatura'),
         {
             type: 'line',
             options: {
+                responsive: true,
+        maintainAspectRatio: false,
                 animation: false,
                 plugins: {
                     legend: {
@@ -155,41 +157,44 @@
             }
         }
     );
-    function changeChartUmi() {
-        chartTemp.destroy();
-
-        let chartUmi = new Chart(
-            document.getElementById('chart'),
-            {
-                type: 'line',
-                options: {
-                    animation: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            enabled: false
-                        }
+    let chartUmidity = new Chart(
+        document.getElementById('dht11Umidade'),
+        
+        {
+            type: 'line',
+            options: {
+                animation: false,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false
                     }
-                },
-                data: {
-                    labels: umi.map(row => row.time),
-                    datasets: [
-                        {
-                            data: umi.map(row => row.count)
-                        }
-                    ]
                 }
+            },
+            data: {
+                labels: umi.map(row => row.time),
+                datasets: [
+                    {
+                        data: umi.map(row => row.count)
+                    }
+                ]
             }
-        );
-
+        }
+    );
+    function changeChartUmi() {
+        dht11Umidade.setAttribute("style", "opacity: 100")
+        dht11Temperatura.setAttribute("style", "opacity: 0%")
         chartHeader.innerHTML = "<span class='headerTitle'>Umidade</span><button class='chartChangeButton' onclick='changeChartTemp()'>Ver Temperatura</button>"
     }
-
     function changeChartTemp() {
-        location.reload()
+        dht11Temperatura.setAttribute("style", "opacity: 100%")
+        dht11Umidade.setAttribute("style", "opacity: 0%")
+        chartHeader.innerHTML = "<span class='headerTitle'>Temperatura</span><button class='chartChangeButton' onclick='changeChartUmi()'>Ver Umidade</button>"
     }
+
 
 </script>
 

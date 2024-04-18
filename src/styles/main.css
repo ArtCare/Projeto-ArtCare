@@ -330,25 +330,27 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: space-around;
+    font-family: "Caladea";
+    justify-content: space-evenly;
 
 }
 
     .titulo-projeto {
-        font-family: "Caladea";
-        font-size: 70px;
+        font-size: 76px;
         font-weight: 700;
         color: #5e3c24;
     }
 
 .texto-projeto {
-    font-size: 20px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #2B2929;
 }
 
 .container-projeto {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     }
 
 .buttons {
@@ -364,30 +366,41 @@ body::-webkit-scrollbar-thumb {
 
 
 .button-saiba {
-    padding: 10px;
-    border-radius: 20px;
+    border-radius: 30px;
     width: 160px;
-    border: 1px solid #110b07;
+    height: 42px;
+    border: 1px solid #A9927D;
+    color: #A9927D;
+    background-color: #FFF;
     font-weight: 700;
-    color: #4e331f;
-    font-family: "Poppins";
+    font-family: "Caladea";
+    font-size: 18px;
+    transition: all .5s ease-in-out ;
+    }
+
+.button-cadastro {
+    font-size: 18px;
+    border-radius: 30px;
+    width: 160px;
+    height: 42px;
+    border: none;
+    color: white;
+    background-color: #A9927D;
+    font-weight: 700;
+    font-family: "Caladea";
+    transition: all .5s ease-in-out ;
     
 }
 
-.button-cadastre {
-    padding: 10px;
-    border-radius: 20px;
-    width: 160px;
-    border: 1px solid black;
-    color: white;
-    background-color: #94734d;
-    font-weight: bold;
-    font-family: "Poppins";
-    
+.button-saiba:hover{
+    background-color: #F5F5F5;
+}
+.button-cadastro:hover{
+    background-color: #5e3c24;
 }
 
 .imagem-projeto {
-    width: 450px;
+    width: 400px;
 }
 
 
@@ -764,6 +777,9 @@ margin-top: 5%;
 width: 40%;
 height: 100%;
 background: linear-gradient(349.48deg, #F5F5F5 -23.43%, #A9927D 81.27%);
+display: flex;
+flex-direction: column;
+justify-content: center;
 
 }
 
@@ -814,8 +830,8 @@ background: linear-gradient(349.48deg, #F5F5F5 -23.43%, #A9927D 81.27%);
 
     border-radius: 20px;
     border: none;
-    width: 125px;
-    height: 30px;
+    width: 145px;
+    height: 40px;
     background-color: white;
     margin-left: 29%;
     box-shadow: 0 4px 2px -2px gray;
