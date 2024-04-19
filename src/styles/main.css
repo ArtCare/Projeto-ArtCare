@@ -741,12 +741,13 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 5%;
 }
 
 .retangulo {
 
-width: 479px;
-height: 363px;
+width: 516px;
+height: 520px;
 background: rgba(169, 146, 125, 0.7);
 border-radius: 40px;
 margin-top: 5%;
@@ -881,6 +882,5 @@ justify-content: center;
 
     color: rgb(136, 128, 103)
 }
-
 
 
