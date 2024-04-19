@@ -17,11 +17,10 @@ canvas {
 #dht11Umidade{
     position: absolute;
     opacity: 0;
-    width: 52%;
     transition: all .25s ease-in-out;
 }
 #dht11Temperatura{
-    width: 52%;
+
     position: absolute;
     transition: all .25s ease-in-out;
 }
