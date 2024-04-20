@@ -13,9 +13,7 @@ function cadastro() {
         alert("Seu email não possui @")
     } else if (email.indexOf(".") == -1){
         alert("Seu email precisa ter um ' . ' ")
-    } 
-    
-    if (senha.length <= 4){
+    } else if (senha.length <= 4){
         alert("Sua senha precisa ter mais que 4 caracteres")
     } else {
         for(let numero = 0; numero <= 9; numero ++ ){
@@ -26,7 +24,7 @@ function cadastro() {
         if(senhaNum == false){
             alert("Senha precisa de um caracter numérico")
         } else {
-            alert("Deu bom")
+            window.location = "login.html"
         }
 
     }

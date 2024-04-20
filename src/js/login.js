@@ -1,14 +1,13 @@
 function ValidarLogin(){
     const email = registroMuseu.value
     const senha = input_senha.value
+    let senhaNum = false
 
     if (email.indexOf("@") == -1){
         alert("Seu email não possui @")
     } else if (email.indexOf(".") == -1){
         alert("Seu email precisa ter um ' . ' ")
-    } 
-    
-    if (senha.length <= 4){
+    } else if (senha.length <= 4){
         alert("Sua senha precisa ter mais que 4 caracteres")
     } else {
         for(let numero = 0; numero <= 9; numero ++ ){
@@ -19,7 +18,7 @@ function ValidarLogin(){
         if(senhaNum == false){
             alert("Senha precisa de um caracter numérico")
         } else {
-            alert("Deu bom")
+            window.location = "ArtCare/dashboard.html"
         }
 
     }
