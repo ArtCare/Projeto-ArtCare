@@ -806,15 +806,20 @@ justify-content: center;
     margin-left:14%;
     margin-right: 0%;
     font-size: 20px;
+    
+   
 }
+
 
 .input-Cadastro{
 
     border-radius: 20px; 
     border-color: white;
-    width: 70%;
+    width: 90%;
     height: 32px;
     box-shadow: 0 4px 0px -1px gray;
+    
+    
 }
 
 .box-children-input{
@@ -824,6 +829,9 @@ justify-content: center;
     justify-content: space-between;
     margin-bottom: 10%;
     width: 85%;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 
