@@ -818,6 +818,7 @@ justify-content: center;
     width: 90%;
     height: 32px;
     box-shadow: 0 4px 0px -1px gray;
+    padding-left: 10px;
     
     
 }
