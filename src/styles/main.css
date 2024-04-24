@@ -814,13 +814,26 @@ justify-content: center;
 .input-Cadastro{
 
     border-radius: 20px; 
+<<<<<<< HEAD
+    border: none;
+    width: 70%;
+=======
     border-color: white;
     width: 90%;
+>>>>>>> 91f91f8ed8d2962fbdc90bb14076fa15f5355d45
     height: 32px;
+    padding-left: 20px;
     box-shadow: 0 4px 0px -1px gray;
     padding-left: 10px;
     
     
+}
+
+.input-Cadastro:focus{
+
+    box-shadow: #000000 0 0 10px;
+    outline: none;
+
 }
 
 .box-children-input{
@@ -830,9 +843,13 @@ justify-content: center;
     justify-content: space-between;
     margin-bottom: 10%;
     width: 85%;
+<<<<<<< HEAD
+    
+=======
     display: block;
     margin-top: 15px;
     margin-bottom: 15px;
+>>>>>>> 91f91f8ed8d2962fbdc90bb14076fa15f5355d45
 }
 
 
