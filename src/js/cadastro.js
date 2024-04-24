@@ -10,7 +10,7 @@ function cadastro() {
     } else if (cnpj.length != 14){
         alert("Seu cnpj precisa ter 14 dígitos")
     } else if (email.indexOf("@") == -1){
-        alert("Seu email não possui @")
+        alert("Seu email não possui ' @ '")
     } else if (email.indexOf(".") == -1){
         alert("Seu email precisa ter um ' . ' ")
     } else if (senha.length <= 4){

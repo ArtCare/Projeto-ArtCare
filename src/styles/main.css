@@ -808,6 +808,24 @@ body::-webkit-scrollbar-thumb {
 
 
 
+<<<<<<< HEAD
+=======
+    border-radius: 20px; 
+<<<<<<< HEAD
+    border: none;
+    width: 70%;
+=======
+    border-color: white;
+    width: 90%;
+>>>>>>> 91f91f8ed8d2962fbdc90bb14076fa15f5355d45
+    height: 32px;
+    padding-left: 20px;
+    box-shadow: 0 4px 0px -1px gray;
+    padding-left: 10px;
+    
+    
+}
+>>>>>>> a3b136c98b36869434c7dc6f92e3a1f08f1e1e24
 
 .box-children-input {
 
