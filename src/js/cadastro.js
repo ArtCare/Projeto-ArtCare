@@ -8,7 +8,7 @@ function cadastro() {
     if(nome.length <= 2){
         alert("Seu nome precisa ter mais que 2 caracteres")
     } else if (cnpj.length != 14){
-        alert("Seu cnpj é precisa ter 14 dígitos")
+        alert("Seu cnpj precisa ter 14 dígitos")
     } else if (email.indexOf("@") == -1){
         alert("Seu email não possui @")
     } else if (email.indexOf(".") == -1){

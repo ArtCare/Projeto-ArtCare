@@ -335,11 +335,11 @@ body::-webkit-scrollbar-thumb {
 
 }
 
-    .titulo-projeto {
-        font-size: 76px;
-        font-weight: 700;
-        color: #5e3c24;
-    }
+.titulo-projeto {
+    font-size: 76px;
+    font-weight: 700;
+    color: #5e3c24;
+}
 
 .texto-projeto {
     font-size: 26px;
@@ -351,7 +351,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    }
+}
 
 .buttons {
     display: flex;
@@ -375,8 +375,8 @@ body::-webkit-scrollbar-thumb {
     font-weight: 700;
     font-family: "Caladea";
     font-size: 18px;
-    transition: all .5s ease-in-out ;
-    }
+    transition: all .5s ease-in-out;
+}
 
 .button-cadastro {
     font-size: 18px;
@@ -388,14 +388,15 @@ body::-webkit-scrollbar-thumb {
     background-color: #A9927D;
     font-weight: 700;
     font-family: "Caladea";
-    transition: all .5s ease-in-out ;
-    
+    transition: all .5s ease-in-out;
+
 }
 
-.button-saiba:hover{
+.button-saiba:hover {
     background-color: #F5F5F5;
 }
-.button-cadastro:hover{
+
+.button-cadastro:hover {
     background-color: #5e3c24;
 }
 
@@ -582,7 +583,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
 }
 
-.logoArtcare{
+.logoArtcare {
     height: 200px;
 }
 
@@ -704,7 +705,7 @@ body::-webkit-scrollbar-thumb {
     font-family: "Poppins";
     text-transform: uppercase;
     cursor: pointer;
-   font-size: 16px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -720,7 +721,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-.infos{
+.infos {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -734,7 +735,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container-2 {
-    
+
     width: 60%;
     height: 100%;
     display: flex;
@@ -744,16 +745,6 @@ body::-webkit-scrollbar-thumb {
     margin-top: 5%;
 }
 
-.retangulo {
-
-width: 516px;
-height: 520px;
-background: rgba(169, 146, 125, 0.7);
-border-radius: 40px;
-margin-top: 5%;
-
-
-}
 
 .logo-white {
 
@@ -763,24 +754,24 @@ margin-top: 5%;
     height: 73px;
 }
 
-.flex-container{
+.flex-container {
 
     display: flex;
-    flex-direction:column ;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 15%;    
+    margin-top: 15%;
 
 }
 
 .retangulo1 {
 
-width: 40%;
-height: 100%;
-background: linear-gradient(349.48deg, #F5F5F5 -23.43%, #A9927D 81.27%);
-display: flex;
-flex-direction: column;
-justify-content: center;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(349.48deg, #F5F5F5 -23.43%, #A9927D 81.27%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
@@ -797,58 +788,57 @@ justify-content: center;
     margin-top: 5%;
 }
 
+.retangulo {
 
-.box-input {
-
+    width: 516px;
+    height: 520px;
+    background: rgba(169, 146, 125, 0.7);
+    border-radius: 40px;
     margin-top: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     font-family: 'Poppins';
-    color: white;
-    margin-left:14%;
-    margin-right: 0%;
+    color: #F5F5F5;
     font-size: 20px;
-    
-   
 }
 
 
-.input-Cadastro{
 
-    border-radius: 20px; 
-<<<<<<< HEAD
-    border: none;
-    width: 70%;
-=======
-    border-color: white;
-    width: 90%;
->>>>>>> 91f91f8ed8d2962fbdc90bb14076fa15f5355d45
-    height: 32px;
-    padding-left: 20px;
-    box-shadow: 0 4px 0px -1px gray;
-    
-    
-}
 
-.input-Cadastro:focus{
-
-    box-shadow: #000000 0 0 10px;
-    outline: none;
-
-}
-
-.box-children-input{
+.box-children-input {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 10%;
-    width: 85%;
-<<<<<<< HEAD
-    
-=======
+    width: 100%;
     display: block;
     margin-top: 15px;
     margin-bottom: 15px;
->>>>>>> 91f91f8ed8d2962fbdc90bb14076fa15f5355d45
+}
+
+
+.input-Cadastro {
+
+    border-radius: 20px;
+    border: none;
+    width: 300px;
+    height: 30px;
+    padding-left: 20px;
+    box-shadow: 0 4px 0px -1px gray;
+    outline: none;
+
+
+}
+
+.input-Cadastro:focus {
+
+    box-shadow: #000000 0 0 10px;
+
 }
 
 
@@ -870,7 +860,7 @@ justify-content: center;
     display: flex;
     align-items: center;
     margin-top: 4%;
-   
+
 }
 
 .box-opcao1 {
@@ -885,7 +875,7 @@ justify-content: center;
 }
 
 .box-opcao2 {
-    
+
     border-color: white;
     width: 44px;
     height: 2px;
@@ -899,13 +889,11 @@ justify-content: center;
 
     margin-top: 2%;
     font-family: 'Poppins';
-    font-size: 23px;  
-    margin-left: 4%; 
+    font-size: 23px;
+    margin-left: 4%;
 }
 
 .box-login {
 
     color: rgb(136, 128, 103)
 }
-
-
