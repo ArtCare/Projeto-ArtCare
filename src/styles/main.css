@@ -238,92 +238,46 @@ body::-webkit-scrollbar-thumb {
     font-size: 20px;
 }
 
-#Equipe {
+#Introducao-projeto{
     height: 100vh;
+    display: flex;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%, #A6CCE6 80%);
-
-}
-
-.upperCloud {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: -10px;
-}
-
-.equipeCloud {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    justify-content: center;
-}
-
-.equipeUpper {
-    display: flex;
-    justify-content: space-between;
-    width: 800px;
-    margin-top: 70px;
-
-}
-
-.membro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.memberPhoto {
-    border-radius: 30px;
-    height: 180px;
-    width: 180px;
-    border: 4px #fff solid;
-    box-shadow: #464646 0 5px 5px;
-}
-
-.nameMember {
     font-family: "Poppins";
-    font-weight: 600;
-    font-size: 24px;
-    color: #fff;
-}
-
-.memberFunction {
-    font-family: "Poppins";
-    font-weight: 600;
-    font-size: 17px;
-    color: #464646;
-    margin-top: 10px;
-}
-
-.equipeLower {
-    display: flex;
-    justify-content: space-between;
-    width: 800px;
-    margin-top: 20px;
-}
-
-.social {
-    display: flex;
+    align-items: center;
     justify-content: space-evenly;
-
-    width: 90%;
+    background-color: #d4cac1;
 }
 
-.socialBtn {
-    height: 30px;
-    width: 30px;
-    transition: all .3s ease-in-out;
+
+.div-projeto{
+    display: flex;
 }
 
-.socialBtn:hover {
-    transform: scale(1.16);
+
+.logoArtCare-introducao{
+    width: 600px;
+    margin-left: 70px;
 }
+
+.texto-introducaoProjeto {
+    font-size: 24px;
+    margin-left: 200px;
+}
+
+.button-introducao {
+    color: #75563f;
+    font-family: "Poppins";
+    font-weight: 900;
+    height: 40px;
+    width: 200px;
+    border-radius: 60px;
+    border: 2px solid #75563f;
+    background-color: #ffffff;
+    font-size: 15px;
+   
+}
+
+
 
 #Projeto {
     height: 100vh;
