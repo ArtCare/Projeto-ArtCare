@@ -15,12 +15,15 @@ canvas {
 }
 
 #dht11Umidade{
+    height: 200px;
+    width: 800px;
     position: absolute;
     opacity: 0;
     transition: all .25s ease-in-out;
 }
 #dht11Temperatura{
-
+    height: 200px;
+    width: 800px;
     position: absolute;
     transition: all .25s ease-in-out;
 }
@@ -175,6 +178,7 @@ canvas {
 .chart {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 800px;
     background-color: #fff;
     margin-left: 50px;
@@ -184,7 +188,7 @@ canvas {
 
 .chartInfo {
     width: 1200px;
-    height: 350px;
+    height: 370px;
     background-color: #fff;
     border-radius: 30px;
     display: flex;
@@ -213,7 +217,6 @@ canvas {
     background-color: #F5F5F5;
     cursor: pointer;
     border-radius: 20px;
-    transition: all .4s ease-in-out;
     height: 40px;
 
     font-family: "Poppins";

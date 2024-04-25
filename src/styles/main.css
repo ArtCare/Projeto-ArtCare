@@ -104,7 +104,7 @@ body::-webkit-scrollbar-thumb {
 #Inicio {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%, #A6CCE6 80%);
+    background-color: #A6CCE6;
 }
 
 .StartContainer {
@@ -175,7 +175,8 @@ body::-webkit-scrollbar-thumb {
     width: 300px;
     border-radius: 60px;
     border: 4px solid #fff;
-    background-color: transparent;
+    background-color: #A6CCE6;
+    border-color: #A6CCE6;
     font-size: 22px;
     animation: up-down 2s;
     animation-iteration-count: infinite;
@@ -186,10 +187,7 @@ body::-webkit-scrollbar-thumb {
     transition: all .4s ease-in-out;
 }
 
-.btn:hover {
-    background-color: #A6CCE6;
-    border-color: #A6CCE6;
-}
+
 
 #Sobre {
     height: 100vh;
@@ -199,10 +197,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 .assetsContainer {
-    background: linear-gradient(360deg, #A6CCE6 0%, rgba(218, 241, 255, 1) 80%);
+    background: linear-gradient(360deg,  rgba(218, 241, 255, 1)0%, #A6CCE6 80%);
 
     height: 100%;
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -211,7 +209,7 @@ body::-webkit-scrollbar-thumb {
 .logoSobre {
     width: 500px;
     height: 150px;
-    margin-left: 20%;
+    margin-left: 15%;
 }
 
 .sobreContainer {
@@ -220,7 +218,7 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 60%;
 
 }
 
@@ -235,95 +233,55 @@ body::-webkit-scrollbar-thumb {
     font-family: "Poppins";
     font-weight: 500;
     color: #2B2929;
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 38px;
 }
 
-#Equipe {
+#Introducao-projeto{
     height: 100vh;
+    display: flex;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: linear-gradient(360deg, rgba(218, 241, 255, 1) 0%, #A6CCE6 80%);
-
-}
-
-.upperCloud {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: -10px;
-}
-
-.equipeCloud {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    justify-content: center;
-}
-
-.equipeUpper {
-    display: flex;
-    justify-content: space-between;
-    width: 800px;
-    margin-top: 70px;
-
-}
-
-.membro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.memberPhoto {
-    border-radius: 30px;
-    height: 180px;
-    width: 180px;
-    border: 4px #fff solid;
-    box-shadow: #464646 0 5px 5px;
-}
-
-.nameMember {
     font-family: "Poppins";
-    font-weight: 600;
-    font-size: 24px;
-    color: #fff;
-}
-
-.memberFunction {
-    font-family: "Poppins";
-    font-weight: 600;
-    font-size: 17px;
-    color: #464646;
-    margin-top: 10px;
-}
-
-.equipeLower {
-    display: flex;
-    justify-content: space-between;
-    width: 800px;
-    margin-top: 20px;
-}
-
-.social {
-    display: flex;
+    align-items: center;
     justify-content: space-evenly;
-
-    width: 90%;
 }
 
-.socialBtn {
-    height: 30px;
-    width: 30px;
-    transition: all .3s ease-in-out;
+
+.div-projeto{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
-.socialBtn:hover {
-    transform: scale(1.16);
+.div-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+
+.logoArtCare-introducao{
+    width: 500px;
+    margin-left: 70px;
+}
+
+.texto-introducaoProjeto {
+    font-size: 24px;
+}
+
+.button-introducao {
+    color: #75563f;
+    font-family: "Poppins";
+    font-weight: 900;
+    height: 40px;
+    width: 200px;
+    border-radius: 60px;
+    border: 2px solid #75563f;
+    background-color: #ffffff;
+    font-size: 15px;
+   
+}
+
 
 #Projeto {
     height: 100vh;
@@ -424,12 +382,12 @@ body::-webkit-scrollbar-thumb {
 
 .context {
     width: 550px;
-    height: 320px;
+    height: 420px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffffffa5;
+    background-color: #ffffffd0;
 }
 
 .titleContext {
@@ -451,7 +409,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffffffa5;
+    background-color: #ffffffd0;
 }
 
 
@@ -465,14 +423,14 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
+    width: 220px;
 }
 
 .inputText {
     font-family: "Caladea";
     font-weight: 700;
     color: #4a4a4a;
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -791,7 +749,7 @@ body::-webkit-scrollbar-thumb {
 .retangulo {
 
     width: 516px;
-    height: 520px;
+    height: 540px;
     background: rgba(169, 146, 125, 0.7);
     border-radius: 40px;
     margin-top: 5%;
@@ -804,29 +762,19 @@ body::-webkit-scrollbar-thumb {
     font-family: 'Poppins';
     color: #F5F5F5;
     font-size: 20px;
+
+    box-shadow: #6f6f6f 0 5px 10px;
 }
 
 
 
-<<<<<<< HEAD
-=======
-    border-radius: 20px; 
-<<<<<<< HEAD
-    border: none;
-    width: 70%;
-=======
-    border-color: white;
-    width: 90%;
->>>>>>> 91f91f8ed8d2962fbdc90bb14076fa15f5355d45
-    height: 32px;
-    padding-left: 20px;
-    box-shadow: 0 4px 0px -1px gray;
-    padding-left: 10px;
-    
-    
+.btnDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+   
 }
->>>>>>> a3b136c98b36869434c7dc6f92e3a1f08f1e1e24
-
 .box-children-input {
 
     display: flex;
@@ -878,7 +826,8 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     align-items: center;
     margin-top: 4%;
-
+    width: 100px;
+    justify-content: space-between;
 }
 
 .box-opcao1 {
@@ -889,7 +838,6 @@ body::-webkit-scrollbar-thumb {
     height: 2px;
     color: silver;
     background-color: silver;
-    margin-left: 31%;
 }
 
 .box-opcao2 {
@@ -899,16 +847,14 @@ body::-webkit-scrollbar-thumb {
     height: 2px;
     color: white;
     background-color: white;
-    margin-left: 5%;
 
 }
 
 .possuiConta {
 
-    margin-top: 2%;
+    margin-top: 4%;
     font-family: 'Poppins';
-    font-size: 23px;
-    margin-left: 4%;
+    font-size: 20px;
 }
 
 .box-login {

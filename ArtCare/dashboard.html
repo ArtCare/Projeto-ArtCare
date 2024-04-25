@@ -90,8 +90,8 @@
                     <button class="chartChangeButton" onclick="changeChartUmi()" id="btn">Ver Umidade</button>
                 </div>
                 <div class="chart">
-                        <canvas id="dht11Umidade"></canvas>
-                        <canvas id="dht11Temperatura" ></canvas>
+                    <canvas id="dht11Umidade" ></canvas>
+                    <canvas id="dht11Temperatura" ></canvas>
                 </div>
             </div>
         </div>
@@ -136,7 +136,7 @@
             type: 'line',
             options: {
                 responsive: true,
-        maintainAspectRatio: false,
+                maintainAspectRatio: false,
                 animation: false,
                 plugins: {
                     legend: {
@@ -151,7 +151,8 @@
                 labels: temp.map(row => row.time),
                 datasets: [
                     {
-                        data: temp.map(row => row.count)
+                        data: temp.map(row => row.count),
+                        borderColor: "#D1495B"
                     }
                 ]
             }
@@ -159,7 +160,7 @@
     );
     let chartUmidity = new Chart(
         document.getElementById('dht11Umidade'),
-        
+
         {
             type: 'line',
             options: {
@@ -178,7 +179,8 @@
                 labels: umi.map(row => row.time),
                 datasets: [
                     {
-                        data: umi.map(row => row.count)
+                        data: umi.map(row => row.count),
+                        borderColor: '#36A2EB',
                     }
                 ]
             }
@@ -186,7 +188,7 @@
     );
     function changeChartUmi() {
         dht11Umidade.setAttribute("style", "opacity: 100")
-        dht11Temperatura.setAttribute("style", "opacity: 0%")
+        dht11Temperatura.setAttribute("style", "opacity: 0%;")
         chartHeader.innerHTML = "<span class='headerTitle'>Umidade</span><button class='chartChangeButton' onclick='changeChartTemp()'>Ver Temperatura</button>"
     }
     function changeChartTemp() {
