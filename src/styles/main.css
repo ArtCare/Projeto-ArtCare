@@ -244,11 +244,16 @@ body::-webkit-scrollbar-thumb {
     font-family: "Poppins";
     align-items: center;
     justify-content: space-evenly;
+<<<<<<< HEAD
+=======
+    background-color: #d4cac1;
+>>>>>>> f5b25fb0f6c881f879c01f2f9008dee50c589a78
 }
 
 
 .div-projeto{
     display: flex;
+<<<<<<< HEAD
     justify-content: space-around;
     width: 100%;
 }
@@ -267,6 +272,19 @@ body::-webkit-scrollbar-thumb {
 
 .texto-introducaoProjeto {
     font-size: 24px;
+=======
+}
+
+
+.logoArtCare-introducao{
+    width: 600px;
+    margin-left: 70px;
+}
+
+.texto-introducaoProjeto {
+    font-size: 24px;
+    margin-left: 200px;
+>>>>>>> f5b25fb0f6c881f879c01f2f9008dee50c589a78
 }
 
 .button-introducao {
@@ -283,6 +301,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f5b25fb0f6c881f879c01f2f9008dee50c589a78
 #Projeto {
     height: 100vh;
     display: flex;
