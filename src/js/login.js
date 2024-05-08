@@ -18,7 +18,7 @@ function ValidarLogin(){
         if(senhaNum == false){
             alert("Senha precisa de um caracter numérico")
         } else {
-            window.location = "ArtCare/dashboard.html"
+            window.location = "dashboard.html"
         }
 
     }
