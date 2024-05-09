@@ -537,11 +537,6 @@ body::-webkit-scrollbar-thumb {
     margin-bottom: -10px;
 }
 
-#Cadastro {
-    height: 100vh;
-    width: 100%;
-}
-
 .logoArtcare {
     height: 200px;
 }
@@ -689,6 +684,7 @@ body::-webkit-scrollbar-thumb {
 .container {
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
 }
@@ -735,47 +731,69 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-.cadastro {
-
+/* .cadastro {
     font-family: 'Poppins';
     color: #F5F5F5;
     font-size: 27px;
     text-align: center;
+} */
+
+#Cadastro {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/background/cadastro-background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.vertical-space {
-    margin-top: 5%;
+#Cadastro .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.retangulo {
-
-    width: 516px;
-    height: 540px;
-    background: rgba(169, 146, 125, 0.7);
-    border-radius: 40px;
-    margin-top: 5%;
-
+.conteudo-cadastro {
+    width: 60%;
+    background: rgb(102, 102, 102, 0.700);
+    border-radius: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    font-family: 'Poppins';
+    font-family: 'Caladea';
+    font-weight: bold;
     color: #F5F5F5;
     font-size: 20px;
-
     box-shadow: #6f6f6f 0 5px 10px;
 }
 
+.box-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.linha1-input, .linha2-input{
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px 0;
+    padding: 10px 0;
+}
 
 .btnDiv{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-   
 }
+
+/* 
 .box-children-input {
 
     display: flex;
@@ -786,20 +804,17 @@ body::-webkit-scrollbar-thumb {
     display: block;
     margin-top: 15px;
     margin-bottom: 15px;
-}
+} */
 
 
 .input-Cadastro {
-
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     width: 300px;
     height: 30px;
     padding-left: 20px;
     box-shadow: 0 4px 0px -1px gray;
     outline: none;
-
-
 }
 
 .input-Cadastro:focus {
