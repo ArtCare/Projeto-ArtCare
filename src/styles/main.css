@@ -304,7 +304,8 @@ body::-webkit-scrollbar-thumb {
     font-size: 26px;
     font-weight: bold;
     /* font-weight: 500; */
-    color: #4A2F1C;
+    /* color: #4A2F1C; */
+    color: #000000;
     font-family: "Caladea";
 }
 
