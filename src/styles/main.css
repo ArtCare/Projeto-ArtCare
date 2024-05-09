@@ -6,6 +6,7 @@ html {
 
 body {
     margin: 0;
+    background-image: url(../assets/svg/fundoInicio.svg);
 }
 
 body::-webkit-scrollbar {
@@ -142,7 +143,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 22px;
 }
 
-.startImage {
+.startm {
     height: 400px;
     width: 400px;
 }
@@ -296,13 +297,15 @@ body::-webkit-scrollbar-thumb {
 .titulo-projeto {
     font-size: 76px;
     font-weight: 700;
-    color: #5e3c24;
+    color: #4A2F1C;
 }
 
 .texto-projeto {
     font-size: 26px;
-    font-weight: 500;
-    color: #2B2929;
+    font-weight: bold;
+    /* font-weight: 500; */
+    color: #4A2F1C;
+    font-family: "Caladea";
 }
 
 .container-projeto {
@@ -325,15 +328,15 @@ body::-webkit-scrollbar-thumb {
 
 .button-saiba {
     border-radius: 30px;
-    width: 160px;
-    height: 42px;
-    border: 2px solid #A9927D;
-    color: #A9927D;
-    background-color: #FFF;
+    width: 230px;
+    height:52px;
+    border: 2px solid #4A2F1C;
+    color: #4A2F1C;
+    background-color: #E0E0E0;
     font-weight: 700;
     font-family: "Caladea";
-    font-size: 18px;
-    transition: all .5s ease-in-out;
+    font-size: 30px;
+    transition: all .1s ease-in-out;
 }
 
 .button-cadastro {
@@ -359,7 +362,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 .imagem-projeto {
-    width: 400px;
+    
+
+position: relative;
+width: 591px;
+height: 940px;
+
+
+
 }
 
 
