@@ -114,8 +114,6 @@ body::-webkit-scrollbar-thumb {
 
 }
 
-
-
 .btn {
     color: #fff;
     font-family: "Poppins";
@@ -137,8 +135,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-
-
 .mainText {
     font-family: "Poppins";
     font-weight: 500;
@@ -147,36 +143,65 @@ body::-webkit-scrollbar-thumb {
     line-height: 38px;
 }
 
+.objetivo {
+font-weight: bolder;
+font-size: 76px;
+font: "caladea";
+
+}
+
 #Introducao-projeto{
     height: 100vh;
     display: flex;
     width: 100%;
-    font-family: "Poppins";
-    align-items: center;
-    justify-content: space-evenly;
+    
 }
 
+.div-projeto {
 
-.div-projeto{
-    display: flex;
-    justify-content: space-around;
     width: 100%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    
+} 
+
+.img-text {
+
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 12%;
+
 }
 
 .div-text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    color: rgb(74, 47, 28);
+    width: 50%;
+    margin-left: 10%;
+     
 }
 
+.div-img {
 
-.logoArtCare-introducao{
-    width: 500px;
-    margin-left: 70px;
+    width: 40%;
+    margin-left: 10px;
+    margin-top: -4%;
+    
 }
+
+.logoArtCare-introducao {
+
+    width: 540px;
+}
+
 
 .texto-introducaoProjeto {
-    font-size: 24px;
+    font-size: 30px;
+    font-family: "Poppins";
+    font-weight: 450;
 }
 
 .button-introducao {
@@ -232,7 +257,6 @@ body::-webkit-scrollbar-thumb {
 .button1 {
     margin-right: 40px;
 }
-
 
 
 
@@ -375,13 +399,13 @@ width: 470px;
 .btnForm {
     color: #FFF;
     font-family: "Poppins";
-    font-weight: 500;
-    height: 40px;
-    width: 200px;
+    font-weight: 550;
+    height: 47px;
+    width: 250px;
     border-radius: 60px;
     border: 2px solid #fff;
     background-color: #4a4a4a;
-    font-size: 15px;
+    font-size: 20px;
     margin-top: 50px;
     cursor: pointer;
     box-shadow: #4a4a4a 0 5px 10px;
