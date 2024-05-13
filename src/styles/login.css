@@ -4,7 +4,7 @@ body{
     margin: 0;
     height: 100vh;
     width: 100%;
-    background:  url("../assets/background/bgSimulador.svg");
+    background:  url("../assets/svg/fpaqwjruzmp91\ 2.png 2.png");
     background-color: #292929;
     background-size: cover;
     display: flex;
@@ -12,104 +12,69 @@ body{
     justify-content: space-between;
     }
 
-    
-.header{
-    padding: 30px;
-}
-.logo{
-    height: 100px;
-}
+    p {
+        color: white;
+    }
+    .header{
+        padding: 30px;
+    }
+    .logo{
+        height: 100px;
+    }
 
-.form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -50px;
-}
+    .div-login{
+        background-color: #525151;
+        height: 500px;
+        width: 500px;
+        border-radius: 40px;
+        margin: auto;
+        opacity: 0.9;
+        
+    }
 
-.title{
-    font-family: "Poppins";
-    font-weight: 600;
-    font-size: 26px;
-    color: #FFF;
-    margin-bottom: 20px;
-}
+    h1 {
+        margin-left: 38%;
+        color: white;
+        font-size: 50px;
+    }
 
-.inputDiv{
-    display: flex;
-    flex-direction: column;
-}
+    .box-input {
+        margin-inline: 100px;
+        padding-bottom: 35px;
+    }
 
-.inputTitle{
-    font-family: "Poppins";
-    font-weight: 500;
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    margin-top: 20px;
-}
+    .input {
+        border-radius: 5px;
+        border: none;
+        width: 250px;
+        height: 30px;
+        padding-left: 20px;
+        box-shadow: 0 4px 0px -1px gray;
+        outline: none;
+    }
 
-.inputForm {
-    height: 40px;
-    width: 400px;
-    border-radius: 20px;
-    padding-left: 20px;
-    border: none;
-    margin-top: 5px;
-    transition: all .4s ease-in-out;
-}
+    .botao {
+        border-radius: 20px;
+        border: none;
+        width: 130px;
+        height: 30px;
+        color: rgb(255, 255, 255);
+        background-color: #B08067;
+        box-shadow: 0 4px 2px -2px gray;
+        margin-top: 20px;
+        margin-left: 24%;
+    }
 
-.inputForm:focus {
-    box-shadow: #000000 0 0 10px;
-    outline: none;
-}
+    .p-input {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
 
-.btn {
-    color: #FFF;
-    font-family: "Poppins";
-    font-weight: 500;
-    height: 40px;
-    width: 200px;
-    border-radius: 60px;
-    border: 2px solid #fff;
-    background-color: #464646b8;
-    font-size: 15px;
-    margin-top: 30px;
-    cursor: pointer;
-    box-shadow: #464646 0 5px 10px;
-    transition: all .4s ease-in-out;
-}
+    .p-cadastre{
+        margin-inline: 100px;
+        font-size: 20px;
+    }
 
-.btn:hover {
-    background-color: #A9927D;
-    border-color: #A9927D;
-}
-
-.btn:active {
-    transform: scale(.9);
-}
-
-.goBack{
-       border: 2px #A9927D solid;
-       border-radius:70px ;
-       width: 50px;
-       height: 50px;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       margin: 30px;
-       background-color: #a9927d74;
-       transition: all .4s ease-in-out;
-      
-}
-
-.goBack:hover{
-      background-color: #a9927d;
-}
-.goBack:active {
-    transform: scale(.9);
-}
-
-.arrow{
-    color: #FFF;
-   }
-
+    .p-cadastre span {
+        color:#B08067 ;
+    }
