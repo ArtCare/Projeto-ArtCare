@@ -4,19 +4,20 @@ body{
     margin: 0;
     height: 100vh;
     width: 100%;
-    background:  url("../assets/svg/fpaqwjruzmp91\ 2.png 2.png");
+    background:  url("../assets/svg/fundoInicio.svg");
     background-color: #292929;
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
     }
 
     p {
         color: white;
     }
     .header{
-        padding: 30px;
+        padding: 30px 30px 0 30px;
     }
     .logo{
         height: 100px;
@@ -26,9 +27,10 @@ body{
         background-color: #525151;
         height: 500px;
         width: 500px;
-        border-radius: 40px;
+        border-radius: 35px;
         margin: auto;
-        opacity: 0.9;
+        opacity: 0.8;
+        padding-bottom: 10px;
         
     }
 
@@ -66,8 +68,9 @@ body{
     }
 
     .p-input {
-        font-size: 20px;
-        margin-bottom: 10px;
+        font-size: 16px;
+        margin-bottom: 5px;
+        font-family: "Poppins";
     }
 
     .p-cadastre{
@@ -77,4 +80,10 @@ body{
 
     .p-cadastre span {
         color:#B08067 ;
+        font-weight: bold;
+    }
+
+    .a-acessar {
+        text-decoration: none;
+        color:#ffffff ;
     }
