@@ -221,7 +221,6 @@ font: "caladea";
 #Projeto {
     height: 100vh;
     width: 100%;
-   
     font-family: "Caladea";
     display: flex;
     justify-content: center;
@@ -403,8 +402,8 @@ width: 470px;
     height: 47px;
     width: 250px;
     border-radius: 60px;
-    border: 2px solid #fff;
-    background-color: #4a4a4a;
+    border: none;
+    background-color: #A9927D; 
     font-size: 20px;
     margin-top: 50px;
     cursor: pointer;
@@ -413,8 +412,8 @@ width: 470px;
 }
 
 .btnForm:hover {
-    background-color: #A9927D;
-    border-color: #A9927D;
+    background-color: #4a4a4a;
+    border: 2px solid #fff;
 }
 
 .btnForm:active {
@@ -689,17 +688,30 @@ width: 470px;
     height: 100vh;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../assets/background/cadastro-background.svg');
+    flex-direction: column;
+    background-image: url('../assets/background/cadastro-login_bg.svg');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;   
+}
+
+#Cadastro .logo {
+    width: 100%;
+    height: 180px;
+    padding-left: 65px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.logoArtCare {
+    height: 80%;
 }
 
 #Cadastro .container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .conteudo-cadastro {
@@ -715,6 +727,12 @@ width: 470px;
     color: #F5F5F5;
     font-size: 20px;
     box-shadow: #6f6f6f 0 5px 10px;
+    padding: 45px 0;
+}
+
+.conteudo-cadastro h1{
+    margin: 0;
+    font-size: 56px;
 }
 
 .box-input {
@@ -723,10 +741,11 @@ width: 470px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 25px;
 }
 
-.linha1-input, .linha2-input{
-    width: 80%;
+.linha-input {
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     margin: 5px 0;
@@ -740,39 +759,36 @@ width: 470px;
     align-items: center;
 }
 
-/* 
+
 .box-children-input {
-
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10%;
-    width: 100%;
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 15px;
-} */
+    flex-direction: column;
+    width: 40%;
+}
 
+.box-children-input span {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
 
 .input-Cadastro {
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
-    width: 300px;
-    height: 30px;
+    width: 100%;
+    height: 38px;
     padding-left: 20px;
     box-shadow: 0 4px 0px -1px gray;
     outline: none;
+    margin-top: 8px;
+    font-size: 20px;
 }
 
 .input-Cadastro:focus {
-
     box-shadow: #000000 0 0 10px;
 
 }
 
-
 .botao-cadastro {
-
     border-radius: 20px;
     border: none;
     width: 145px;
@@ -783,9 +799,7 @@ width: 470px;
 
 }
 
-
 .box-opcao {
-
     display: flex;
     align-items: center;
     margin-top: 4%;
@@ -794,8 +808,6 @@ width: 470px;
 }
 
 .box-opcao1 {
-
-
     border-color: silver;
     width: 44px;
     height: 2px;
@@ -804,7 +816,6 @@ width: 470px;
 }
 
 .box-opcao2 {
-
     border-color: white;
     width: 44px;
     height: 2px;
@@ -814,13 +825,17 @@ width: 470px;
 }
 
 .possuiConta {
-
     margin-top: 4%;
     font-family: 'Poppins';
     font-size: 20px;
 }
 
 .box-login {
+    color: #A9927D;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
 
-    color: rgb(136, 128, 103)
+.box-login:hover {
+    color: #4A2F1C;
 }
