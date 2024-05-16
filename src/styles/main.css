@@ -92,12 +92,12 @@ body::-webkit-scrollbar-thumb {
     transform: scaleX(1);
 }
 
-.cadastro{
+.cadastro {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    background-color: #75563f;
+    background-color: #464646;
     width: 230px;
     height: 50px;
     margin-left: -10px;
@@ -105,34 +105,17 @@ body::-webkit-scrollbar-thumb {
     margin-right: 10px;
 
 }
-.cadastro:hover{
-    background-color: #5e4633;
+
+.cadastro:hover {
+    background-color: #75563f;
 }
-.cadastroLink{
+
+.cadastroLink {
     text-decoration: none;
     color: #FFF;
 
 }
 
-.btn {
-    color: #fff;
-    font-family: "Poppins";
-    font-weight: 500;
-    height: 60px;
-    width: 300px;
-    border-radius: 60px;
-    border: 4px solid #fff;
-    background-color: #A6CCE6;
-    border-color: #A6CCE6;
-    font-size: 22px;
-    animation: up-down 2s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    margin-top: -30px;
-    cursor: pointer;
-    box-shadow: #464646 0 5px 10px;
-    transition: all .4s ease-in-out;
-}
 
 
 .mainText {
@@ -144,27 +127,27 @@ body::-webkit-scrollbar-thumb {
 }
 
 .objetivo {
-font-weight: bolder;
-font-size: 76px;
-font: "caladea";
+    font-weight: bolder;
+    font-size: 76px;
+    font: "caladea";
 
 }
 
-#Introducao-projeto{
+#Objetivo {
     height: 100vh;
     display: flex;
     width: 100%;
-    
+
 }
 
 .div-projeto {
 
     width: 100%;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
-    
-} 
+
+}
 
 .img-text {
 
@@ -176,12 +159,12 @@ font: "caladea";
 
 }
 
-.div-text{
+.div-text {
 
     color: rgb(74, 47, 28);
     width: 50%;
     margin-left: 10%;
-     
+
 }
 
 .div-img {
@@ -189,7 +172,7 @@ font: "caladea";
     width: 40%;
     margin-left: 10px;
     margin-top: -4%;
-    
+
 }
 
 .logoArtCare-introducao {
@@ -199,9 +182,9 @@ font: "caladea";
 
 
 .texto-introducaoProjeto {
-    font-size: 30px;
+    font-size: 26px;
     font-family: "Poppins";
-    font-weight: 450;
+    font-weight: 400;
 }
 
 .button-introducao {
@@ -214,7 +197,7 @@ font: "caladea";
     border: 2px solid #75563f;
     background-color: #ffffff;
     font-size: 15px;
-   
+
 }
 
 
@@ -234,11 +217,10 @@ font: "caladea";
 }
 
 .texto-projeto {
-    font-size: 22px;
+    font-size: 28px;
     font-weight: bold;
-    /* font-weight: 500; */
-    /* color: #4A2F1C; */
-    color: #000000;
+    font-weight: 400;
+    color: #4A2F1C;
     font-family: "Caladea";
 }
 
@@ -262,14 +244,15 @@ font: "caladea";
 .button-saiba {
     border-radius: 30px;
     width: 230px;
-    height:52px;
-    border: 4px solid #613e26;
-    color: #4A2F1C;
-    background-color: #E0E0E0;
+    height: 52px;
+    border: none;
+    color: #FFF;
+    background-color: #8e694d;
     font-weight: 700;
     font-family: "Caladea";
     font-size: 30px;
     transition: all .5s ease-in-out;
+    box-shadow: #292929 2px 4px 10px;
 }
 
 .button-cadastro {
@@ -287,7 +270,7 @@ font: "caladea";
 }
 
 .button-saiba:hover {
-    background-color: #F5F5F5;
+    background-color: #7f5e45;
 }
 
 .button-cadastro:hover {
@@ -295,10 +278,11 @@ font: "caladea";
 }
 
 .imagem-projeto {
-width: 470px;
+    width: 470px;
 
 }
-.project{
+
+.project {
     display: flex;
     align-items: center;
     height: 100vh;
@@ -386,7 +370,7 @@ width: 470px;
     border-radius: 20px;
     padding-left: 20px;
     border: 1px solid #464646;
-    
+
 }
 
 .inputForm:focus {
@@ -403,7 +387,7 @@ width: 470px;
     width: 250px;
     border-radius: 60px;
     border: none;
-    background-color: #A9927D; 
+    background-color: #A9927D;
     font-size: 20px;
     margin-top: 50px;
     cursor: pointer;
@@ -691,7 +675,7 @@ width: 470px;
     flex-direction: column;
     background-image: url('../assets/background/cadastro-login_bg.svg');
     background-size: cover;
-    background-repeat: no-repeat;   
+    background-repeat: no-repeat;
 }
 
 #Cadastro .logo {
@@ -730,7 +714,7 @@ width: 470px;
     padding: 45px 0;
 }
 
-.conteudo-cadastro h1{
+.conteudo-cadastro h1 {
     margin: 0;
     font-size: 56px;
 }
@@ -752,7 +736,7 @@ width: 470px;
     padding: 10px 0;
 }
 
-.btnDiv{
+.btnDiv {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
