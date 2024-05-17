@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    background-color: #F5F5F5;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#dht11Umidade{
+    height: 200px;
+    width: 800px;
+    position: absolute;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+}
+#dht11Temperatura{
+    height: 200px;
+    width: 800px;
+    position: absolute;
+    transition: all .25s ease-in-out;
+}
+.menu {
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: #b8b3ae 0 5px 10px;
+    border-right: 2px #A5A5A5 solid;
+}
+
+.logo {
+    width: 180px;
+    margin-top: 20px;
+}
+
+.menu-Itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin-top: 30%;
+    margin-bottom: 20%;
+    background-color: transparent;
+}
+
+.botoes-superiores {
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.item {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all .4s ease-in-out;
+    height: 80px;
+}
+
+.texto-item {
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 30px;
+    text-align: start;
+    width: 100px;
+    color: #666666;
+
+}
+
+.menuicon {
+    color: #666666;
+}
+
+.botoes-inferiores {
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.item-selecionado {
+    background-color: #B08067;
+    border-radius: 50px;
+}
+
+.item:hover {
+    background-color: #F5F5F5;
+}
+
+.item-selecionado:hover {
+    background-color: #c58f72;
+}
+
+.cor-item-selecionado {
+    color: #fff;
+}
+
+.conteudo {
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.header .conteudo {
+    width: 85%;
+    height: 120px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: #b8b3ae 0 5px 10px;
+    border-bottom: 2px #A5A5A5 solid;
+    border-radius: 20px;
+}
+
+.titulo-header {
+    margin-left: 50px;
+    font-family: "Poppins";
+    font-size: 28px;
+    font-weight: 600;
+    color: #B08067;
+}
+
+.div-cards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.div-cards .conteudo {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.indicadores {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 45%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: #8d8d8d 0 3px 3px;
+}
+
+.card:hover {
+    border: 3px solid #C62400;
+    box-shadow: #C62400 0 0 15px;
+}
+
+.titulo-card{
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 700;
+    color: #666666;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.texto-card{
+    font-family: "Poppins";
+    font-size: 56px;
+    font-weight: 700;
+    color: #B08067;
+}
+
+.informacao {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    
+}
+
+.status .card {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding-left: 20px;
+    box-shadow: #8d8d8d 0 3px 3px;
+}
+
+/* .status {
+    width: 50%;
+} */
+
+/* .logout {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all .4s ease-in-out;
+    height: 60px;
+
+    margin-right: 50px;
+    margin-bottom: -10px;
+} */
+
+/* .optionLogout {
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 20px;
+    color: #666666;
+} */
+
+.chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    background-color: #fff;
+    margin-left: 50px;
+    height: 200px;
+}
+
+.chartInfo {
+    width: 85%;
+    height: 370px;
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: #8d8d8d 0 3px 3px;
+}
+
+
+.chartHeader {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.chartChangeButton {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    width: 170px;
+    justify-content: center;
+
+    border: none;
+    background-color: #F5F5F5;
+    cursor: pointer;
+    border-radius: 20px;
+    height: 40px;
+
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 500;
+
+     color: #B08067;
+}
+
+.chartChangeButton:hover{
+    background-color: #A5A5A5;
+    color: #fff;
+}
+
+.chartChangeButton:active{
+    transform: scale(.95);
+}
+.statusDiv{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  
+
+}
+
+.statusTitle{
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: -10px;   
+
+    color: #666666;
+}
+.statusValue{
+    font-family: "Poppins";
+    font-size: 26px;
+    font-weight: 700;
+
+    color: #028d29;
+}
+.museum{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.museumInfo{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infoDiv{
+    width: 390px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FFF;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    box-shadow: #8d8d8d 0 3px 3px;
+}
+
+
+.infoIcon{
+    color: #666666;
+
+}
