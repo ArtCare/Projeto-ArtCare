@@ -126,7 +126,7 @@ body {
     box-shadow: #b8b3ae 0 5px 10px;
     border-bottom: 2px #A5A5A5 solid;
     border-radius: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .caption {
@@ -189,7 +189,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-inline: 5%;
-    margin-top: 4%;
+    margin-top: 2%;
 }
 
 .titleWrapper {
@@ -233,7 +233,7 @@ body {
 }
 
 .sectors {
-    margin-top: 2%;
+    margin-top: 3%;
     margin-inline: 5%;
     width: 100%;
 }
@@ -290,7 +290,7 @@ body {
 }
 
 .graficos {
-    height: 30%;
+    height: 33%;
     width: 90%;
     margin-bottom: 30px;
     display: flex;
@@ -298,7 +298,7 @@ body {
 }
 
 .criticalidade {
-    width: 30%;
+    width: 40%;
     height: 100%;
     background-color: #FFF;
     display: flex;
@@ -321,7 +321,7 @@ body {
 }
 
 .qtdAlerta {
-    width: 68%;
+    width: 58%;
     height: 100%;
     background-color: #FFF;
 
@@ -335,7 +335,7 @@ body {
 
 .barChart{
   height: 100%;
-  width: 90%;
+  width: 80%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
