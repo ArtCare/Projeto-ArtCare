@@ -17,7 +17,7 @@ body {
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-
+  
 }
 
 .logo {
@@ -66,7 +66,7 @@ body {
 .conteudo-cadastro h1 {
     padding-top: 10px;
     font-size: 56px;
-    text-align: center;
+  
 }
 
 .box-input {
@@ -75,7 +75,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    text-align: center;
 
 }
 
@@ -95,11 +95,15 @@ body {
     flex-direction: column;
     width: 60%;
     margin-top: 10px;
+    text-align: left;
 }
 
 .box-children-input span {
     font-size: 22px;
-    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-family: 'Caladea';
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .input-Cadastro {
@@ -141,8 +145,8 @@ body {
 
 .possuiConta {
     margin-top: 4%;
-    font-family: 'Poppins';
-    font-size: 20px;
+    font-family: 'Caladea';
+    font-size: 30px;
 }
 
 .box-login {
@@ -152,12 +156,12 @@ body {
 }
 
 .box-login:hover {
-    color: #4A2F1C;
+    color: #8a684e;
 }
 
 .btnForm {
     color: #FFF;
-    font-family: "Poppins";
+    font-family: "Caladea";
     font-weight: 550;
     height: 40px;
     width: 200px;
@@ -180,10 +184,10 @@ body {
     transform: scale(.9);
 }
 
-.cadastroRepresentante {
-    display: flex;
-    position: absolute;
-    width: 100%;
+#cadastroRepresentante {
+    transition: all 2s ease-in-out;
+    display: none;
+    width: 40%;
     background: rgb(102, 102, 102, 0.700);
     border-radius: 50px;
     flex-direction: column;
@@ -194,5 +198,87 @@ body {
     color: #F5F5F5;
     font-size: 20px;
     box-shadow: #2a2a2a 0 5px 10px;
+ }
+.modal{
+    width: 40%;
+    height: 30%;
+    border: none;
+    padding: 0;
+    border-radius: 20px;
+}
 
+.modal::backdrop{
+    background-color: #000000b9;
+
+}
+.content{
+    display: flex;
+    height: 100%;
+    border-radius: 20px;
+}
+.iconContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 30%;
+    background-color: #C62400;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.messageContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+    font-family: 'Caladea';
+    font-weight: 700;
+}
+.title{
+    text-align: left;
+    color: #C62400;
+    font-size: 30px;
+
+}
+.message{
+    color: #666666;
+    font-size: 20px;
+}
+
+.btnModal{
+    font-family: 'Caladea';
+    width: 50%;
+    background-color:#C62400;
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 20px;
+    height: 16%;
+    border-radius: 10px;
+}
+.sucessesBG{
+    background-color: #2AD445;
+}
+.sucesses{
+  color: #2AD445;
+}
+
+@keyframes fadein{
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+        }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+     
+    }
+}
+
+dialog[open]{
+    animation: fadein 1s ease forwards;
 }

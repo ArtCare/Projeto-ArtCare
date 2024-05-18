@@ -2,52 +2,102 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtCare - Cadastro</title>
-    <link rel="stylesheet" href="./css/cadastro.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" href="./src/assets/svg/artcareLogoMini.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArtCare - Cadastro</title>
+  <link rel="stylesheet" href="./css/cadastro.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="./src/assets/svg/artcareLogoMini.svg">
 </head>
 
 <body>
-    <div class="container">
-        <div class="logo">
-            <img class="logoArtCare" src="./assets/svg/artcareLogo.svg" >
+  <div class="container">
+    <div class="logo">
+      <img class="logoArtCare" src="./assets/svg/artcareLogo.svg">
 
-            <span class="slogan">Preservar a arte é preservar nossa história <br> cuide, valorize, eternize.</span>
+      <span class="slogan">Preservar a arte é preservar nossa história <br> cuide, valorize, eternize.</span>
 
-            <span class="possuiConta">
-                Já possui uma conta? <a href="./login.html" class=box-login>Faça Login</a>
-            </span>
-        </div>
-
-        <div id="conteudoCadastro" class="conteudo-cadastro" data-aos="fade-left" data-aos-duration="1500">
-            <div class="box-input active">
-            <h1>Cadastro</h1>
-                <div class="box-children-input">
-                    <span>Nome do museu</span>
-                    <input class="input-Cadastro" type="text" id="input_nome">
-                </div>
-                <div class="box-children-input">
-                    <span>Registro de museu</span>
-                    <input class="input-Cadastro" type="text" id="input_rm">
-                </div>
-                <div class="box-children-input">
-                    <span>CNPJ</span>
-                    <input class="input-Cadastro" type="text" id="input_cnpj">
-                </div>
-                <div class="box-children-input">
-                    <span>Senha</span>
-                    <input class="input-Cadastro" type="password" id="input_senha">
-                </div>
-                <div class="btnDiv">
-                    <button class="btnForm" onclick="nextStep()">Proximo</button>
-                </div>
-            </div>
-        </div>
+      <span class="possuiConta">
+        Já possui uma conta? <a href="./login.html" class=box-login>Faça Login</a>
+      </span>
     </div>
 
+    <div id="conteudoCadastro" class="conteudo-cadastro" data-aos="fade-left" data-aos-duration="1500">
+      <div class="box-input active">
+        <h1>Cadastro</h1>
+        <div class="box-children-input">
+          <span>Nome do museu</span>
+          <input class="input-Cadastro" type="text" id="input_nome">
+        </div>
+        <div class="box-children-input">
+          <span>Registro de museu</span>
+          <input class="input-Cadastro" type="text" id="input_rm">
+        </div>
+        <div class="box-children-input">
+          <span>CNPJ</span>
+          <input class="input-Cadastro" type="text" id="input_cnpj">
+        </div>
+        <div class="box-children-input">
+          <span>Senha</span>
+          <input class="input-Cadastro" type="password" id="input_senha">
+        </div>
+        <div class="btnDiv">
+          <button class="btnForm" onclick="nextStep()">Proximo</button>
+        </div>
+      </div>
+    </div>
+    <div id="cadastroRepresentante" class="cadastroRepresentante" data-aos="fade-left" data-aos-duration="1500">
+      <div  class="box-input ">
+        <h1>Cadastre um<br>Representante</h1>
+             <div class="box-children-input">
+              <span>Nome</span>
+              <input class="input-Cadastro" type="text" id="nomeRepresentante">
+          </div>
+          <div class="box-children-input">
+              <span>Email</span>
+              <input class="input-Cadastro" type="text" id="email">
+          </div>
+          <div class="box-children-input">
+              <span>Senha</span>
+              <input class="input-Cadastro" type="password" id="senhaRepresentante">
+          </div>
+          <div class="box-children-input">
+              <span>Confirmar senha</span>
+              <input class="input-Cadastro" type="password" id="confSenha">
+          </div>
+          <div class="btnDiv">
+              <button class="btnForm" onclick="cadastro()">CADASTRE-SE</button>
+          </div>
+      </div>
+   </div>`
+   
+  </div>
+
+  <dialog id="alertModal" class="modal">
+    <div class="content">
+      <div class="iconContainer">
+        <img src="./assets/icons/errorIcon.svg">
+      </div>
+      <div class="messageContainer">
+        <span class="title">Erro ao cadastrar<br>
+          <span class="message" id="message">Email ou senha inválidos</span>
+        </span>
+        <button class="btnModal" onclick="closeModal()">Tentar novamente</button>
+      </div>
+    </div>
+  </dialog>
+  <dialog id="sucesso" class="modal" data-aos="fade-down" data-aos-duration="1200">
+    <div class="content">
+      <div class="iconContainer sucessesBG">
+        <img src="./assets/icons/success.svg">
+      </div>
+      <div class="messageContainer">
+        <span class="title sucesses">Sucesso<br>
+          <span class="message">Você será redirecionado para o login.</span>
+        </span>
+      </div>
+    </div>
+  </dialog>
 </body>
 
 </html>

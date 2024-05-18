@@ -93,18 +93,20 @@ h1 {
 
 
 .p-input {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 5px;
     font-family: 'Caladea';
+    font-weight: 700;
 }
 
 .p-cadastre {
     font-size: 20px;
 }
 
-.p-cadastre span {
-    color: #B08067;
+.p-cadastre a {
+    color: #DDAD94;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .a-acessar {
