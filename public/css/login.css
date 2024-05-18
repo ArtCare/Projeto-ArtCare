@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body {
     margin: 0;
     height: 100vh;
@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    font-family: 'Caladea';
+
 }
 
 p {
@@ -35,7 +35,7 @@ p {
 .div-login {
     background: rgb(102, 102, 102, 0.700);
     width: 36%;
-    height: 80%;
+    height: 70%;
     border-radius: 50px;
     box-shadow: #2a2a2a 0 5px 10px;
     display: flex;
@@ -69,7 +69,7 @@ h1 {
 
 .btnForm {
     color: #FFF;
-    font-family: "Poppins";
+    font-family: "Caladea";
     font-weight: 550;
     height: 40px;
     width: 200px;
@@ -95,7 +95,7 @@ h1 {
 .p-input {
     font-size: 16px;
     margin-bottom: 5px;
-    font-family: "Poppins";
+    font-family: 'Caladea';
 }
 
 .p-cadastre {
@@ -110,4 +110,65 @@ h1 {
 .a-acessar {
     text-decoration: none;
     color: #ffffff;
+}
+
+.modal{
+    width: 40%;
+    height: 30%;
+    border: none;
+    padding: 0;
+    border-radius: 20px;
+}
+
+.modal::backdrop{
+    background-color: #000000b9;
+
+}
+.content{
+    display: flex;
+    height: 100%;
+    border-radius: 20px;
+}
+.iconContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 30%;
+    background-color: #C62400;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.messageContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+    font-family: 'Caladea';
+    font-weight: 700;
+}
+.title{
+    text-align: left;
+    color: #C62400;
+    font-size: 30px;
+
+}
+.message{
+    color: #666666;
+    font-size: 20px;
+}
+
+.btnModal{
+    font-family: 'Caladea';
+    width: 50%;
+    background-color:#C62400;
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 20px;
+    height: 16%;
+    border-radius: 10px;
 }

@@ -1,14 +1,15 @@
+const modal = document.querySelector('#alertModal')
+const rm = document.querySelector('#rm').value
+const senha = document.querySelector('#senha').value
+
+
 function ValidarLogin(){
-    const email = registroMuseu.value
-    const senha = input_senha.value
     let senhaNum = false
 
-    if (email.indexOf("@") == -1){
-        alert("Seu email não possui ' @ '")
-    } else if (email.indexOf(".") == -1){
-        alert("Seu email precisa ter um ' . ' ")
-    } else if (senha.length <= 4){
-        alert("Sua senha precisa ter mais que 4 caracteres")
+    if (rm.length <= 8 || rm.length >= 10){
+        modal.showModal()
+    }else if (senha.length <= 4){
+        modal.showModal()
     } else {
         for(let numero = 0; numero <= 9; numero ++ ){
             if(senha.indexOf(numero.toString())!= -1){
@@ -16,10 +17,13 @@ function ValidarLogin(){
             } 
         }
         if(senhaNum == false){
-            alert("Senha precisa de um caracter numérico")
+            modal.showModal()
         } else {
-            window.location = "dashboard.html"
+            window.location = "./dashboard/dashboard.html"
         }
-
     }
+}
+
+function closeModal(){
+    modal.close()
 }

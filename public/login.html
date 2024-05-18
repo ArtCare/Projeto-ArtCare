@@ -19,21 +19,35 @@
             </div>
             <div class="box-input">
                 <p class="p-input">REGISTRO DO MUSEU:</p>
-                <input type="text" class="input">
-                <p class="p-input">SENHA:</p>
+                <input type="text" class="input" id="rm">
+                <p class="p-input" id="senha">SENHA:</p>
                 <input type="text" class="input">
     
             </div>
-            <button class="btnForm"><a href="./dashboard.html" class="a-acessar">ACESSAR</a></button>
+            <button class="btnForm" onclick="ValidarLogin()">ACESSAR</button>
             <div class="cadastro-login">
                 <p class="p-cadastre">Não possui uma conta? <span>Cadastre-se!</span></p>
             </div>
         </div>
     </div>
+
+    <dialog id="alertModal" class="modal" >
+        <div class="content">
+            <div class="iconContainer">
+                <img src="./assets/icons/errorIcon.svg">
+            </div>
+            <div class="messageContainer">
+                <span class="title">Erro ao realizar login <br>
+                <span class="message">Email ou senha inválidos</span>
+                </span>
+                <button class="btnModal" onclick="closeModal()">Tentar novamente</button>
+            </div>
+        </div>
+    </dialog>
 </body>
 
 </html>
-
+<script src="./js/login.js"></script>
 <script>
 
 
