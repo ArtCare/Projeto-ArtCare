@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArtCare - Dashboard</title>
-    <link rel="stylesheet" href="./src/styles/dashboard-setor.css">
-    <link rel="icon" href="../src/assets/svg/artcareLogoMini.svg">
+    <link rel="stylesheet" href="../css/dashboard-setor.css">
+    <link rel="icon" href="../assets/svg/artcareLogoMini.svg">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="menu">
-        <img src="./src/assets/svg/artcareBrownLogo2.svg" class="logo">
+        <img src="../assets/svg/artcareBrownLogo2.svg" class="logo">
         <div class="menu-Itens">
             <div class="botoes-superiores">
                 <button class="item">
@@ -41,8 +41,27 @@
     </div>
     <div class="conteudo">
         <div class="header">
-            <div class="conteudo">
-                <span class="titulo-header">Setor</span>
+            <div class="header-container">
+                <div class="principal">
+                    <span class="titulo-header">Setor 00 - Nome do Setor</span>
+                    <button class="btn-verLegenda" onclick="mostrarLegendas()">Ver legendas</button>
+                </div>
+                <div class="metricas">
+                    <div class="temperatura">
+                        <span class="titulo-metrica">Métricas de temperatura do setor</span>
+                        <div class="descricao">
+                            <p>Temperatura máxima: 00ºC</p>
+                            <p>Temperatura mínima: 00ºC</p>
+                        </div>
+                    </div>
+                    <div class="umidade">
+                        <span class="titulo-metrica">Métricas de umidade do setor</span>
+                        <div class="descricao">
+                            <p>Umidade máxima: 00ºC</p>
+                            <p>Umidade mínima: 00ºC</p>
+                        </div>
+                    </div>
+                </div>
                 <!-- <button class="option logout" onclick="logout()">
                     <i class="fa-solid fa-right-from-bracket fa-xl menuicon"></i> <span class="optionLogout">Sair</span>
                 </button> -->
@@ -69,21 +88,48 @@
                 </div>
                 <div class="status">
                     <div class="card">
-                        <span class="statusTitle">STATUS</span>
-                        <span class="statusValue">POSITIVO</span>
+                        <div class="alerta">
+                            <span class="titulo-status">STATUS:</span>
+                            <span class="tipo-status">Crítico</span>
+                            <p class="texto-status">Temperatura acima das métricas</p>
+                        </div>
+                        <div class="tempo">
+                            <span class="titulo-tempo">Tempo</span>
+                            <p class="texto-tempo">00:00:00</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="museum">
-            <div class="chartInfo">
-                <div class="chartHeader" id="chartHeader">
-                    <span class="titulo-header">Temperatura</span>
-                    <button class="chartChangeButton" onclick="changeChartUmi()" id="btn">Ver Umidade</button>
+        <div class="graficos-container">
+            <div class="conteudo">
+                <div class="coluna-esquerda">
+                    <div class="grafico-temperatura">
+                        <div class="header-grafico">
+                            <span class="titulo-header">Temperatura</span>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="grafico_temperatura"></canvas>
+                        </div>
+                    </div>
+                    <div class="grafico-umidade">
+                        <div class="header-grafico">
+                            <span class="titulo-header">Umidade</span>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="grafico_umidade"></canvas>
+                        </div>
+                    </div>
                 </div>
-                <div class="chart">
-                    <canvas id="dht11Umidade"></canvas>
-                    <canvas id="dht11Temperatura"></canvas>
+                <div class="coluna-direita">
+                    <div class="grafico-status">
+                        <div class="header-grafico">
+                            <span class="titulo-header">Status</span>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="grafico_status"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,8 +137,12 @@
 </body>
 
 </html>
-<script src="../node_modules/chart.js/dist/chart.umd.js"></script>
+<!-- <script src="../node_modules/chart.js/dist/chart.umd.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://kit.fontawesome.com/77b47374b3.js" crossorigin="anonymous"></script>
+<script src="../js/dashboard-setor.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script> AOS.init(); </script>
 
 <script>
     function logout() {
@@ -122,8 +172,10 @@
         { time: "21:00", count: 47 },
     ];
 
-    let chartTemperature = new Chart(
-        document.getElementById('dht11Temperatura'),
+    
+
+    let graficoTemperatura = new Chart(
+        document.getElementById('grafico_temperatura'),
         {
             type: 'line',
             options: {
@@ -150,8 +202,9 @@
             }
         }
     );
-    let chartUmidity = new Chart(
-        document.getElementById('dht11Umidade'),
+
+    let graficoUmidade = new Chart(
+        document.getElementById('grafico_umidade'),
 
         {
             type: 'line',
@@ -178,19 +231,23 @@
             }
         }
     );
-    function changeChartUmi() {
-        dht11Umidade.setAttribute("style", "opacity: 100")
-        dht11Temperatura.setAttribute("style", "opacity: 0%;")
-        chartHeader.innerHTML = "<span class='titulo-header'>Umidade</span><button class='chartChangeButton' onclick='changeChartTemp()'>Ver Temperatura</button>"
-    }
-    function changeChartTemp() {
-        dht11Temperatura.setAttribute("style", "opacity: 100%")
-        dht11Umidade.setAttribute("style", "opacity: 0%")
-        chartHeader.innerHTML = "<span class='titulo-header'>Temperatura</span><button class='chartChangeButton' onclick='changeChartUmi()'>Ver Umidade</button>"
-    }
 
+    let graficoStatus = new Chart (
+        document.getElementById('grafico_status'),
 
+        {
+            type: 'pie',
+            data:{
+                labels: [
+                    'Crítico',
+                    'Alerta',
+                    'Normal'
+                ],
+                datasets: [{
+                    data: [10, 15, 7],
+                    borderWidth: 1
+                }]
+            },
+        }
+    )
 </script>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script> AOS.init(); </script>

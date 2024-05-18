@@ -131,23 +131,87 @@ canvas {
     margin-top: 2%;
 }
 
-.header .conteudo {
+.header-container {
     width: 85%;
-    height: 120px;
     background-color: #fff;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     box-shadow: #b8b3ae 0 5px 10px;
     border-bottom: 2px #A5A5A5 solid;
     border-radius: 20px;
+    padding: 20px 0;
+}
+
+.header-container .principal {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .titulo-header {
-    margin-left: 50px;
     font-family: "Poppins";
     font-size: 28px;
     font-weight: 600;
+    color: #666666;
+}
+
+.btn-verLegenda {
+    width: 170px;
+    border: none;
+    background-color: #666666;
+    cursor: pointer;
+    border-radius: 20px;
+    height: 40px;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 500;
+     color: #fff;
+}
+
+.metricas {
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.metricas .titulo-metrica {
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.metricas .temperatura,.umidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metricas .temperatura {
+    color: #C62400;
+}
+
+.metricas .umidade {
+    color: #072F9F;
+}
+
+.metricas .descricao {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Caladea';
+    color: #666666;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.descricao p {
+    margin-top: 5px;
+}
+
+.header-grafico .titulo-header {
     color: #B08067;
 }
 
@@ -171,21 +235,25 @@ canvas {
     justify-content: space-between;
 }
 
+.indicadores .card {
+    box-sizing: border-box;
+}
+
 .card {
     width: 45%;
     padding: 20px;
-    box-sizing: border-box;
     background-color: #fff;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     box-shadow: #8d8d8d 0 3px 3px;
+    border: 3px solid #fff;
 }
 
 .card:hover {
     border: 3px solid #C62400;
-    box-shadow: #C62400 0 0 15px;
+    box-shadow: 0 0 15px #C62400;
 }
 
 .titulo-card{
@@ -216,14 +284,65 @@ canvas {
     align-items: center;
     justify-content: flex-end;
     width: 50%;
-    
 }
 
 .status .card {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding-left: 20px;
+    width: 80%;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+    padding: 0 25px;
     box-shadow: #8d8d8d 0 3px 3px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    right: -112px;
+}
+
+.status .alerta,.tempo {
+    width: 45%;
+}
+
+.titulo-status, .titulo-tempo {
+    font-weight: bold;
+    color: #666666;
+}
+
+.texto-status, .texto-tempo {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.titulo-status {
+    font-size: 26px;
+    font-family: "Poppins";
+}
+
+.tipo-status {
+    font-family: "Caladea";
+    font-size: 26px;
+    font-weight: bold;
+    color: #C62400;
+}
+
+.texto-status {
+    text-transform: uppercase;
+    font-family: 'Caladea';
+    color: #666666;
+    text-align: center;
+    font-size: 18px;
+}
+
+.titulo-tempo {
+    font-size: 30px;
+    font-family: 'Caladea';
+}
+
+.texto-tempo {
+    color: #C62400;
+    font-family: 'Poppins';
+    font-size: 42px;
+    margin: 0;
 }
 
 /* .status {
@@ -254,97 +373,70 @@ canvas {
     color: #666666;
 } */
 
-.chart {
+.graficos-container {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 800px;
+}
+
+.graficos-container .conteudo {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.coluna-esquerda {
+    width: 50%;
+}
+
+.coluna-direita {
+    width: 30%;
+}
+
+.grafico {
+    width: 85%;
+}
+
+.grafico-temperatura, .grafico-umidade {
+    width: 100%;  
+    /* background-color: #fff;
+    border-radius: 30px; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #8d8d8d 0 3px 3px; */
+}
+
+
+/* .chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 100%;
     background-color: #fff;
     margin-left: 50px;
-    height: 200px;
-}
+    background-color: #072F9F;
+} */
 
-.chartInfo {
-    width: 85%;
-    height: 370px;
-    background-color: #fff;
-    border-radius: 30px;
+.header-grafico {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    box-shadow: #8d8d8d 0 3px 3px;
-}
-
-
-.chartHeader {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+    width: 95%;
     justify-content: space-between;
-    padding-top: 20px;
-}
-
-.chartChangeButton {
-    margin-right: 50px;
-    display: flex;
     align-items: center;
-    width: 170px;
-    justify-content: center;
-
-    border: none;
-    background-color: #F5F5F5;
-    cursor: pointer;
-    border-radius: 20px;
-    height: 40px;
-
-    font-family: "Poppins";
-    font-size: 16px;
-    font-weight: 500;
-
-     color: #B08067;
 }
 
-.chartChangeButton:hover{
-    background-color: #A5A5A5;
-    color: #fff;
-}
-
-.chartChangeButton:active{
-    transform: scale(.95);
-}
-.statusDiv{
+/* .statusDiv{
     width: 100%;
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
   
 
-}
+} */
 
-.statusTitle{
-    font-family: "Poppins";
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: -10px;   
-
-    color: #666666;
-}
-.statusValue{
-    font-family: "Poppins";
-    font-size: 26px;
-    font-weight: 700;
-
-    color: #028d29;
-}
-.museum{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.museumInfo{
+/* .museumInfo{
     width: 85%;
     display: flex;
     justify-content: space-between;
@@ -363,8 +455,7 @@ canvas {
     border-radius: 30px;
     margin-bottom: 20px;
     box-shadow: #8d8d8d 0 3px 3px;
-}
-
+} */
 
 .infoIcon{
     color: #666666;
