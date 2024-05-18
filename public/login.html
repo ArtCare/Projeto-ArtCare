@@ -20,8 +20,8 @@
             <div class="box-input">
                 <p class="p-input">REGISTRO DO MUSEU:</p>
                 <input type="text" class="input" id="rm">
-                <p class="p-input" id="senha">SENHA:</p>
-                <input type="text" class="input">
+                <p class="p-input" >SENHA:</p>
+                <input type="text" id="senha" class="input">
     
             </div>
             <button class="btnForm" onclick="ValidarLogin()">ACESSAR</button>
@@ -41,6 +41,18 @@
                 <span class="message">Email ou senha inválidos</span>
                 </span>
                 <button class="btnModal" onclick="closeModal()">Tentar novamente</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="sucesso" class="modal" >
+        <div class="content">
+            <div class="iconContainer sucessesBG">
+                <img src="./assets/icons/success.svg">
+            </div>
+            <div class="messageContainer">
+                <span class="title sucesses">Sucesso<br>
+                <span class="message">Você será redirecionado para o sistema.</span>
+                </span>
             </div>
         </div>
     </dialog>

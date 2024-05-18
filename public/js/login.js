@@ -1,25 +1,30 @@
 const modal = document.querySelector('#alertModal')
-const rm = document.querySelector('#rm').value
-const senha = document.querySelector('#senha').value
+const sucesso = document.querySelector('#sucesso')
+const rm = document.querySelector('#rm')
+const senha = document.querySelector('#senha')
 
 
 function ValidarLogin(){
     let senhaNum = false
-
-    if (rm.length <= 8 || rm.length >= 10){
+    console.log(senha.value.length)
+    console.log(rm.value.length)
+    if (rm.value.length <= 8 || rm.value.length >= 10){
         modal.showModal()
-    }else if (senha.length <= 4){
+    }else if (senha.value.length <= 4){
         modal.showModal()
     } else {
         for(let numero = 0; numero <= 9; numero ++ ){
-            if(senha.indexOf(numero.toString())!= -1){
+            if(senha.value.indexOf(numero.toString())!= -1){
                 senhaNum = true
             } 
         }
         if(senhaNum == false){
             modal.showModal()
         } else {
-            window.location = "./dashboard/dashboard.html"
+            sucesso.showModal()
+            setTimeout(()=> {
+                window.location = "./dashboard/dashboard.html"
+            }, 3000)
         }
     }
 }
