@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArtCare - Login</title>
     <link rel="stylesheet" href="./css/login.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -44,7 +45,7 @@
             </div>
         </div>
     </dialog>
-    <dialog id="sucesso" class="modal" >
+    <dialog id="sucesso" class="modal" data-aos="fade-down" data-aos-duration = "1200">
         <div class="content">
             <div class="iconContainer sucessesBG">
                 <img src="./assets/icons/success.svg">
@@ -60,6 +61,8 @@
 
 </html>
 <script src="./js/login.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script> AOS.init()</script>
 <script>
 
 

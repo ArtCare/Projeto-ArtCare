@@ -6,8 +6,6 @@ const senha = document.querySelector('#senha')
 
 function ValidarLogin(){
     let senhaNum = false
-    console.log(senha.value.length)
-    console.log(rm.value.length)
     if (rm.value.length <= 8 || rm.value.length >= 10){
         modal.showModal()
     }else if (senha.value.length <= 4){
