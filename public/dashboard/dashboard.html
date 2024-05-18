@@ -20,185 +20,128 @@
                     <i class="fa-solid fa-house fa-xl menuicon onScreenColors"></i> <span
                         class="menuOption onScreenColors">Dashboard</span>
                 </button>
-
-                <button class="option">
-                    <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Perfil</span>
-                </button>
-
                 <button class="option">
                     <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
                 </button>
-            </div>
-            <div class="secondaryOptions">
-                <button class="option">
-                    <i class="fa-solid fa-circle-question fa-xl menuicon"></i> <span class="menuOption">Ajuda</span>
-                </button>
 
                 <button class="option">
-                    <i class="fa-solid fa-gear fa-xl menuicon"></i> <span class="menuOption">Configurações</span>
+                    <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
                 </button>
 
-
             </div>
+
+
+            <button class="option logout" onclick="logout()">
+                <i class="fa-solid fa-power-off fa-2xl menuicon"></i> <span class="optionLogout">Sair</span>
+            </button>
         </div>
+    </div>
     </div>
     <div class="content">
         <div class="header">
-            <span class="headerTitle">DASHBOARD</span>
-
-            <button class="option logout" onclick="logout()">
-                <i class="fa-solid fa-right-from-bracket fa-xl menuicon"></i> <span class="optionLogout">Sair</span>
-            </button>
-        </div>
-
-        <div class="statusDiv">
-            <div class="status">
-                <span class="statusTitle">STATUS</span>
-                <span class="statusValue">POSITIVO</span>
+            <div class="caption">
+                <span class="critico">Crítico</span>
+                <span class="legenda">Status onde o setor está acima/abaixo das métricas definidas para cada
+                    setor.</span>
+            </div>
+            <div class="caption">
+                <span class="alerta">Alerta</span>
+                <span class="legenda">Status onde o setor está próximo das métricas definidas para cada setor.</span>
+            </div>
+            <div class="caption">
+                <span class="tempo">Tempo</span>
+                <span class="legenda">Tempo na qual o setor possui este status.</span>
             </div>
         </div>
-        <div class="museum">
-            <div class="museumInfo">
-                <div class="infoDiv">
-                    <span class="infoTitle">Temperatura média</span>
-                    <div class="info">
-                        <span class="infoValue">19°C</span>
-                        <i class="fa-solid fa-temperature-quarter fa-2xl infoIcon"></i>
-                    </div>
+        <div class="setores">
+            <div class="sectorsHeader">
+                <div class="titleWrapper">
+                    <span class="title">Setores</span>
+                    <span class="totalSectors">Total 5, monitore-os abaixo</span>
                 </div>
-
-                <div class="infoDiv">
-                    <span class="infoTitle">Umidade média</span>
-                    <div class="info">
-                        <span class="infoValue">42%</span>
-                        <i class="fa-solid fa-droplet fa-2xl infoIcon"></i>
+                <div class="sectorsStatus">
+                    <div class="alert">
+                        <span class="sectorsInAlert alerta">1</span>
+                        <span class="typeAlert">Alerta</span>
                     </div>
-                </div>
-
-                <div class="infoDiv">
-                    <span class="infoTitle">Quantidade de setores</span>
-                    <div class="info">
-                        <span class="infoValue">5</span>
-                        <i class="fa-solid fa-vector-square fa-2xl infoIcon"></i>
+                    <div class="alert">
+                        <span class="sectorsInAlert critico">1</span>
+                        <span class="typeAlert">Crítico</span>
                     </div>
                 </div>
             </div>
 
-            <div class="chartInfo">
-                <div class="chartHeader" id="chartHeader">
-                    <span class="headerTitle">Temperatura</span>
-                    <button class="chartChangeButton" onclick="changeChartUmi()" id="btn">Ver Umidade</button>
+            <div class="sectors">
+                <div class="sector">
+                    <div class="sectorName">
+                        <span class="sectorCaption">Nome</span>
+                        <span class="name ">Arte grega, romana e etrusca</span>
+                    </div>
+                    <div class="sectorContainer">
+                        <span class="sectorCaption">Status</span>
+                        <span class="name critico">Crítico</span>
+                    </div>
+                    <div class="sectorContainer">
+                        <span class="sectorCaption">Tempo</span>
+                        <span class="name">00:05:00</span>
+                    </div>
+                    <button class="seeSector">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
-                <div class="chart">
-                    <canvas id="dht11Umidade" ></canvas>
-                    <canvas id="dht11Temperatura" ></canvas>
+                <div class="sector">
+                    <div class="sectorName">
+                        <span class="sectorCaption">Nome</span>
+                        <span class="name ">Antiguidades egípcias</span>
+                    </div>
+                    <div class="sectorContainer">
+                        <span class="sectorCaption">Status</span>
+                        <span class="name alerta">Alerta</span>
+                    </div>
+                    <div class="sectorContainer">
+                        <span class="sectorCaption">Tempo</span>
+                        <span class="name">00:10:00</span>
+                    </div>
+                    <button class="seeSector">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+                <div class="sector">
+                    <div class="sectorName">
+                        <span class="sectorCaption">Nome</span>
+                        <span class="name ">Esculturas</span>
+                    </div>
+                    <div class="sectorContainer">
+                        <span class="sectorCaption">Status</span>
+                        <span class="name">Normal</span>
+                    </div>
+                    <div class="sectorContainer">
+                        <span class="sectorCaption">Tempo</span>
+                        <span class="name">-------------</span>
+                    </div>
+                    <button class="seeSector">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
+        <div class="graficos">
+            <div class="criticalidade">
+                <span class="chartTitle">Criticalidade do museu</span>
+                <div class="ChartContainer">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+            <div class="qtdAlerta">
+                <span class="chartTitle">Setores com mais status de alerta </span>
+                <div class="ChartContainer barChart">
+                    <canvas id="barChart" height="80" width="300"></canvas>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 
 </html>
-<script src="../../node_modules/chart.js/dist/chart.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://kit.fontawesome.com/77b47374b3.js" crossorigin="anonymous"></script>
 
-<script>
-    function logout() {
-        window.location.href = "../login.html"
-    }
-
-
-    const temp = [
-        { time: "00:00", count: 19 },
-        { time: "03:00", count: 19 },
-        { time: "06:00", count: 19 },
-        { time: "09:00", count: 21 },
-        { time: "12:00", count: 20 },
-        { time: "15:00", count: 19 },
-        { time: "18:00", count: 18 },
-        { time: "21:00", count: 18 },
-    ];
-
-    const umi = [
-        { time: "00:00", count: 42 },
-        { time: "03:00", count: 42 },
-        { time: "06:00", count: 42 },
-        { time: "09:00", count: 39 },
-        { time: "12:00", count: 43 },
-        { time: "15:00", count: 42 },
-        { time: "18:00", count: 40 },
-        { time: "21:00", count: 47 },
-    ];
-
-    let chartTemperature = new Chart(
-        document.getElementById('dht11Temperatura'),
-        {
-            type: 'line',
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                animation: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        enabled: false
-                    }
-                }
-            },
-            data: {
-                labels: temp.map(row => row.time),
-                datasets: [
-                    {
-                        data: temp.map(row => row.count),
-                        borderColor: "#D1495B"
-                    }
-                ]
-            }
-        }
-    );
-    let chartUmidity = new Chart(
-        document.getElementById('dht11Umidade'),
-
-        {
-            type: 'line',
-            options: {
-                animation: false,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        enabled: false
-                    }
-                }
-            },
-            data: {
-                labels: umi.map(row => row.time),
-                datasets: [
-                    {
-                        data: umi.map(row => row.count),
-                        borderColor: '#36A2EB',
-                    }
-                ]
-            }
-        }
-    );
-    function changeChartUmi() {
-        dht11Umidade.setAttribute("style", "opacity: 100")
-        dht11Temperatura.setAttribute("style", "opacity: 0%;")
-        chartHeader.innerHTML = "<span class='headerTitle'>Umidade</span><button class='chartChangeButton' onclick='changeChartTemp()'>Ver Temperatura</button>"
-    }
-    function changeChartTemp() {
-        dht11Temperatura.setAttribute("style", "opacity: 100%")
-        dht11Umidade.setAttribute("style", "opacity: 0%")
-        chartHeader.innerHTML = "<span class='headerTitle'>Temperatura</span><button class='chartChangeButton' onclick='changeChartUmi()'>Ver Umidade</button>"
-    }
-
-
-</script>
+<script src="../js/dashboard.js"></script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script> AOS.init(); </script>
