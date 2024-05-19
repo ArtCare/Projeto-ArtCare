@@ -1,76 +1,45 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
 
 function autenticar(req, res) {
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
+    var email = req.body.email;
+    var senha = req.body.senha;
 
-    if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
-    } else if (senha == undefined) {
-        res.status(400).send("Sua senha está indefinida!");
-    } else {
-
-        usuarioModel.autenticar(email, senha)
-            .then(
-                function (resultadoAutenticar) {
-                    console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
-                    console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
-
-                    if (resultadoAutenticar.length == 1) {
-                        console.log(resultadoAutenticar);
-
-                        aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
-                            .then((resultadoAquarios) => {
-                                if (resultadoAquarios.length > 0) {
-                                    res.json({
-                                        id: resultadoAutenticar[0].id,
-                                        email: resultadoAutenticar[0].email,
-                                        nome: resultadoAutenticar[0].nome,
-                                        senha: resultadoAutenticar[0].senha,
-                                        aquarios: resultadoAquarios
-                                    });
-                                } else {
-                                    res.status(204).json({ aquarios: [] });
-                                }
-                            })
-                    } else if (resultadoAutenticar.length == 0) {
-                        res.status(403).send("Email e/ou senha inválido(s)");
-                    } else {
-                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
-                    }
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    }
-
+    usuarioModel.autenticar(email, senha)
+    .then(
+        function (resultadoAutenticar) {
+            if (resultadoAutenticar.length == 0) {
+                res.status(403).send("Email e/ou senha inválido(s)");
+            } else {
+                res.status(200).json(resultadoAutenticar[0])
+            }
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
 }
+    
 
-function cadastrar(req, res) {
+
+
+function cadastrarMuseu(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeServer;
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
-    var empresaId = req.body.empresaServer;
+    var nome = req.body.nome;
+    var cnpj = req.body.cnpj;
+    var rm = req.body.rm;
+
 
     // Faça as validações dos valores
-    if (nome == undefined) {
+    if (nome.length <= 2) {
         res.status(400).send("Seu nome está undefined!");
-    } else if (email == undefined) {
+    } else if (cnpj.length != 14) {
         res.status(400).send("Seu email está undefined!");
-    } else if (senha == undefined) {
-        res.status(400).send("Sua senha está undefined!");
-    } else if (empresaId == undefined) {
-        res.status(400).send("Sua empresa está undefined!");
+    } else if (rm.length != 9) {
+        res.status(400).send("Seu rm está undefined!");
     } else {
-
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, empresaId)
+        usuarioModel.cadastrarMuseu(nome, cnpj, rm)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -88,7 +57,52 @@ function cadastrar(req, res) {
     }
 }
 
+function cadastrarRepresentante(req, res) {
+
+    var fkMuseu = req.body.fkMuseu;
+    var nome = req.body.nome;
+    var email = req.body.email;
+    var senha = req.body.senha;
+
+
+    // Faça as validações dos valores
+    if (nome.value <= 3) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (senha.length <= 7) {
+        res.status(400).send("Sua senha está undefined!");
+    } else {
+
+        usuarioModel.cadastrarRepresentante(fkMuseu,nome, email, senha)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function buscarMuseu(req, res) {
+     usuarioModel.buscarMuseu().then(response => {
+        res.status(200).json(response);
+        }).catch(
+        function (erro) {
+            console.log(erro);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrarMuseu,
+    cadastrarRepresentante,
+    buscarMuseu
 }
