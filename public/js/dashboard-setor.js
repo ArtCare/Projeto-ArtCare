@@ -1,4 +1,4 @@
-const headerContainer = document.querySelector('.header-container')
+'const headerContainer = document.querySelector('.header-container')
 let legendaAtiva = true;
 
 function mostrarLegendas() {
