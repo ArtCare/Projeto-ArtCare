@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtCare - Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboardSupervisor.css">
+    <link rel="icon" href="../assets/svg/artcareLogoMini.svg">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu">
+        <img src="../assets/svg/artcareBrownLogo2.svg" class="logo">
+
+        <div class="divOptions">
+            <div class="PrimaryScreens">
+                <button class="option onScreen">
+                    <i class="fa-solid fa-house fa-xl menuicon onScreenColors"></i> <span
+                        class="menuOption onScreenColors">Dashboard</span>
+                </button>
+                <button class="option">
+                    <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
+                </button>
+
+                <button class="option">
+                    <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
+                </button>
+
+            </div>
+
+
+            <button class="option logout" onclick="logout()">
+                <i class="fa-solid fa-power-off fa-2xl menuicon"></i> <span class="optionLogout">Sair</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="novoSupervisor">
+            <span>Cadastrar novo Supervisor</span>
+        </div>
+
+        <div class="supervisores">
+            <span class="supervisoresTitulo">Supervisores</span>
+            <div class="dadosSupervisores">
+                <span class="nomeClass">Nome
+                    <div class="nomes">
+                        <p>Marcos Araujo</p>
+                        <p>Nataly Fagundes</p>
+                        <p>Ademar Torres</p>
+                        <p>Luis Antônio</p>
+                    </div>
+                </span>
+                <span class="emailClass">Email
+                    <div class="email">
+                        <p>Marcos.Araujo@louvre.museu</p>
+                        <p>nataly.fagundes@louvre.museu</p>
+                        <p>ademar.torres@louvre.museu</p>
+                        <p>luis.antonio32@louvre.museu</p>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
