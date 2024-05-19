@@ -114,14 +114,14 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    margin-top: 10%;
+    margin-top: -120px;
     background-color: #666666;
     width: 200px;
     height: 50px;
     font-size: 15px;
     font-weight: bold;
     color: #fff;
-    margin-left: 410px;
+    margin-left: 350px;
 }
 .supervisores{
     position: relative;
@@ -149,33 +149,52 @@ body {
     font-style: italic;
     font-size: 24px;
     height: 100%;
-    overflow-y: auto; /* ou 'scroll' */
-   
+    overflow-y:scroll; /* ou 'scroll' */
+    scroll-behavior: smooth;
+}
+
+/* incerto */
+.dadosSupervisores::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dadosSupervisores::-webkit-scrollbar-track {
+    background: #F5F5F5;
+    width: 100%;
+}
+
+.dadosSupervisores::-webkit-scrollbar-thumb {
+    background-color: #B08067;
+    border-radius: 30px;
 }
 
 .nomeClass{
     display: flex;
     flex-direction: column;
     position: absolute;
-    font-size: 24px;
+    font-size: 20px;
+    font-family: "Poppins";
 }
 .emailClass{
     display: flex;
     flex-direction: column;
     position: absolute;
-    font-size: 24px;
+    font-size: 20px;
     margin-left: 250px;
+    font-family: "Poppins";
 }
 
 .nomes{
     font-size: 18px;
     font-style: normal;
+    font-family: "Caladea";
 }
 .email{
     font-size: 14px;
     font-style: normal;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-family: "Caladea";
+    display: flex;
+    flex-direction: column;
 }
 .content {
     width: 100%;
@@ -183,4 +202,12 @@ body {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+}
+.editDel{
+    color:#B08067;
+    border-color: transparent;
+    background-color: #F5F5F5;
+}
+.editDel :hover{
+    color:#666666
 }
