@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="modal-setor.css">
+    <link href='https://fonts.googleapis.com/css?family=Caladea' rel='stylesheet'>
+    
+</head>
+
+<body>
+    <button onclick="modal.showModal()">Abrir Modal</button>
+
+    <dialog id="modal">
+        <div class="containerModal">
+            <span class="cadastrarModal">
+                Cadastrar um novo setor
+            </span>
+            <div class="dadosDoSetor">
+                <span class="setor">
+                    Dados do setor
+                </span>
+                <span class="nome">
+                    Nome
+                    <input class="inputDadosSetor" placeholder="Antiguidade egípcias" type="text" id="input_nome_setor">
+                </span>
+                <span class="andar">
+                    Andar(Opcional)
+                    <input class="inputDadosSetor" type="text" placeholder="Quarto andar" id="input_andar">
+                </span>
+            </div>
+
+            <div class="containerModal2">
+            <div class="metricas">
+                <span class="textoMetricas">
+                    Métricas
+                </span>
+                <div class="wrapMetricas">
+                    <div class="metricaInput">
+                        Umidade Mínima
+                        <input class="inputMetrica" placeholder="40%" type="text" id="input_umidade_minima">
+                    </div>
+                    <div class="metricaInput">
+                        Temperatura Mínima
+                        <input class="inputMetrica" placeholder="18°C" type="text" id="input_temperatura_minima">
+                    </div>
+                    <div class="metricaInput">
+                        Umidade Máxima
+                        <input class="inputMetrica" placeholder="45°C" type="text" id="input_umidade_maxima">
+                    </div>
+                    <div class="metricaInput">
+                        Temperatura Máxima
+                        <input class="inputMetrica" placeholder="24°C" type="text" id="input_umidade_minima">
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <span class="textoMedia">
+                    Em média a temperatura de um 
+                    setor deve estar entre 18 e 24 
+                    graus celsius e a umidade entre
+                    40 e 45 porcento 
+                <p>
+                    Deseja alterar essas métricas ?
+                </p>
+                </span>
+                <div class="botoesCadastroSetor">
+                <button class="botaoMetricaSim" onclick="botaoMetricaSim()">SIM</button>
+                <button class="botaoMetricaNao" onclick="botaoMetricaNao()">NÃO</button>
+                </div>
+            </div>
+        </div>
+            <button class="botaoModal" clonclick="modal.close()">Cadastrar</button>
+        </div>
+    </dialog>
+</body>
+
+</html>
