@@ -333,6 +333,10 @@ body {
     align-items: center;
 }
 
+.pieChart{
+    height: 110%;
+}
+
 .barChart{
   height: 100%;
   width: 80%;

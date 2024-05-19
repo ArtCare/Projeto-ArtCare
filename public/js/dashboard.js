@@ -33,7 +33,7 @@ const barData = {
     labels: labels,
     datasets: [{
         label: 'Quantidade de vezes em estado de alerta',
-        data: [5, 10, 7, 3, 4],
+        data: [5, 10, 7, 3, 15],
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(255, 159, 64, 0.2)',
