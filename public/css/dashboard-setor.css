@@ -128,11 +128,11 @@ canvas {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 .header-container {
-    width: 85%;
+    width: 90%;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -141,7 +141,7 @@ canvas {
     box-shadow: #b8b3ae 0 5px 10px;
     border-bottom: 2px #A5A5A5 solid;
     border-radius: 20px;
-    padding: 20px 0;
+    padding: 12px 0;
 }
 
 .header-container .principal {
@@ -153,7 +153,7 @@ canvas {
 
 .titulo-header {
     font-family: "Poppins";
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
     color: #666666;
 }
@@ -220,11 +220,11 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 .div-cards .conteudo {
-    width: 85%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
 }
@@ -296,7 +296,7 @@ canvas {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    right: -112px;
+    right: -75px;
 }
 
 .status .alerta,.tempo {
@@ -345,117 +345,77 @@ canvas {
     margin: 0;
 }
 
-/* .status {
-    width: 50%;
-} */
-
-/* .logout {
-    width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: all .4s ease-in-out;
-    height: 60px;
-
-    margin-right: 50px;
-    margin-bottom: -10px;
-} */
-
-/* .optionLogout {
-    font-family: "Poppins";
-    font-size: 18px;
-    font-weight: 400;
-    margin-left: 20px;
-    color: #666666;
-} */
-
 .graficos-container {
     width: 100%;
+    height: 45%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 1%;
 }
 
 .graficos-container .conteudo {
-    width: 85%;
+    width: 90%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 .coluna-esquerda {
     width: 50%;
+    height: 110%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .coluna-direita {
     width: 30%;
+    height: 110%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .grafico {
     width: 85%;
 }
 
-.grafico-temperatura, .grafico-umidade {
-    width: 100%;  
-    /* background-color: #fff;
-    border-radius: 30px; */
-    /* display: flex;
+.grafico-temperatura, .grafico-umidade, .grafico-status {
+    width: 95%;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 0 20px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: #8d8d8d 0 3px 3px; */
+    box-shadow: #8d8d8d 0 3px 3px;
+    box-sizing: border-box;
 }
 
+.grafico-status {
+    height: 100%;
+    justify-content: space-around;
+}
 
-/* .chart {
+.grafico-status .header-grafico {
+    text-align: center;
+}
+
+.grafico-status .grafico {
+    height: 72%;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    width: 100%;
-    background-color: #fff;
-    margin-left: 50px;
-    background-color: #072F9F;
-} */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .header-grafico {
     display: flex;
-    width: 95%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* .statusDiv{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-  
-
-} */
-
-/* .museumInfo{
     width: 85%;
-    display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-.infoDiv{
-    width: 390px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #FFF;
-    border-radius: 30px;
-    margin-bottom: 20px;
-    box-shadow: #8d8d8d 0 3px 3px;
-} */
 
 .infoIcon{
     color: #666666;

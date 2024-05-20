@@ -106,7 +106,7 @@
                 <div class="coluna-esquerda">
                     <div class="grafico-temperatura">
                         <div class="header-grafico">
-                            <span class="titulo-header">Temperatura</span>
+                            <span class="titulo-header">Variação de temperatura diária</span>
                         </div>
                         <div class="grafico">
                             <canvas id="grafico_temperatura"></canvas>
@@ -114,7 +114,7 @@
                     </div>
                     <div class="grafico-umidade">
                         <div class="header-grafico">
-                            <span class="titulo-header">Umidade</span>
+                            <span class="titulo-header">Variação de umidade diária</span>
                         </div>
                         <div class="grafico">
                             <canvas id="grafico_umidade"></canvas>
@@ -124,7 +124,7 @@
                 <div class="coluna-direita">
                     <div class="grafico-status">
                         <div class="header-grafico">
-                            <span class="titulo-header">Status</span>
+                            <span class="titulo-header">Porcentagem dos status semanais</span>
                         </div>
                         <div class="grafico">
                             <canvas id="grafico_status"></canvas>
@@ -245,7 +245,12 @@
                 ],
                 datasets: [{
                     data: [10, 15, 7],
-                    borderWidth: 1
+                    borderWidth: 1,
+                    backgroundColor: [
+                    '#C62400',
+                    '#DC9E00',
+                    '#575757'
+                    ]
                 }]
             },
         }
