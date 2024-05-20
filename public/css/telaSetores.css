@@ -136,8 +136,8 @@ body {
     border: none;
     font-size: 16px;
     position: absolute;
-    top: 140px;
-    margin-inline: 45%;
+    top: 25px;
+    margin-inline: 53%;
     
 }
 
@@ -147,8 +147,8 @@ body {
     background-color: #FFF;
     box-shadow: #b8b3ae 0 5px 10px;
     position: absolute;
-    top: 200px;
-    left: 500px;
+    top: 100px;
+    left: 400px;
     border-radius: 20px;
 }
 
