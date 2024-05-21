@@ -3,7 +3,7 @@
 
 body {
     margin: 0;
-    background-color: #F5F5F5;
+    background-color: #F1EFF7;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -18,8 +18,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: #b8b3ae 0 5px 10px;
-    border-right: 2px #A5A5A5 solid;
+    box-shadow: #b8b3ae 0 5px 20px;
+
 }
 
 .logo {
@@ -91,7 +91,7 @@ body {
 }
 
 .onScreen {
-    box-shadow: #666666 0 2px 6px;
+    box-shadow: #b8b3ae 0 5px 20px;
     background-color: #B08067;
 
 }
@@ -123,8 +123,8 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: #b8b3ae 0 5px 10px;
-    border-bottom: 2px #A5A5A5 solid;
+    box-shadow: #b8b3ae 0 5px 20px;
+   
     border-radius: 20px;
     margin-top: 10px;
 }
@@ -178,8 +178,7 @@ body {
     height: 45%;
     width: 90%;
 
-    box-shadow: #b8b3ae 0 5px 10px;
-    border-bottom: 2px #A5A5A5 solid;
+    box-shadow: #b8b3ae 0 5px 20px;
     border-radius: 20px;
     background-color: #FFF;
 }
@@ -305,8 +304,7 @@ body {
     flex-direction: column;
     align-items: center;
 
-    box-shadow: #b8b3ae 0 5px 10px;
-    border-bottom: 2px #A5A5A5 solid;
+    box-shadow: #b8b3ae 0 5px 20px;
     border-radius: 20px;
 }
 
@@ -325,8 +323,7 @@ body {
     height: 100%;
     background-color: #FFF;
 
-    box-shadow: #b8b3ae 0 5px 10px;
-    border-bottom: 2px #A5A5A5 solid;
+    box-shadow: #b8b3ae 0 5px 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
