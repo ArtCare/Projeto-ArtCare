@@ -55,7 +55,7 @@ async function cadastro() {
     } else if (emailRepresentante.value.indexOf('@') == -1 || emailRepresentante.value.indexOf('.') == -1) {
         modal.showModal()
         message.textContent = "Email inválido."
-    } else if (password.value.length <= 4) {
+    } else if (password.value.length <= 7) {
         modal.showModal()
         message.textContent = "Sua senha precisa ter mais que 4 caracteres."
     } else {

@@ -34,9 +34,10 @@ fkMuseu int,
 	    constraint fkMuseuRepresentante foreign key (fkMuseu)
 		references museu(idMuseu),
 nome varchar(45) not null,
-email varchar(256) not null,
+email varchar(256) not null,	 	
 senha varchar(45) not null
 );
+
 
 create table sensor (
 	idSensor int primary key auto_increment,
@@ -123,7 +124,8 @@ delete from museu where idMuseu = 15;
 truncate representante;
 select * from museu join representante on idMuseu = fkMuseu;
 
-
+ insert into representante (fkMuseu, nome, email, senha) values (2, 'Gabriel', 'gmatosdantas777@gmail.com','ga120264');
+ 
 select * from endereco;
 select * from supervisor;
 select * from setor;
