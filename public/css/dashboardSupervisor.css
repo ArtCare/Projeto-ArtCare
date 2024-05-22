@@ -128,11 +128,15 @@ body {
     font-size: 15px;
     font-weight: bold;
     color: #fff;
+    margin-bottom: 20px;
 }
 
 .novoSupervisorButtom:hover {
     background-color: rgb(176, 128, 103);
     border: 2px solid #fff;
+}
+.novoSupervisorButtom:active{
+    transform: scale(.95);
 }
 
 .supervisores {
@@ -146,71 +150,60 @@ body {
     font-weight: bold;
     width: 50%;
     height: 50%;
+   
 }
 
 .supervisoresTitulo {
     height: 20%;
     font-size: 40px;
     margin-top: 5%;
-    margin-left: 5%;
+
+}
+
+.dadosSupervisoresContainer {
+    width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 80%;
+    margin-bottom: 20px;
 }
 
 .dadosSupervisores {
     color: #666666;
-    font-style: italic;
     font-size: 24px;
-    height: 100%;
+
     width: 90%;
     display: flex;
-    justify-content: space-evenly;
-    overflow-y: scroll;
-    /* ou 'scroll' */
-    scroll-behavior: smooth;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
-.dadosSupervisores::-webkit-scrollbar {
+.dadosSupervisoresContainer::-webkit-scrollbar {
     width: 8px;
 }
 
-.dadosSupervisores::-webkit-scrollbar-track {
+.dadosSupervisoresContainer::-webkit-scrollbar-track {
     background: #F5F5F5;
     width: 100%;
 }
 
-.dadosSupervisores::-webkit-scrollbar-thumb {
+.dadosSupervisoresContainer::-webkit-scrollbar-thumb {
     background-color: #B08067;
     border-radius: 30px;
 }
 
-.nomeClass {
-    display: flex;
-    flex-direction: column;
-
-    font-size: 20px;
-    font-family: "Poppins";
-}
-
-.emailClass {
-    display: flex;
-    flex-direction: column;
-
-    font-size: 20px;
-    margin-left: 250px;
-    font-family: "Poppins";
-}
-
 .nomes {
-    font-size: 18px;
+    font-size: 24px;
     font-style: normal;
     font-family: "Caladea";
 }
 
 .email {
-    font-size: 14px;
-    font-style: normal;
+    font-size: 20px;
     font-family: "Caladea";
-    display: flex;
-    flex-direction: column;
+    font-weight: 400;
 }
 
 .content {
@@ -221,12 +214,30 @@ body {
     flex-direction: column;
 }
 
-.editDel {
+
+.edit {
     color: #B08067;
     border-color: transparent;
     background-color: #F5F5F5;
 }
 
-.editDel :hover {
+.del {
+    color: #B08067;
+    border-color: transparent;
+    background-color: #F5F5F5;
+}
+
+.edit:hover {
     color: #666666
+}
+
+.del:hover {
+    color: #666666
+}
+
+.optionLogout {
+    font-family: "Poppins";
+    font-size: 22px;
+    font-weight: 700;
+    color: #666666;
 }
