@@ -20,11 +20,11 @@
                     <i class="fa-solid fa-house fa-xl menuicon onScreenColors"></i> <span
                         class="menuOption onScreenColors">Dashboard</span>
                 </button>
-                <button class="option">
+                <button class="option" onclick="navigateToSectors()">
                     <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
                 </button>
 
-                <button class="option">
+                <button class="option" onclick="navigateToSupervisor()">
                     <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
                 </button>
 
@@ -140,8 +140,17 @@
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://kit.fontawesome.com/77b47374b3.js" crossorigin="anonymous"></script>
-
 <script src="../js/dashboard.js"></script>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script> AOS.init(); </script>
+<script>
+    function navigateToHome(){
+        location.replace("./dashboard.html")
+    }
+    function navigateToSectors(){
+        location.replace("./setores.html")
+    }
+    function navigateToSupervisor(){
+        location.replace("./supervisor.html")
+    }
+</script>

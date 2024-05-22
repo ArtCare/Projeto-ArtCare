@@ -139,6 +139,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     box-shadow: 0 4px 8px #a2a2a2;
     border-radius: 20px;
     color: #B08067;
@@ -159,9 +160,9 @@ body {
     font-style: italic;
     font-size: 24px;
     height: 100%;
-    width: 100%;
+    width: 90%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     overflow-y: scroll;
     /* ou 'scroll' */
     scroll-behavior: smooth;

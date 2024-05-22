@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArtCare - Dashboard</title>
-    <link rel="stylesheet" href="../css/telaSetores.css">
+    <link rel="stylesheet" href="../css/setores.css">
     <link rel="icon" href="../assets/svg/artcareLogoMini.svg">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -16,7 +16,7 @@
 
         <div class="divOptions">
             <div class="PrimaryScreens">
-                <button class="option ">
+                <button class="option "onclick="navigateToHome()">
                     <i class="fa-solid fa-house fa-xl menuicon "></i> <span
                         class="menuOption  ">Dashboard</span>
                 </button>
@@ -24,7 +24,7 @@
                     <i class="fa-solid fa-vector-square fa-xl menuicon onScreenColors"></i> <span class="menuOption onScreenColors">Setores</span>
                 </button>
 
-                <button class="option">
+                <button class="option" onclick="navigateToSupervisor()">
                     <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
                 </button>
 
@@ -54,14 +54,7 @@
             <div class="setoresText">
                 <span>Esculturas</span> <button class="buttonSetor">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
             </div>
-            <div class="setoresText">
-                <span>Esculturas</span> <button class="buttonSetor">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-            <div class="setoresText">
-                <span>Arte grega, romana e etrusca</span> <button class="buttonSetor">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-
-        </div>
+,        </div>
     </div>
 </body>
 
@@ -73,3 +66,14 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script> AOS.init(); </script>
+<script>
+    function navigateToHome(){
+        location.replace("./dashboard.html")
+    }
+    function navigateToSectors(){
+        location.replace("./setores.html")
+    }
+    function navigateToSupervisor(){
+        location.replace("./supervisor.html")
+    }
+</script>

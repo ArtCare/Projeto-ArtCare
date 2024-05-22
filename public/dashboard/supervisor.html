@@ -16,11 +16,11 @@
 
         <div class="divOptions">
             <div class="PrimaryScreens">
-                <button class="option">
+                <button class="option" onclick="navigateToHome()">
                     <i class="fa-solid fa-house fa-xl menuicon "></i> <span
                         class="menuOption ">Dashboard</span>
                 </button>
-                <button class="option">
+                <button class="option" onclick="navigateToSectors()">
                     <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
                 </button>
 
@@ -62,7 +62,8 @@
                             </p>
                             <p>nataly.fagundes@louvre.museu
                                 <button class="editDel">
-                                    <i class="fa-solid fa-pen"></i></button><button class="editDel">
+                                    <i class="fa-solid fa-pen"></i></button>
+                                    <button class="editDel">
                                     <i class="fa-solid fa-trash"></i></button>
                             </p>
                             <p>ademar.torres@louvre.museu
@@ -86,3 +87,14 @@
 </html>
 <script src="https://kit.fontawesome.com/77b47374b3.js" crossorigin="anonymous"></script>
 <!-- <script src="../j"></script> -->
+<script>
+    function navigateToHome(){
+        location.replace("./dashboard.html")
+    }
+    function navigateToSectors(){
+        location.replace("./setores.html")
+    }
+    function navigateToSupervisor(){
+        location.replace("./supervisor.html")
+    }
+</script>
