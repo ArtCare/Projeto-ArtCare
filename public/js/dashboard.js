@@ -1,3 +1,4 @@
+sessionStorage.removeItem("idSetor")
 const totalSectors = document.querySelector("#totalSectors")
 const nameSector = document.querySelector("#nameSector")
 const statusSetor = document.querySelector("#statusSetor")
@@ -34,7 +35,7 @@ fetch("/setores/buscarSetores").then(function (resposta) {
                         <span class="sectorCaption">Tempo</span>
                         <span class="name">00:05:00</span>
                     </div>
-                    <button class="seeSector">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="seeSector" value="${res[posicao].idSetor}" onclick="verSetor(this)">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             `
 
@@ -137,4 +138,8 @@ const barChart = new Chart(
 );
 function logout() {
     window.location.href = "../login.html"
+}
+function verSetor(res){
+    window.location.href = "./setor.html"
+    sessionStorage.setItem("idSetor", res.value)
 }

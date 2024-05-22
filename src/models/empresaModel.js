@@ -13,4 +13,4 @@ function listar() {
 }
 
 
-module.exports = { buscarPorCnpj, buscarPorId, cadastrar, listar };
+module.exports = { buscarPorId, listar };
