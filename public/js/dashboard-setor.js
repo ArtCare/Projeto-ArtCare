@@ -1,4 +1,5 @@
 const headerContainer = document.querySelector('.header-container')
+const metricas = document.querySelector('metricas')
 let legendaAtiva = true;
 
 function mostrarLegendas() {

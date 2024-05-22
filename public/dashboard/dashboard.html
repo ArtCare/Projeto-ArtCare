@@ -57,73 +57,27 @@
             <div class="sectorsHeader">
                 <div class="titleWrapper">
                     <span class="title">Setores</span>
-                    <span class="totalSectors">Total 5, monitore-os abaixo</span>
+                    <span class="totalSectors" id="totalSectors">Total 5, monitore-os abaixo</span>
                 </div>
                 <div class="sectorsStatus">
                     <div class="alert">
-                        <span class="sectorsInAlert alerta">1</span>
-                        <span class="typeAlert">Alerta</span>
+                        <span class="sectorsInAlert critico" id="qtdCritico"></span>
+                        <span class="typeAlert">Crítico</span>
                     </div>
                     <div class="alert">
-                        <span class="sectorsInAlert critico">1</span>
-                        <span class="typeAlert">Crítico</span>
+                        <span class="sectorsInAlert alerta" id="qtdAlerta"></span>
+                        <span class="typeAlert">Alerta</span>
                     </div>
                 </div>
             </div>
 
-            <div class="sectors">
-                <div class="sector">
-                    <div class="sectorName">
-                        <span class="sectorCaption">Nome</span>
-                        <span class="name ">Arte grega, romana e etrusca</span>
-                    </div>
-                    <div class="sectorContainer">
-                        <span class="sectorCaption">Status</span>
-                        <span class="name critico">Crítico</span>
-                    </div>
-                    <div class="sectorContainer">
-                        <span class="sectorCaption">Tempo</span>
-                        <span class="name">00:05:00</span>
-                    </div>
-                    <button class="seeSector">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
-                </div>
-                <div class="sector">
-                    <div class="sectorName">
-                        <span class="sectorCaption">Nome</span>
-                        <span class="name ">Antiguidades egípcias</span>
-                    </div>
-                    <div class="sectorContainer">
-                        <span class="sectorCaption">Status</span>
-                        <span class="name alerta">Alerta</span>
-                    </div>
-                    <div class="sectorContainer">
-                        <span class="sectorCaption">Tempo</span>
-                        <span class="name">00:10:00</span>
-                    </div>
-                    <button class="seeSector">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
-                </div>
-                <div class="sector">
-                    <div class="sectorName">
-                        <span class="sectorCaption">Nome</span>
-                        <span class="name ">Esculturas</span>
-                    </div>
-                    <div class="sectorContainer">
-                        <span class="sectorCaption">Status</span>
-                        <span class="name">Normal</span>
-                    </div>
-                    <div class="sectorContainer">
-                        <span class="sectorCaption">Tempo</span>
-                        <span class="name">-------------</span>
-                    </div>
-                    <button class="seeSector">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
-                </div>
-            </div>
+            <div class="sectors" id="sectors"></div>
         </div>
         <div class="graficos">
             <div class="criticalidade">
-                <span class="chartTitle">Criticalidade do museu</span>
+                <span class="chartTitle">Criticidade do museu</span>
                 <div class="ChartContainer pieChart">
-                    <canvas id="pieChart" ></canvas>
+                    <canvas id="pieChart"></canvas>
                 </div>
             </div>
             <div class="qtdAlerta">
@@ -144,13 +98,13 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script> AOS.init(); </script>
 <script>
-    function navigateToHome(){
+    function navigateToHome() {
         location.replace("./dashboard.html")
     }
-    function navigateToSectors(){
+    function navigateToSectors() {
         location.replace("./setores.html")
     }
-    function navigateToSupervisor(){
+    function navigateToSupervisor() {
         location.replace("./supervisor.html")
     }
 </script>

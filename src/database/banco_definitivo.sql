@@ -1,8 +1,6 @@
 create database ArtCare;
 use ArtCare;
 
-
-
 create table verificacao (
 	idVerificacao int primary key auto_increment,
     tempMax decimal(4,2) not null,
@@ -31,8 +29,7 @@ create table museu (
 create table representante (
 idRepresentante int primary key auto_increment,
 fkMuseu int,
-	    constraint fkMuseuRepresentante foreign key (fkMuseu)
-		references museu(idMuseu),
+foreign key (fkMuseu) references museu(idMuseu),
 nome varchar(45) not null,
 email varchar(256) not null,	 	
 senha varchar(45) not null
@@ -62,6 +59,7 @@ create table setor (
     fkVerificacao int,
     nome varchar(45) not null,
     andar int not null,
+    statusSetor int,
     constraint pkCompostaSetor primary key (idSetor, fkSensor, fkMuseu, fkVerificacao),
     constraint fkSensorDoSetor foreign key (fkSensor) references sensor (idSensor),
     constraint fkMuseuDoSetor foreign key (fkMuseu) references museu (idMuseu),
@@ -108,27 +106,34 @@ insert into sensor (nome, tipo) values
 insert into supervisor (nome, email, senha, permissao) values
 ('bruno', 'bruno.oliveira@gmail.com', 'Bruninho321', 'sim');
 
-insert into setor (fkSensor, fkMuseu, fkVerificacao, nome, andar) values
-(1, 1, 1, 'galeria de arte', 12);
+insert into setor (fkSensor, fkMuseu, fkVerificacao, nome, andar, statusSetor) values
+(1, 1, 1, 'Arte grega', 2, 3),
+(1, 1, 1, 'Esculturas', 7, 2),
+(1, 1, 1, 'Antiguidades egipcias', 2, 1),
+(1, 1, 1, 'Arte Romana', 1, 3);
 
-insert into registro (fkSensor, umidade, temperatura) values
+insert into registro (fkSensor, temperatura, umidade) values
 (1, 20.00, 42.00);
 
 select * from representante;
 insert into representante (fkMuseu, nome, email, senha) values 
-(7, "Julia", "email", "213231");
+(1, "Julia", "email", "12345678");
 
 SELECT idMuseu FROM museu ORDER BY idMuseu DESC LIMIT 1;
 
 delete from museu where idMuseu = 15;
 truncate representante;
 select * from museu join representante on idMuseu = fkMuseu;
+select idSetor, nome, statusSetor from setor order by statusSetor DESC;
 
- insert into representante (fkMuseu, nome, email, senha) values (2, 'Gabriel', 'gmatosdantas777@gmail.com','ga120264');
- 
+
+select * from setor where statusSetor = 3;
+select count(statusSetor) from setor where statusSetor = 2;
+
 select * from endereco;
 select * from supervisor;
 select * from setor;
 select * from sensor;
-select * from registro;
+select umidade from registro;
+select temperatura from registro;
 select * from verificacao;

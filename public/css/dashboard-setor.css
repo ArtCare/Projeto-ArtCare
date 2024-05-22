@@ -149,6 +149,7 @@ canvas {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all .5s ease-in-out;
 }
 
 .titulo-header {
