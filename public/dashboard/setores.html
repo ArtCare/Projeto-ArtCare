@@ -38,7 +38,7 @@
     </div>
     <div class="setoresMuseus">
         <div class="divButtonCadastro">
-            <button class="buttonCadastro">Cadastrar novo setor</button>
+            <button class="buttonCadastro" onclick="registerNewSector()">Cadastrar novo setor</button>
         </div>
         <div class="setores">
             <div class="caption">
@@ -56,13 +56,75 @@
             </div>
 ,        </div>
     </div>
+    <dialog id="modal">
+        <div class="containerModal">
+            <span class="cadastrarModal">
+                Cadastrar um novo setor
+            </span>
+            <div class="dadosDoSetor">
+                <span class="setor">
+                    Dados do setor
+                </span>
+                <span class="nome">
+                    Nome
+                    <input class="inputDadosSetor" placeholder="Antiguidade egípcias" type="text" id="input_nome_setor">
+                </span>
+                <span class="andar">
+                    Andar(Opcional)
+                    <input class="inputDadosSetor" type="text" placeholder="Quarto andar" id="input_andar">
+                </span>
+            </div>
+
+            <div class="containerModal2">
+            <div class="metricas">
+                <span class="textoMetricas">
+                    Métricas
+                </span>
+                <div class="wrapMetricas">
+                    <div class="metricaInput">
+                        Umidade Mínima
+                        <input class="inputMetrica" placeholder="40%" type="text" id="input_umidade_minima">
+                    </div>
+                    <div class="metricaInput">
+                        Temperatura Mínima
+                        <input class="inputMetrica" placeholder="18°C" type="text" id="input_temperatura_minima">
+                    </div>
+                    <div class="metricaInput">
+                        Umidade Máxima
+                        <input class="inputMetrica" placeholder="45°C" type="text" id="input_umidade_maxima">
+                    </div>
+                    <div class="metricaInput">
+                        Temperatura Máxima
+                        <input class="inputMetrica" placeholder="24°C" type="text" id="input_umidade_minima">
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <span class="textoMedia">
+                    Em média a temperatura de um 
+                    setor deve estar entre 18 e 24 
+                    graus celsius e a umidade entre
+                    40 e 45 porcento 
+                <p>
+                    Deseja alterar essas métricas ?
+                </p>
+                </span>
+                <div class="botoesCadastroSetor">
+                <button class="botaoMetricaSim" onclick="botaoMetricaSim()">SIM</button>
+                <button class="botaoMetricaNao" onclick="botaoMetricaNao()">NÃO</button>
+                </div>
+            </div>
+        </div>
+            <button class="botaoModal" onclick="close()">Cadastrar</button>
+        </div>
+    </dialog>
 </body>
 
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://kit.fontawesome.com/77b47374b3.js" crossorigin="anonymous"></script>
 
-<script src="../js/dashboard.js"></script>
+<script src="../js/setores.js"></script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script> AOS.init(); </script>
