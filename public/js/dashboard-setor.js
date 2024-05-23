@@ -1,6 +1,8 @@
 const idSetor = sessionStorage.getItem("idSetor")
 const headerContainer = document.querySelector('.header-container')
 const sectorTitle = document.querySelector('#sectorTitle')
+const temperatura = document.querySelector('#temperatura')
+const umidade = document.querySelector('#umidade')
 
 let legendaAtiva = true;
 
@@ -8,6 +10,13 @@ fetch(`/setores/buscarDadosSetor/${idSetor}`).then(res => {
      res.json().then(res =>{
          sectorTitle.textContent = `Setor ${res[0].idSetor}: ${res[0].nome}`
      })
+}
+)
+fetch(`/setores/buscarCapturasSetor/${idSetor}`).then(res => {
+    res.json().then(res =>{
+        temperatura.textContent = `${res[0].temperatura}°C`
+        umidade.textContent = `${res[0].umidade}%`
+    })
 }
 )
 

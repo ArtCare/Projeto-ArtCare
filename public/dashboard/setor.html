@@ -13,30 +13,27 @@
 <body>
     <div class="menu">
         <img src="../assets/svg/artcareBrownLogo2.svg" class="logo">
-        <div class="menu-Itens">
-            <div class="botoes-superiores">
-                <button class="item">
-                    <i class="fa-solid fa-house fa-xl menuicon"></i> <span class="texto-item">Dashboard</span>
+
+        <div class="divOptions">
+            <div class="PrimaryScreens">
+                <button class="option onScreen">
+                    <i class="fa-solid fa-house fa-xl menuicon onScreenColors"></i> <span
+                        class="menuOption onScreenColors">Dashboard</span>
+                </button>
+                <button class="option" onclick="navigateToSectors()">
+                    <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
                 </button>
 
-                <button class="item">
-                    <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="texto-item">Perfil</span>
+                <button class="option" onclick="navigateToSupervisor()">
+                    <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
                 </button>
 
-                <button class="item item-selecionado">
-                    <i class="fa-solid fa-vector-square fa-xl menuicon cor-item-selecionado"></i> <span
-                        class="texto-item cor-item-selecionado">Setores</span>
-                </button>
             </div>
-            <div class="botoes-inferiores">
-                <button class="item">
-                    <i class="fa-solid fa-circle-question fa-xl menuicon"></i> <span class="texto-item">Ajuda</span>
-                </button>
 
-                <button class="item">
-                    <i class="fa-solid fa-gear fa-xl menuicon"></i> <span class="texto-item">Configurações</span>
-                </button>
-            </div>
+
+            <button class="option logout" onclick="logout()">
+                <i class="fa-solid fa-power-off fa-2xl menuicon"></i> <span class="optionLogout">Sair</span>
+            </button>
         </div>
     </div>
     <div class="conteudo">
@@ -71,7 +68,7 @@
                     <div class="card indicador">
                         <span class="titulo-card">Temperatura atual</span>
                         <div class="informacao">
-                            <span class="texto-card red" >19°C</span>
+                            <span class="texto-card red" id="temperatura"></span>
                             <i class="fa-solid fa-temperature-quarter fa-2x infoIcon"></i>
                         </div>
                     </div>
@@ -79,7 +76,7 @@
                     <div class="card indicador">
                         <span class="titulo-card">Umidade atual</span>
                         <div class="informacao">
-                            <span class="texto-card blue">42%</span>
+                            <span class="texto-card blue" id="umidade"></span>
                             <i class="fa-solid fa-droplet fa-2x infoIcon"></i>
                         </div>
                     </div>

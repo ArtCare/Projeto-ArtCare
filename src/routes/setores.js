@@ -16,5 +16,8 @@ router.get("/buscarSetoresAlerta/", function (req, res) {
 router.get("/buscarDadosSetor/:idSetor", function (req, res) {
     setoresController.buscarDadosSetor(req, res);
 })
+router.get("/buscarCapturasSetor/:idSetor", function (req, res) {
+    setoresController.buscarCapturasSetor(req, res);
+})
 
 module.exports = router;

@@ -1,5 +1,6 @@
 create database ArtCare;
 use ArtCare;
+drop database ArtCare;
 
 create table verificacao (
 	idVerificacao int primary key auto_increment,

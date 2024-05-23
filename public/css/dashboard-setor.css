@@ -30,12 +30,13 @@ canvas {
 .menu {
     width: 250px;
     height: 100vh;
+
     background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: #b8b3ae 0 5px 10px;
-    border-right: 2px #A5A5A5 solid;
+    box-shadow: #b8b3ae 0 5px 20px;
+
 }
 
 .logo {
@@ -43,46 +44,48 @@ canvas {
     margin-top: 20px;
 }
 
-.menu-Itens {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    margin-top: 30%;
-    margin-bottom: 20%;
-    background-color: transparent;
-}
-
-.botoes-superiores {
+.PrimaryScreens {
     display: flex;
     flex-direction: column;
     height: 30%;
-    width: 90%;
+    width: 100%;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+
 }
 
+.divOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
-.item {
+    width: 100%;
+    height: 100%;
+    margin-top: 50%;
+    margin-bottom: 10%;
+    background-color: transparent;
+}
+
+.option {
     display: flex;
     align-items: center;
-    width: 90%;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
+    width: 100%;
+    justify-content: center;
     border: none;
     background-color: transparent;
     cursor: pointer;
-    border-radius: 50px;
+    margin-top: 4%;
     transition: all .4s ease-in-out;
-    height: 80px;
+    height: 70px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
-.texto-item {
-    font-family: "Caladea";
+.menuOption {
+    font-family: "Poppins";
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     margin-right: 30px;
     text-align: start;
     width: 100px;
@@ -92,15 +95,10 @@ canvas {
 
 .menuicon {
     color: #666666;
+    margin-inline: 10px;
+
 }
 
-.botoes-inferiores {
-    display: flex;
-    flex-direction: column;
-    height: 20%;
-    width: 90%;
-    justify-content: space-between;
-}
 
 .item-selecionado {
     background-color: #B08067;
@@ -122,13 +120,35 @@ canvas {
 .conteudo {
     width: 100%;
 }
-
+.optionLogout {
+    font-family: "Poppins";
+    font-size: 22px;
+    font-weight: 700;
+    color: #666666;
+}
 .header {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1%;
+}
+.onScreen {
+    box-shadow: #b8b3ae 0 5px 20px;
+    background-color: #B08067;
+
+}
+
+.option:hover {
+    background-color: #F5F5F5;
+}
+
+.onScreen:hover {
+    background-color: #c58f72;
+}
+
+.onScreenColors {
+    color: #fff;
 }
 
 .header-container {
@@ -347,7 +367,6 @@ canvas {
     font-size: 42px;
     margin: 0;
 }
-
 .graficos-container {
     width: 100%;
     height: 46%;
