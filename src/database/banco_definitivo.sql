@@ -117,23 +117,25 @@ insert into registro (fkSensor, temperatura, umidade) values
 
 select * from representante;
 insert into representante (fkMuseu, nome, email, senha) values 
-(1, "Julia", "email", "12345678");
+(1, "Julia", "juliaararipe@gmail.com", "12345678");
 
 SELECT idMuseu FROM museu ORDER BY idMuseu DESC LIMIT 1;
 
 delete from museu where idMuseu = 15;
 truncate representante;
-select * from museu join representante on idMuseu = fkMuseu;
+select * from museu;
 select idSetor, nome, statusSetor from setor order by statusSetor DESC;
 
 
 select * from setor where statusSetor = 3;
 select count(statusSetor) from setor where statusSetor = 2;
 
+select * from setor join verificacao on fkVerificacao = idVerificacao join sensor on setor.fkSensor = idSensor join registro on registro.fkSensor = idSensor;
+
 select * from endereco;
 select * from supervisor;
 select * from setor;
 select * from sensor;
-select umidade from registro;
+select * from registro;
 select temperatura from registro;
 select * from verificacao;

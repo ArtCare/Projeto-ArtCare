@@ -13,8 +13,8 @@ router.get("/buscarSetoresAlerta/", function (req, res) {
     setoresController.buscarSetoresAlerta(req, res);
 });
 
-router.get("/tempo-real/:idAquario", function (req, res) {
-    medidaController.buscarMedidasEmTempoReal(req, res);
+router.get("/buscarDadosSetor/:idSetor", function (req, res) {
+    setoresController.buscarDadosSetor(req, res);
 })
 
 module.exports = router;

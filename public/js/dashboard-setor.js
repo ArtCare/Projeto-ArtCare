@@ -1,6 +1,15 @@
+const idSetor = sessionStorage.getItem("idSetor")
 const headerContainer = document.querySelector('.header-container')
-const metricas = document.querySelector('metricas')
+const sectorTitle = document.querySelector('#sectorTitle')
+
 let legendaAtiva = true;
+
+fetch(`/setores/buscarDadosSetor/${idSetor}`).then(res => {
+     res.json().then(res =>{
+         sectorTitle.textContent = `Setor ${res[0].idSetor}: ${res[0].nome}`
+     })
+}
+)
 
 function mostrarLegendas() {
 
