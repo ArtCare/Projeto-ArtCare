@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body {
     margin: 0;
     background-color: #F5F5F5;
@@ -15,15 +15,15 @@ canvas {
 }
 
 #dht11Umidade{
-    height: 200px;
-    width: 800px;
+    height: 30%;
+    width: 50%;
     position: absolute;
     opacity: 0;
     transition: all .25s ease-in-out;
 }
 #dht11Temperatura{
-    height: 200px;
-    width: 800px;
+    height: 30%;
+    width: 50%;
     position: absolute;
     transition: all .25s ease-in-out;
 }
@@ -80,7 +80,7 @@ canvas {
 }
 
 .texto-item {
-    font-family: "Poppins";
+    font-family: "Caladea";
     font-size: 18px;
     font-weight: 400;
     margin-right: 30px;
@@ -153,10 +153,11 @@ canvas {
 }
 
 .titulo-header {
-    font-family: "Poppins";
+    font-family: "Caladea";
     font-size: 24px;
     font-weight: 600;
     color: #666666;
+    margin-bottom: 20px;
 }
 
 .btn-verLegenda {
@@ -166,7 +167,7 @@ canvas {
     cursor: pointer;
     border-radius: 20px;
     height: 40px;
-    font-family: "Poppins";
+    font-family: "Caladea";
     font-size: 16px;
     font-weight: 500;
      color: #fff;
@@ -176,11 +177,10 @@ canvas {
     width: 95%;
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
 }
 
 .metricas .titulo-metrica {
-    font-family: 'Poppins';
+    font-family: 'Caladea';
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -231,18 +231,14 @@ canvas {
 }
 
 .indicadores {
-    width: 50%;
+    width: 44%;
     display: flex;
     justify-content: space-between;
 }
 
-.indicadores .card {
-    box-sizing: border-box;
-}
-
 .card {
-    width: 45%;
-    padding: 20px;
+    width: 50%;
+    padding: 8px 14px ;
     background-color: #fff;
     border-radius: 20px;
     display: flex;
@@ -250,6 +246,7 @@ canvas {
     justify-content: space-around;
     box-shadow: #8d8d8d 0 3px 3px;
     border: 3px solid #fff;
+    margin-right: 20px;
 }
 
 .card:hover {
@@ -258,7 +255,7 @@ canvas {
 }
 
 .titulo-card{
-    font-family: "Poppins";
+    font-family: "Caladea";
     font-size: 16px;
     font-weight: 700;
     color: #666666;
@@ -267,14 +264,19 @@ canvas {
 }
 
 .texto-card{
-    font-family: "Poppins";
-    font-size: 56px;
+    font-family: "Caladea";
+    font-size: 50px;
     font-weight: 700;
-    color: #B08067;
+}
+.red{
+    color: #C62400;
+}
+.blue{
+   color: #1C50E0
 }
 
 .informacao {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -289,19 +291,19 @@ canvas {
 
 .status .card {
     width: 80%;
-    height: 100%;
+    height: 60%;
     border-radius: 20px 0 0 20px;
-    padding: 0 25px;
+    padding: 20px 20px;
     box-shadow: #8d8d8d 0 3px 3px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    right: -75px;
+    right: -85px;
 }
 
-.status .alerta,.tempo {
-    width: 45%;
+.status .alerta {
+    width: 60%;
 }
 
 .titulo-status, .titulo-tempo {
@@ -315,13 +317,13 @@ canvas {
 }
 
 .titulo-status {
-    font-size: 26px;
-    font-family: "Poppins";
+    font-size: 22px;
+    font-family: "Caladea";
 }
 
 .tipo-status {
     font-family: "Caladea";
-    font-size: 26px;
+    font-size: 22px;
     font-weight: bold;
     color: #C62400;
 }
@@ -331,7 +333,7 @@ canvas {
     font-family: 'Caladea';
     color: #666666;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .titulo-tempo {
@@ -341,14 +343,14 @@ canvas {
 
 .texto-tempo {
     color: #C62400;
-    font-family: 'Poppins';
+    font-family: 'Caladea';
     font-size: 42px;
     margin: 0;
 }
 
 .graficos-container {
     width: 100%;
-    height: 45%;
+    height: 46%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -364,34 +366,41 @@ canvas {
 
 .coluna-esquerda {
     width: 50%;
-    height: 110%;
+    height: 116%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .coluna-direita {
-    width: 30%;
+    width: 40%;
     height: 110%;
     display: flex;
     justify-content: flex-end;
 }
 
 .grafico {
-    width: 85%;
+    width: 80%;
+  
+}
+.graficoPizza{
+    width: 60%;
 }
 
 .grafico-temperatura, .grafico-umidade, .grafico-status {
-    width: 95%;
+    width: 110%;
+    height: 100%;
     background-color: #fff;
-    border-radius: 30px;
-    padding: 0 20px;
+    border-radius: 14px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: #8d8d8d 0 3px 3px;
     box-sizing: border-box;
+    margin-bottom: 2%;
+    
 }
 
 .grafico-status {

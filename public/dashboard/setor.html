@@ -71,16 +71,16 @@
                     <div class="card indicador">
                         <span class="titulo-card">Temperatura atual</span>
                         <div class="informacao">
-                            <span class="texto-card">19°C</span>
-                            <i class="fa-solid fa-temperature-quarter fa-4x infoIcon"></i>
+                            <span class="texto-card red" >19°C</span>
+                            <i class="fa-solid fa-temperature-quarter fa-2x infoIcon"></i>
                         </div>
                     </div>
 
                     <div class="card indicador">
                         <span class="titulo-card">Umidade atual</span>
                         <div class="informacao">
-                            <span class="texto-card">42%</span>
-                            <i class="fa-solid fa-droplet fa-4x infoIcon"></i>
+                            <span class="texto-card blue">42%</span>
+                            <i class="fa-solid fa-droplet fa-2x infoIcon"></i>
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                         <div class="header-grafico">
                             <span class="titulo-header">Porcentagem dos status semanais</span>
                         </div>
-                        <div class="grafico">
+                        <div class="graficoPizza">
                             <canvas id="grafico_status"></canvas>
                         </div>
                     </div>
@@ -143,11 +143,10 @@
 <script> AOS.init(); </script>
 
 <script>
+    Chart.defaults.plugins.legend.position = 'bottom';
     function logout() {
         window.location.href = "login.html"
     }
-
-
     const temp = [
         { time: "00:00", count: 19 },
         { time: "03:00", count: 19 },
