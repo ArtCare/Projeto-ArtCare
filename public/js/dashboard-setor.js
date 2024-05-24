@@ -7,6 +7,8 @@ const umidade = document.querySelector('#umidade')
 const registrosTemperatura = []
 const registrosUmidade = []
 const tempoRegistro = []
+
+Chart.defaults.plugins.legend.position = 'bottom';
 fetch(`/setores/buscarDadosSetor/${idSetor}`).then(res => {
     res.json().then(res => {
         sectorTitle.textContent = `Setor ${res[0].idSetor}: ${res[0].nome}`
@@ -54,6 +56,15 @@ let tempDados = {
         }
     ]
 }
+let umiDados = {
+    labels: tempoRegistro,
+    datasets: [
+        {
+            data: registrosUmidade,
+            borderColor: "#072F9F"
+        }
+    ]
+}
 let graficoTemperatura = new Chart(
     document.getElementById('grafico_temperatura'),
     {
@@ -91,15 +102,7 @@ let graficoUmidade = new Chart(
                 }
             }
         },
-        data: {
-            labels: umi.map(row => row.time),
-            datasets: [
-                {
-                    data: umi.map(row => row.count),
-                    borderColor: '#36A2EB',
-                }
-            ]
-        }
+        data: umiDados
     }
 );
 let graficoStatus = new Chart(
@@ -108,9 +111,9 @@ let graficoStatus = new Chart(
         type: 'pie',
         data: {
             labels: [
-                'Crítico',
-                'Alerta',
-                'Normal'
+                '40% dos dias em status normal',
+                '40% dos dias em status alerta',
+                '20% dos dias com status crítico'
             ],
             datasets: [{
                 data: [10, 15, 7],
@@ -127,17 +130,19 @@ let graficoStatus = new Chart(
 function buscarCapturas() {
     fetch(`/setores/buscarCapturasSetor/${idSetor}`).then(res => {
         res.json().then(res => {
-
             temperatura.textContent = `${res[0].temperatura}°C`
             umidade.textContent = `${res[0].umidade}%`
-
             registrosTemperatura.push(res[0].temperatura)
+            registrosUmidade.push(res[0].umidade)
             tempoRegistro.push(res[0].tempo)
+
             if(registrosTemperatura.length > 7){
                 tempoRegistro.shift()
                 registrosTemperatura.shift()
+                registrosUmidade.shift()
             }
             graficoTemperatura.update();
+            graficoUmidade.update();
             console.log(tempoRegistro)
         })
     })

@@ -392,7 +392,7 @@ canvas {
 }
 
 .coluna-direita {
-    width: 40%;
+    width: 43%;
     height: 110%;
     display: flex;
     justify-content: flex-end;
@@ -404,6 +404,7 @@ canvas {
 }
 .graficoPizza{
     width: 60%;
+    
 }
 
 .grafico-temperatura, .grafico-umidade, .grafico-status {
@@ -411,7 +412,7 @@ canvas {
     height: 100%;
     background-color: #fff;
     border-radius: 14px;
-    padding: 10px;
+    padding: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -429,6 +430,7 @@ canvas {
 
 .grafico-status .header-grafico {
     text-align: center;
+    width: 74%;
 }
 
 .grafico-status .grafico {
