@@ -16,7 +16,7 @@
 
         <div class="divOptions">
             <div class="PrimaryScreens">
-                <button class="option onScreen">
+                <button class="option onScreen" onclick="navigateToHome()">
                     <i class="fa-solid fa-house fa-xl menuicon onScreenColors"></i> <span
                         class="menuOption onScreenColors">Dashboard</span>
                 </button>
@@ -135,3 +135,14 @@
 <script src="../js/dashboard-setor.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script> AOS.init(); </script>
+<script>
+    function navigateToHome() {
+        location.replace("./dashboard.html")
+    }
+    function navigateToSectors() {
+        location.replace("./setores.html")
+    }
+    function navigateToSupervisor() {
+        location.replace("./supervisor.html")
+    }
+</script>

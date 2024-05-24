@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
     margin: 0;
-    background-color: #F5F5F5;
+    background-color: #F1EFF7;
     height: 100vh;
     width: 100%;
     display: flex;
 }
+
 canvas {
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -14,19 +16,21 @@ canvas {
     user-select: none;
 }
 
-#dht11Umidade{
+#dht11Umidade {
     height: 30%;
     width: 50%;
     position: absolute;
     opacity: 0;
     transition: all .25s ease-in-out;
 }
-#dht11Temperatura{
+
+#dht11Temperatura {
     height: 30%;
     width: 50%;
     position: absolute;
     transition: all .25s ease-in-out;
 }
+
 .menu {
     width: 250px;
     height: 100vh;
@@ -120,12 +124,14 @@ canvas {
 .conteudo {
     width: 100%;
 }
+
 .optionLogout {
     font-family: "Poppins";
     font-size: 22px;
     font-weight: 700;
     color: #666666;
 }
+
 .header {
     width: 100%;
     display: flex;
@@ -133,6 +139,7 @@ canvas {
     align-items: center;
     margin-top: 1%;
 }
+
 .onScreen {
     box-shadow: #b8b3ae 0 5px 20px;
     background-color: #B08067;
@@ -158,7 +165,7 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: #b8b3ae 0 5px 10px;
+    box-shadow: #b8b3ae 0 5px 20px;
     border-bottom: 2px #A5A5A5 solid;
     border-radius: 20px;
     padding: 10px 0;
@@ -178,6 +185,7 @@ canvas {
     font-weight: 700;
     color: #B08067;
 }
+
 .titulo-header {
     font-family: "Caladea";
     font-size: 24px;
@@ -198,7 +206,8 @@ canvas {
     font-weight: 700;
 }
 
-.metricas .temperatura,.umidade {
+.metricas .temperatura,
+.umidade {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -251,13 +260,13 @@ canvas {
 
 .card {
     width: 50%;
-    padding: 8px 14px ;
+    padding: 8px 14px;
     background-color: #fff;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    box-shadow: #8d8d8d 0 3px 3px;
+    box-shadow: #b8b3ae 0 5px 20px;
     border: 3px solid #fff;
     margin-right: 20px;
 }
@@ -267,7 +276,7 @@ canvas {
     box-shadow: 0 0 15px #C62400;
 }
 
-.titulo-card{
+.titulo-card {
     font-family: "Caladea";
     font-size: 16px;
     font-weight: 700;
@@ -276,16 +285,18 @@ canvas {
     margin-bottom: 5px;
 }
 
-.texto-card{
+.texto-card {
     font-family: "Caladea";
     font-size: 50px;
     font-weight: 700;
 }
-.red{
+
+.red {
     color: #C62400;
 }
-.blue{
-   color: #1C50E0
+
+.blue {
+    color: #1C50E0
 }
 
 .informacao {
@@ -295,7 +306,7 @@ canvas {
     align-items: center;
 }
 
-.status{
+.status {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -307,7 +318,7 @@ canvas {
     height: 60%;
     border-radius: 20px 0 0 20px;
     padding: 20px 20px;
-    box-shadow: #8d8d8d 0 3px 3px;
+  box-shadow: #b8b3ae 0 5px 20px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -319,13 +330,15 @@ canvas {
     width: 60%;
 }
 
-.titulo-status, .titulo-tempo {
+.titulo-status,
+.titulo-tempo {
     font-weight: bold;
     color: #666666;
 }
 
 
-.texto-status, .texto-tempo {
+.texto-status,
+.texto-tempo {
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -361,6 +374,7 @@ canvas {
     font-size: 42px;
     margin: 0;
 }
+
 .graficos-container {
     width: 100%;
     height: 46%;
@@ -394,14 +408,17 @@ canvas {
 
 .grafico {
     width: 80%;
-  
-}
-.graficoPizza{
-    width: 65%;
-    
+
 }
 
-.grafico-temperatura, .grafico-umidade, .grafico-status {
+.graficoPizza {
+    width: 65%;
+
+}
+
+.grafico-temperatura,
+.grafico-umidade,
+.grafico-status {
     width: 110%;
     height: 100%;
     background-color: #fff;
@@ -411,10 +428,10 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: #8d8d8d 0 3px 3px;
+  box-shadow: #b8b3ae 0 5px 20px;
     box-sizing: border-box;
     margin-bottom: 2%;
-    
+
 }
 
 .grafico-status {
@@ -442,7 +459,7 @@ canvas {
     align-items: center;
 }
 
-.infoIcon{
+.infoIcon {
     color: #666666;
 
 }

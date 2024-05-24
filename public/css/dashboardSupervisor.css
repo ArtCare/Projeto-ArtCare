@@ -3,7 +3,7 @@
 
 body {
     margin: 0;
-    background-color: #F5F5F5;
+    background-color: #F1EFF7;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -144,12 +144,13 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    box-shadow: 0 4px 8px #a2a2a2;
+    box-shadow: #b8b3ae 0 5px 20px;
     border-radius: 20px;
     color: #B08067;
     font-weight: bold;
     width: 50%;
     height: 50%;
+    background-color: #fff;
    
 }
 

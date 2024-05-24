@@ -3,7 +3,7 @@
 
 body {
     margin: 0;
-    background-color: #F5F5F5;
+    background-color: #F1EFF7;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: #b8b3ae 0 5px 10px;
+    box-shadow: #b8b3ae 0 5px 20px;
     border-right: 2px #A5A5A5 solid;
 }
 
@@ -146,7 +146,7 @@ body {
     border-radius: 10px;
     border: none;
     font-size: 16px;
-    box-shadow: #A5A5A5 0 4px 10px;
+    box-shadow: #b8b3ae 0 5px 20px;
     transition: all .5s ease-in-out;
 }
 
@@ -195,9 +195,9 @@ h4 {
 .setores {
     width: 48%;
     height: 55%;
-    box-shadow: #b8b3ae 0 5px 10px;
+    box-shadow: #b8b3ae 0 5px 20px;
     border-radius: 20px;
-    background-color: #F5F5F5;
+    background-color: #FFF;
     display: flex;
     flex-direction: column;
     align-items: center;
