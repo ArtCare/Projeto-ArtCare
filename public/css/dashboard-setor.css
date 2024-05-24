@@ -161,7 +161,7 @@ canvas {
     box-shadow: #b8b3ae 0 5px 10px;
     border-bottom: 2px #A5A5A5 solid;
     border-radius: 20px;
-    padding: 12px 0;
+    padding: 10px 0;
 }
 
 .header-container .principal {
@@ -172,37 +172,30 @@ canvas {
     transition: all .5s ease-in-out;
 }
 
+.titulo-header-metricas {
+    font-family: "Caladea";
+    font-size: 40px;
+    font-weight: 700;
+    color: #B08067;
+}
 .titulo-header {
     font-family: "Caladea";
     font-size: 24px;
-    font-weight: 600;
-    color: #666666;
-    margin-bottom: 20px;
-}
-
-.btn-verLegenda {
-    width: 170px;
-    border: none;
-    background-color: #666666;
-    cursor: pointer;
-    border-radius: 20px;
-    height: 40px;
-    font-family: "Caladea";
-    font-size: 16px;
-    font-weight: 500;
-     color: #fff;
+    font-weight: 700;
+    color: #B08067;
 }
 
 .metricas {
     width: 95%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .metricas .titulo-metrica {
     font-family: 'Caladea';
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .metricas .temperatura,.umidade {
@@ -331,6 +324,7 @@ canvas {
     color: #666666;
 }
 
+
 .texto-status, .texto-tempo {
     text-transform: uppercase;
     font-weight: bold;
@@ -403,7 +397,7 @@ canvas {
   
 }
 .graficoPizza{
-    width: 60%;
+    width: 65%;
     
 }
 
