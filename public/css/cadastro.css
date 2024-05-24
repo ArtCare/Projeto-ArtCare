@@ -258,6 +258,13 @@ body {
     margin-top: 20px;
     height: 16%;
     border-radius: 10px;
+    transition: all .4s ease-in-out;
+}
+
+.btnModal:hover {
+    background-color: #831d0b;
+    color: rgba(255, 255, 255, 0.850);
+    cursor: pointer;
 }
 .sucessesBG{
     background-color: #2AD445;
