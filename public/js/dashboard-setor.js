@@ -3,18 +3,32 @@ const headerContainer = document.querySelector('.header-container')
 const sectorTitle = document.querySelector('#sectorTitle')
 const temperatura = document.querySelector('#temperatura')
 const umidade = document.querySelector('#umidade')
+const tempMax = document.querySelector('#tempMax')
+const tempMin = document.querySelector('#tempMin')
+const umiMax = document.querySelector('#umiMax')
+const umiMin = document.querySelector('#umiMin')
 
 const registrosTemperatura = []
 const registrosUmidade = []
 const tempoRegistro = []
 
 Chart.defaults.plugins.legend.position = 'bottom';
+Chart.defaults.color = "#292929";
+Chart.defaults.font.size = 16;
+
 fetch(`/setores/buscarDadosSetor/${idSetor}`).then(res => {
     res.json().then(res => {
         sectorTitle.textContent = `Setor ${res[0].idSetor}: ${res[0].nome}`
     })
-}
-)
+})
+fetch(`/setores/buscarMetricasSetor/${idSetor}`).then(res => {
+    res.json().then(res => {
+        tempMax.textContent = `TEMPERATURA MÁXIMA: ${res[0].temperaturaMaxima}°C`
+        tempMin.textContent = `TEMPERATURA MÍNIMA: ${res[0].temperaturaMinima}°C`
+        umiMax.textContent = `UMIDADE MÁXIMA: ${res[0].umidadeMaxima}%`
+        umiMin.textContent = `UMIDADE MÍNIMA: ${res[0].umidadeMinima}%`
+    })
+})
 buscarCapturas()
 function logout() {
     window.location.href = "login.html"
@@ -111,9 +125,9 @@ let graficoStatus = new Chart(
         type: 'pie',
         data: {
             labels: [
-                '40% dos dias em status normal',
+                '20% dos dias com status crítico',
                 '40% dos dias em status alerta',
-                '20% dos dias com status crítico'
+                '40% dos dias em status normal',
             ],
             datasets: [{
                 data: [10, 15, 7],
@@ -132,8 +146,10 @@ function buscarCapturas() {
         res.json().then(res => {
             temperatura.textContent = `${res[0].temperatura}°C`
             umidade.textContent = `${res[0].umidade}%`
-            registrosTemperatura.push(res[0].temperatura)
-            registrosUmidade.push(res[0].umidade)
+            // registrosTemperatura.push(res[0].temperatura)
+            // registrosUmidade.push(res[0].umidade)
+               registrosTemperatura.push(Math.floor(Math.random() * 29) + 3)
+            registrosUmidade.push(Math.floor(Math.random() * 52) + 8)
             tempoRegistro.push(res[0].tempo)
 
             if(registrosTemperatura.length > 7){
@@ -148,5 +164,5 @@ function buscarCapturas() {
     })
     setTimeout(() => {
         buscarCapturas()
-    }, 3000)
+    }, 1000)
 }

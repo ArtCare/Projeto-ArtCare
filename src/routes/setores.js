@@ -19,5 +19,8 @@ router.get("/buscarDadosSetor/:idSetor", function (req, res) {
 router.get("/buscarCapturasSetor/:idSetor", function (req, res) {
     setoresController.buscarCapturasSetor(req, res);
 })
+router.get("/buscarMetricasSetor/:idSetor", function (req, res) {
+    setoresController.buscarMetricasSetor(req, res);
+})
 
 module.exports = router;

@@ -29,11 +29,18 @@ function buscarCapturasSetor(idSetor){
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+function buscarMetricasSetor(idSetor){
+    var instrucaoSql = `select tempMax as temperaturaMaxima, tempMin as temperaturaMinima, umiMax as umidadeMaxima, umiMin as umidadeMinima
+    from verificacao join setor on idVerificacao = fkVerificacao where idSetor = ${idSetor};`;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 module.exports = {
     buscarSetores,
     buscarSetoresCriticos,
     buscarSetoresAlerta,
     buscarDadosSetor,
-    buscarCapturasSetor
+    buscarCapturasSetor,
+    buscarMetricasSetor
 }
