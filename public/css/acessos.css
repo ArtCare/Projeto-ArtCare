@@ -365,3 +365,84 @@ h4 {
     width: 250px;
     font-size: 17px;
 }
+
+.textoMedia {
+
+    display: flex;
+    flex-direction: column;
+    color: rgb(102, 102, 102);
+}
+
+.botoesCadastroSetor {
+
+    width: 100%;
+}
+
+.botaoMetricaSim {
+
+    border-radius: 20px;
+    width: 80px;
+    height: 30px;
+    border: none;
+    border: none;
+    background-color: rgb(102, 102, 102);
+    color: white;
+    transition: all .4s ease-in-out;
+    cursor: pointer;;
+    font-size: 15px;
+    font-family: 'Caladea';
+    font-weight: bold;
+}
+
+.botaoMetricaSim:hover {
+
+    
+    background-color: rgb(176, 128, 103) ;
+    border: 2px solid #fff;
+}
+
+
+.botaoMetricaNao {
+    
+    margin-left: 7px;
+    border-radius: 20px;
+    width: 80px;
+    height: 30px;
+    border: none;
+    border: none;
+    background-color: rgb(102, 102, 102);
+    color: white;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'Caladea';
+    font-weight: bold;
+}
+
+.botaoMetricaNao:hover {
+    
+    background-color: rgb(176, 128, 103) ;
+    border: 2px solid #fff;
+}
+
+
+.inputMetrica {
+
+    height: 25.5px;
+    border-radius: 5px;
+    width: 142px;
+    border: 2px solid  rgb(176, 128, 103);
+    box-shadow: #807f7f 0 2px 2px;
+    margin-top: 5px;
+    padding-left: 18px;
+    background: url("https://static.vecteezy.com/ti/vetor-gratis/p3/16831773-de-icone-de-cadeado-vetor.jpg") no-repeat left;
+    background-size: 20px;  
+}
+
+::placeholder{
+
+    font-size: 12px;
+    padding-left: 5px;
+    font-family: 'Caladea';
+    font-weight: bold;
+}
