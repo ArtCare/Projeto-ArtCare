@@ -108,19 +108,129 @@ body {
     color: #fff;
 }
 
-.logout {
-    width: 150px;
+.novoSupervisor {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.novoSupervisorButtom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #666666;
+    border: none;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+    width: 220px;
+    height: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.novoSupervisorButtom:hover {
+    background-color: #B08067;
+    border: 2px solid #fff;
+}
+
+.novoSupervisorButtom:active {
+    transform: scale(.95);
+}
+
+.supervisores {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: #b8b3ae 0 5px 20px;
+    border-radius: 20px;
+    color: #B08067;
+    font-weight: bold;
+    width: 50%;
+    height: 50%;
+    background-color: #fff;
+}
+
+.supervisoresTitulo {
+    height: 20%;
+    font-size: 40px;
+    margin-top: 5%;
+}
+
+.dadosSupervisoresContainer {
+    width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 80%;
+    margin-bottom: 20px;
+}
+
+.dadosSupervisores {
+    color: #666666;
+    font-size: 24px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.dadosSupervisoresContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dadosSupervisoresContainer::-webkit-scrollbar-track {
+    background: #F5F5F5;
+    width: 100%;
+}
+
+.dadosSupervisoresContainer::-webkit-scrollbar-thumb {
+    background-color: #B08067;
+    border-radius: 30px;
+}
+
+.nomes {
+    font-size: 24px;
+    font-style: normal;
+    font-family: "Caladea";
+}
+
+.email {
+    font-size: 20px;
+    font-family: "Caladea";
+    font-weight: 400;
+}
+
+.content {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
 
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    border-radius: 50px;
+.edit {
+    color: #B08067;
+    border-color: transparent;
+    background-color: #F1EFF7;
+}
 
-    transition: all .4s ease-in-out;
-    height: 60px;
+.del {
+    color: #B08067;
+    border-color: transparent;
+    background-color: #F1EFF7;
+}
+
+.edit:hover {
+    color: #666666
+}
+
+.del:hover {
+    color: #666666
 }
 
 .optionLogout {
@@ -128,321 +238,4 @@ body {
     font-size: 22px;
     font-weight: 700;
     color: #666666;
-}
-
-.divButtonCadastro {
-    display: flex;
-    justify-content: flex-end;
-    width: 48%;
-    margin-bottom: 20px;
-}
-
-.buttonCadastro {
-    height: 60px;
-    width: 200px;
-    background-color: #666666;
-    font-weight: bold;
-    color: white;
-    border-radius: 10px;
-    border: none;
-    font-size: 16px;
-    box-shadow: #b8b3ae 0 5px 20px;
-    transition: all .5s ease-in-out;
-}
-
-.buttonCadastro:active{
-    transform: scale(.95);
-}
-
-.setoresMuseus {
-
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-h2 {
-    color: #B08067;
-    font-size: 40px;
-    margin-left: 50px;
-    font-weight: bold;
-}
-
-h4 {
-    color: #666666;
-    margin: 0 0 0 50px;
-    font-weight: 300;
-}
-
-
-.setoresText {
-    margin-top: 30px;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.setoresText span {
-    color: #666666;
-    font-weight: 800;
-    font-size: 20px;
-
-
-}
-
-.setores {
-    width: 48%;
-    height: 55%;
-    box-shadow: #b8b3ae 0 5px 20px;
-    border-radius: 20px;
-    background-color: #FFF;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.caption {
-    width: 104%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.buttonSetor {
-    width: 200px;
-    height: 36px;
-    border-radius: 30px;
-    border: none;
-    background-color: #666666;
-    color: #FFF;
-    font-size: 16px;
-    font-weight: 700;
-    justify-content: space-around;
-    align-items: center;
-    transition: all .5s ease-in-out;
-}
-
-.buttonSetor:active{
-    transform: scale(.95);
-}
-#modal {
-
-    width: 800px;
-    height: 450px;
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    font-family: 'Caladea';
-    font-weight: bold;
-    border: none;
-}
-
-.containerModal {
-
-    width: 100%;
-    height: 400px;
-}
-
-.botaoModal {
-    
-    margin-left: 43%;
-    height: 20px;
-    margin-top: 3%;
-    border-radius: 25px;
-    width: 127px;
-    font-size: 17px;
-    height: 32px;
-    border: none;
-    background-color: rgb(102, 102, 102);
-    color: white;
-    transition: all .4s ease-in-out;
-    cursor: pointer;
-    font-family: 'Caladea';
-    font-weight: bold;
-}
-
-.botaoModal:hover {
-
-    background-color: rgb(176, 128, 103) ;
-    border: 2px solid #fff;
-}
-
-.cadastrarModal {
-
-    display: flex;
-    justify-content: center; 
-    font-size: 30px;
-    color:  rgb(176, 128, 103);
-}
-
-.dadosDoSetor {
-
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 45px;
-    margin-left: 75px;
-    width: 650px;
-}
-
-
-.nome {
-
-    display: flex;
-    flex-direction: column;
-    color: rgb(102, 102, 102);
-    font-size: 18px;
-}
-
-.andar {    
-    display: flex;
-    flex-direction: column;
-    color: rgb(102, 102, 102);
-    font-size: 18px;
-}
-
-
-.setor {
-
-    margin-top: 10px;
-    font-size: 30px;
-    color:  rgb(176, 128, 103);
-    margin-right: 20px;
-    margin-top: 3%;
-}
-
-.inputDadosSetor{
-
-    border: 2px solid  rgb(176, 128, 103);
-    height: 27px;
-    border-radius: 5px;
-    width: 180px;
-    box-shadow: #807f7f 0 2px 2px;
-    margin-top: 5px;   
-}
-
-.containerModal2 {
-
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.metricas {
-
-    margin-top: 6%;
-    width: 50%;
-}
-.textoMetricas {
-
-    font-size: 30px;
-    color:  rgb(176, 128, 103);
-}
-
-.metricaInput {
-
-    display: flex;
-    flex-direction: column;
-    margin-right: 9%;
-    margin-bottom: 4%;
-    font-size: 17px;   
-}
-
-.wrapMetricas {
-
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: 120px;
-    width: 108%;
-    color: rgb(102, 102, 102);
-    margin-top: 2%;
-}
-
-.media {
-
-    margin-top: 11%;
-    width: 250px;
-    font-size: 17px;
-}
-
-.textoMedia {
-
-    display: flex;
-    flex-direction: column;
-    color: rgb(102, 102, 102);
-}
-
-.botoesCadastroSetor {
-
-    width: 100%;
-}
-
-.botaoMetricaSim {
-
-    border-radius: 20px;
-    width: 80px;
-    height: 30px;
-    border: none;
-    border: none;
-    background-color: rgb(102, 102, 102);
-    color: white;
-    transition: all .4s ease-in-out;
-    cursor: pointer;;
-    font-size: 15px;
-    font-family: 'Caladea';
-    font-weight: bold;
-}
-
-.botaoMetricaSim:hover {
-
-    
-    background-color: rgb(176, 128, 103) ;
-    border: 2px solid #fff;
-}
-
-
-.botaoMetricaNao {
-    
-    margin-left: 7px;
-    border-radius: 20px;
-    width: 80px;
-    height: 30px;
-    border: none;
-    border: none;
-    background-color: rgb(102, 102, 102);
-    color: white;
-    transition: all .4s ease-in-out;
-    cursor: pointer;
-    font-size: 15px;
-    font-family: 'Caladea';
-    font-weight: bold;
-}
-
-.botaoMetricaNao:hover {
-    
-    background-color: rgb(176, 128, 103) ;
-    border: 2px solid #fff;
-}
-
-
-.inputMetrica {
-
-    height: 25.5px;
-    border-radius: 5px;
-    width: 142px;
-    border: 2px solid  rgb(176, 128, 103);
-    box-shadow: #807f7f 0 2px 2px;
-    margin-top: 5px;
-    padding-left: 18px;
-    background: url("https://static.vecteezy.com/ti/vetor-gratis/p3/16831773-de-icone-de-cadeado-vetor.jpg") no-repeat left;
-    background-size: 20px;  
-}
-
-::placeholder{
-
-    font-size: 12px;
-    padding-left: 5px;
-    font-family: 'Caladea';
-    font-weight: bold;
 }
