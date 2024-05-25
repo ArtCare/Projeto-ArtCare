@@ -238,3 +238,130 @@ h4 {
     font-weight: bold;
     border: none;
 }
+
+.containerModal {
+
+    width: 100%;
+    height: 400px;
+}
+
+.botaoModal {
+    
+    margin-left: 43%;
+    height: 20px;
+    margin-top: 3%;
+    border-radius: 25px;
+    width: 127px;
+    font-size: 17px;
+    height: 32px;
+    border: none;
+    background-color: rgb(102, 102, 102);
+    color: white;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+    font-family: 'Caladea';
+    font-weight: bold;
+}
+
+.botaoModal:hover {
+
+    background-color: rgb(176, 128, 103) ;
+    border: 2px solid #fff;
+}
+
+.cadastrarModal {
+
+    display: flex;
+    justify-content: center; 
+    font-size: 30px;
+    color:  rgb(176, 128, 103);
+}
+
+.dadosDoSetor {
+
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 45px;
+    margin-left: 75px;
+    width: 650px;
+}
+
+
+.nome {
+
+    display: flex;
+    flex-direction: column;
+    color: rgb(102, 102, 102);
+    font-size: 18px;
+}
+
+.andar {    
+    display: flex;
+    flex-direction: column;
+    color: rgb(102, 102, 102);
+    font-size: 18px;
+}
+
+
+.setor {
+
+    margin-top: 10px;
+    font-size: 30px;
+    color:  rgb(176, 128, 103);
+    margin-right: 20px;
+    margin-top: 3%;
+}
+
+.inputDadosSetor{
+
+    border: 2px solid  rgb(176, 128, 103);
+    height: 27px;
+    border-radius: 5px;
+    width: 180px;
+    box-shadow: #807f7f 0 2px 2px;
+    margin-top: 5px;   
+}
+
+.containerModal2 {
+
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.metricas {
+
+    margin-top: 6%;
+    width: 50%;
+}
+.textoMetricas {
+
+    font-size: 30px;
+    color:  rgb(176, 128, 103);
+}
+
+.metricaInput {
+
+    display: flex;
+    flex-direction: column;
+    margin-right: 9%;
+    margin-bottom: 4%;
+    font-size: 17px;   
+}
+
+.wrapMetricas {
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 120px;
+    width: 108%;
+    color: rgb(102, 102, 102);
+    margin-top: 2%;
+}
+
+.media {
+
+    margin-top: 11%;
+    width: 250px;
+    font-size: 17px;
+}
