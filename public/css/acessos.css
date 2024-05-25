@@ -114,21 +114,25 @@ body {
     justify-content: flex-end;
 }
 
-.novoSupervisorButtom {
+.divButtonPdf  {
+    margin-left: 80%;
+}
+
+.gerarPdfButton {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: #666666;
     border: none;
     transition: all .4s ease-in-out;
     cursor: pointer;
-    width: 220px;
+    width: 130px;
     height: 50px;
     font-size: 15px;
     font-weight: bold;
     color: #fff;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .novoSupervisorButtom:hover {
@@ -149,15 +153,15 @@ body {
     border-radius: 20px;
     color: #B08067;
     font-weight: bold;
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 60%;
     background-color: #fff;
 }
 
 .supervisoresTitulo {
     height: 20%;
-    font-size: 40px;
-    margin-top: 5%;
+    font-size: 50px;
+    
 }
 
 .dadosSupervisoresContainer {
