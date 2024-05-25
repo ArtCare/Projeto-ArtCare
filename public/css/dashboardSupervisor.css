@@ -42,7 +42,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
     width: 100%;
     height: 100%;
     margin-top: 50%;
@@ -132,10 +131,11 @@ body {
 }
 
 .novoSupervisorButtom:hover {
-    background-color: rgb(176, 128, 103);
+    background-color: #B08067;
     border: 2px solid #fff;
 }
-.novoSupervisorButtom:active{
+
+.novoSupervisorButtom:active {
     transform: scale(.95);
 }
 
@@ -151,7 +151,7 @@ body {
     width: 50%;
     height: 50%;
     background-color: #fff;
-   
+
 }
 
 .supervisoresTitulo {
@@ -219,13 +219,13 @@ body {
 .edit {
     color: #B08067;
     border-color: transparent;
-    background-color: #F5F5F5;
+    background-color: #F1EFF7;
 }
 
 .del {
     color: #B08067;
     border-color: transparent;
-    background-color: #F5F5F5;
+    background-color: #F1EFF7;
 }
 
 .edit:hover {
