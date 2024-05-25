@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtCare - Dashboard</title>
+    <link rel="stylesheet" href="../css/acessos.css">
+    <link rel="icon" href="../assets/svg/artcareLogoMini.svg">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu">
+        <img src="../assets/svg/artcareBrownLogo2.svg" class="logo">
+
+        <div class="divOptions">
+            <div class="PrimaryScreens">
+                <button class="option" onclick="navigateToHome()">
+                    <i class="fa-solid fa-house fa-xl menuicon "></i> <span class="menuOption ">Dashboard</span>
+                </button>
+                <button class="option" onclick="navigateToSectors()">
+                    <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
+                </button>
+
+                <button class="option onScreen">
+                    <i class="fa-solid fa-user fa-xl menuicon onScreenColors"></i> <span
+                        class="menuOption onScreenColors">Supervisores</span>
+                </button>
+
+            </div>
+
+            <button class="option logout" onclick="logout()">
+                <i class="fa-solid fa-power-off fa-2xl menuicon"></i> <span class="optionLogout">Sair</span>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
