@@ -1,451 +1,416 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 body {
-    margin: 0;
-    background-color: #F1EFF7;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    font-family: "Caladea";
+  margin: 0;
+  background-color: #f1eff7;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  font-family: "Caladea";
 }
 
 .menu {
-    width: 250px;
-    height: 100vh;
+  width: 250px;
+  height: 100vh;
 
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: #b8b3ae 0 5px 20px;
-    border-right: 2px #A5A5A5 solid;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: #b8b3ae 0 5px 20px;
+  border-right: 2px #a5a5a5 solid;
 }
 
 .logo {
-    width: 180px;
-    margin-top: 20px;
+  width: 180px;
+  margin-top: 20px;
 }
 
 .PrimaryScreens {
-    display: flex;
-    flex-direction: column;
-    height: 30%;
-    width: 100%;
-    justify-content: space-between;
-    align-items: flex-end;
-
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .divOptions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
-    width: 100%;
-    height: 100%;
-    margin-top: 50%;
-    margin-bottom: 10%;
-    background-color: transparent;
+  width: 100%;
+  height: 100%;
+  margin-top: 50%;
+  margin-bottom: 10%;
+  background-color: transparent;
 }
 
 .option {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    margin-top: 4%;
-    transition: all .4s ease-in-out;
-    height: 70px;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: 4%;
+  transition: all 0.4s ease-in-out;
+  height: 70px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
 
 .menuOption {
-    font-family: "Poppins";
-    font-size: 18px;
-    font-weight: 600;
-    margin-right: 30px;
-    text-align: start;
-    width: 100px;
-    color: #666666;
-
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 30px;
+  text-align: start;
+  width: 100px;
+  color: #666666;
 }
 
 .menuicon {
-    color: #666666;
-    margin-inline: 10px;
-
+  color: #666666;
+  margin-inline: 10px;
 }
 
 .secondaryOptions {
-    display: flex;
-    flex-direction: column;
-    height: 20%;
-    width: 90%;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+  width: 90%;
+  justify-content: space-between;
 }
 
 .onScreen {
-    box-shadow: #666666 0 2px 6px;
-    background-color: #B08067;
-
+  box-shadow: #666666 0 2px 6px;
+  background-color: #b08067;
 }
 
 .option:hover {
-    background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .onScreen:hover {
-    background-color: #c58f72;
+  background-color: #c58f72;
 }
 
 .onScreenColors {
-    color: #fff;
+  color: #fff;
 }
 
 .logout {
-    width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    border-radius: 50px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50px;
 
-    transition: all .4s ease-in-out;
-    height: 60px;
+  transition: all 0.4s ease-in-out;
+  height: 60px;
 }
 
 .optionLogout {
-    font-family: "Poppins";
-    font-size: 22px;
-    font-weight: 700;
-    color: #666666;
+  font-family: "Poppins";
+  font-size: 22px;
+  font-weight: 700;
+  color: #666666;
 }
 
 .divButtonCadastro {
-    display: flex;
-    justify-content: flex-end;
-    width: 48%;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  width: 48%;
+  margin-bottom: 20px;
 }
 
 .buttonCadastro {
-    height: 60px;
-    width: 200px;
-    background-color: #666666;
-    font-weight: bold;
-    color: white;
-    border-radius: 10px;
-    border: none;
-    font-size: 16px;
-    box-shadow: #b8b3ae 0 5px 20px;
-    transition: all .5s ease-in-out;
+  height: 60px;
+  width: 200px;
+  background-color: #666666;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  box-shadow: #b8b3ae 0 5px 20px;
+  transition: all 0.5s ease-in-out;
 }
 
-.buttonCadastro:active{
-    transform: scale(.95);
+.buttonCadastro:active {
+  transform: scale(0.95);
 }
 
 .setoresMuseus {
-
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h2 {
-    color: #B08067;
-    font-size: 40px;
-    margin-left: 50px;
-    font-weight: bold;
+  color: #b08067;
+  font-size: 40px;
+  margin-left: 50px;
+  font-weight: bold;
 }
 
 h4 {
-    color: #666666;
-    margin: 0 0 0 50px;
-    font-weight: 300;
+  color: #666666;
+  margin: 0 0 0 50px;
+  font-weight: 300;
 }
 
-
 .setoresText {
-    margin-top: 30px;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
+  margin-top: 30px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .setoresText span {
-    color: #666666;
-    font-weight: 800;
-    font-size: 20px;
-
-
+  color: #666666;
+  font-weight: 800;
+  font-size: 20px;
 }
 
 .setores {
-    width: 48%;
-    height: 55%;
-    box-shadow: #b8b3ae 0 5px 20px;
-    border-radius: 20px;
-    background-color: #FFF;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 48%;
+  height: 55%;
+  box-shadow: #b8b3ae 0 5px 20px;
+  border-radius: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .caption {
-    width: 104%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  width: 104%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .buttonSetor {
-    width: 200px;
-    height: 36px;
-    border-radius: 30px;
-    border: none;
-    background-color: #666666;
-    color: #FFF;
-    font-size: 16px;
-    font-weight: 700;
-    justify-content: space-around;
-    align-items: center;
-    transition: all .5s ease-in-out;
+  width: 200px;
+  height: 36px;
+  border-radius: 30px;
+  border: none;
+  background-color: #666666;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
 }
 
-.buttonSetor:active{
-    transform: scale(.95);
+.buttonSetor:active {
+  transform: scale(0.95);
 }
 #modal {
-
-    width: 800px;
-    height: 450px;
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    font-family: 'Caladea';
-    font-weight: bold;
-    border: none;
+  width: 800px;
+  height: 450px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: "Caladea";
+  font-weight: bold;
+  border: none;
 }
 
 .containerModal {
-
-    width: 100%;
-    height: 400px;
+  width: 100%;
+  height: 400px;
 }
 
 .botaoModal {
-    
-    margin-left: 43%;
-    height: 20px;
-    margin-top: 3%;
-    border-radius: 25px;
-    width: 127px;
-    font-size: 17px;
-    height: 32px;
-    border: none;
-    background-color: rgb(102, 102, 102);
-    color: white;
-    transition: all .4s ease-in-out;
-    cursor: pointer;
-    font-family: 'Caladea';
-    font-weight: bold;
+  margin-left: 43%;
+  height: 20px;
+  margin-top: 3%;
+  border-radius: 25px;
+  width: 127px;
+  font-size: 17px;
+  height: 32px;
+  border: none;
+  background-color: rgb(102, 102, 102);
+  color: white;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  font-family: "Caladea";
+  font-weight: bold;
 }
 
 .botaoModal:hover {
-
-    background-color: rgb(176, 128, 103) ;
-    border: 2px solid #fff;
+  background-color: rgb(176, 128, 103);
+  border: 2px solid #fff;
 }
 
 .cadastrarModal {
-
-    display: flex;
-    justify-content: center; 
-    font-size: 30px;
-    color:  rgb(176, 128, 103);
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  color: rgb(176, 128, 103);
 }
 
 .dadosDoSetor {
-
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 45px;
-    margin-left: 75px;
-    width: 650px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 45px;
+  margin-left: 75px;
+  width: 650px;
 }
-
 
 .nome {
-
-    display: flex;
-    flex-direction: column;
-    color: rgb(102, 102, 102);
-    font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(102, 102, 102);
+  font-size: 18px;
 }
 
-.andar {    
-    display: flex;
-    flex-direction: column;
-    color: rgb(102, 102, 102);
-    font-size: 18px;
+.andar {
+  display: flex;
+  flex-direction: column;
+  color: rgb(102, 102, 102);
+  font-size: 18px;
 }
-
 
 .setor {
-
-    margin-top: 10px;
-    font-size: 30px;
-    color:  rgb(176, 128, 103);
-    margin-right: 20px;
-    margin-top: 3%;
+  margin-top: 10px;
+  font-size: 30px;
+  color: rgb(176, 128, 103);
+  margin-right: 20px;
+  margin-top: 3%;
 }
 
-.inputDadosSetor{
-
-    border: 2px solid  rgb(176, 128, 103);
-    height: 27px;
-    border-radius: 5px;
-    width: 180px;
-    box-shadow: #807f7f 0 2px 2px;
-    margin-top: 5px;   
+.inputDadosSetor {
+  border: 2px solid rgb(176, 128, 103);
+  height: 27px;
+  border-radius: 5px;
+  width: 180px;
+  box-shadow: #807f7f 0 2px 2px;
+  margin-top: 5px;
 }
 
 .containerModal2 {
-
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .metricas {
-
-    margin-top: 6%;
-    width: 50%;
+  margin-top: 6%;
+  width: 50%;
 }
 .textoMetricas {
-
-    font-size: 30px;
-    color:  rgb(176, 128, 103);
+  font-size: 30px;
+  color: rgb(176, 128, 103);
 }
 
 .metricaInput {
-
-    display: flex;
-    flex-direction: column;
-    margin-right: 9%;
-    margin-bottom: 4%;
-    font-size: 17px;   
+  display: flex;
+  flex-direction: column;
+  margin-right: 9%;
+  margin-bottom: 4%;
+  font-size: 17px;
 }
 
 .wrapMetricas {
-
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: 120px;
-    width: 108%;
-    color: rgb(102, 102, 102);
-    margin-top: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 120px;
+  width: 108%;
+  color: rgb(102, 102, 102);
+  margin-top: 2%;
 }
 
 .media {
-
-    margin-top: 11%;
-    width: 250px;
-    font-size: 17px;
+  margin-top: 11%;
+  width: 250px;
+  font-size: 17px;
 }
 .textoMedia {
-
-    display: flex;
-    flex-direction: column;
-    color: rgb(102, 102, 102);
+  display: flex;
+  flex-direction: column;
+  color: rgb(102, 102, 102);
 }
 
 .botoesCadastroSetor {
-
-    width: 100%;
+  width: 100%;
 }
 
 .botaoMetricaSim {
-
-    border-radius: 20px;
-    width: 80px;
-    height: 30px;
-    border: none;
-    border: none;
-    background-color: rgb(102, 102, 102);
-    color: white;
-    transition: all .4s ease-in-out;
-    cursor: pointer;;
-    font-size: 15px;
-    font-family: 'Caladea';
-    font-weight: bold;
+  border-radius: 20px;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border: none;
+  background-color: rgb(102, 102, 102);
+  color: white;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: "Caladea";
+  font-weight: bold;
 }
 
 .botaoMetricaSim:hover {
-
-    
-    background-color: rgb(176, 128, 103) ;
-    border: 2px solid #fff;
+  background-color: rgb(176, 128, 103);
+  border: 2px solid #fff;
 }
 
-
 .botaoMetricaNao {
-    
-    margin-left: 7px;
-    border-radius: 20px;
-    width: 80px;
-    height: 30px;
-    border: none;
-    border: none;
-    background-color: rgb(102, 102, 102);
-    color: white;
-    transition: all .4s ease-in-out;
-    cursor: pointer;
-    font-size: 15px;
-    font-family: 'Caladea';
-    font-weight: bold;
+  margin-left: 7px;
+  border-radius: 20px;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border: none;
+  background-color: rgb(102, 102, 102);
+  color: white;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: "Caladea";
+  font-weight: bold;
 }
 
 .botaoMetricaNao:hover {
-    
-    background-color: rgb(176, 128, 103) ;
-    border: 2px solid #fff;
+  background-color: rgb(176, 128, 103);
+  border: 2px solid #fff;
 }
-
 
 .inputMetrica {
-
-    height: 25.5px;
-    border-radius: 5px;
-    width: 142px;
-    border: 2px solid  rgb(176, 128, 103);
-    box-shadow: #807f7f 0 2px 2px;
-    margin-top: 5px;
-    padding-left: 18px;
-    background: url("https://static.vecteezy.com/ti/vetor-gratis/p3/16831773-de-icone-de-cadeado-vetor.jpg") no-repeat left;
-    background-size: 20px;  
+  height: 25.5px;
+  border-radius: 5px;
+  width: 142px;
+  border: 2px solid rgb(176, 128, 103);
+  box-shadow: #807f7f 0 2px 2px;
+  margin-top: 5px;
+  padding-left: 18px;
+  background: url("https://static.vecteezy.com/ti/vetor-gratis/p3/16831773-de-icone-de-cadeado-vetor.jpg")
+    no-repeat left;
+  background-size: 20px;
 }
 
-::placeholder{
-
-    font-size: 12px;
-    padding-left: 5px;
-    font-family: 'Caladea';
-    font-weight: bold;
+::placeholder {
+  font-size: 12px;
+  padding-left: 5px;
+  font-family: "Caladea";
+  font-weight: bold;
 }
 
-    
-
-
+dialog[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
