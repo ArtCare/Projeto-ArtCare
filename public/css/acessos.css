@@ -144,6 +144,23 @@ body {
     transform: scale(.95);
 }
 
+.acessosSpans {
+    width: 50%;
+    padding-right: 20%;
+    margin-bottom: 20px;
+}
+
+.relatorioSetores {
+    font-size: 24px;
+    color: #666666;
+    margin-right: 30px;
+}
+
+.relatorioAcesso {
+    font-size: 24px;
+    color: #B08067;
+}
+
 .supervisores {
     display: flex;
     flex-direction: column;
@@ -207,6 +224,11 @@ body {
     font-size: 20px;
     font-family: "Caladea";
     font-weight: 400;
+}
+
+.dataHora {
+    font-style: italic;
+    color: #817e7e;
 }
 
 .content {
