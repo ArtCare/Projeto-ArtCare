@@ -51,7 +51,7 @@ canvas {
 .PrimaryScreens {
     display: flex;
     flex-direction: column;
-    height: 30%;
+    height: 35%;
     width: 100%;
     justify-content: space-between;
     align-items: flex-end;
@@ -66,8 +66,7 @@ canvas {
 
     width: 100%;
     height: 100%;
-    margin-top: 50%;
-    margin-bottom: 10%;
+    margin-top: 30%;
     background-color: transparent;
 }
 
@@ -79,9 +78,8 @@ canvas {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    margin-top: 4%;
     transition: all .4s ease-in-out;
-    height: 70px;
+    height: 120px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }

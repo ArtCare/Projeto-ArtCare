@@ -27,6 +27,9 @@
                 <button class="option" onclick="navigateToSupervisor()">
                     <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
                 </button>
+                <button class="option" onclick="navigateToRelatorio()">
+                    <i class="fa-solid fa-rectangle-list fa-xl menuicon"></i> <span class="menuOption">Relatórios</span>
+                </button>
 
             </div>
 
@@ -129,13 +132,16 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script> AOS.init(); </script>
 <script>
-    function navigateToHome(){
+    function navigateToHome() {
         location.replace("./dashboard.html")
     }
-    function navigateToSectors(){
+    function navigateToSectors() {
         location.replace("./setores.html")
     }
-    function navigateToSupervisor(){
+    function navigateToSupervisor() {
         location.replace("./supervisor.html")
+    }
+    function navigateToRelatorio() {
+        location.replace("./relatorio.html")
     }
 </script>

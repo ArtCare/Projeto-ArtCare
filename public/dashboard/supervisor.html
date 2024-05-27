@@ -22,10 +22,12 @@
                 <button class="option" onclick="navigateToSectors()">
                     <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
                 </button>
-
                 <button class="option onScreen">
                     <i class="fa-solid fa-user fa-xl menuicon onScreenColors"></i> <span
                         class="menuOption onScreenColors">Supervisores</span>
+                </button>
+                <button class="option" onclick="navigateToRelatorio()">
+                    <i class="fa-solid fa-rectangle-list fa-xl menuicon"></i> <span class="menuOption">Relatórios</span>
                 </button>
 
             </div>
@@ -150,5 +152,8 @@
     }
     function navigateToSupervisor() {
         location.replace("./supervisor.html")
+    }
+    function navigateToRelatorio() {
+        location.replace("./relatorio.html")
     }
 </script>

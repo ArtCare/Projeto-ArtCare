@@ -22,10 +22,12 @@
                 <button class="option" onclick="navigateToSectors()">
                     <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
                 </button>
-
+                
+                <button class="option" onclick="navigateToSupervisor()">
+                    <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
+                </button>
                 <button class="option onScreen">
-                    <i class="fa-solid fa-user fa-xl menuicon onScreenColors"></i> <span
-                        class="menuOption onScreenColors">Supervisores</span>
+                    <i class="fa-solid fa-rectangle-list fa-xl menuicon onScreenColors"></i> <span class="menuOption onScreenColors">Relatórios</span>
                 </button>
 
             </div>
@@ -76,21 +78,6 @@
                     <span class="email">mauro.galvao@louvre.frc</span>
                     <span class="dataHora">19/07/2024 - 19:35:22</span>
                 </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <span class="dataHora">19/07/2024 - 19:35:22</span>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <span class="dataHora">19/07/2024 - 19:35:22</span>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <span class="dataHora">19/07/2024 - 19:35:22</span>
-                </div>
             </div>
         </div>
     </div>
@@ -107,5 +94,8 @@
     }
     function navigateToSupervisor() {
         location.replace("./supervisor.html")
+    }
+    function navigateToRelatorio() {
+        location.replace("./relatorio.html")
     }
 </script>

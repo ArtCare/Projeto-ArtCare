@@ -113,7 +113,7 @@ insert into setor (fkSensor, fkMuseu, fkVerificacao, nome, andar, statusSetor) v
 (1, 1, 1, 'Arte Romana', 1, 3);
 
 insert into registro (fkSensor, temperatura, umidade) values
-(1, 30.00, 26.00);
+(1, 31.00, 26.00);
 
 select * from representante;
 insert into representante (fkMuseu, nome, email, senha) values 
@@ -131,6 +131,8 @@ select * from setor where statusSetor = 3;
 select count(statusSetor) from setor where statusSetor = 2;
 
 select round((umidade),0), round((temperatura),0) from setor join sensor on setor.fkSensor = idSensor join registro on registro.fkSensor = idSensor where idSetor = 3 order by idRegistro DESC limit 1;
+
+select max(temperatura) from setor join registro on setor.fkSensor = registro.fkSensor;
 
 select * from museu;
 select * from endereco;

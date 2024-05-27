@@ -148,7 +148,7 @@ function buscarCapturas() {
             umidade.textContent = `${res[0].umidade}%`
             // registrosTemperatura.push(res[0].temperatura)
             // registrosUmidade.push(res[0].umidade)
-               registrosTemperatura.push(Math.floor(Math.random() * 29) + 3)
+            registrosTemperatura.push(Math.floor(Math.random() * 29) + 3)
             registrosUmidade.push(Math.floor(Math.random() * 52) + 8)
             tempoRegistro.push(res[0].tempo)
 

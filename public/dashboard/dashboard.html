@@ -27,9 +27,10 @@
                 <button class="option" onclick="navigateToSupervisor()">
                     <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
                 </button>
-
+                <button class="option" onclick="navigateToRelatorio()">
+                    <i class="fa-solid fa-rectangle-list fa-xl menuicon"></i> <span class="menuOption">Relatórios</span>
+                </button>
             </div>
-
 
             <button class="option logout" onclick="logout()">
                 <i class="fa-solid fa-power-off fa-2xl menuicon"></i> <span class="optionLogout">Sair</span>
@@ -106,5 +107,8 @@
     }
     function navigateToSupervisor() {
         location.replace("./supervisor.html")
+    }
+    function navigateToRelatorio() {
+        location.replace("./relatorio.html")
     }
 </script>
