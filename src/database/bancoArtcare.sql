@@ -27,14 +27,15 @@ create table museu (
 );
 
 create table representante (
-idRepresentante int primary key auto_increment,
+idRepresentante int,
 fkMuseu int,
-foreign key (fkMuseu) references museu(idMuseu),
+	constraint pkRepresentanteMuseu primary key (idRepresentante, fkMuseu),
+    constraint fkMuseuRepresentante foreign key (fkMuseu)
+		references museu(idMuseu),
 nome varchar(45) not null,
-email varchar(256) not null,	 	
+email varchar(256) not null,
 senha varchar(45) not null
 );
-
 
 create table sensor (
 	idSensor int primary key auto_increment,
@@ -59,7 +60,6 @@ create table setor (
     fkVerificacao int,
     nome varchar(45) not null,
     andar int not null,
-    statusSetor int,
     constraint pkCompostaSetor primary key (idSetor, fkSensor, fkMuseu, fkVerificacao),
     constraint fkSensorDoSetor foreign key (fkSensor) references sensor (idSensor),
     constraint fkMuseuDoSetor foreign key (fkMuseu) references museu (idMuseu),
@@ -77,6 +77,19 @@ fkSupervisor int,
     constraint fkSensorVisualizacao foreign key (fkSensor) references sensor(idSensor),
     constraint fkMuseuVisualizacao foreign key (fkMuseu) references museu(idMuseu),
     constraint fkSupervisor foreign key (fkSupervisor) references supervisor(idSupervisor)
+);
+
+create table relatorio2 (
+idRelatorio int
+);
+
+create table relatorio (
+idRelatorio int auto_increment primary key,
+fkSupervisor int,
+fkSetor int,
+dataHora datetime,
+constraint fkRelatorioSupervisor foreign key (fkSupervisor) references supervisor(idSupervisor),
+constraint fkrelatorioSetor foreign key (fkSetor) references setor(idSetor)
 );
 
 create table registro (
@@ -100,44 +113,74 @@ insert into endereco (cep, numEnd, complemento) values
 insert into museu (fkEndereco, nome, cnpj, rm) values
 (1, 'masp', '12345678909876', '520485530');
 
+insert into representante (fkMuseu, nome, email, senha) values 
+(1, "Julia", "juliaararipe@gmail.com", "12345678");
+
 insert into sensor (nome, tipo) values
 ('dht11', 'temperatura, umidade');
 
 insert into supervisor (nome, email, senha, permissao) values
 ('bruno', 'bruno.oliveira@gmail.com', 'Bruninho321', 'sim');
 
-insert into setor (fkSensor, fkMuseu, fkVerificacao, nome, andar, statusSetor) values
-(1, 1, 1, 'Arte grega', 2, 3),
-(1, 1, 1, 'Esculturas', 7, 2),
-(1, 1, 1, 'Antiguidades egipcias', 2, 1),
-(1, 1, 1, 'Arte Romana', 1, 3);
+insert into setor (fkSensor, fkMuseu, fkVerificacao, nome, andar) values
+(1, 1, 1, 'galeria de arte', 12);
 
-insert into registro (fkSensor, temperatura, umidade) values
-(1, 30.00, 26.00);
+insert into registro (fkSensor, umidade, temperatura) values
+(1, 20.00, 42.00);
 
-select * from representante;
-insert into representante (fkMuseu, nome, email, senha) values 
-(1, "Julia", "juliaararipe@gmail.com", "12345678");
+desc relatorio;
+
+insert into relatorio (fkSupervisor, fkSetor, dataHora) values
+(1, 1, "2024-05-10 10:30:00"),
+(1, 1, "2024-05-10 16:30:00"),
+(1, 1, "2024-05-10 20:00:00"),
+(1, 1, "2024-05-11 03:30:00"),
+(1, 1, "2024-05-11 09:30:00"),
+(1, 1, "2024-05-11 10:00:00"),
+(1, 1, "2024-05-12 16:50:00"),
+(1, 1, "2024-05-12 07:30:00"),
+(1, 1, "2024-04-12 07:40:00"),
+(1, 1, "2024-05-13 17:30:00"),
+(1, 1, "2024-05-13 18:30:00"),
+(1, 1, "2024-05-13 20:00:00");
+select * from museu;
+select * from endereco;
+select * from supervisor;
+select * from relatorio;
+select * from setor;
+select * from sensor;
+select * from registro;
+select * from verificacao;
+
+select supervisor.nome as "Nome do Supervisor", setor.nome as "nome do Setor", dataHora from relatorio JOIN supervisor ON fkSupervisor = idSupervisor
+	JOIN setor ON fkSetor = idSetor;
+    
+
+select supervisor.nome as "Nome do Supervisor", setor.nome as "nome do Setor", dataHora from relatorio JOIN supervisor ON fkSupervisor = idSupervisor
+	JOIN setor ON fkSetor = idSetor where dataHora = "2024-05-13 20:00:00";
+
+select setor.idSetor, setor.nome, umidade, temperatura from setor JOIN sensor on fkSensor = idSensor
+	JOIN registro ON sensor.idSensor = registro.fkSensor where dtRegistro = "2024-05-26 19:41:27";
 
 SELECT idMuseu FROM museu ORDER BY idMuseu DESC LIMIT 1;
 
-delete from museu where idMuseu = 15;
-truncate representante;
-select * from museu;
 select idSetor, nome, statusSetor from setor order by statusSetor DESC;
-
 
 select * from setor where statusSetor = 3;
 select count(statusSetor) from setor where statusSetor = 2;
 
-select round((umidade),0), round((temperatura),0) from setor join sensor on setor.fkSensor = idSensor join registro on registro.fkSensor = idSensor where idSetor = 3 order by idRegistro DESC limit 1;
+select round((umidade),0), round((temperatura),0) 
+	from setor join sensor on setor.fkSensor = idSensor 
+		join registro on registro.fkSensor = idSensor where idSetor = 3 order by idRegistro DESC limit 1;
+        
+alter table verificacao
+add column alertaTempMax decimal(4,2);
 
-select * from museu;
-select * from endereco;
-select * from supervisor;
-select * from representante;
-select * from setor;
-select * from sensor;
-select * from registro;
-select temperatura from registro;
-select * from verificacao;
+alter table verificacao
+add column alertaTempMin decimal(4,2);
+
+alter table verificacao
+add column alertaUmiMax decimal(4,2);
+
+alter table verificacao
+add column alertaUmiMin decimal(4,2);
