@@ -34,6 +34,7 @@ function ValidarLogin() {
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.NOME_USUARIO = json.nome;
                         sessionStorage.ID_USUARIO = json.idRepresentante;
+                        sessionStorage.FK_MUSEU = json.fkMuseu;
 
                         setTimeout(() => {
                             window.location = "./dashboard/dashboard.html"

@@ -40,108 +40,47 @@
 
     <div class="content">
         <div class="novoSupervisor">
-            <button class="novoSupervisorButtom" onclick="cadastrar()">Cadastrar novo Supervisor</button>
+            <button class="novoSupervisorButtom" onclick="novoSupervisor()"">Cadastrar novo Supervisor</button>
         </div>
-        <div class="supervisores">
-            <span class="supervisoresTitulo">Supervisores</span>
-            <div class="dadosSupervisoresContainer">
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <button class="edit">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
-                    <button class="del">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <button class="edit">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
-                    <button class="del">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <button class="edit">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
-                    <button class="del">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <button class="edit">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
-                    <button class="del">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <button class="edit">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
-                    <button class="del">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <button class="edit">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
-                    <button class="del">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <button class="edit">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
-                    <button class="del">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <button class="edit">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
-                    <button class="del">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <button class="edit">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
-                    <button class="del">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-            </div>
+        <div class=" supervisores">
+                <span class="supervisoresTitulo">Supervisores</span>
+                <div id="dadosSupervisoresContainer" class="dadosSupervisoresContainer"></div>
+                <dialog id="modalSupervisor">
+                    <div class="container-modalSupervisor">
+                        <span class="cadastrarSupervisor">
+                            Cadastrar novo supervisor
+                        </span>
+                        <span class="dadosDoSupervisor">
+                            Dados do supervisor
+                        </span>
+                        <div class="flihoSupervisor">
+                            <span class="inputSupervisor">
+                                Nome
+                                <input type="text" placeholder="Nome do supervisor" class="inputDadosSupervisor"
+                                    id="input_nomeSupervisor">
+                            </span>
+                            <span class="inputSupervisor">
+                                Email
+                                <input type="text" placeholder="mauro.galvao@louvre.museu" class="inputDadosSupervisor"
+                                    id="input_emailSupervisor">
+                            </span>
+                            <span class="inputSupervisor">
+                                Senha
+                                <input type="password" placeholder="******" class="inputDadosSupervisor"
+                                    id="input_senhaSupervisor">
+                            </span>
+                        </div>
+                        <div class="divBotaoCadastroSupervisor">
+                            <button class="botaoCadastroSupervisor" onclick="cadastrarSupervisor()">Cadastrar</button>
+                        </div>
+                    </div>
+                </dialog>
         </div>
     </div>
 </body>
 
 </html>
-
+<script src="../js/supervisor.js"></script>
 <script src="https://kit.fontawesome.com/77b47374b3.js" crossorigin="anonymous"></script>
 <script>
     function navigateToHome() {
