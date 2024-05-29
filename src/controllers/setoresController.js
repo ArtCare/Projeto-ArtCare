@@ -82,7 +82,21 @@ function buscarMetricasSetor(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
-
+function novoSetor(req, res) {
+    const fkSensor = req.params.fkSensor
+ fkMuseu, nome, andar, statusSetor
+    setoresModel.buscarMetricasSetor(idSetor).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
 
 module.exports = {
     buscarSetores,
@@ -90,5 +104,7 @@ module.exports = {
     buscarSetoresAlerta,
     buscarDadosSetor,
     buscarCapturasSetor,
-    buscarMetricasSetor
+    buscarMetricasSetor,
+    novoSetor,
+    novaVerificacao
 }

@@ -16,12 +16,12 @@
 
         <div class="divOptions">
             <div class="PrimaryScreens">
-                <button class="option "onclick="navigateToHome()">
-                    <i class="fa-solid fa-house fa-xl menuicon "></i> <span
-                        class="menuOption  ">Dashboard</span>
+                <button class="option " onclick="navigateToHome()">
+                    <i class="fa-solid fa-house fa-xl menuicon "></i> <span class="menuOption  ">Dashboard</span>
                 </button>
                 <button class="option onScreen">
-                    <i class="fa-solid fa-vector-square fa-xl menuicon onScreenColors"></i> <span class="menuOption onScreenColors">Setores</span>
+                    <i class="fa-solid fa-vector-square fa-xl menuicon onScreenColors"></i> <span
+                        class="menuOption onScreenColors">Setores</span>
                 </button>
 
                 <button class="option" onclick="navigateToSupervisor()">
@@ -48,16 +48,8 @@
                 <h2>Setores</h2>
                 <h4><i>Nome</i></h4>
             </div>
-            <div class="setoresText">
-                <span>Antiguidades egípcias</span> <button class="buttonSetor">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-            <div class="setoresText">
-                <span>Arte grega, romana e etrusca</span> <button class="buttonSetor">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-            <div class="setoresText">
-                <span>Esculturas</span> <button class="buttonSetor">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-,        </div>
+            <div class="setoresDiv" id="setores"></div>
+        </div>
     </div>
     <dialog id="modal">
         <div class="containerModal">
@@ -79,45 +71,45 @@
             </div>
 
             <div class="containerModal2">
-            <div class="metricas">
-                <span class="textoMetricas">
-                    Métricas
-                </span>
-                <div class="wrapMetricas">
-                    <div class="metricaInput">
-                        Umidade Mínima
-                        <input class="inputMetrica" placeholder="40%" type="text" id="input_umidade_minima">
+                <div class="metricas">
+                    <span class="textoMetricas">
+                        Métricas
+                    </span>
+                    <div class="wrapMetricas">
+                        <div class="metricaInput">
+                            Umidade Mínima
+                            <input class="inputMetrica" placeholder="40%" type="text" id="input_umidade_minima">
+                        </div>
+                        <div class="metricaInput">
+                            Temperatura Mínima
+                            <input class="inputMetrica" placeholder="18°C" type="text" id="input_temperatura_minima">
+                        </div>
+                        <div class="metricaInput">
+                            Umidade Máxima
+                            <input class="inputMetrica" placeholder="45°C" type="text" id="input_umidade_maxima">
+                        </div>
+                        <div class="metricaInput">
+                            Temperatura Máxima
+                            <input class="inputMetrica" placeholder="24°C" type="text" id="input_umidade_minima">
+                        </div>
                     </div>
-                    <div class="metricaInput">
-                        Temperatura Mínima
-                        <input class="inputMetrica" placeholder="18°C" type="text" id="input_temperatura_minima">
-                    </div>
-                    <div class="metricaInput">
-                        Umidade Máxima
-                        <input class="inputMetrica" placeholder="45°C" type="text" id="input_umidade_maxima">
-                    </div>
-                    <div class="metricaInput">
-                        Temperatura Máxima
-                        <input class="inputMetrica" placeholder="24°C" type="text" id="input_umidade_minima">
+                </div>
+                <div class="media">
+                    <span class="textoMedia">
+                        Em média a temperatura de um
+                        setor deve estar entre 18 e 24
+                        graus celsius e a umidade entre
+                        40 e 45 porcento
+                        <p>
+                            Deseja alterar essas métricas ?
+                        </p>
+                    </span>
+                    <div class="botoesCadastroSetor">
+                        <button class="botaoMetricaSim" onclick="botaoMetricaSim()">SIM</button>
+                        <button class="botaoMetricaNao" onclick="botaoMetricaNao()">NÃO</button>
                     </div>
                 </div>
             </div>
-            <div class="media">
-                <span class="textoMedia">
-                    Em média a temperatura de um 
-                    setor deve estar entre 18 e 24 
-                    graus celsius e a umidade entre
-                    40 e 45 porcento 
-                <p>
-                    Deseja alterar essas métricas ?
-                </p>
-                </span>
-                <div class="botoesCadastroSetor">
-                <button class="botaoMetricaSim" onclick="botaoMetricaSim()">SIM</button>
-                <button class="botaoMetricaNao" onclick="botaoMetricaNao()">NÃO</button>
-                </div>
-            </div>
-        </div>
             <button class="botaoModal" onclick="close()">Cadastrar</button>
         </div>
     </dialog>

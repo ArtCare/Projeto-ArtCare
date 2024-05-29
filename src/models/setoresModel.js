@@ -31,7 +31,18 @@ function buscarCapturasSetor(idSetor){
 }
 function buscarMetricasSetor(idSetor){
     var instrucaoSql = `select tempMax as temperaturaMaxima, tempMin as temperaturaMinima, umiMax as umidadeMaxima, umiMin as umidadeMinima
-    from verificacao join setor on idVerificacao = fkVerificacao where idSetor = ${idSetor};`;
+    from verificacao where fkSetor = ${idSetor};`;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function novoSetor(fkMuseu, nome, andar, statusSetor){
+    var instrucaoSql = `insert into setor (fkMuseu, nome, andar, statusSetor) values (${fkSensor}, ${fkMuseu}, '${nome}', '${andar}', ${statusSetor});`;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+function novaVerificacao(tempMax, tempMin, umiMax, umiMin, fkSetor){
+    var instrucaoSql = `insert into verificacao (tempMax, tempMin, umiMax, umiMin, fkSetor) values (${tempMax}, ${tempMin}, '${umiMax}', '${umiMin}', ${fkSetor});`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
@@ -42,5 +53,7 @@ module.exports = {
     buscarSetoresAlerta,
     buscarDadosSetor,
     buscarCapturasSetor,
-    buscarMetricasSetor
+    buscarMetricasSetor,
+    novoSetor,
+    novaVerificacao
 }
