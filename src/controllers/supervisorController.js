@@ -11,7 +11,7 @@ function cadastrarSupervisor(req, res) {
   var fkMuseu = req.params.fkMuseu;
   var nome = req.body.nome;
   var email = req.body.email;
-  var senha = req.body.email;
+  var senha = req.body.senha;
 
   supervisorModel.buscarPorEmail(email).then((resultado) => {
     if (resultado.length > 0) {

@@ -6,29 +6,33 @@ const nome = document.querySelector("#input_nomeSupervisor")
 const email = document.querySelector("#input_emailSupervisor")
 const senha = document.querySelector("#input_senhaSupervisor")
 
-
-fetch(`/supervisor/buscarSupervisor/${fkMuseu}`).then(res => {
-    res.json().then(res => {
-        for (posicao = 0; posicao < res.length; posicao++) {
-            dadosSupervisoresContainer.innerHTML += `
-            <div class="dadosSupervisores">
-            <span class="nameSupervisor">${res[posicao].nome}</span>
-            <span class="email">${res[posicao].email}</span>
-            <button class="edit">
-                <i class="fa-solid fa-pen"></i>
-            </button>
-            <button class="del">
-                <i class="fa-solid fa-trash"></i>
-            </button>
-        </div>
-            `
-        }
+buscarSupervisor()
+function buscarSupervisor(){
+    dadosSupervisoresContainer.innerHTML = ""
+    fetch(`/supervisor/buscarSupervisor/${fkMuseu}`).then(res => {
+        res.json().then(res => {
+            for (posicao = 0; posicao < res.length; posicao++) {
+                dadosSupervisoresContainer.innerHTML += `
+                <div class="dadosSupervisores">
+                <span class="nameSupervisor">${res[posicao].nome}</span>
+                <span class="email">${res[posicao].email}</span>
+                <button class="edit">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="del">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+                `
+            }
+        })
     })
-})
+    setTimeout(()=> {
+        buscarSupervisor()
+    },2000)
+}
 
 function novoSupervisor() {
-
-
     modal.showModal()
 }
 function cadastrarSupervisor() {
@@ -45,5 +49,6 @@ function cadastrarSupervisor() {
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
     });
-    // modal.close()
+    modal.close()
+    buscarSupervisor()
 }

@@ -48,8 +48,8 @@ create table supervisor (
     nome varchar(45) not null,
     email varchar(256) not null,
     senha varchar(45) not null,
-    permissao char(3) not null default 'não',
-    constraint chkPermissaoSupervisor check (permissao in ('sim', 'não'))
+   fkMuseu int,
+    foreign key (fkMuseu) references museu(idMuseu)
 );
 
 create table setor (
@@ -71,12 +71,10 @@ idVisualizacao int auto_increment,
 fkSetor int,
 fkSensor int,
 fkMuseu int,
-fkSupervisor int,
-	constraint pkCompostaVisualizacao primary key (idVisualizacao, fkSetor, fkSensor, fkMuseu, fkSupervisor),
+	constraint pkCompostaVisualizacao primary key (idVisualizacao, fkSetor, fkSensor, fkMuseu),
     constraint fkSetorVisualizacao foreign key (fkSetor) references setor(idSetor),
     constraint fkSensorVisualizacao foreign key (fkSensor) references sensor(idSensor),
-    constraint fkMuseuVisualizacao foreign key (fkMuseu) references museu(idMuseu),
-    constraint fkSupervisor foreign key (fkSupervisor) references supervisor(idSupervisor)
+    constraint fkMuseuVisualizacao foreign key (fkMuseu) references museu(idMuseu)
 );
 
 create table registro (
@@ -103,8 +101,8 @@ insert into museu (fkEndereco, nome, cnpj, rm) values
 insert into sensor (nome, tipo) values
 ('dht11', 'temperatura, umidade');
 
-insert into supervisor (nome, email, senha, permissao) values
-('bruno', 'bruno.oliveira@gmail.com', 'Bruninho321', 'sim');
+insert into supervisor (nome, email, senha, fkMuseu) values
+('bruno', 'bruno.oliveira@gmail.com', 'Bruninho321', 1);
 
 insert into setor (fkSensor, fkMuseu, fkVerificacao, nome, andar, statusSetor) values
 (1, 1, 1, 'Arte grega', 2, 3),
@@ -122,7 +120,6 @@ insert into representante (fkMuseu, nome, email, senha) values
 SELECT idMuseu FROM museu ORDER BY idMuseu DESC LIMIT 1;
 
 delete from museu where idMuseu = 15;
-truncate representante;
 select * from museu;
 select idSetor, nome, statusSetor from setor order by statusSetor DESC;
 
