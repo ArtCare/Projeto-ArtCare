@@ -41,11 +41,11 @@ function cadastrarSupervisor() {
     console.log(email)
     console.log(nome.value)
     if (input_nomeSupervisor.value.length <= 3) {
-        alert("Seu nome precisa ter mais que 3 caracteres.")
+        alertaSupervisor.innerHTML = `Seu nome precisa ter mais que 3 caracteres.`                      
     } else if (input_emailSupervisor.value.indexOf('@') == -1 || input_emailSupervisor.value.indexOf('.') == -1) {
-        alert("Email precisa conter '@' e '.'")
+        alertaSupervisor.innerHTML = "Email precisa conter '@' e '.'"
     } else if (input_senhaSupervisor.value.length <= 7) {
-        alert("Sua senha precisa ter mais que 7 caracteres.")
+        alertaSupervisor.innerHTML ="Sua senha precisa ter mais que 7 caracteres."
     } else {
         for (let numero = 0; numero <= 9; numero++) {
             if (input_senhaSupervisor.value
@@ -54,7 +54,7 @@ function cadastrarSupervisor() {
             }
         }
         if (senhaNum == false) {
-            alert("Senha precisa de um caracter numérico")
+            alertaSupervisor.innerHTML ="Senha precisa de um caracter numérico"
         } else {    
             fetch(`/supervisor/cadastrarSupervisor/${fkMuseu}`, {
                 method: "POST",
