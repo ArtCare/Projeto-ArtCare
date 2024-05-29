@@ -57,7 +57,7 @@ async function cadastro() {
         message.textContent = "Email inválido."
     } else if (password.value.length <= 7) {
         modal.showModal()
-        message.textContent = "Sua senha precisa ter mais que 4 caracteres."
+        message.textContent = "Sua senha precisa ter mais que 7 caracteres."
     } else {
         for (let numero = 0; numero <= 9; numero++) {
             if (password.value.indexOf(numero.toString()) != -1) {
