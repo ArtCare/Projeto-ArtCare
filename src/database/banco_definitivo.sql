@@ -101,12 +101,6 @@ insert into sensor (nome, tipo) values
 insert into supervisor (nome, email, senha, fkMuseu) values
 ('bruno', 'bruno.oliveira@gmail.com', 'Bruninho321', 1);
 
-insert into setor (fkSensor, fkMuseu, nome, andar, statusSetor) values
-(1, 1,  'Arte grega', 2, 3),
-(1, 1,  'Esculturas', 7, 2),
-(1, 1,  'Antiguidades egipcias', 2, 1),
-(1, 1,  'Arte Romana', 1, 3);
-
 insert into registro (fkSensor, temperatura, umidade) values
 (1, 31.00, 26.00);
 
@@ -137,4 +131,4 @@ select * from sensor;
 select * from registro;
 select temperatura from registro;
 select * from verificacao;
-
+select idSetor, nome, statusSetor from setor where fkMuseu = 1 order by statusSetor DESC;

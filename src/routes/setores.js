@@ -3,7 +3,7 @@ var router = express.Router();
 
 var setoresController = require("../controllers/setoresController");
 
-router.get("/buscarSetores/", function (req, res) {
+router.get("/buscarSetores/:idMuseu", function (req, res) {
     setoresController.buscarSetores(req, res);
 });
 router.get("/buscarSetoresCriticos/", function (req, res) {

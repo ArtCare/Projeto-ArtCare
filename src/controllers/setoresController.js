@@ -1,7 +1,8 @@
 var setoresModel = require("../models/setoresModel");
 
 function buscarSetores(req, res) {
-    setoresModel.buscarSetores().then(function (resultado) {
+    const fkMuseu = req.params.idMuseu
+    setoresModel.buscarSetores(fkMuseu).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
