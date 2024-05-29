@@ -1,15 +1,6 @@
 create database ArtCare;
 use ArtCare;
 
-
-create table verificacao (
-	idVerificacao int primary key auto_increment,
-    tempMax decimal(4,2) not null,
-    tempMin decimal(4,2) not null,
-    umiMax decimal(4,2) not null,
-    umiMin decimal(4,2) not null
-);
-
 create table endereco (
 	idEndereco int primary key auto_increment,
     cep char(9) not null,
@@ -25,6 +16,32 @@ create table museu (
     rm char(9) not null unique,
     constraint fkEnderecoCliente foreign key (fkEndereco) references endereco (idEndereco)
 );
+create table sensor (
+	idSensor int primary key auto_increment,
+    nome char(5) default 'dht11',
+    tipo varchar(45) default 'temperatura, umidade',
+    constraint chkNomeSensor check (nome in ('dht11'))
+);
+create table setor (
+	idSetor int primary key auto_increment,
+    fkSensor int,
+    fkMuseu int,
+    nome varchar(45) not null,
+    andar varchar(45) not null,
+    statusSetor int,
+    constraint fkSensorDoSetor foreign key (fkSensor) references sensor (idSensor),
+    constraint fkMuseuDoSetor foreign key (fkMuseu) references museu (idMuseu)
+);
+create table verificacao (
+	idVerificacao int primary key auto_increment,
+    tempMax decimal(4,2) not null,
+    tempMin decimal(4,2) not null,
+    umiMax decimal(4,2) not null,
+    umiMin decimal(4,2) not null,
+    fkSetor int,
+    foreign key(fkSetor) references setor(idSetor)
+);
+
 
 create table representante (
 idRepresentante int primary key auto_increment,
@@ -36,35 +53,17 @@ senha varchar(45) not null
 );
 
 
-create table sensor (
-	idSensor int primary key auto_increment,
-    nome char(5) default 'dht11',
-    tipo varchar(45) default 'temperatura, umidade',
-    constraint chkNomeSensor check (nome in ('dht11'))
-);
 
 create table supervisor (
 	idSupervisor int primary key auto_increment,
     nome varchar(45) not null,
     email varchar(256) not null,
     senha varchar(45) not null,
-   fkMuseu int,
+	fkMuseu int,
     foreign key (fkMuseu) references museu(idMuseu)
 );
 
-create table setor (
-	idSetor int auto_increment,
-    fkSensor int,
-    fkMuseu int,
-    fkVerificacao int,
-    nome varchar(45) not null,
-    andar int not null,
-    statusSetor int,
-    constraint pkCompostaSetor primary key (idSetor, fkSensor, fkMuseu, fkVerificacao),
-    constraint fkSensorDoSetor foreign key (fkSensor) references sensor (idSensor),
-    constraint fkMuseuDoSetor foreign key (fkMuseu) references museu (idMuseu),
-    constraint fkVerificacaoDoSetor foreign key (fkVerificacao) references verificacao (idVerificacao)
-);
+
 
 create table visualizacao (
 idVisualizacao int auto_increment,
@@ -89,8 +88,6 @@ create table registro (
 
 desc registro;
 -- Necessário alterar INSERTS e SELECTS
-insert into verificacao (tempMax, tempMin, umiMax, umiMin) values
-(20.00, 18.00, 45.00, 40.00);
 
 insert into endereco (cep, numEnd, complemento) values
 ('08140-060', '979', 'próximo à avenida paulista');
@@ -104,11 +101,11 @@ insert into sensor (nome, tipo) values
 insert into supervisor (nome, email, senha, fkMuseu) values
 ('bruno', 'bruno.oliveira@gmail.com', 'Bruninho321', 1);
 
-insert into setor (fkSensor, fkMuseu, fkVerificacao, nome, andar, statusSetor) values
-(1, 1, 1, 'Arte grega', 2, 3),
-(1, 1, 1, 'Esculturas', 7, 2),
-(1, 1, 1, 'Antiguidades egipcias', 2, 1),
-(1, 1, 1, 'Arte Romana', 1, 3);
+insert into setor (fkSensor, fkMuseu, nome, andar, statusSetor) values
+(1, 1,  'Arte grega', 2, 3),
+(1, 1,  'Esculturas', 7, 2),
+(1, 1,  'Antiguidades egipcias', 2, 1),
+(1, 1,  'Arte Romana', 1, 3);
 
 insert into registro (fkSensor, temperatura, umidade) values
 (1, 31.00, 26.00);
@@ -140,3 +137,4 @@ select * from sensor;
 select * from registro;
 select temperatura from registro;
 select * from verificacao;
+

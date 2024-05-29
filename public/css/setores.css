@@ -229,22 +229,26 @@ h4 {
   margin-top: -40px;
 }
 
-.buttonSetor {
-  width: 200px;
+.seeSector{
+  width: 160px;
   height: 36px;
   border-radius: 30px;
   border: none;
-  background-color: #666666;
-  color: #fff;
-  font-size: 16px;
+  background-color: #B08067;
+  color: #FFF;
+  font-size: 18px;
   font-weight: 700;
+  margin-left: 10%;
+  display: flex;
   justify-content: space-around;
   align-items: center;
-  transition: all 0.5s ease-in-out;
+  transition: all .6s ease-in-out;
 }
-
-.buttonSetor:active {
-  transform: scale(0.95);
+.seeSector:hover{
+  background-color: #575757;
+}
+.seeSector:active{
+  transform: scale(.95);
 }
 #modal {
   width: 800px;
@@ -256,6 +260,16 @@ h4 {
   font-weight: bold;
   border: none;
 }
+.errorMessageDiv{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.errorMessage{
+  color: rgb(170, 9, 9);
+}
+
 
 .containerModal {
   width: 100%;
@@ -281,7 +295,6 @@ h4 {
 
 .botaoModal:hover {
   background-color: rgb(176, 128, 103);
-  border: 2px solid #fff;
 }
 
 .cadastrarModal {
@@ -294,8 +307,7 @@ h4 {
 .dadosDoSetor {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 45px;
-  margin-left: 75px;
+  margin: 20px 75px;
   width: 650px;
 }
 
@@ -328,6 +340,7 @@ h4 {
   width: 180px;
   box-shadow: #807f7f 0 2px 2px;
   margin-top: 5px;
+  outline: none;
 }
 
 .containerModal2 {
@@ -337,7 +350,6 @@ h4 {
 }
 
 .metricas {
-  margin-top: 6%;
   width: 50%;
 }
 .textoMetricas {
@@ -351,6 +363,7 @@ h4 {
   margin-right: 9%;
   margin-bottom: 4%;
   font-size: 17px;
+
 }
 
 .wrapMetricas {
@@ -359,11 +372,10 @@ h4 {
   margin-right: 120px;
   width: 108%;
   color: rgb(102, 102, 102);
-  margin-top: 2%;
 }
 
 .media {
-  margin-top: 11%;
+  margin-top: 4%;
   width: 250px;
   font-size: 17px;
 }
@@ -394,7 +406,6 @@ h4 {
 
 .botaoMetricaSim:hover {
   background-color: rgb(176, 128, 103);
-  border: 2px solid #fff;
 }
 
 .botaoMetricaNao {
@@ -415,7 +426,6 @@ h4 {
 
 .botaoMetricaNao:hover {
   background-color: rgb(176, 128, 103);
-  border: 2px solid #fff;
 }
 
 .inputMetrica {
@@ -427,8 +437,9 @@ h4 {
   margin-top: 5px;
   padding-left: 18px;
   background: url("https://static.vecteezy.com/ti/vetor-gratis/p3/16831773-de-icone-de-cadeado-vetor.jpg")
-    no-repeat left;
+  no-repeat left;
   background-size: 20px;
+  outline: none;
 }
 
 ::placeholder {

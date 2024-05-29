@@ -83,17 +83,25 @@ function buscarMetricasSetor(req, res) {
     });
 }
 function novoSetor(req, res) {
-    const fkSensor = req.params.fkSensor
- fkMuseu, nome, andar, statusSetor
-    setoresModel.buscarMetricasSetor(idSetor).then(function (resultado) {
-        if (resultado.length > 0) {
-            res.status(200).json(resultado);
-        } else {
-            res.status(204).send("Nenhum resultado encontrado!")
-        }
+    const fkSensor = req.body.fkSensor
+    const fkMuseu = req.body.fkMuseu
+    const nome = req.body.nome
+    const andar = req.body.andar
+    const umiMin = req.body.umidadeMinima
+    const umiMax = req.body.umidadeMaxima
+    const tempMin = req.body.temperaturaMinima
+    const tempMax = req.body.temperaturaMaxima
+    
+    setoresModel.novoSetor(fkSensor, fkMuseu, nome, andar).then(function () {
+        setoresModel.buscarUltimoSetor().then(function (resposta){
+            const fkSetor = resposta[0].idSetor
+        setoresModel.novaVerificacao(tempMax, tempMin, umiMax, umiMin, fkSetor) 
+        })
+
+       
     }).catch(function (erro) {
         console.log(erro);
-        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        console.log("Houve um erro ao cadastrar um novo setor.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }
@@ -106,5 +114,4 @@ module.exports = {
     buscarCapturasSetor,
     buscarMetricasSetor,
     novoSetor,
-    novaVerificacao
 }

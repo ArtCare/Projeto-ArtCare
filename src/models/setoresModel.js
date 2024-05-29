@@ -36,8 +36,8 @@ function buscarMetricasSetor(idSetor){
     return database.executar(instrucaoSql);
 }
 
-function novoSetor(fkMuseu, nome, andar, statusSetor){
-    var instrucaoSql = `insert into setor (fkMuseu, nome, andar, statusSetor) values (${fkSensor}, ${fkMuseu}, '${nome}', '${andar}', ${statusSetor});`;
+function novoSetor(fkSensor, fkMuseu, nome, andar){
+    var instrucaoSql = `insert into setor (fkSensor, fkMuseu, nome, andar) values (${fkSensor}, ${fkMuseu}, '${nome}', '${andar}');`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
@@ -46,6 +46,11 @@ function novaVerificacao(tempMax, tempMin, umiMax, umiMin, fkSetor){
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+function buscarUltimoSetor() {
+    var instrucaoSql = `select * from setor order by idSetor desc limit 1;`;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}    
 
 module.exports = {
     buscarSetores,
@@ -55,5 +60,6 @@ module.exports = {
     buscarCapturasSetor,
     buscarMetricasSetor,
     novoSetor,
-    novaVerificacao
+    novaVerificacao,
+    buscarUltimoSetor
 }
