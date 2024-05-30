@@ -166,10 +166,12 @@ body {
     font-size: 24px;
     width: 90%;
     display: flex;
-    align-items: center;
+    align-items:center;
     justify-content: space-around;
     margin-top: 20px;
     margin-left: 20px;
+    padding: 10px 0; /* Espaçamento interno */
+    border-bottom: 1px solid transparent; /* Linha de separação entre os itens */
 }
 
 .dadosSupervisoresContainer::-webkit-scrollbar {
@@ -193,6 +195,8 @@ body {
 }
 
 .email {
+    flex: 1; /* Itens ocupam o mesmo espaço */
+    margin-left: 5%; /* Espaçamento à direita dos itens */
     font-size: 20px;
     font-family: "Caladea";
     font-weight: 400;
