@@ -159,19 +159,20 @@ body {
     scroll-behavior: smooth;
     height: 80%;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dadosSupervisores {
     color: #666666;
     font-size: 24px;
-    width: 90%;
+    width: 80%;
     display: flex;
     align-items:center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 20px;
-    margin-left: 20px;
-    padding: 10px 0; /* Espaçamento interno */
-    border-bottom: 1px solid transparent; /* Linha de separação entre os itens */
+    padding-bottom: 4px;
 }
 
 .dadosSupervisoresContainer::-webkit-scrollbar {
@@ -188,19 +189,14 @@ body {
     border-radius: 30px;
 }
 
-.nomes {
-    font-size: 24px;
-    font-style: normal;
-    font-family: "Caladea";
+.nomeDiv{
+    width: 150px;
 }
-
 .email {
-    flex: 1; /* Itens ocupam o mesmo espaço */
-    margin-left: 5%; /* Espaçamento à direita dos itens */
     font-size: 20px;
     font-family: "Caladea";
     font-weight: 400;
-}
+ }
 
 .content {
     width: 100%;
@@ -212,14 +208,15 @@ body {
 
 .edit {
     color: #B08067;
-    border-color: transparent;
-    background-color: #F1EFF7;
-}
+    border: none;
+    background-color: #FFF;
+    margin-left: 50px;
+    }
 
 .del {
     color: #B08067;
-    border-color: transparent;
-    background-color: #F1EFF7;
+    border: none;
+    background-color: #FFF;
 }
 
 .edit:hover {

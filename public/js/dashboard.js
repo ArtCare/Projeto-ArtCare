@@ -6,14 +6,19 @@ const statusSetor = document.querySelector("#statusSetor")
 const sectors = document.querySelector("#sectors")
 const qtdAlerta = document.querySelector("#qtdAlerta")
 const qtdCritico = document.querySelector("#qtdCritico")
-let setoresCriticos = 0
-let setoresAlerta = 0
+
+qtdCritico.textContent = 0
+qtdAlerta.textContent = 0
+let totalSetores = 0
 
 fetch(`/setores/buscarSetores/${idMuseu}`).then(function (resposta) {
-    console.log(resposta)
-    if (resposta.length > 0) {
+
+    let setoresCriticos = []
+    let setoresAlerta = []
+
+    if (resposta) {
         resposta.json().then(res => {
-            let totalSetores = res.length
+            totalSetores = res.length
             totalSectors.textContent = `Total ${res.length}, monitore-os abaixo`
             for (posicao = 0; posicao <= res.length; posicao++) {
                 let name = res[posicao].nome
@@ -44,72 +49,63 @@ fetch(`/setores/buscarSetores/${idMuseu}`).then(function (resposta) {
                 </div>
             `
             }
+        })
+    } else {
+        noSector()
+    }
 
-
-            fetch("/setores/buscarSetoresCriticos").then(function (resposta) {
+    fetch(`/setores/buscarSetoresCriticos/${idMuseu}`).then(function (respostaCritico) {
+        respostaCritico.json().then(res => {
+            setoresCriticos.push(res.length)
+            qtdCritico.textContent = setoresCriticos[setoresCriticos.length - 1]
+           
+            fetch(`/setores/buscarSetoresAlerta/${idMuseu}`).then(function (resposta) {
                 resposta.json().then(res => {
-                    setoresCriticos = res.length
-                    fetch("/setores/buscarSetoresAlerta").then(function (resposta) {
-                        resposta.json().then(res => {
-                            setoresAlerta = res.length
-
-                            qtdCritico.textContent = setoresCriticos
-                            qtdAlerta.textContent = setoresAlerta
-
-                            let porcentagemCritico = (setoresCriticos / totalSetores) * 100
-                            let porcentagemAlerta = (setoresAlerta / totalSetores) * 100
-                            let porcentagemNormal = 100 - (porcentagemAlerta + porcentagemCritico)
-
-                            Chart.defaults.color = "#292929";
-                            Chart.defaults.font.size = 20;
-                            Chart.defaults.plugins.legend.position = 'right';
-                            const pieData = {
-                                datasets: [{
-                                    label: 'Criticidade',
-                                    data: [0, 0, 0],
-                                    backgroundColor: [
-                                        '#C62400',
-                                        '#DC9E00',
-                                        '#575757'
-                                    ],
-                                    position: "#right"
-                                }],
-                                labels: ["Crítico", "Alerta", "Normal"],
-                                legend: "none"
-                            };
-
-                            const pieConfig = {
-                                type: 'pie',
-                                data: pieData,
-
-                            };
-                            const pieChart = new Chart(
-                                document.getElementById('pieChart'),
-                                pieConfig,
-                            );
-
-                        })
-                    }).catch(function (erro) {
-                        console.log(erro);
-                    })
-                })
+                    setoresAlerta.push(res.length)
+                    qtdCritico.textContent = setoresCriticos[setoresCriticos.length - 1]
+                    qtdAlerta.textContent = setoresAlerta[setoresAlerta.length - 1]
+                }
+                )
+            pie()
             }).catch(function (erro) {
                 console.log(erro);
             })
-
         })
-    } else {
-        totalSectors.textContent = `Total de 0 setores, cadastre um setor para monitora-lo`
-        qtdCritico.textContent = setoresCriticos
-        qtdAlerta.textContent = setoresAlerta
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    // let alertaExiste = false
+   async function pie() {
+      await fetch(`/setores/buscarSetoresAlerta/${idMuseu}`).then(function (resposta) {
+            resposta.json().then(res => {
+                
+            })}) 
+
+        let critico = setoresCriticos[0]
+        let alerta = setoresAlerta[0]
+        
+        if (alerta == undefined) {
+            alerta = 0
+        }
+        if (critico == undefined) {
+            critico = 0
+        }
+
+        console.log(critico, alerta)
+
+        let porcentagemCritico = (critico / totalSetores) * 100
+        let porcentagemAlerta = (alerta / totalSetores) * 100
+        let porcentagemNormal = 100 - (porcentagemAlerta + porcentagemCritico)
 
         Chart.defaults.color = "#292929";
         Chart.defaults.font.size = 20;
         Chart.defaults.plugins.legend.position = 'right';
+
         const pieData = {
             datasets: [{
                 label: 'Criticidade',
-                data: [33, 33, 33],
+                data: [porcentagemCritico, porcentagemAlerta, porcentagemNormal],
                 backgroundColor: [
                     '#C62400',
                     '#DC9E00',
@@ -130,10 +126,39 @@ fetch(`/setores/buscarSetores/${idMuseu}`).then(function (resposta) {
             document.getElementById('pieChart'),
             pieConfig,
         );
+        // fetch(`/setores/buscarSetoresAlerta/${idMuseu}`).then(function (resposta) {
+        //     if(resposta){
+        //         alertaExiste = true
+                
+        //      }
+        //      if(alertaExiste){}
+
+        // }).catch(function (erro) {
+        //     console.log(erro);
+        // })
     }
 }).catch(function (erro) {
     console.log(erro);
 })
+
+
+function logout() {
+    window.location.href = "../login.html"
+}
+function verSetor(res) {
+    window.location.href = "./setor.html"
+    sessionStorage.setItem("idSetor", res.value)
+}
+
+function noSector() {
+    totalSectors.textContent = `Total de 0 setores, cadastre um setor para monitora-lo`
+    qtdCritico.textContent = setoresCriticos
+    qtdAlerta.textContent = setoresAlerta
+}
+
+
+
+
 
 const labels = ["Setor 1", "Setor 4", "Setor 5", "Setor 7", "setor 12"]
 const barData = {
@@ -146,14 +171,11 @@ const barData = {
 
         ],
         borderColor: [
-
             'rgb(255, 205, 86)',
-
         ],
         borderWidth: 2
     }]
 };
-
 const barConfig = {
     type: 'bar',
     data: barData,
@@ -170,10 +192,3 @@ const barChart = new Chart(
     document.getElementById('barChart'),
     barConfig,
 );
-function logout() {
-    window.location.href = "../login.html"
-}
-function verSetor(res) {
-    window.location.href = "./setor.html"
-    sessionStorage.setItem("idSetor", res.value)
-}

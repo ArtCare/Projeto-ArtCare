@@ -15,7 +15,8 @@ function buscarSetores(req, res) {
     });
 }
 function buscarSetoresCriticos(req, res) {
-    setoresModel.buscarSetoresCriticos().then(function (resultado) {
+    var fkMuseu = req.params.idMuseu;
+    setoresModel.buscarSetoresCriticos(fkMuseu).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -28,7 +29,8 @@ function buscarSetoresCriticos(req, res) {
     });
 }
 function buscarSetoresAlerta(req, res) {
-    setoresModel.buscarSetoresAlerta().then(function (resultado) {
+    var fkMuseu = req.params.idMuseu;
+    setoresModel.buscarSetoresAlerta(fkMuseu).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -94,7 +96,7 @@ function novoSetor(req, res) {
     const tempMax = req.body.temperaturaMaxima
     
     setoresModel.novoSetor(fkSensor, fkMuseu, nome, andar).then(function () {
-        setoresModel.buscarUltimoSetor().then(function (resposta){
+        setoresModel.buscarUltimoSetor(fkMuseu).then(function (resposta){
             const fkSetor = resposta[0].idSetor
         setoresModel.novaVerificacao(tempMax, tempMin, umiMax, umiMin, fkSetor) 
         })

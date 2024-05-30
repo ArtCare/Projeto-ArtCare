@@ -6,13 +6,13 @@ function buscarSetores(fkMuseu) {
     return database.executar(instrucaoSql);
 }
 
-function buscarSetoresCriticos() {
-    var instrucaoSql = `select * from setor where statusSetor = 3;`;
+function buscarSetoresCriticos(fkMuseu) {
+    var instrucaoSql = `select * from setor where statusSetor = 3 and fkMuseu = ${fkMuseu};`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-function buscarSetoresAlerta() {
-    var instrucaoSql = `select * from setor where statusSetor = 2;`;
+function buscarSetoresAlerta(fkMuseu) {
+    var instrucaoSql = `select * from setor where statusSetor = 2 and fkMuseu = ${fkMuseu};`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }    
@@ -46,8 +46,8 @@ function novaVerificacao(tempMax, tempMin, umiMax, umiMin, fkSetor){
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-function buscarUltimoSetor() {
-    var instrucaoSql = `select * from setor order by idSetor desc limit 1;`;
+function buscarUltimoSetor(fkMuseu) {
+    var instrucaoSql = `select * from setor where fkMuseu = ${fkMuseu} order by idSetor desc limit 1;`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }    

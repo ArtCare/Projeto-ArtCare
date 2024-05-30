@@ -43,7 +43,7 @@ function desabilitarMetricas() {
 buscarSetores()
 function buscarSetores() {
     setores.innerHTML = ""
-    fetch(`/setores/buscarSetores/`).then(res => {
+    fetch(`/setores/buscarSetores/${fkMuseu}`).then(res => {
         res.json().then(res => {
             for (posicao = 0; posicao < res.length; posicao++) {
                 setores.innerHTML += `
@@ -62,9 +62,7 @@ function buscarSetores() {
 function registerNewSector() {
     modal.showModal()
 }
-function close() {
-    modal.close()
-}
+
 function verSetor(res) {
     window.location.href = "./setor.html"
     sessionStorage.setItem("idSetor", res.value)
@@ -103,8 +101,10 @@ function cadastrarSetor() {
             umidadeMaxima: umiMax,
             temperaturaMinima: tempMin,
             temperaturaMaxima: tempMax
-        }),
+        }), 
+        
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
     });
+    modal.close()
 }

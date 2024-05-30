@@ -14,8 +14,12 @@ function buscarSupervisor() {
             for (posicao = 0; posicao < res.length; posicao++) {
                 dadosSupervisoresContainer.innerHTML += `
                 <div class="dadosSupervisores">
+                <div class="nomeDiv">
                 <span class="nameSupervisor">${res[posicao].nome}</span>
+                </div>
+                <div class="nomeDiv">
                 <span class="email">${res[posicao].email}</span>
+                </div>
                 <button class="edit">
                     <i class="fa-solid fa-pen"></i>
                 </button>
@@ -27,9 +31,6 @@ function buscarSupervisor() {
             }
         })
     })
-    setTimeout(() => {
-        buscarSupervisor()
-    }, 2000)
 }
 
 function novoSupervisor() {
@@ -43,7 +44,7 @@ function cadastrarSupervisor() {
     if (input_nomeSupervisor.value.length <= 3) {
         alertaSupervisor.innerHTML = `Seu nome precisa ter mais que 3 caracteres.`                      
     } else if (input_emailSupervisor.value.indexOf('@') == -1 || input_emailSupervisor.value.indexOf('.') == -1) {
-        alertaSupervisor.innerHTML = "Email precisa conter '@' e '.'"
+        alertaSupervisor.innerHTML = "Email inválido"
     } else if (input_senhaSupervisor.value.length <= 7) {
         alertaSupervisor.innerHTML ="Sua senha precisa ter mais que 7 caracteres."
     } else {
@@ -69,7 +70,7 @@ function cadastrarSupervisor() {
             }).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             });
-            modal.close()
+            location.reload()
             buscarSupervisor()
         }
     }

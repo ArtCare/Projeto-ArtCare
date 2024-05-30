@@ -6,10 +6,10 @@ var setoresController = require("../controllers/setoresController");
 router.get("/buscarSetores/:idMuseu", function (req, res) {
     setoresController.buscarSetores(req, res);
 });
-router.get("/buscarSetoresCriticos/", function (req, res) {
+router.get("/buscarSetoresCriticos/:idMuseu", function (req, res) {
     setoresController.buscarSetoresCriticos(req, res);
 });
-router.get("/buscarSetoresAlerta/", function (req, res) {
+router.get("/buscarSetoresAlerta/:idMuseu", function (req, res) {
     setoresController.buscarSetoresAlerta(req, res);
 });
 
