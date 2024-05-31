@@ -16,7 +16,7 @@ let tempMin = 18
 let tempMax = 22
 
 let alterMetricas = false
-
+let qtdSetores = 0
 metricas()
 function metricas() {
     if (!alterMetricas) {
@@ -45,6 +45,7 @@ function buscarSetores() {
     setores.innerHTML = ""
     fetch(`/setores/buscarSetores/${fkMuseu}`).then(res => {
         res.json().then(res => {
+            qtdSetores = res.length
             for (posicao = 0; posicao < res.length; posicao++) {
                 setores.innerHTML += `
                 <div class="setoresText">
@@ -55,11 +56,9 @@ function buscarSetores() {
             }
         })
     })
-    setTimeout(() => {
-        buscarSetores()
-    }, 2000)
-}
+   }
 function registerNewSector() {
+    console.log(qtdSetores)
     modal.showModal()
 }
 
@@ -69,6 +68,12 @@ function verSetor(res) {
 }
 
 function cadastrarSetor() {
+    let sensor = qtdSetores + 1
+
+    if(sensor >= 6){
+        sensor = 1
+    }
+
     if (input_nome_setor.value == "") {
         errorNameDiv.style.display = "flex"
         console.log('oi')
@@ -87,6 +92,7 @@ function cadastrarSetor() {
         tempMin = input_temperatura_minima.value
         tempMax = input_temperatura_maxima.value
     }
+    
     fetch("/setores/novoSetor", {
         method: "POST",
         headers: {
@@ -95,16 +101,16 @@ function cadastrarSetor() {
         body: JSON.stringify({
             nome: input_nome_setor.value,
             andar: input_andar.value,
-            fkSensor: 1,
+            fkSensor: sensor,
             fkMuseu: fkMuseu,
             umidadeMinima: umiMin,
             umidadeMaxima: umiMax,
             temperaturaMinima: tempMin,
             temperaturaMaxima: tempMax
         }), 
-        
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
     });
+    location.reload()
     modal.close()
 }

@@ -146,10 +146,9 @@ function buscarCapturas() {
         res.json().then(res => {
             temperatura.textContent = `${res[0].temperatura}°C`
             umidade.textContent = `${res[0].umidade}%`
-            // registrosTemperatura.push(res[0].temperatura)
-            // registrosUmidade.push(res[0].umidade)
-            registrosTemperatura.push(Math.floor(Math.random() * 29) + 3)
-            registrosUmidade.push(Math.floor(Math.random() * 52) + 8)
+            registrosTemperatura.push(res[0].temperatura)
+            registrosUmidade.push(res[0].umidade)
+          
             tempoRegistro.push(res[0].tempo)
 
             if(registrosTemperatura.length > 7){
@@ -164,5 +163,5 @@ function buscarCapturas() {
     })
     setTimeout(() => {
         buscarCapturas()
-    }, 1000)
+    }, 3000)
 }
