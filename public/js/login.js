@@ -43,9 +43,36 @@ function ValidarLogin() {
                     });
 
                 } else {
-                    resposta.text().then(text => {
-                        modal.showModal();
-                    });
+                    fetch("/supervisor/autenticar", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            email: email.value,
+                            senha: senha.value
+                        })
+                    }).then(function (resposta) {
+                        if (resposta.ok) {
+                            sucesso.showModal()
+                            resposta.json().then(json => {
+                                sessionStorage.EMAIL_SUPERVISOR = json.email;
+                                sessionStorage.NOME_SUPERVISOR = json.nome;
+                                sessionStorage.ID_SUPERVISOR = json.idSupervisor;
+                                sessionStorage.FK_MUSEU = json.fkMuseu;
+        
+                                setTimeout(() => {
+                                    window.location = "./dashboard/dashboard.html"
+                                }, 3000)
+        
+                            });
+        
+                        } else {
+                            resposta.text().then(text => {
+                                modal.showModal();
+                            });
+                        }
+                    })
                 }
             }).catch(function (erro) {
                 console.log(erro);

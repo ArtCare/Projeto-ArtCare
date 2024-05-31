@@ -1,4 +1,5 @@
 const idSetor = sessionStorage.getItem("idSetor")
+const idSupervisor = sessionStorage.getItem("ID_SUPERVISOR")
 const headerContainer = document.querySelector('.header-container')
 const sectorTitle = document.querySelector('#sectorTitle')
 const temperatura = document.querySelector('#temperatura')
@@ -7,10 +8,19 @@ const tempMax = document.querySelector('#tempMax')
 const tempMin = document.querySelector('#tempMin')
 const umiMax = document.querySelector('#umiMax')
 const umiMin = document.querySelector('#umiMin')
+const navigationSetores = document.querySelector("#navigationSetores")
+const navigationSupervisor = document.querySelector("#navigationSupervisor")
+const navigationRelatorio = document.querySelector("#navigationRelatorio")
 
 const registrosTemperatura = []
 const registrosUmidade = []
 const tempoRegistro = []
+
+if(idSupervisor > 0){
+    navigationSetores.style.display = "none"
+    navigationSupervisor.style.display = "none"
+    navigationRelatorio.style.display = "none"
+}
 
 Chart.defaults.plugins.legend.position = 'bottom';
 Chart.defaults.color = "#292929";

@@ -2,7 +2,6 @@ var supervisorModel = require("../models/supervisorModel");
 
 function buscarSupervisor(req, res) {
   var fkMuseu = req.params.fkMuseu;
-
   supervisorModel.buscarSupervisor(fkMuseu).then((resultado) => {
     res.status(200).json(resultado);
   });
@@ -26,8 +25,28 @@ function cadastrarSupervisor(req, res) {
   });
 }
 
+function autenticar(req, res) {
+  var email = req.body.email;
+  var senha = req.body.senha;
+
+  supervisorModel.autenticar(email, senha)
+  .then(
+      function (resultadoAutenticar) {
+          if (resultadoAutenticar.length == 0) {
+              res.status(403).send("Email e/ou senha inválido(s)");
+          } else {
+              res.status(200).json(resultadoAutenticar[0])
+          }
+      }
+  ).catch(
+      function (erro) {
+          console.log(erro);
+          res.status(500).json(erro.sqlMessage);
+      }
+  );
+}
 module.exports = {
   buscarSupervisor,
   cadastrarSupervisor,
- 
+  autenticar
 };

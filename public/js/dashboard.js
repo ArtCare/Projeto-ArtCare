@@ -1,11 +1,21 @@
 sessionStorage.removeItem("idSetor")
 const idMuseu = sessionStorage.getItem("FK_MUSEU")
+const idSupervisor = sessionStorage.getItem("ID_SUPERVISOR")
 const totalSectors = document.querySelector("#totalSectors")
 const nameSector = document.querySelector("#nameSector")
 const statusSetor = document.querySelector("#statusSetor")
 const sectors = document.querySelector("#sectors")
 const qtdAlerta = document.querySelector("#qtdAlerta")
 const qtdCritico = document.querySelector("#qtdCritico")
+const navigationSetores = document.querySelector("#navigationSetores")
+const navigationSupervisor = document.querySelector("#navigationSupervisor")
+const navigationRelatorio = document.querySelector("#navigationRelatorio")
+
+if(idSupervisor > 0){
+    navigationSetores.style.display = "none"
+    navigationSupervisor.style.display = "none"
+    navigationRelatorio.style.display = "none"
+}
 
 qtdCritico.textContent = 0
 qtdAlerta.textContent = 0

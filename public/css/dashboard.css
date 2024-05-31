@@ -58,7 +58,7 @@ body {
     background-color: transparent;
     cursor: pointer;
     transition: all .4s ease-in-out;
-    height: 120px;
+    height: 50px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
