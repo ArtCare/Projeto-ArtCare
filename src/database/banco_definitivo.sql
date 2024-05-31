@@ -73,8 +73,11 @@ fkMuseu int,
 	constraint pkCompostaVisualizacao primary key (idVisualizacao, fkSetor, fkSensor, fkMuseu),
     constraint fkSetorVisualizacao foreign key (fkSetor) references setor(idSetor),
     constraint fkSensorVisualizacao foreign key (fkSensor) references sensor(idSensor),
-    constraint fkMuseuVisualizacao foreign key (fkMuseu) references museu(idMuseu)
+    constraint fkMuseuVisualizacao foreign key (fkMuseu) references museu(idMuseu),
+dtRegistro timestamp not null default current_timestamp
 );
+
+
 
 create table registro (
 	idRegistro int auto_increment,
@@ -132,3 +135,7 @@ select * from registro;
 select temperatura from registro;
 select * from verificacao;
 select idSetor, nome, statusSetor from setor where fkMuseu = 1 order by statusSetor DESC;
+SELECT idSupervisor, nome, email, senha, fkMuseu FROM supervisor;
+truncate registro;
+update setor set statusSetor = 3 where idSetor = 2;
+

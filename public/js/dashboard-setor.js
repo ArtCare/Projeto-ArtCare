@@ -28,7 +28,7 @@ Chart.defaults.font.size = 16;
 
 fetch(`/setores/buscarDadosSetor/${idSetor}`).then(res => {
     res.json().then(res => {
-        sectorTitle.textContent = `Setor ${res[0].idSetor}: ${res[0].nome}`
+        sectorTitle.textContent = `Setor: ${res[0].nome}`
     })
 })
 fetch(`/setores/buscarMetricasSetor/${idSetor}`).then(res => {

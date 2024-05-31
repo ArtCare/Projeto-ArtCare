@@ -19,14 +19,14 @@ if(idSupervisor > 0){
 
 qtdCritico.textContent = 0
 qtdAlerta.textContent = 0
+
+let setoresCriticos = []
+let setoresAlerta = []
 let totalSetores = 0
 
 fetch(`/setores/buscarSetores/${idMuseu}`).then(function (resposta) {
-
-    let setoresCriticos = []
-    let setoresAlerta = []
-
-    if (resposta) {
+    console.log(resposta)
+    if (resposta.status == 200) {
         resposta.json().then(res => {
             totalSetores = res.length
             totalSectors.textContent = `Total ${res.length}, monitore-os abaixo`
@@ -85,13 +85,21 @@ fetch(`/setores/buscarSetores/${idMuseu}`).then(function (resposta) {
         console.log(erro);
     })
 
-    // let alertaExiste = false
-   async function pie() {
-      await fetch(`/setores/buscarSetoresAlerta/${idMuseu}`).then(function (resposta) {
-            resposta.json().then(res => {
-                
-            })}) 
+    fetch(`/setores/buscarSetoresAlerta/${idMuseu}`).then(function (resposta) {
+        resposta.json().then(res => {
+            setoresAlerta.push(res.length)
+            qtdCritico.textContent = setoresCriticos[setoresCriticos.length - 1] ? setoresCriticos[setoresCriticos.length - 1] : 0
+            qtdAlerta.textContent = setoresAlerta[setoresAlerta.length - 1]
+        }
+        )
+    pie()
+    })
 
+  async function pie() {
+    await fetch(`/setores/buscarSetoresAlerta/${idMuseu}`).then(function (resposta) {
+        resposta.json().then(res => {
+            
+        })}) 
         let critico = setoresCriticos[0]
         let alerta = setoresAlerta[0]
         
@@ -136,16 +144,6 @@ fetch(`/setores/buscarSetores/${idMuseu}`).then(function (resposta) {
             document.getElementById('pieChart'),
             pieConfig,
         );
-        // fetch(`/setores/buscarSetoresAlerta/${idMuseu}`).then(function (resposta) {
-        //     if(resposta){
-        //         alertaExiste = true
-                
-        //      }
-        //      if(alertaExiste){}
-
-        // }).catch(function (erro) {
-        //     console.log(erro);
-        // })
     }
 }).catch(function (erro) {
     console.log(erro);
@@ -153,6 +151,7 @@ fetch(`/setores/buscarSetores/${idMuseu}`).then(function (resposta) {
 
 
 function logout() {
+    sessionStorage.clear()
     window.location.href = "../login.html"
 }
 function verSetor(res) {
@@ -164,6 +163,35 @@ function noSector() {
     totalSectors.textContent = `Total de 0 setores, cadastre um setor para monitora-lo`
     qtdCritico.textContent = setoresCriticos
     qtdAlerta.textContent = setoresAlerta
+
+    Chart.defaults.color = "#292929";
+    Chart.defaults.font.size = 20;
+    Chart.defaults.plugins.legend.position = 'right';
+
+    const pieData = {
+        datasets: [{
+            label: 'Criticidade',
+            data: [0, 0, 1],
+            backgroundColor: [
+                '#C62400',
+                '#DC9E00',
+                '#575757'
+            ],
+            position: "#right"
+        }],
+        labels: ["Crítico", "Alerta", "Normal"],
+        legend: "none"
+    };
+
+    const pieConfig = {
+        type: 'pie',
+        data: pieData,
+
+    };
+    const pieChart = new Chart(
+        document.getElementById('pieChart'),
+        pieConfig,
+    );
 }
 
 
