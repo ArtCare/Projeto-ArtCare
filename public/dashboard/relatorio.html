@@ -22,12 +22,13 @@
                 <button class="option" onclick="navigateToSectors()">
                     <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
                 </button>
-                
+
                 <button class="option" onclick="navigateToSupervisor()">
                     <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
                 </button>
                 <button class="option onScreen">
-                    <i class="fa-solid fa-rectangle-list fa-xl menuicon onScreenColors"></i> <span class="menuOption onScreenColors">Relatórios</span>
+                    <i class="fa-solid fa-rectangle-list fa-xl menuicon onScreenColors"></i> <span
+                        class="menuOption onScreenColors">Relatórios</span>
                 </button>
 
             </div>
@@ -40,50 +41,36 @@
 
     <div class="content">
         <div class="acessosSpans">
-            <span class="relatorioSetores">Relatório de setores</span> <span class="relatorioAcesso"><a>Relatório de acesso</a></span>
+            <span class="relatorioSetores">Relatório de setores</span> <span class="relatorioAcesso"><a>Relatório de
+                    acesso</a></span>
         </div>
         <div class="supervisores">
             <div class="divButtonPdf">
                 <button class="gerarPdfButton ">Gerar PDF</button>
             </div>
-            <span class="supervisoresTitulo">Acessos</span>
-            <div class="dadosSupervisoresContainer">
+            <div class="alignDiv">
+                <span class="supervisoresTitulo">Acessos</span>
+            </div>
+            <div class="dadosSupervisoresContainer" id="dadosSupervisoresContainer">
                 <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <span class="dataHora">19/07/2024 - 19:35:22</span>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Marcos Araújo</span>
-                    <span class="email">marcos.araujo@louvre.frc</span>
-                    <span class="dataHora">18/06/2024 - 12:02:59</span>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <span class="dataHora">19/07/2024 - 19:35:22</span>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <span class="dataHora">19/07/2024 - 19:35:22</span>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <span class="dataHora">19/07/2024 - 19:35:22</span>
-                </div>
-                <div class="dadosSupervisores">
-                    <span class="nameSupervisor">Mauro Galvão</span>
-                    <span class="email">mauro.galvao@louvre.frc</span>
-                    <span class="dataHora">19/07/2024 - 19:35:22</span>
+                    <div class="div">
+                        <span class="legenda">Nome</span>
+                    </div>
+                    <div class="div">
+                        <span class="legenda" id>Setor</span>
+                    </div>
+                    <div class="div">
+                        <span class="legenda">Data - Hora</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
 
+<script src="../js/relatorio.js"></script>
 <script src="https://kit.fontawesome.com/77b47374b3.js" crossorigin="anonymous"></script>
 <script>
     function navigateToHome() {

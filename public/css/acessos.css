@@ -181,6 +181,9 @@ body {
 
 .dadosSupervisoresContainer {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow-y: scroll;
     scroll-behavior: smooth;
     height: 80%;
@@ -190,14 +193,16 @@ body {
 .dadosSupervisores {
     color: #666666;
     font-size: 24px;
-    width: 90%;
+    width: 80%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 20px;
     margin-left: 20px;
 }
-
+.div{
+    width: 300px;
+}
 .dadosSupervisoresContainer::-webkit-scrollbar {
     width: 8px;
 }
@@ -212,21 +217,28 @@ body {
     border-radius: 30px;
 }
 
-.nomes {
-    font-size: 24px;
-    font-style: normal;
+.nameSupervisor {
+    font-size: 30px;
+    font-weight: 700;
     font-family: "Caladea";
 }
 
-.email {
+.setor {
+    font-size: 24px;
+    font-family: "Caladea";
+    font-weight: 400;
+}
+.legenda {
     font-size: 20px;
     font-family: "Caladea";
     font-weight: 400;
+    font-style: italic;
 }
 
 .dataHora {
     font-style: italic;
-    color: #817e7e;
+    color: #666666;
+    font-weight: 400;
 }
 
 .content {
@@ -263,3 +275,4 @@ body {
     font-weight: 700;
     color: #666666;
 }
+

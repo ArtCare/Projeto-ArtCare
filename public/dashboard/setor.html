@@ -62,7 +62,7 @@
         <div class="div-cards">
             <div class="conteudo">
                 <div class="indicadores">
-                    <div class="card indicador">
+                    <div class="card indicador" id="indicadorTemp">
                         <span class="titulo-card">Temperatura atual</span>
                         <div class="informacao">
                             <span class="texto-card red" id="temperatura"></span>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
 
-                    <div class="card indicador">
+                    <div class="card indicador" id="indicadorUmi">
                         <span class="titulo-card">Umidade atual</span>
                         <div class="informacao">
                             <span class="texto-card blue" id="umidade"></span>
@@ -126,6 +126,19 @@
             </div>
         </div>
     </div>
+    <dialog id="alertModal" class="modal">
+        <div class="content" >
+          <div class="iconContainer" id="typeContent">
+            <img src="../assets/icons/alert.svg">
+          </div>
+          <div class="messageContainer" >
+                <span class="title" id="typeTitle"></span><br>
+                  <span class="message" id="message"></span>
+                    
+            <button class="btnModal" id="modalBtn" onclick="closeModal()">OK</button>
+          </div>
+        </div>
+      </dialog>
 </body>
 
 </html>

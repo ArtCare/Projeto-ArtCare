@@ -11,12 +11,25 @@ const umiMin = document.querySelector('#umiMin')
 const navigationSetores = document.querySelector("#navigationSetores")
 const navigationSupervisor = document.querySelector("#navigationSupervisor")
 const navigationRelatorio = document.querySelector("#navigationRelatorio")
+const alertModal = document.querySelector("#alertModal")
+const message = document.querySelector("#message")
+const typeContent = document.querySelector("#typeContent")
+const typeTitle = document.querySelector("#typeTitle")
+const modalBtn = document.querySelector("#modalBtn")
+const indicadorTemp = document.querySelector("#indicadorTemp")
+const indicadorUmi = document.querySelector("#indicadorUmi")
+
 
 const registrosTemperatura = []
 const registrosUmidade = []
 const tempoRegistro = []
 
-if(idSupervisor > 0){
+const temperaturaMax = []
+const temperaturaMin = []
+const umidadeMax = []
+const umidadeMin = []
+
+if (idSupervisor > 0) {
     navigationSetores.style.display = "none"
     navigationSupervisor.style.display = "none"
     navigationRelatorio.style.display = "none"
@@ -33,44 +46,26 @@ fetch(`/setores/buscarDadosSetor/${idSetor}`).then(res => {
 })
 fetch(`/setores/buscarMetricasSetor/${idSetor}`).then(res => {
     res.json().then(res => {
-        tempMax.textContent = `TEMPERATURA MÁXIMA: ${res[0].temperaturaMaxima}°C`
-        tempMin.textContent = `TEMPERATURA MÍNIMA: ${res[0].temperaturaMinima}°C`
-        umiMax.textContent = `UMIDADE MÁXIMA: ${res[0].umidadeMaxima}%`
-        umiMin.textContent = `UMIDADE MÍNIMA: ${res[0].umidadeMinima}%`
+        temperaturaMax.push(res[0].temperaturaMaxima)
+        temperaturaMin.push(res[0].temperaturaMinima)
+        umidadeMax.push(res[0].umidadeMaxima)
+        umidadeMin.push(res[0].umidadeMinima)
+
+
+        tempMax.textContent = `TEMPERATURA MÁXIMA: ${temperaturaMax[0]}°C`
+        tempMin.textContent = `TEMPERATURA MÍNIMA: ${temperaturaMin[0]}°C`
+        umiMax.textContent = `UMIDADE MÁXIMA: ${umidadeMax[0]}%`
+        umiMin.textContent = `UMIDADE MÍNIMA: ${umidadeMin[0]}%`
+        buscarCapturas()
     })
 })
-buscarCapturas()
+
 function logout() {
+    sessionStorage.clear()
     window.location.href = "login.html"
 }
 
 
-function mostrarLegendas() {
-
-    if (legendaAtiva == true) {
-        esconderLegendas()
-    } else {
-        headerContainer.innerHTML += `
-            <div class="metricas">
-                <div class="temperatura">
-                    <span class="titulo-metrica">Métricas de temperatura do setor</span>
-                    <div class="descricao">
-                        <p>Temperatura máxima: 00ºC</p>
-                        <p>Temperatura mínima: 00ºC</p>
-                    </div>
-                </div>
-                <div class="umidade">
-                    <span class="titulo-metrica">Métricas de umidade do setor</span>
-                    <div class="descricao">
-                        <p>Umidade máxima: 00ºC</p>
-                        <p>Umidade mínima: 00ºC</p>
-                    </div>
-                </div>
-            </div>
-        `
-        legendaAtiva = true;
-    }
-}
 let tempDados = {
     labels: tempoRegistro,
     datasets: [
@@ -151,27 +146,169 @@ let graficoStatus = new Chart(
         },
     }
 )
+
+let modalShow = false
 function buscarCapturas() {
     fetch(`/setores/buscarCapturasSetor/${idSetor}`).then(res => {
         res.json().then(res => {
+            console.log(res)
             temperatura.textContent = `${res[0].temperatura}°C`
             umidade.textContent = `${res[0].umidade}%`
             registrosTemperatura.push(res[0].temperatura)
             registrosUmidade.push(res[0].umidade)
-          
-            tempoRegistro.push(res[0].tempo)
 
-            if(registrosTemperatura.length > 7){
+            tempoRegistro.push(res[0].tempo)
+            console.log(registrosUmidade[registrosUmidade.length - 1], umidadeMin[0])
+
+            if (registrosTemperatura.length > 7) {
                 tempoRegistro.shift()
                 registrosTemperatura.shift()
                 registrosUmidade.shift()
             }
+            if (
+                registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMax[0] -1 &&
+                    registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMin[0] +1&&
+                
+                    registrosUmidade[registrosUmidade.length - 1] <= umidadeMax[0] -1 &&
+                    registrosUmidade[registrosUmidade.length - 1] >= umidadeMin[0] +1
+                )
+            {
+                indicadorTemp.style.border = "none"
+                indicadorUmi.style.border = "none"
+                atualizarSetor(1)
+            }
+            // critico
+            if (
+                (registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax[0] - 1 ||
+                    registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin[0] - 1) &&
+                (
+                    registrosUmidade[registrosUmidade.length - 1] > umidadeMax[0] - 1 ||
+                    registrosUmidade[registrosUmidade.length - 1] < umidadeMin[0] - 1
+                )
+            ) {
+                if (modalShow == false) {
+                    typeTitle.textContent = 'CRÍTICO!'
+                    message.textContent = "Temperatura e umidade fora das métricas, verifique o setor!"
+                    alertModal.showModal()
+                    modalShow = true
+                    atualizarSetor(3)
+                    indicadorTemp.style.border = "4px solid #C62400"
+                    indicadorUmi.style.border = "4px solid #1C50E0"
+                }
+            }
+            else if (
+                registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax[0] - 1 ||
+                registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin[0] - 1
+            ) {
+                if (modalShow == false) {
+                    typeTitle.textContent = 'CRÍTICO!'
+                    message.textContent = "Temperatura fora das métricas, verifique o setor!"
+                    alertModal.showModal()
+                    modalShow = true
+                    atualizarSetor(3)
+                    indicadorTemp.style.border = "4px solid #C62400"
+                }
+            } else if (
+                registrosUmidade[registrosUmidade.length - 1] > umidadeMax[0] - 1 ||
+                registrosUmidade[registrosUmidade.length - 1] < umidadeMin[0] - 1
+
+            ) {
+                if (modalShow == false) {
+                    typeTitle.textContent = 'CRÍTICO!'
+                    message.textContent = "Umidade fora das métricas, verifique o setor!"
+                    alertModal.showModal()
+                    modalShow = true
+                    atualizarSetor(3)
+                    indicadorUmi.style.border = "4px solid #1C50E0"
+                }
+            }
+
+            // alerta
+            if (
+                (
+                    registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMax[0] - 1 ||
+                    registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMin[0] + 1
+                )
+                &&
+                (
+                    registrosUmidade[registrosUmidade.length - 1] >= umidadeMax[0] - 1 ||
+                    registrosUmidade[registrosUmidade.length - 1] <= umidadeMin[0] + 1
+                )
+            ) {
+                if (modalShow == false) {
+                    alertModal.style.borderColor = "#DC9E00"
+                    typeContent.style.backgroundColor = '#DC9E00'
+                    modalBtn.style.backgroundColor = '#DC9E00'
+                    typeTitle.style.color = '#DC9E00'
+                    typeTitle.textContent = 'ALERTA!'
+                    message.textContent = "Temperatura e umidade muito próximos as métricas, verifique o setor!"
+                    alertModal.showModal()
+                    modalShow = true
+                    atualizarSetor(2)
+                    indicadorTemp.style.border = "4px solid #DC9E00"
+                    indicadorUmi.style.border = "4px solid #DC9E00"
+                }
+            }
+            else if (
+                registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMax[0] - 1 ||
+                registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMin[0] + 1
+            ) {
+                if (modalShow == false) {
+                    alertModal.style.borderColor = "#DC9E00"
+                    typeContent.style.backgroundColor = '#DC9E00'
+                    modalBtn.style.backgroundColor = '#DC9E00'
+                    typeTitle.style.color = '#DC9E00'
+                    typeTitle.textContent = 'ALERTA!'
+                    message.textContent = "Temperatura muito próxima as métricas, verifique o setor!"
+                    alertModal.showModal()
+                    modalShow = true
+                    atualizarSetor(2)
+                    indicadorTemp.style.border = "4px solid #DC9E00"
+                }
+            } else if (
+                registrosUmidade[registrosUmidade.length - 1] >= umidadeMax[0] - 1 ||
+                registrosUmidade[registrosUmidade.length - 1] <= umidadeMin[0] + 1
+
+            ) {
+                if (modalShow == false) {
+                    alertModal.style.borderColor = "#DC9E00"
+                    typeContent.style.backgroundColor = '#DC9E00'
+                    modalBtn.style.backgroundColor = '#DC9E00'
+                    typeTitle.style.color = '#DC9E00'
+                    typeTitle.textContent = 'ALERTA!'
+                    message.textContent = "Umidade muito próxima as métricas, verifique o setor!"
+                    alertModal.showModal()
+                    modalShow = true
+                    atualizarSetor(2)
+                    indicadorUmi.style.border = "4px solid #DC9E00"
+                }
+            }
+
+
+
             graficoTemperatura.update();
             graficoUmidade.update();
-            console.log(tempoRegistro)
         })
     })
     setTimeout(() => {
         buscarCapturas()
     }, 3000)
+}
+
+function closeModal() {
+    alertModal.close()
+}
+d
+function atualizarSetor(status) {
+    fetch(`/setores/atualizarStatusSetor/${idSetor}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            statusSetor: status,
+        }),
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
 }

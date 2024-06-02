@@ -68,16 +68,20 @@ create table supervisor (
 create table visualizacao (
 idVisualizacao int auto_increment,
 fkSetor int,
-fkSensor int,
+fkSupervisor int,
 fkMuseu int,
-	constraint pkCompostaVisualizacao primary key (idVisualizacao, fkSetor, fkSensor, fkMuseu),
-    constraint fkSetorVisualizacao foreign key (fkSetor) references setor(idSetor),
-    constraint fkSensorVisualizacao foreign key (fkSensor) references sensor(idSensor),
-    constraint fkMuseuVisualizacao foreign key (fkMuseu) references museu(idMuseu),
-dtRegistro timestamp not null default current_timestamp
+	constraint pkCompostaVisualizacao primary key (idVisualizacao, fkSetor, fkSupervisor, fkMuseu),
+    foreign key (fkSetor) references setor(idSetor),
+    foreign key (fkSupervisor) references supervisor(idSupervisor),
+    foreign key (fkMuseu) references museu(idMuseu),
+dtVisualizacao timestamp not null default current_timestamp
 );
 
+insert into visualizacao (fkSetor, fkSupervisor, fkMuseu) values (
+1, 1, 3
+);
 
+drop table visualizacao;
 
 create table registro (
 	idRegistro int auto_increment,
@@ -131,11 +135,13 @@ select * from supervisor;
 select * from representante;
 select * from setor;
 select * from sensor;
-select * from registro;
+select count(idRegistro) from registro;
 select temperatura from registro;
-select * from verificacao;
+select * from visualizacao;
 select idSetor, nome, statusSetor from setor where fkMuseu = 1 order by statusSetor DESC;
 SELECT idSupervisor, nome, email, senha, fkMuseu FROM supervisor;
 truncate registro;
 update setor set statusSetor = 3 where idSetor = 2;
 
+select supervisor.nome, setor.nome, dtVisualizacao from supervisor join visualizacao on idSupervisor = fkSupervisor join setor on fkSetor = idSetor where visualizacao.fkMuseu = 2;
+insert into visualizacao (fkSetor, fkSupervisor, fkMuseu) values (2, 2, 3);

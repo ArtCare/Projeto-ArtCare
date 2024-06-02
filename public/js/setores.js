@@ -1,4 +1,5 @@
 const fkMuseu = sessionStorage.getItem("FK_MUSEU")
+const fkSupervisor = sessionStorage.getItem("ID_SUPERVISOR")
 const modal = document.querySelector('#modal')
 const setores = document.querySelector('#setores')
 const input_umidade_minima = document.querySelector('#input_umidade_minima')
@@ -56,7 +57,7 @@ function buscarSetores() {
             }
         })
     })
-   }
+}
 function registerNewSector() {
     console.log(qtdSetores)
     modal.showModal()
@@ -70,7 +71,7 @@ function verSetor(res) {
 function cadastrarSetor() {
     let sensor = qtdSetores + 1
 
-    if(sensor >= 6){
+    if (sensor >= 6) {
         sensor = 1
     }
 
@@ -92,7 +93,7 @@ function cadastrarSetor() {
         tempMin = input_temperatura_minima.value
         tempMax = input_temperatura_maxima.value
     }
-    
+
     fetch("/setores/novoSetor", {
         method: "POST",
         headers: {
@@ -107,10 +108,12 @@ function cadastrarSetor() {
             umidadeMaxima: umiMax,
             temperaturaMinima: tempMin,
             temperaturaMaxima: tempMax
-        }), 
+        }),
+    }).then(()=>{
+        buscarSetores()
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
     });
-    location.reload()
+    
     modal.close()
 }

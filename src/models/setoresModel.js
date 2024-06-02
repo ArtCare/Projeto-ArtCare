@@ -23,7 +23,7 @@ function buscarDadosSetor(idSetor){
     return database.executar(instrucaoSql);
 }
 function buscarCapturasSetor(idSetor){
-    var instrucaoSql = `select round((umidade),0) as umidade, round((temperatura),0) as temperatura, TIME(dtRegistro) as tempo from setor 
+    var instrucaoSql = `select setor.nome, round((umidade),0) as umidade, round((temperatura),0) as temperatura, TIME(dtRegistro) as tempo from setor 
     join sensor on setor.fkSensor = idSensor join
      registro on registro.fkSensor = idSensor where idSetor = ${idSetor} order by idRegistro DESC limit 1;`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -51,6 +51,12 @@ function buscarUltimoSetor(fkMuseu) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }    
+function atualizarStatusSetor(statusSetor, idSetor) {
+    var instrucaoSql = `update setor set statusSetor = ${statusSetor} where idSetor = ${idSetor};`;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}  
+
 
 module.exports = {
     buscarSetores,
@@ -61,5 +67,6 @@ module.exports = {
     buscarMetricasSetor,
     novoSetor,
     novaVerificacao,
-    buscarUltimoSetor
+    buscarUltimoSetor,
+    atualizarStatusSetor
 }

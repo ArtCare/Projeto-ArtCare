@@ -269,9 +269,13 @@ canvas {
     margin-right: 20px;
 }
 
-.card:hover {
+.alertTemp {
     border: 3px solid #C62400;
     box-shadow: 0 0 15px #C62400;
+}
+.alertUmi {
+    border: 3px solid #1C50E0;
+    box-shadow: 0 0 15px #1C50E0;
 }
 
 .titulo-card {
@@ -458,4 +462,77 @@ canvas {
 .infoIcon {
     color: #666666;
 
+}
+
+.modal{
+    width: 40%;
+    height: 30%;
+    border: 8px solid;
+    border-color:  #C62400;
+    padding: 0;
+    border-radius: 20px;
+}
+
+.modal::backdrop{
+    background-color: #000000b9;
+
+}
+.content{
+    display: flex;
+    height: 100%;
+    border-radius: 20px;
+}
+.iconContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 30%;
+    background-color: #C62400;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.messageContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+    font-family: 'Caladea';
+    font-weight: 700;
+}
+.textContainer{
+    width: 50%;
+}
+.title{
+    color: #C62400;
+    font-size: 50px;
+
+}
+.message{
+    color: #666666;
+    font-size: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.btnModal{
+    font-family: 'Caladea';
+    width: 30%;
+    background-color:#C62400;
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 20px;
+    height: 16%;
+    border-radius: 10px;
+    transition: all .4s ease-in-out;
+}
+
+.btnModal:hover {
+    background-color: #831d0b;
+    color: rgba(255, 255, 255, 0.850);
+    cursor: pointer;
 }

@@ -25,5 +25,7 @@ router.get("/buscarMetricasSetor/:idSetor", function (req, res) {
 router.post("/novoSetor/", function (req, res) {
     setoresController.novoSetor(req, res);
 })
-
+router.put("/atualizarStatusSetor/:idSetor", function (req, res) {
+    setoresController.atualizarStatusSetor(req, res);
+})
 module.exports = router;

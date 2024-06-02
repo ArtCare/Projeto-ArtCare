@@ -98,8 +98,8 @@ fetch(`/setores/buscarSetores/${idMuseu}`).then(function (resposta) {
   async function pie() {
     await fetch(`/setores/buscarSetoresAlerta/${idMuseu}`).then(function (resposta) {
         resposta.json().then(res => {
-            
-        })}) 
+            })}) 
+      setTimeout(() => {  
         let critico = setoresCriticos[0]
         let alerta = setoresAlerta[0]
         
@@ -140,10 +140,12 @@ fetch(`/setores/buscarSetores/${idMuseu}`).then(function (resposta) {
             data: pieData,
 
         };
-        const pieChart = new Chart(
-            document.getElementById('pieChart'),
-            pieConfig,
-        );
+        
+            const pieChart = new Chart(
+                document.getElementById('pieChart'),
+                pieConfig,
+            );
+        }, 200);
     }
 }).catch(function (erro) {
     console.log(erro);
@@ -155,8 +157,27 @@ function logout() {
     window.location.href = "../login.html"
 }
 function verSetor(res) {
-    window.location.href = "./setor.html"
+    if(idSupervisor > 0){
+        fetch(`/relatorio/inserirRelatorioVisualizacao/${idMuseu}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            fkSetor: res.value,
+            fkSupervisor: idSupervisor,
+        }),
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+     window.location.href = "./setor.html"
     sessionStorage.setItem("idSetor", res.value)
+    }else{
+        window.location.href = "./setor.html"
+        sessionStorage.setItem("idSetor", res.value)
+    }
+    
+   
 }
 
 function noSector() {
