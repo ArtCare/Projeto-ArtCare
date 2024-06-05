@@ -470,3 +470,8 @@ dialog[open]::backdrop {
   margin-bottom: 15px;
   color: white;
 }
+
+.botaoFecharModal:hover {
+  background-color: #B08067;
+  border: 2px solid #fff;
+}
