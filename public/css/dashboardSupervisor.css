@@ -256,7 +256,6 @@ body {
 
     display: flex;
     justify-content: center;
-    margin-top: 3%;
     font-size: 30px;
     color:  rgb(176, 128, 103);
 }
@@ -349,4 +348,28 @@ body {
 
 dialog[open]::backdrop{
     background-color: #00000075;
+}
+
+.botaoFecharModal {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 91%;
+    border-radius: 9px;
+    background-color: #666666;
+    border: none;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+    width: 70px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.botaoFecharModal:hover {
+    background-color: #B08067;
+    border: 2px solid #fff;
 }
