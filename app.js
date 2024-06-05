@@ -19,7 +19,6 @@ var usuarioRouter = require("./src/routes/usuarios");
 var setoresRouter = require("./src/routes/setores");
 var supervisorRouter = require("./src/routes/supervisor");
 var relatorioRouter = require("./src/routes/relatorio");
-var aquariosRouter = require("./src/routes/aquarios");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,7 +30,6 @@ app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/relatorio", relatorioRouter);
 app.use("/setores", setoresRouter);
-app.use("/aquarios", aquariosRouter);
 app.use("/supervisor", supervisorRouter);
 
 app.listen(PORTA_APP, function () {
