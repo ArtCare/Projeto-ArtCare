@@ -22,3 +22,8 @@ fetch(`/relatorio/buscarRelatorioVisualizacao/${fkMuseu}`).then(res => {
         }
     })
 })
+
+function logout() {
+    sessionStorage.clear()
+    window.location.href = "../login.html"
+}
