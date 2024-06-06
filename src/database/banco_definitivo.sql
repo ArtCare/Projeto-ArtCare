@@ -77,12 +77,6 @@ fkMuseu int,
 dtVisualizacao timestamp not null default current_timestamp
 );
 
-insert into visualizacao (fkSetor, fkSupervisor, fkMuseu) values (
-1, 1, 3
-);
-
-drop table visualizacao;
-
 create table registro (
 	idRegistro int auto_increment,
     fkSensor int,
@@ -93,27 +87,6 @@ create table registro (
     constraint fkSensorRegistro foreign key (fkSensor) references sensor (idSensor)
 );
 
-desc registro;
--- Necessário alterar INSERTS e SELECTS
-
-insert into endereco (cep, numEnd, complemento) values
-('08140-060', '979', 'próximo à avenida paulista');
-
-insert into museu (fkEndereco, nome, cnpj, rm) values
-(1, 'masp', '12345678909876', '520485530');
-
-insert into sensor (nome, tipo) values
-('dht11', 'temperatura, umidade');
-
-insert into supervisor (nome, email, senha, fkMuseu) values
-('bruno', 'bruno.oliveira@gmail.com', 'Bruninho321', 1);
-
-insert into registro (fkSensor, temperatura, umidade) values
-(1, 31.00, 26.00);
-
-select * from representante;
-insert into representante (fkMuseu, nome, email, senha) values 
-(1, "Julia", "juliaararipe@gmail.com", "12345678");
 
 SELECT idMuseu FROM museu ORDER BY idMuseu DESC LIMIT 1;
 
@@ -144,4 +117,3 @@ truncate registro;
 update setor set statusSetor = 3 where idSetor = 2;
 
 select supervisor.nome, setor.nome, dtVisualizacao from supervisor join visualizacao on idSupervisor = fkSupervisor join setor on fkSetor = idSetor where visualizacao.fkMuseu = 2;
-insert into visualizacao (fkSetor, fkSupervisor, fkMuseu) values (2, 2, 3);

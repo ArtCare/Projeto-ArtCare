@@ -28,6 +28,7 @@ const temperaturaMax = []
 const temperaturaMin = []
 const umidadeMax = []
 const umidadeMin = []
+let modalShow = false
 
 if (idSupervisor > 0) {
     navigationSetores.style.display = "none"
@@ -147,7 +148,7 @@ let graficoStatus = new Chart(
     }
 )
 
-let modalShow = false
+
 function buscarCapturas() {
     fetch(`/setores/buscarCapturasSetor/${idSetor}`).then(res => {
         res.json().then(res => {
@@ -156,9 +157,8 @@ function buscarCapturas() {
             umidade.textContent = `${res[0].umidade}%`
             registrosTemperatura.push(res[0].temperatura)
             registrosUmidade.push(res[0].umidade)
-
             tempoRegistro.push(res[0].tempo)
-            console.log(registrosUmidade[registrosUmidade.length - 1], umidadeMin[0])
+            console.log(modalShow)
 
             if (registrosTemperatura.length > 7) {
                 tempoRegistro.shift()
@@ -166,24 +166,24 @@ function buscarCapturas() {
                 registrosUmidade.shift()
             }
             if (
-                registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMax[0] -1 &&
-                    registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMin[0] +1&&
-                
-                    registrosUmidade[registrosUmidade.length - 1] <= umidadeMax[0] -1 &&
-                    registrosUmidade[registrosUmidade.length - 1] >= umidadeMin[0] +1
-                )
-            {
+                registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMax[0] &&
+                registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMin[0] &&
+                registrosUmidade[registrosUmidade.length - 1] < umidadeMax[0] &&
+                registrosUmidade[registrosUmidade.length - 1] > umidadeMin[0]
+            ) {
                 indicadorTemp.style.border = "none"
                 indicadorUmi.style.border = "none"
+                if(modalShow){
+                    modalShow = false
+                }
                 atualizarSetor(1)
-            }
-            // critico
-            if (
-                (registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax[0] - 1 ||
-                    registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin[0] - 1) &&
+            }            
+            else if (
+                (registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax[0] ||
+                    registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin[0]) &&
                 (
-                    registrosUmidade[registrosUmidade.length - 1] > umidadeMax[0] - 1 ||
-                    registrosUmidade[registrosUmidade.length - 1] < umidadeMin[0] - 1
+                    registrosUmidade[registrosUmidade.length - 1] > umidadeMax[0] ||
+                    registrosUmidade[registrosUmidade.length - 1] < umidadeMin[0]
                 )
             ) {
                 if (modalShow == false) {
@@ -197,8 +197,8 @@ function buscarCapturas() {
                 }
             }
             else if (
-                registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax[0] - 1 ||
-                registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin[0] - 1
+                registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax[0] ||
+                registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin[0]
             ) {
                 if (modalShow == false) {
                     typeTitle.textContent = 'CRÍTICO!'
@@ -209,8 +209,8 @@ function buscarCapturas() {
                     indicadorTemp.style.border = "4px solid #C62400"
                 }
             } else if (
-                registrosUmidade[registrosUmidade.length - 1] > umidadeMax[0] - 1 ||
-                registrosUmidade[registrosUmidade.length - 1] < umidadeMin[0] - 1
+                registrosUmidade[registrosUmidade.length - 1] > umidadeMax[0] ||
+                registrosUmidade[registrosUmidade.length - 1] < umidadeMin[0]
 
             ) {
                 if (modalShow == false) {
@@ -283,9 +283,6 @@ function buscarCapturas() {
                     indicadorUmi.style.border = "4px solid #DC9E00"
                 }
             }
-
-
-
             graficoTemperatura.update();
             graficoUmidade.update();
         })
