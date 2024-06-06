@@ -112,25 +112,40 @@ body {
     justify-content: flex-end;
 }
 
-.divButtonPdf  {
-    margin-left: 80%;
+.divButtonPesquisa  {
+    margin-left: 70%;
 }
 
-.gerarPdfButton {
+.iptPesquisa {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    background-color: #666666;
-    border: none;
-    transition: all .4s ease-in-out;
+    border-radius: 25px;
+    background-color: #fff;
+    border: 3px solid #666666;
+    /* transition: all .4s ease-in-out; */
     cursor: pointer;
-    width: 130px;
-    height: 50px;
-    font-size: 15px;
+    width: 285px;
+    height: 38px;
+    font-size: 18px;
     font-weight: bold;
-    color: #fff;
-    margin-top: 20px;
+    color: #666666;
+    margin-top: 23px;
+    padding: 0 10px;
+    padding-left: 28px;
+    box-sizing: border-box;
+}
+
+.iptPesquisa::placeholder {
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.fa-magnifying-glass {
+    color: #666666;
+    position: relative;
+    top: 52px;
+    left: 10px;
 }
 
 .novoSupervisorButtom:hover {
