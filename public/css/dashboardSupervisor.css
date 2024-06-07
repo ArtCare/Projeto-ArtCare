@@ -246,6 +246,19 @@ body {
     border: none;
 }
 
+
+#modalSupervisor2 {
+
+    width: 785px;
+    height: 375px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Caladea';
+    font-weight: bold;
+    border: none;
+}
+
 .container-modalSupervisor {
 
     width: 100%;

@@ -1,6 +1,7 @@
 const fkMuseu = sessionStorage.getItem("FK_MUSEU")
 
 const modal = document.querySelector("#modalSupervisor")
+const modal2 = document.querySelector("#modalSupervisor2")
 const dadosSupervisoresContainer = document.querySelector("#dadosSupervisoresContainer")
 const nome = document.querySelector("#input_nomeSupervisor")
 const email = document.querySelector("#input_emailSupervisor")
@@ -15,13 +16,13 @@ function buscarSupervisor() {
                 dadosSupervisoresContainer.innerHTML += `
                 <div class="dadosSupervisores">
                 <div class="nomeDiv">
-                <span class="nameSupervisor">${res[posicao].nome}</span>
+                <span value="${res[posicao].id}" class="nameSupervisor">${res[posicao].nome}</span>
                 </div>
                 <div class="nomeDiv">
                 <span class="email">${res[posicao].email}</span>
                 </div>
-                <button class="edit">
-                    <i class="fa-solid fa-pen"></i>
+                <button onclick="editarSupervisor()" class="edit">
+                    <i  class="fa-solid fa-pen"></i>
                 </button>
                 <button class="del">
                     <i class="fa-solid fa-trash"></i>
@@ -36,20 +37,24 @@ function buscarSupervisor() {
 function novoSupervisor() {
     modal.showModal()
 }
+
+function editarSupervisor() {
+    modal2.showModal()
+}
 function cadastrarSupervisor() {
 
     let senhaNum = false
     console.log(email)
     console.log(nome.value)
-    if (input_nomeSupervisor.value.length <= 3) {
+    if (nome.value.length <= 3) {
         alertaSupervisor.innerHTML = `Seu nome precisa ter mais que 3 caracteres.`                      
-    } else if (input_emailSupervisor.value.indexOf('@') == -1 || input_emailSupervisor.value.indexOf('.') == -1) {
+    } else if (email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1) {
         alertaSupervisor.innerHTML = "Email inválido"
-    } else if (input_senhaSupervisor.value.length <= 7) {
+    } else if (senha.value.length <= 7) {
         alertaSupervisor.innerHTML ="Sua senha precisa ter mais que 7 caracteres."
     } else {
         for (let numero = 0; numero <= 9; numero++) {
-            if (input_senhaSupervisor.value
+            if (senha.value
                 .indexOf(numero.toString()) != -1) {
                 senhaNum = true
             }

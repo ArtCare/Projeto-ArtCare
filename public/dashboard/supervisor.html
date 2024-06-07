@@ -77,6 +77,38 @@
                         </div>
                     </div>
                 </dialog>
+                <dialog id="modalSupervisor2">
+                    <button class="botaoFecharModal" onclick="modal.close()">Fechar</button>
+                    <div class="container-modalSupervisor">
+                        <span class="cadastrarSupervisor">
+                            Alterar dados do supervisor
+                        </span>
+                        <span class="dadosDoSupervisor">
+                            <span>Dados do supervisor</span>
+                            <span class="alertaSupervisor" id="alertaSupervisor"></span>
+                        </span>
+                        <div class="flihoSupervisor">
+                            <span class="inputSupervisor">
+                                Nome do supervisor
+                                <input type="text" placeholder="Nome do supervisor" class="inputDadosSupervisor"
+                                    id="input_nomeSupervisor">
+                            </span>
+                            <span class="inputSupervisor">
+                                Email
+                                <input type="text" placeholder="mauro.galvao@louvre.museu" class="inputDadosSupervisor"
+                                    id="input_emailSupervisor">
+                            </span>
+                            <span class="inputSupervisor">
+                                Senha
+                                <input type="password" placeholder="******" class="inputDadosSupervisor"
+                                    id="input_senhaSupervisor">
+                            </span>
+                        </div>
+                        <div class="divBotaoCadastroSupervisor">
+                            <button class="botaoCadastroSupervisor" onclick="AlterarDadosSupervisor()">Alterar</button>
+                        </div>
+                    </div>
+                </dialog>
         </div>
     </div>
 </body>
