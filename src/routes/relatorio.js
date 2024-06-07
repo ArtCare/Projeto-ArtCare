@@ -27,4 +27,8 @@ router.delete("/deletar/:idrelatorio", function (req, res) {
     relatorioController.deletar(req, res);
 });
 
+router.post("/pesquisarPorNome/:fkMuseu", function (req, res) {
+    relatorioController.pesquisarPorNome(req, res);
+})
+
 module.exports = router;
