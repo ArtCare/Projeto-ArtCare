@@ -64,7 +64,17 @@ function deletar(idAviso) {
     return database.executar(instrucaoSql);
 }
 
+function pesquisarPorNome(fkMuseu, nomePesquisado) {
+    var instrucaoSql = `
+    select supervisor.nome as nomeSupervisor, setor.nome as nomeSetor, date_format(dtVisualizacao, '%Y/%m/%d %H:%i:%s') as dataHora from supervisor join visualizacao on idSupervisor = fkSupervisor join setor on fkSetor = idSetor where visualizacao.fkMuseu = ${fkMuseu} and supervisor.nome like '${nomePesquisado}%';
+    `
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     buscarRelatorioVisualizacao,
     inserirRelatorioVisualizacao,
+    pesquisarPorNome
 }
