@@ -1,7 +1,7 @@
 const fkMuseu = sessionStorage.getItem("FK_MUSEU")
 
 const modal = document.querySelector("#modalSupervisor")
-const modal2 = document.querySelector("#modalSupervisor2")
+const modal2 = document.querySelector("#modalEditSupervisor")
 const dadosSupervisoresContainer = document.querySelector("#dadosSupervisoresContainer")
 const nome = document.querySelector("#input_nomeSupervisor")
 const email = document.querySelector("#input_emailSupervisor")
