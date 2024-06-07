@@ -2,6 +2,7 @@ const fkMuseu = sessionStorage.getItem("FK_MUSEU")
 const nome = document.querySelector("#nome")
 const setor = document.querySelector("#setor")
 const dataHora = document.querySelector("#dataHora")
+const nomePesquisado = document.querySelector("#ipt_pesquisa")
 fetch(`/relatorio/buscarRelatorioVisualizacao/${fkMuseu}`).then(res => {
     res.json().then(res => {
         console.log(res[0].dataHora)
