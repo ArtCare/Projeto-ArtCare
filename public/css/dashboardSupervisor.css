@@ -412,15 +412,14 @@ dialog[open]::backdrop{
 }
 
 .botaoFecharModalExcluir {
-    margin-left: 91%;
-    border-radius: 9px;
+    border-radius: 10px;
     background-color: #666666;
     border: none;
     transition: all .4s ease-in-out;
     cursor: pointer;
-    width: 70px;
-    height: 35px;
-    font-size: 14px;
+    width: 74px;
+    height: 37px;
+    font-size: 20px;
     font-weight: bold;
     color: #fff;
     margin-bottom: 20px;
@@ -430,4 +429,34 @@ dialog[open]::backdrop{
 .botaoFecharModalExcluir:hover {
     background-color: #B08067;
     border: 2px solid #fff;
+}
+
+.botaoExcluirSupervisor {
+
+    height: 37px;
+    width: 74px;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: rgb(102, 102, 102);
+    color: white;
+    border: none;
+    font-family: 'caladea';
+    font-weight: bold;
+    transition: all .4s ease-in-out;
+    cursor: pointer;; 
+
+}
+
+.botaoExcluirSupervisor:hover {
+
+    background-color: rgb(176, 128, 103) ;
+    border: 2px solid #fff;
+}
+
+.divBotoesExcluirSupervisor {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+
 }
