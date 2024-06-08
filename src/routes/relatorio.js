@@ -30,5 +30,12 @@ router.delete("/deletar/:idrelatorio", function (req, res) {
 router.post("/pesquisarPorNome/:fkMuseu", function (req, res) {
     relatorioController.pesquisarPorNome(req, res);
 })
+router.post("/pesquisarPorNome/:fkMuseu", function (req, res) {
+    relatorioController.pesquisarPorNome(req, res);
+})
+
+router.get("/buscarQuantidadeStatusAlerta/:idMuseu", function (req, res) {
+    relatorioController.buscarQuantidadeStatusAlerta(req, res);
+})
 
 module.exports = router;

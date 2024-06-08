@@ -15,7 +15,21 @@ function inserirRelatorioVisualizacao(fkSetor, fkSupervisor, fkMuseu) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+function inserirRelatorioSetor(fkSetor, statusSetor, temperatura, umidade) {
+    var instrucaoSql = `
+   insert into relatorio (fkSetor, statusSetor, temperatura, umidade) values (${fkSetor}, '${statusSetor}', ${temperatura}, ${umidade});
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
+function buscarQuantidadeStatusAlerta(fkMuseu) {
+    var instrucaoSql = `
+    select nome, count(idRelatorio) as quantidade from relatorio join setor on fkSetor = idSetor where relatorio.statusSetor = 'Alerta' and  fkMuseu = ${fkMuseu} group by nome order by nome; ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 function listarPorUsuario(idUsuario) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorUsuario()");
     var instrucaoSql = `
@@ -76,5 +90,7 @@ function pesquisarPorNome(fkMuseu, nomePesquisado) {
 module.exports = {
     buscarRelatorioVisualizacao,
     inserirRelatorioVisualizacao,
-    pesquisarPorNome
+    pesquisarPorNome,
+    inserirRelatorioSetor,
+    buscarQuantidadeStatusAlerta
 }

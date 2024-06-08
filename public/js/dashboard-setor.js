@@ -166,24 +166,24 @@ function buscarCapturas() {
                 registrosUmidade.shift()
             }
             if (
-                registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMax[0] &&
-                registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMin[0] &&
-                registrosUmidade[registrosUmidade.length - 1] < umidadeMax[0] &&
-                registrosUmidade[registrosUmidade.length - 1] > umidadeMin[0]
+                registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMax[0] - 1 &&
+                registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMin[0] + 1 &&
+                registrosUmidade[registrosUmidade.length - 1] < umidadeMax[0] - 1 &&
+                registrosUmidade[registrosUmidade.length - 1] > umidadeMin[0] + 1
             ) {
                 indicadorTemp.style.border = "none"
                 indicadorUmi.style.border = "none"
-                if(modalShow){
+                if (modalShow) {
                     modalShow = false
                 }
                 atualizarSetor(1)
-            }            
+            }
             else if (
                 (registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax[0] ||
-                    registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin[0]) &&
+                    registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin[0])  &&
                 (
                     registrosUmidade[registrosUmidade.length - 1] > umidadeMax[0] ||
-                    registrosUmidade[registrosUmidade.length - 1] < umidadeMin[0]
+                    registrosUmidade[registrosUmidade.length - 1] < umidadeMin[0] 
                 )
             ) {
                 if (modalShow == false) {
@@ -192,6 +192,7 @@ function buscarCapturas() {
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(3)
+                    novoRelatorio("Crítico", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorTemp.style.border = "4px solid #C62400"
                     indicadorUmi.style.border = "4px solid #1C50E0"
                 }
@@ -206,6 +207,7 @@ function buscarCapturas() {
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(3)
+                    novoRelatorio("Crítico", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorTemp.style.border = "4px solid #C62400"
                 }
             } else if (
@@ -219,20 +221,25 @@ function buscarCapturas() {
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(3)
+                    novoRelatorio("Crítico", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorUmi.style.border = "4px solid #1C50E0"
                 }
-            }
-
-            // alerta
-            if (
+            }else if (
                 (
-                    registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMax[0] - 1 ||
-                    registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMin[0] + 1
+                    (registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMax - 1 &&
+                        registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMax)
+                    ||
+                    (registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMin + 1 &&
+                        registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMin + 1)
                 )
                 &&
                 (
-                    registrosUmidade[registrosUmidade.length - 1] >= umidadeMax[0] - 1 ||
-                    registrosUmidade[registrosUmidade.length - 1] <= umidadeMin[0] + 1
+                    (registrosUmidade[registrosUmidade.length - 1] >= umidadeMax - 1 &&
+                        registrosUmidade[registrosUmidade.length - 1] <= umidadeMax) ||
+
+                    (registrosUmidade[registrosUmidade.length - 1] <= umidadeMin + 1 &&
+                        registrosUmidade[registrosUmidade.length - 1] >= umidadeMin
+                    )
                 )
             ) {
                 if (modalShow == false) {
@@ -245,13 +252,19 @@ function buscarCapturas() {
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(2)
+                    novoRelatorio("Alerta", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorTemp.style.border = "4px solid #DC9E00"
                     indicadorUmi.style.border = "4px solid #DC9E00"
                 }
             }
             else if (
-                registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMax[0] - 1 ||
-                registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMin[0] + 1
+                (
+                    (registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMax - 1 &&
+                        registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMax)
+                    ||
+                    (registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMin + 1 &&
+                        registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMin + 1)
+                )
             ) {
                 if (modalShow == false) {
                     alertModal.style.borderColor = "#DC9E00"
@@ -263,12 +276,16 @@ function buscarCapturas() {
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(2)
+                    novoRelatorio("Alerta", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorTemp.style.border = "4px solid #DC9E00"
                 }
             } else if (
-                registrosUmidade[registrosUmidade.length - 1] >= umidadeMax[0] - 1 ||
-                registrosUmidade[registrosUmidade.length - 1] <= umidadeMin[0] + 1
-
+                (registrosUmidade[registrosUmidade.length - 1] >= umidadeMax - 1 &&
+                    registrosUmidade[registrosUmidade.length - 1] <= umidadeMax)
+                ||
+                (registrosUmidade[registrosUmidade.length - 1] <= umidadeMin + 1 &&
+                    registrosUmidade[registrosUmidade.length - 1] >= umidadeMin
+                )
             ) {
                 if (modalShow == false) {
                     alertModal.style.borderColor = "#DC9E00"
@@ -280,6 +297,7 @@ function buscarCapturas() {
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(2)
+                    novoRelatorio("Alerta", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorUmi.style.border = "4px solid #DC9E00"
                 }
             }
@@ -305,6 +323,23 @@ function atualizarSetor(status) {
         body: JSON.stringify({
             statusSetor: status,
         }),
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+}
+
+function novoRelatorio(status, temperatura, umidade) {
+    fetch(`/relatorio/inserirRelatorioSetor/`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            fkSetor: idSetor,
+            statusSetor: status,
+            temperatura: temperatura,
+            umidade: umidade,
+        })
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
     });

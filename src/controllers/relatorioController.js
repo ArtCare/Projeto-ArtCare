@@ -63,6 +63,48 @@ function pesquisarDescricao(req, res) {
         );
 }
 
+function inserirRelatorioSetor(req, res) {
+    const fkSetor = req.body.fkSetor
+    const statusSetor = req.body.statusSetor
+    const temperatura = req.body.temperatura
+    const umidade = req.body.umidade
+
+    relatorioModel.inserirRelatorioSetor(fkSetor, statusSetor, temperatura, umidade)
+        .then(
+            function (resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!");
+                }
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "Houve um erro ao buscar os avisos: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function buscarQuantidadeStatusAlerta(req, res) {
+    const fkMuseu = req.params.idMuseu
+    relatorioModel.buscarQuantidadeStatusAlerta(fkMuseu).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
 function publicar(req, res) {
     var titulo = req.body.titulo;
     var descricao = req.body.descricao;
@@ -149,5 +191,7 @@ function pesquisarPorNome(req, res) {
 module.exports = {
     buscarRelatorioVisualizacao,
     inserirRelatorioVisualizacao,
-    pesquisarPorNome
+    pesquisarPorNome,
+    inserirRelatorioSetor,
+    buscarQuantidadeStatusAlerta
 }

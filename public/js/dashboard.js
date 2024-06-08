@@ -38,7 +38,6 @@ function atualizarSetores() {
             resposta.json().then(res => {
                 for (posicao = 0; posicao < res.length; posicao++) {
                     let setor = res[posicao].idSetor
-                    console.log(setor)
                     fetch(`/setores/buscarMetricasSetor/${setor}`).then(response => {
                         response.json().then(res => {
                             let temperaturaMax = res[0].temperaturaMaxima
@@ -51,62 +50,21 @@ function atualizarSetores() {
                                     registrosTemperatura.push(res[0].temperatura)
                                     registrosUmidade.push(res[0].umidade)
                                     if (
-                                        registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMax &&
-                                        registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMin &&
-                                        registrosUmidade[registrosUmidade.length - 1] < umidadeMax &&
-                                        registrosUmidade[registrosUmidade.length - 1] > umidadeMin
+                                        registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMax - 1 &&
+                                        registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMin + 1 &&
+                                        registrosUmidade[registrosUmidade.length - 1] < umidadeMax - 1 &&
+                                        registrosUmidade[registrosUmidade.length - 1] > umidadeMin + 1
                                     ) {
                                         setoresCriticos.push(0)
                                         setoresAlerta.push(0)
                                         atualizarSetor(1)
-                                    } else if (
-                                        (
-                                            (registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMax - 1 &&
-                                            registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMax)
-                                            ||
-                                           (registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMin + 1 &&
-                                            registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMin + 1)
-                                        )
-                                        &&
-                                        (
-                                            (registrosUmidade[registrosUmidade.length - 1] >= umidadeMax - 1 &&
-                                            registrosUmidade[registrosUmidade.length - 1] <= umidadeMax) ||
-
-                                            (registrosUmidade[registrosUmidade.length - 1] <= umidadeMin + 1 &&
-                                                registrosUmidade[registrosUmidade.length - 1] >= umidadeMin 
-                                            )
-                                        )
-                                    ) {
-                                        setoresCriticos.push(0)
-                                        atualizarSetor(2)
                                     }
                                     else if (
                                         (
-                                            (registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMax - 1 &&
-                                            registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMax)
-                                            ||
-                                           (registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMin + 1 &&
-                                            registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMin + 1)
+                                            registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax ||
+                                            registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin
                                         )
-                                    ) {
-                                        setoresCriticos.push(0)
-                                        atualizarSetor(2)
-                                    } else if (
-                                        (registrosUmidade[registrosUmidade.length - 1] >= umidadeMax - 1 &&
-                                            registrosUmidade[registrosUmidade.length - 1] <= umidadeMax) 
-                                            ||
-                                            (registrosUmidade[registrosUmidade.length - 1] <= umidadeMin + 1 &&
-                                                registrosUmidade[registrosUmidade.length - 1] >= umidadeMin 
-                                            )
-
-                                    ) {
-                                        setoresCriticos.push(0)
-                                        atualizarSetor(2)
-                                    }
-
-                                    else if (
-                                        (registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax ||
-                                            registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin) &&
+                                        ||
                                         (
                                             registrosUmidade[registrosUmidade.length - 1] > umidadeMax ||
                                             registrosUmidade[registrosUmidade.length - 1] < umidadeMin
@@ -114,22 +72,39 @@ function atualizarSetores() {
                                     ) {
                                         setoresAlerta.push(0)
                                         atualizarSetor(3)
-                                    }
-                                    else if (
-                                        registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax ||
-                                        registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin
-                                    ) {
-                                        setoresAlerta.push(0)
-                                        atualizarSetor(3)
-
                                     } else if (
-                                        registrosUmidade[registrosUmidade.length - 1] > umidadeMax ||
-                                        registrosUmidade[registrosUmidade.length - 1] < umidadeMin
+                                        (
+                                            registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMax - 1
+                                            &&
+                                            registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMax
 
+                                            ||
+
+                                            registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMin + 1
+                                            &&
+                                            registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMin + 1
+
+                                        )
+                                        ||
+                                        (
+                                            (
+                                                registrosUmidade[registrosUmidade.length - 1] >= umidadeMax - 1
+                                                &&
+                                                registrosUmidade[registrosUmidade.length - 1] <= umidadeMax
+                                            )
+                                            ||
+                                            (
+                                                registrosUmidade[registrosUmidade.length - 1] <= umidadeMin + 1
+                                                &&
+                                                registrosUmidade[registrosUmidade.length - 1] >= umidadeMin
+                                            )
+                                        )
                                     ) {
-                                        setoresAlerta.push(0)
-                                        atualizarSetor(3)
-                                    }})
+                                        setoresCriticos.push(0)
+                                        atualizarSetor(2)
+                                    }
+
+                                })
                             })
                         })
                     })
@@ -152,6 +127,8 @@ function atualizarSetores() {
                     }
                 }
             })
+        } else {
+            noSector()
         }
     })
 }
@@ -194,8 +171,6 @@ function buscarSetores() {
             `
                 }
             })
-        } else {
-            noSector()
         }
 
         fetch(`/setores/buscarSetoresCriticos/${idMuseu}`).then(function (respostaCritico) {
@@ -219,15 +194,7 @@ function buscarSetores() {
             console.log(erro);
         })
 
-        fetch(`/setores/buscarSetoresAlerta/${idMuseu}`).then(function (resposta) {
-            resposta.json().then(res => {
-                setoresAlerta.push(res.length)
-                qtdCritico.textContent = setoresCriticos[setoresCriticos.length - 1] ? setoresCriticos[setoresCriticos.length - 1] : 0
-                qtdAlerta.textContent = setoresAlerta[setoresAlerta.length - 1]
-            }
-            )
-            pie()
-        })
+
 
         async function pie() {
             await fetch(`/setores/buscarSetoresAlerta/${idMuseu}`).then(function (resposta) {
@@ -309,8 +276,8 @@ function verSetor(res) {
 
 function noSector() {
     totalSectors.textContent = `Total de 0 setores, cadastre um setor para monitora-lo`
-    qtdCritico.textContent = setoresCriticos
-    qtdAlerta.textContent = setoresAlerta
+    qtdCritico.textContent = 0
+    qtdAlerta.textContent = 0
 
     Chart.defaults.color = "#292929";
     Chart.defaults.font.size = 20;
@@ -342,40 +309,52 @@ function noSector() {
     );
 }
 
+const labels = []
+const datas = []
 
-
-
-
-const labels = ["Setor 1", "Setor 4", "Setor 5", "Setor 7", "setor 12"]
-const barData = {
-    labels: labels,
-    datasets: [{
-        label: 'Quantidade de vezes em estado de alerta',
-        data: [5, 10, 7, 3, 15],
-        backgroundColor: [
-            'rgba(255, 205, 86, 0.2)',
-
-        ],
-        borderColor: [
-            'rgb(255, 205, 86)',
-        ],
-        borderWidth: 2
-    }]
-};
-const barConfig = {
-    type: 'bar',
-    data: barData,
-    options: {
-        plugins: {
-            legend: {
-                display: false
-            },
+fetch(`/relatorio/buscarQuantidadeStatusAlerta/${idMuseu}`).then(response => {
+    response.json().then(res => {
+        console.log(res)
+        for (posicao = 0; posicao < res.length; posicao++) {
+            labels.push(res[posicao].nome)
+            datas.push(res[posicao].quantidade)
         }
-    },
-};
+        barChart()
+    })
+})
+function barChart() {
+    const barData = {
+        labels: labels,
+        datasets: [{
+            label: 'Quantidade de vezes em estado de alerta',
+            data: datas,
+            backgroundColor: [
+                'rgba(255, 205, 86, 0.2)',
 
-const barChart = new Chart(
-    document.getElementById('barChart'),
-    barConfig,
-);
+            ],
+            borderColor: [
+                'rgb(255, 205, 86)',
+            ],
+            borderWidth: 2
+        }]
+    };
+    const barConfig = {
+        type: 'bar',
+        data: barData,
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                },
+            }
+        },
+    };
+
+    const barChart = new Chart(
+        document.getElementById('barChart'),
+        barConfig,
+    );
+
+}
+
 

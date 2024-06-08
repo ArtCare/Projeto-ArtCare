@@ -29,9 +29,13 @@ create table setor (
     nome varchar(45) not null,
     andar varchar(45) not null,
     statusSetor int,
+	dtStatus time,
     constraint fkSensorDoSetor foreign key (fkSensor) references sensor (idSensor),
     constraint fkMuseuDoSetor foreign key (fkMuseu) references museu (idMuseu)
 );
+
+ALTER TABLE setor add COLUMN dtStatus time;
+
 create table verificacao (
 	idVerificacao int primary key auto_increment,
     tempMax decimal(4,2) not null,
@@ -41,7 +45,6 @@ create table verificacao (
     fkSetor int,
     foreign key(fkSetor) references setor(idSetor)
 );
-
 
 create table representante (
 idRepresentante int primary key auto_increment,
@@ -87,6 +90,19 @@ create table registro (
     constraint fkSensorRegistro foreign key (fkSensor) references sensor (idSensor)
 );
 
+create table relatorio(
+	idRelatorio int auto_increment,
+    fkSetor int,
+	statusSetor varchar(45),
+    dtRelatorio timestamp not null default current_timestamp,
+    temperatura decimal(4,2),
+    umidade decimal(4,2),
+    foreign key (fkSetor) references setor(idSetor),
+    primary key (idRelatorio, fkSetor)
+    );
+
+drop table relatorio;
+insert into sensor (nome, tipo) values ("DHT11", "Temperatura e Umidade"); 
 
 SELECT idMuseu FROM museu ORDER BY idMuseu DESC LIMIT 1;
 
@@ -105,7 +121,7 @@ select max(temperatura) from setor join registro on setor.fkSensor = registro.fk
 select * from museu;
 select * from endereco;
 select * from supervisor;
-select * from representante;
+select * from representante; 
 select * from setor;
 select * from sensor;
 select count(idRegistro) from registro;
@@ -115,5 +131,32 @@ select idSetor, nome, statusSetor from setor where fkMuseu = 1 order by statusSe
 SELECT idSupervisor, nome, email, senha, fkMuseu FROM supervisor;
 truncate registro;
 update setor set statusSetor = 3 where idSetor = 2;
+select * from verificacao;
+
 
 select supervisor.nome, setor.nome, dtVisualizacao from supervisor join visualizacao on idSupervisor = fkSupervisor join setor on fkSetor = idSetor where visualizacao.fkMuseu = 2;
+
+insert into relatorio (fkSetor, statusSetor, temperatura, umidade) values (
+1, "Critico", 26.5, 44
+);
+
+select * from relatorio;
+truncate relatorio;
+
+select nome, count(idRelatorio) as quantidade from relatorio join setor on fkSetor = idSetor where relatorio.statusSetor = 'Alerta' and fkMuseu = 1 group by nome order by quantidade desc limit 5;
+select count(distinct(date(dtRelatorio))) from relatorio where statusSetor = 'Alerta';
+
+select 
+setor.nome as Setor, 
+relatorio.statusSetor as Status, 
+relatorio.dtRelatorio as DataHora,
+verificacao.tempMax as MaximoDeTemperatura, 
+verificacao.tempMin as MinimoDeTemperatura, 
+verificacao.umiMax as MaximoDeUmidade, 
+verificacao.umiMin as MinimoDeUmidade,
+relatorio.temperatura as temperaturaCapturada, 
+relatorio.umidade as umidadeCapturada
+from relatorio join setor on relatorio.fkSetor = setor.idSetor 
+join verificacao on verificacao.fkSetor = setor.idSetor;
+
+
