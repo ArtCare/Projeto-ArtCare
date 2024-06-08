@@ -43,72 +43,83 @@
             <button class="novoSupervisorButtom" onclick="novoSupervisor()">Cadastrar novo Supervisor</button>
         </div>
         <div class=" supervisores">
-                <span class="supervisoresTitulo">Supervisores</span>
-                <div id="dadosSupervisoresContainer" class="dadosSupervisoresContainer"></div>
-                <dialog id="modalSupervisor">
-                    <button class="botaoFecharModal" onclick="modal.close()">Fechar</button>
-                    <div class="container-modalSupervisor">
-                        <span class="cadastrarSupervisor">
-                            Cadastrar novo supervisor
+            <span class="supervisoresTitulo">Supervisores</span>
+            <div id="dadosSupervisoresContainer" class="dadosSupervisoresContainer"></div>
+            <dialog id="modalSupervisor">
+                <button class="botaoFecharModal" onclick="modal.close()">Fechar</button>
+                <div class="container-modalSupervisor">
+                    <span class="cadastrarSupervisor">
+                        Cadastrar novo supervisor
+                    </span>
+                    <span class="dadosDoSupervisor">
+                        <span>Dados do supervisor</span>
+                        <span class="alertaSupervisor" id="alertaSupervisor"></span>
+                    </span>
+                    <div class="flihoSupervisor">
+                        <span class="inputSupervisor">
+                            Nome do supervisor
+                            <input type="text" placeholder="Nome do supervisor" class="inputDadosSupervisor"
+                                id="input_nomeSupervisor">
                         </span>
-                        <span class="dadosDoSupervisor">
-                            <span>Dados do supervisor</span>
-                            <span class="alertaSupervisor" id="alertaSupervisor"></span>
+                        <span class="inputSupervisor">
+                            Email
+                            <input type="text" placeholder="mauro.galvao@louvre.museu" class="inputDadosSupervisor"
+                                id="input_emailSupervisor">
                         </span>
-                        <div class="flihoSupervisor">
-                            <span class="inputSupervisor">
-                                Nome do supervisor
-                                <input type="text" placeholder="Nome do supervisor" class="inputDadosSupervisor"
-                                    id="input_nomeSupervisor">
-                            </span>
-                            <span class="inputSupervisor">
-                                Email
-                                <input type="text" placeholder="mauro.galvao@louvre.museu" class="inputDadosSupervisor"
-                                    id="input_emailSupervisor">
-                            </span>
-                            <span class="inputSupervisor">
-                                Senha
-                                <input type="password" placeholder="******" class="inputDadosSupervisor"
-                                    id="input_senhaSupervisor">
-                            </span>
-                        </div>
-                        <div class="divBotaoCadastroSupervisor">
-                            <button class="botaoCadastroSupervisor" onclick="cadastrarSupervisor()">Cadastrar</button>
-                        </div>
+                        <span class="inputSupervisor">
+                            Senha
+                            <input type="password" placeholder="******" class="inputDadosSupervisor"
+                                id="input_senhaSupervisor">
+                        </span>
                     </div>
-                </dialog>
-                <dialog id="modalEditSupervisor">
-                    <button class="botaoFecharModal" onclick="modal.close()">Fechar</button>
-                    <div class="container-modalSupervisor">
-                        <span class="cadastrarSupervisor">
-                            Alterar dados do supervisor
-                        </span>
-                        <span class="dadosDoSupervisor">
-                            <span>Dados do supervisor</span>
-                            <span class="alertaSupervisor" id="alertaSupervisor"></span>
-                        </span>
-                        <div class="flihoSupervisor">
-                            <span class="inputSupervisor">
-                                Nome do supervisor
-                                <input type="text" placeholder="Nome do supervisor" class="inputDadosSupervisor"
-                                    id="input_nomeSupervisor">
-                            </span>
-                            <span class="inputSupervisor">
-                                Email
-                                <input type="text" placeholder="mauro.galvao@louvre.museu" class="inputDadosSupervisor"
-                                    id="input_emailSupervisor">
-                            </span>
-                            <span class="inputSupervisor">
-                                Senha
-                                <input type="password" placeholder="******" class="inputDadosSupervisor"
-                                    id="input_senhaSupervisor">
-                            </span>
-                        </div>
-                        <div class="divBotaoCadastroSupervisor">
-                            <button class="botaoCadastroSupervisor" onclick="AlterarDadosSupervisor()">Alterar</button>
-                        </div>
+                    <div class="divBotaoCadastroSupervisor">
+                        <button class="botaoCadastroSupervisor" onclick="cadastrarSupervisor()">Cadastrar</button>
                     </div>
-                </dialog>
+                </div>
+            </dialog>
+            <dialog id="modalEditSupervisor">
+                <button class="botaoFecharModal" onclick="modalEditSupervisor.close()">Fechar</button>
+                <div class="container-modalSupervisor">
+                    <span class="cadastrarSupervisor">
+                        Alterar dados do supervisor
+                    </span>
+                    <span class="dadosDoSupervisor">
+                        <span>Dados do supervisor</span>
+                        <span class="alertaSupervisor" id="alertaSupervisor"></span>
+                    </span>
+                    <div class="flihoSupervisor">
+                        <span class="inputSupervisor">
+                            Nome do supervisor
+                            <input type="text" placeholder="Nome do supervisor" class="inputDadosSupervisor"
+                                id="input_nomeSupervisor">
+                        </span>
+                        <span class="inputSupervisor">
+                            Email
+                            <input type="text" placeholder="mauro.galvao@louvre.museu" class="inputDadosSupervisor"
+                                id="input_emailSupervisor">
+                        </span>
+                        <span class="inputSupervisor">
+                            Senha
+                            <input type="password" placeholder="******" class="inputDadosSupervisor"
+                                id="input_senhaSupervisor">
+                        </span>
+                    </div>
+                    <div class="divBotaoCadastroSupervisor">
+                        <button class="botaoCadastroSupervisor" onclick="AlterarDadosSupervisor()">Alterar</button>
+                    </div>
+                </div>
+            </dialog>
+            <dialog id="modalExcluirSupervisor">
+                <div class="container-modalSupervisor">   
+                    <span class="textoExcluirSupervisor">
+                        Tem certeza que deseja excluir este supervisor ?
+                    </span>                 
+                    <div class="divBotaoCadastroSupervisor">
+                        <button class="botaoCadastroSupervisor" onclick="ExcluirSupervisor()">SIM</button>
+                        <button class="botaoFecharModal" onclick="modalExcluirSupervisor.close()">Não</button>
+                    </div>
+                </div>
+            </dialog>
         </div>
     </div>
 </body>

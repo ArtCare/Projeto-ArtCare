@@ -259,6 +259,19 @@ body {
     border: none;
 }
 
+#modalExcluirSupervisor {
+
+    width: 585px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Caladea';
+    font-weight: bold;
+    border: none;
+}
+
+
 .container-modalSupervisor {
 
     width: 100%;
@@ -335,7 +348,8 @@ body {
 
     display: flex;
     justify-content: center;
-    margin-top: 7%;  
+    width: 7%;
+    margin-left: 47%;
 }
 
 .botaoCadastroSupervisor {
@@ -365,7 +379,6 @@ dialog[open]::backdrop{
 
 .botaoFecharModal {
 
-    display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 91%;

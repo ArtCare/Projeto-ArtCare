@@ -2,6 +2,7 @@ const fkMuseu = sessionStorage.getItem("FK_MUSEU")
 
 const modal = document.querySelector("#modalSupervisor")
 const modal2 = document.querySelector("#modalEditSupervisor")
+const modal3 = document.querySelector("#modalExcluirSupervisor")
 const dadosSupervisoresContainer = document.querySelector("#dadosSupervisoresContainer")
 const nome = document.querySelector("#input_nomeSupervisor")
 const email = document.querySelector("#input_emailSupervisor")
@@ -16,7 +17,7 @@ function buscarSupervisor() {
                 dadosSupervisoresContainer.innerHTML += `
                 <div class="dadosSupervisores">
                 <div class="nomeDiv">
-                <span value="${res[posicao].id}" class="nameSupervisor">${res[posicao].nome}</span>
+                <span class="nameSupervisor">${res[posicao].nome}</span>
                 </div>
                 <div class="nomeDiv">
                 <span class="email">${res[posicao].email}</span>
@@ -24,7 +25,7 @@ function buscarSupervisor() {
                 <button onclick="editarSupervisor()" class="edit">
                     <i  class="fa-solid fa-pen"></i>
                 </button>
-                <button class="del">
+                <button  onclick="excluirSupervisor()" class="del">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </div>
@@ -40,6 +41,10 @@ function novoSupervisor() {
 
 function editarSupervisor() {
     modal2.showModal()
+}
+
+function excluirSupervisor() {
+    modal3.showModal()
 }
 function cadastrarSupervisor() {
 
