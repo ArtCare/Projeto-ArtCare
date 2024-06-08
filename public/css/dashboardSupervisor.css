@@ -348,8 +348,7 @@ body {
 
     display: flex;
     justify-content: center;
-    width: 7%;
-    margin-left: 47%;
+    width: 100%;
     margin-top: 7%;
 }
 
@@ -423,6 +422,7 @@ dialog[open]::backdrop{
     font-weight: bold;
     color: #fff;
     margin-bottom: 20px;
+    margin-left: 3%;
 
 }
 
@@ -435,7 +435,7 @@ dialog[open]::backdrop{
 
     height: 37px;
     width: 74px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 20px;
     background-color: rgb(102, 102, 102);
     color: white;
@@ -457,6 +457,6 @@ dialog[open]::backdrop{
 
     display: flex;
     justify-content: center;
-    margin-top: 7%;
+    margin-top: 10%;
 
 }
