@@ -350,6 +350,7 @@ body {
     justify-content: center;
     width: 7%;
     margin-left: 47%;
+    margin-top: 7%;
 }
 
 .botaoCadastroSupervisor {
@@ -364,7 +365,7 @@ body {
     font-family: 'caladea';
     font-weight: bold;
     transition: all .4s ease-in-out;
-    cursor: pointer;;  
+    cursor: pointer;; 
 }
 
 .botaoCadastroSupervisor:hover {
@@ -398,4 +399,14 @@ dialog[open]::backdrop{
 .botaoFecharModal:hover {
     background-color: #B08067;
     border: 2px solid #fff;
+}
+
+.textoExcluirSupervisor {
+
+    font-size: 38px;
+    color:  rgb(176, 128, 103);
+    margin-top: 11%;
+    display: flex;
+    justify-content: center;
+    margin-left: 25px;
 }
