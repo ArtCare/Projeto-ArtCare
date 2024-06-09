@@ -24,9 +24,18 @@ function autenticar(email, senha) {
   `;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
+}
+
+function excluirSupervisor(idSupervisor) {
+  var instrucaoSql = `  
+      DELETE FROM supervisor WHERE idSupervisor = '${idSupervisor}';
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
 }module.exports = { 
   buscarSupervisor,
   cadastrarSupervisor,
   buscarPorEmail,
-  autenticar
+  autenticar,
+  excluirSupervisor
 };

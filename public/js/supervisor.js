@@ -7,6 +7,7 @@ const dadosSupervisoresContainer = document.querySelector("#dadosSupervisoresCon
 const nome = document.querySelector("#input_nomeSupervisor")
 const email = document.querySelector("#input_emailSupervisor")
 const senha = document.querySelector("#input_senhaSupervisor")
+let idSupervisor = 0 
 
 buscarSupervisor()
 function buscarSupervisor() {
@@ -25,7 +26,7 @@ function buscarSupervisor() {
                 <button onclick="editarSupervisor()" class="edit">
                     <i  class="fa-solid fa-pen"></i>
                 </button>
-                <button  onclick="excluirSupervisor()" class="del">
+                <button id="${res[posicao].idSupervisor}" onclick="excluirSupervisor(this)" class="del">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </div>
@@ -43,7 +44,8 @@ function editarSupervisor() {
     modal2.showModal()
 }
 
-function excluirSupervisor() {
+function excluirSupervisor(item) {
+    idSupervisor = item.id
     modal3.showModal()
 }
 function cadastrarSupervisor() {
@@ -52,11 +54,11 @@ function cadastrarSupervisor() {
     console.log(email)
     console.log(nome.value)
     if (nome.value.length <= 3) {
-        alertaSupervisor.innerHTML = `Seu nome precisa ter mais que 3 caracteres.`                      
+        alertaSupervisor.innerHTML = `Seu nome precisa ter mais que 3 caracteres.`
     } else if (email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1) {
         alertaSupervisor.innerHTML = "Email inválido"
     } else if (senha.value.length <= 7) {
-        alertaSupervisor.innerHTML ="Sua senha precisa ter mais que 7 caracteres."
+        alertaSupervisor.innerHTML = "Sua senha precisa ter mais que 7 caracteres."
     } else {
         for (let numero = 0; numero <= 9; numero++) {
             if (senha.value
@@ -65,8 +67,8 @@ function cadastrarSupervisor() {
             }
         }
         if (senhaNum == false) {
-            alertaSupervisor.innerHTML ="Senha precisa de um caracter numérico"
-        } else {    
+            alertaSupervisor.innerHTML = "Senha precisa de um caracter numérico"
+        } else {
             fetch(`/supervisor/cadastrarSupervisor/${fkMuseu}`, {
                 method: "POST",
                 headers: {
@@ -84,6 +86,30 @@ function cadastrarSupervisor() {
             buscarSupervisor()
         }
     }
+}
+
+function excluirSupervisores() {
+    fetch(`/supervisor/excluirSupervisor/${idSupervisor}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }   
+    }).then(function (resposta) {
+
+        if (resposta.ok) {
+
+            modal3.close()
+            buscarSupervisor()
+            
+        } else {
+
+            console.log("Houve um erro ao tentar realizar a consulta!");
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
 }
 
 function logout() {

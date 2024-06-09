@@ -23,5 +23,10 @@ router.post("/autenticar", function (req, res) {
   supervisorController.autenticar(req, res);
 });
 
+router.delete("/excluirSupervisor/:idSupervisor", function (req, res) {
+  supervisorController.excluirSupervisor(req, res);
+});
+
+
 
 module.exports = router;
