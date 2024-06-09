@@ -8,12 +8,14 @@ const nome = document.querySelector("#input_nomeSupervisor")
 const email = document.querySelector("#input_emailSupervisor")
 const senha = document.querySelector("#input_senhaSupervisor")
 let idSupervisor = 0 
+let supervisores
 
 buscarSupervisor()
 function buscarSupervisor() {
     dadosSupervisoresContainer.innerHTML = ""
     fetch(`/supervisor/buscarSupervisor/${fkMuseu}`).then(res => {
         res.json().then(res => {
+            supervisores = res;
             for (posicao = 0; posicao < res.length; posicao++) {
                 dadosSupervisoresContainer.innerHTML += `
                 <div class="dadosSupervisores">
@@ -23,7 +25,7 @@ function buscarSupervisor() {
                 <div class="nomeDiv">
                 <span class="email">${res[posicao].email}</span>
                 </div>
-                <button onclick="editarSupervisor()" class="edit">
+                <button name="${res[posicao].idSupervisor}" onclick="editarSupervisor(this)" class="edit">
                     <i  class="fa-solid fa-pen"></i>
                 </button>
                 <button id="${res[posicao].idSupervisor}" onclick="excluirSupervisor(this)" class="del">
@@ -40,7 +42,17 @@ function novoSupervisor() {
     modal.showModal()
 }
 
-function editarSupervisor() {
+function editarSupervisor(item) {
+    for(let posicao = 0; posicao < supervisores.length; posicao++) {
+
+        if(supervisores[posicao].idSupervisor == item.name) {
+
+            input_alterarNomeSupervisor.value = supervisores[posicao].nome;
+            input_alterarEmailSupervisor.value = supervisores[posicao].email;
+            input_alterarSenhaSupervisor.value = supervisores[posicao].senha;
+        }
+
+    }
     modal2.showModal()
 }
 
