@@ -1,5 +1,4 @@
 const fkMuseu = sessionStorage.getItem("FK_MUSEU")
-
 const modal = document.querySelector("#modalSupervisor")
 const modal2 = document.querySelector("#modalEditSupervisor")
 const modal3 = document.querySelector("#modalExcluirSupervisor")
@@ -50,6 +49,8 @@ function editarSupervisor(item) {
             input_alterarNomeSupervisor.value = supervisores[posicao].nome;
             input_alterarEmailSupervisor.value = supervisores[posicao].email;
             input_alterarSenhaSupervisor.value = supervisores[posicao].senha;
+
+            idSupervisor = supervisores[posicao].idSupervisor
         }
 
     }
@@ -123,6 +124,36 @@ function excluirSupervisores() {
     })
 
 }
+
+function alterarDadosSupervisor() {
+    fetch(`/supervisor/atualizarSupervisor/${idSupervisor}`, {
+        method: "PUT",
+        body: JSON.stringify({
+            nome: input_alterarNomeSupervisor.value,
+            email: input_alterarEmailSupervisor.value,
+            senha: input_alterarSenhaSupervisor.value
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }   
+    }).then(function (resposta) {
+
+        if (resposta.ok) {
+
+            modal2.close()
+            buscarSupervisor()
+            
+        } else {
+
+            console.log("Houve um erro ao tentar realizar a consulta!");
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+}
+
 
 function logout() {
     sessionStorage.clear()

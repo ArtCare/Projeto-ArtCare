@@ -32,10 +32,19 @@ function excluirSupervisor(idSupervisor) {
   `;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
+}
+
+function atualizarSupervisor(idSupervisor, nome, email, senha) {
+  var instrucaoSql = `  
+      UPDATE supervisor SET nome = '${nome}', email = '${email}', senha = '${senha}' WHERE idSupervisor = ${idSupervisor};
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
 }module.exports = { 
   buscarSupervisor,
   cadastrarSupervisor,
   buscarPorEmail,
   autenticar,
-  excluirSupervisor
+  excluirSupervisor,
+  atualizarSupervisor
 };

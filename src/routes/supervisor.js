@@ -27,6 +27,10 @@ router.delete("/excluirSupervisor/:idSupervisor", function (req, res) {
   supervisorController.excluirSupervisor(req, res);
 });
 
+router.put("/atualizarSupervisor/:idSupervisor", function (req, res) {
+  supervisorController.atualizarSupervisor(req, res);
+});
+
 
 
 module.exports = router;
