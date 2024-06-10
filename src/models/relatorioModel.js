@@ -86,11 +86,20 @@ function pesquisarPorNome(fkMuseu, nomePesquisado) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+function buscarQuantidadeStatusPorSetor(fkSetor, status) {
+    var instrucaoSql = `
+        select count(idRelatorio) as quantidade from relatorio join setor on fkSetor = idSetor where relatorio.statusSetor = '${status}' and fkSetor = ${fkSetor};
+    `
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 module.exports = {
     buscarRelatorioVisualizacao,
     inserirRelatorioVisualizacao,
     pesquisarPorNome,
     inserirRelatorioSetor,
-    buscarQuantidadeStatusAlerta
+    buscarQuantidadeStatusAlerta,
+    buscarQuantidadeStatusPorSetor
 }

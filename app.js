@@ -19,6 +19,7 @@ var usuarioRouter = require("./src/routes/usuarios");
 var setoresRouter = require("./src/routes/setores");
 var supervisorRouter = require("./src/routes/supervisor");
 var relatorioRouter = require("./src/routes/relatorio");
+var tempoRouter = require("./src/routes/tempo");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,6 +32,7 @@ app.use("/usuarios", usuarioRouter);
 app.use("/relatorio", relatorioRouter);
 app.use("/setores", setoresRouter);
 app.use("/supervisor", supervisorRouter);
+app.use("/tempo", tempoRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`

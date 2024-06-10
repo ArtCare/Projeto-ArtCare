@@ -412,7 +412,7 @@ canvas {
 }
 
 .graficoPizza {
-    width: 65%;
+    width: 90%;
 
 }
 
@@ -441,7 +441,9 @@ canvas {
 
 .grafico-status .header-grafico {
     text-align: center;
-    width: 74%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .grafico-status .grafico {

@@ -18,6 +18,7 @@ const typeTitle = document.querySelector("#typeTitle")
 const modalBtn = document.querySelector("#modalBtn")
 const indicadorTemp = document.querySelector("#indicadorTemp")
 const indicadorUmi = document.querySelector("#indicadorUmi")
+const time = document.querySelector("#time")
 
 
 const registrosTemperatura = []
@@ -125,40 +126,126 @@ let graficoUmidade = new Chart(
         data: umiDados
     }
 );
-let graficoStatus = new Chart(
-    document.getElementById('grafico_status'),
-    {
-        type: 'pie',
-        data: {
-            labels: [
-                '20% dos dias com status crítico',
-                '40% dos dias em status alerta',
-                '40% dos dias em status normal',
-            ],
-            datasets: [{
-                data: [10, 15, 7],
-                borderWidth: 1,
-                backgroundColor: [
-                    '#C62400',
-                    '#DC9E00',
-                    '#575757'
-                ]
-            }]
-        },
-    }
-)
 
+let end = new Date()
+let inicio = new Date(end - 604800000)
+
+let inicioDay = inicio.getDate()
+let inicioMouth = (new Date().getMonth(inicio)) + 1
+let inicioYear = new Date().getFullYear(inicio)
+
+let inicioFormatted = `${inicioYear}:${inicioMouth}:${inicioDay}`
+
+const ultimoRegistro = []
+getTempo()
+function getTempo(){
+    fetch(`/tempo/buscarTempo/`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            fkSetor: idSetor,
+            status: "Crítico"
+        })
+    }).then((res) => {
+        res.json().then((res) => {
+        let inicioTime = moment(res[0].tempo)
+        let endTime = moment()
+        let diferenca = moment(endTime,"HH:mm:ss").diff(moment(inicioTime,"HH:mm:ss"));;
+        var d = moment.duration(diferenca);
+        var s = Math.floor(d.asHours()) + moment.utc(diferenca).format(":mm:ss");
+        time.textContent = s
+        })
+    })
+    setTimeout(()=>{
+        getTempo()
+    },1000)
+}
+
+
+
+const labels = []
+const datas = []
+
+
+fetch(`/relatorio/buscarQuantidadeStatusPorSetor/`, {
+    method: 'POST',
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+        fkSetor: idSetor,
+        status: "Crítico"
+    }),
+}).then(response => {
+    response.json().then(res => {
+        labels.push("Crítico")
+        datas.push(res[0].quantidade)
+        barChart()
+    })
+})
+fetch(`/relatorio/buscarQuantidadeStatusPorSetor/`, {
+    method: 'POST',
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+        fkSetor: idSetor,
+        status: "Alerta"
+    }),
+}).then(response => {
+    response.json().then(res => {
+        labels.push("Alerta")
+        datas.push(res[0].quantidade)
+        barChart()
+    })
+})
+function barChart() {
+    const barData = {
+        labels: labels,
+        datasets: [{
+            label: 'Quantidade de vezes em estado de alerta',
+            data: datas,
+            backgroundColor: [
+                'rgba(255, 205, 86, 0.2)',
+                'rgba(255, 25, 86, 0.2)',
+
+            ],
+            borderColor: [
+                'rgb(255, 205, 86)',
+                'rgb(255, 25, 86)',
+            ],
+            borderWidth: 2
+        }]
+    };
+    const barConfig = {
+        type: 'bar',
+        data: barData,
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                },
+            }
+        },
+    };
+
+    const barChart = new Chart(
+        document.getElementById('barChart'),
+        barConfig,
+    );
+
+}
 
 function buscarCapturas() {
     fetch(`/setores/buscarCapturasSetor/${idSetor}`).then(res => {
         res.json().then(res => {
-            console.log(res)
             temperatura.textContent = `${res[0].temperatura}°C`
             umidade.textContent = `${res[0].umidade}%`
             registrosTemperatura.push(res[0].temperatura)
             registrosUmidade.push(res[0].umidade)
             tempoRegistro.push(res[0].tempo)
-            console.log(modalShow)
 
             if (registrosTemperatura.length > 7) {
                 tempoRegistro.shift()
@@ -180,10 +267,10 @@ function buscarCapturas() {
             }
             else if (
                 (registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax[0] ||
-                    registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin[0])  &&
+                    registrosTemperatura[registrosTemperatura.length - 1] < temperaturaMin[0]) &&
                 (
                     registrosUmidade[registrosUmidade.length - 1] > umidadeMax[0] ||
-                    registrosUmidade[registrosUmidade.length - 1] < umidadeMin[0] 
+                    registrosUmidade[registrosUmidade.length - 1] < umidadeMin[0]
                 )
             ) {
                 if (modalShow == false) {
@@ -224,7 +311,7 @@ function buscarCapturas() {
                     novoRelatorio("Crítico", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorUmi.style.border = "4px solid #1C50E0"
                 }
-            }else if (
+            } else if (
                 (
                     (registrosTemperatura[registrosTemperatura.length - 1] >= temperaturaMax - 1 &&
                         registrosTemperatura[registrosTemperatura.length - 1] <= temperaturaMax)
@@ -313,7 +400,6 @@ function buscarCapturas() {
 function closeModal() {
     alertModal.close()
 }
-d
 function atualizarSetor(status) {
     fetch(`/setores/atualizarStatusSetor/${idSetor}`, {
         method: "PUT",
@@ -344,3 +430,4 @@ function novoRelatorio(status, temperatura, umidade) {
         console.log(`#ERRO: ${resposta}`);
     });
 }
+

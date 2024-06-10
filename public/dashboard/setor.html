@@ -87,7 +87,7 @@
                         </div>
                         <div class="tempo">
                             <span class="titulo-tempo">Tempo</span>
-                            <p class="texto-tempo">00:00:00</p>
+                            <p class="texto-tempo" id="time">00:00:00</p>
                         </div>
                     </div>
                 </div>
@@ -116,10 +116,10 @@
                 <div class="coluna-direita">
                     <div class="grafico-status">
                         <div class="header-grafico">
-                            <span class="titulo-header">Porcentagem dos status semanais</span>
+                            <span class="titulo-header-metricas">Status do Setor</span>
                         </div>
                         <div class="graficoPizza">
-                            <canvas id="grafico_status"></canvas>
+                            <canvas id="barChart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -145,6 +145,7 @@
 <!-- <script src="../node_modules/chart.js/dist/chart.umd.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://kit.fontawesome.com/77b47374b3.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
 <script src="../js/dashboard-setor.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script> AOS.init(); </script>

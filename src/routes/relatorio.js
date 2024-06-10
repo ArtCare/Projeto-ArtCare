@@ -30,12 +30,14 @@ router.delete("/deletar/:idrelatorio", function (req, res) {
 router.post("/pesquisarPorNome/:fkMuseu", function (req, res) {
     relatorioController.pesquisarPorNome(req, res);
 })
-router.post("/pesquisarPorNome/:fkMuseu", function (req, res) {
-    relatorioController.pesquisarPorNome(req, res);
+router.post("/inserirRelatorioSetor/", function (req, res) {
+    relatorioController.inserirRelatorioSetor(req, res);
 })
 
 router.get("/buscarQuantidadeStatusAlerta/:idMuseu", function (req, res) {
     relatorioController.buscarQuantidadeStatusAlerta(req, res);
 })
-
+router.post("/buscarQuantidadeStatusPorSetor/", function (req, res) {
+    relatorioController.buscarQuantidadeStatusPorSetor(req, res);
+})
 module.exports = router;
