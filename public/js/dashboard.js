@@ -141,19 +141,8 @@ function buscarSetores() {
                 totalSetores = res.length
                 totalSectors.textContent = `Total ${res.length}, monitore-os abaixo`
                 sectors.innerHTML = ""
-                console.log(res.length)
                 for (posicao = 0; posicao < res.length; posicao++) {
-                    let setor = res[posicao].idSetor
-                     fetch(`/tempo/buscarTempo/`, {
-                        method: 'POST',
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({
-                            fkSetor: res[posicao].idSetor,
-                            status: "Crítico"
-                        })
-                    }).then(resposta => {
+                    let name = res[posicao].nome
                     let status = "Normal"
                     let color = "#666666"
                     if (res[posicao].statusSetor == 3) {
@@ -163,76 +152,48 @@ function buscarSetores() {
                         status = "Alerta"
                         color = "#DC9E00"
                     }
-                    let name = res[posicao].nome
-
-                   
-                        if (resposta.status == 200) {
-                            resposta.json().then(response => {
-                                let inicioTime = moment(response[0].tempo)
-                                let endTime = moment()
-                                let diferenca = moment(endTime, "HH:mm:ss").diff(moment(inicioTime, "HH:mm:ss"));;
-                                var d = moment.duration(diferenca);
-                                var s = Math.floor(d.asHours()) + moment.utc(diferenca).format(":mm:ss");
-                                let time = s
-
-                                sectors.innerHTML += `
-                                <div class="sector">
-                                        <div class="sectorName">
-                                            <span class="sectorCaption">Nome</span>
-                                            <span class="name" id="nameSector">${name}</span>
-                                        </div>
-                                        <div class="sectorContainer">
-                                            <span class="sectorCaption">Status</span>
-                                            <span class="name" style="color: ${color}" id="statusSetor">${status}</span>
-                                        </div>
-                                        <div class="sectorContainer">
-                                            <span class="sectorCaption">Tempo</span>
-                                            <span class="name">${time}</span>
-                                        </div>
-                                        <button class="seeSector" value="${setor}" onclick="verSetor(this)">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
-                                    </div>
-                                `
-                            })
-                        } else {
-                            sectors.innerHTML += `
-                            <div class="sector">
-                                    <div class="sectorName">
-                                        <span class="sectorCaption">Nome</span>
-                                        <span class="name" id="nameSector">${name}</span>
-                                    </div>
-                                    <div class="sectorContainer">
-                                        <span class="sectorCaption">Status</span>
-                                        <span class="name" style="color: ${color}" id="statusSetor">${status}</span>
-                                    </div>
-                                    <div class="sectorContainer">
-                                        <span class="sectorCaption">Tempo</span>
-                                        <span class="name">----------</span>
-                                    </div>
-                                    <button class="seeSector" value="${setor}" onclick="verSetor(this)">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
-                                </div>
-                            `
-                        }
-
-                    })
-
-
+                    sectors.innerHTML += `
+            <div class="sector">
+                    <div class="sectorName">
+                        <span class="sectorCaption">Nome</span>
+                        <span class="name" id="nameSector">${name}</span>
+                    </div>
+                    <div class="sectorContainer">
+                        <span class="sectorCaption">Status</span>
+                        <span class="name" style="color: ${color}" id="statusSetor">${status}</span>
+                    </div>
+                    <div class="sectorContainer">
+                        <span class="sectorCaption">Andar</span>
+                        <span class="name">${res[posicao].andar}</span>
+                    </div>
+                    <button class="seeSector" value="${res[posicao].idSetor}" onclick="verSetor(this)">Ver setor <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            `
                 }
             })
         }
 
         fetch(`/setores/buscarSetoresCriticos/${idMuseu}`).then(function (respostaCritico) {
+            if (respostaCritico.status != 200) {
+                pie()
+            }
             respostaCritico.json().then(res => {
                 setoresCriticos.push(res.length)
                 qtdCritico.textContent = setoresCriticos[setoresCriticos.length - 1]
 
                 fetch(`/setores/buscarSetoresAlerta/${idMuseu}`).then(function (resposta) {
-                    resposta.json().then(res => {
-                        setoresAlerta.push(res.length)
-                        qtdCritico.textContent = setoresCriticos[setoresCriticos.length - 1]
-                        qtdAlerta.textContent = setoresAlerta[setoresAlerta.length - 1]
+                    if (resposta.status != 200) {
+                        pie()
+                    } else {
+                        resposta.json().then(res => {
+                            setoresAlerta.push(res.length)
+                            qtdCritico.textContent = setoresCriticos[setoresCriticos.length - 1]
+                            qtdAlerta.textContent = setoresAlerta[setoresAlerta.length - 1]
+                        }
+                        )
+                        pie()
+
                     }
-                    )
-                    pie()
                 }).catch(function (erro) {
                     console.log(erro);
                 })
@@ -257,7 +218,7 @@ function buscarSetores() {
                 let porcentagemNormal = 100 - (porcentagemAlerta + porcentagemCritico)
 
                 Chart.defaults.color = "#292929";
-                Chart.defaults.font.size = 10;
+                Chart.defaults.font.size = 20;
                 Chart.defaults.plugins.legend.position = 'right';
 
                 const pieData = {
@@ -288,10 +249,11 @@ function buscarSetores() {
             }, 200);
         }
     }).catch(function (erro) {
-        // console.log(erro);
+        console.log(erro);
     })
 
 }
+
 
 function logout() {
     sessionStorage.clear()

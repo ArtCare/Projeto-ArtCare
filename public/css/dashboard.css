@@ -266,6 +266,8 @@ body {
     flex-direction: column;
     color: #666666;
     margin-left: 10%;
+    width: 150px;
+    align-items: flex-start;
 }
 .sectorCaption{
     font-family: "poppins";

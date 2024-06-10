@@ -19,8 +19,9 @@ const modalBtn = document.querySelector("#modalBtn")
 const indicadorTemp = document.querySelector("#indicadorTemp")
 const indicadorUmi = document.querySelector("#indicadorUmi")
 const time = document.querySelector("#time")
-
-
+const typeStatus = document.querySelector("#typeStatus")
+const typeMessage = document.querySelector("#typeMessage")
+const tempo = document.querySelector("#tempo")
 const registrosTemperatura = []
 const registrosUmidade = []
 const tempoRegistro = []
@@ -264,6 +265,10 @@ function buscarCapturas() {
                     modalShow = false
                 }
                 atualizarSetor(1)
+                typeStatus.textContent = "Normal"
+                typeStatus.style.color = '#666666'
+                typeMessage.textContent = "Setor dentro das métricas"
+                tempo.style.display = "none"
             }
             else if (
                 (registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax[0] ||
@@ -275,13 +280,17 @@ function buscarCapturas() {
             ) {
                 if (modalShow == false) {
                     typeTitle.textContent = 'CRÍTICO!'
+                    typeStatus.textContent = "CRÍTICO"
+                    typeStatus.style.color = '#C62400'
                     message.textContent = "Temperatura e umidade fora das métricas, verifique o setor!"
+                    typeMessage.textContent = "Temperatura e umidade fora das métricas!"
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(3)
                     novoRelatorio("Crítico", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorTemp.style.border = "4px solid #C62400"
                     indicadorUmi.style.border = "4px solid #1C50E0"
+                    tempo.style.display = "block"
                 }
             }
             else if (
@@ -290,12 +299,16 @@ function buscarCapturas() {
             ) {
                 if (modalShow == false) {
                     typeTitle.textContent = 'CRÍTICO!'
+                    typeStatus.textContent = "CRÍTICO"
+                    typeStatus.style.color = '#C62400'
                     message.textContent = "Temperatura fora das métricas, verifique o setor!"
+                    typeMessage.textContent = "Temperatura fora das métricas!"
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(3)
                     novoRelatorio("Crítico", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorTemp.style.border = "4px solid #C62400"
+                    tempo.style.display = "block"
                 }
             } else if (
                 registrosUmidade[registrosUmidade.length - 1] > umidadeMax[0] ||
@@ -304,12 +317,16 @@ function buscarCapturas() {
             ) {
                 if (modalShow == false) {
                     typeTitle.textContent = 'CRÍTICO!'
+                    typeStatus.textContent = "CRÍTICO"
+                    typeStatus.style.color = '#C62400'
                     message.textContent = "Umidade fora das métricas, verifique o setor!"
+                    typeMessage.textContent = "Umidade fora das métricas!"
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(3)
                     novoRelatorio("Crítico", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorUmi.style.border = "4px solid #1C50E0"
+                    tempo.style.display = "block"
                 }
             } else if (
                 (
@@ -330,12 +347,17 @@ function buscarCapturas() {
                 )
             ) {
                 if (modalShow == false) {
+                    typeStatus.textContent = "ALERTA"
+                    tempo.style.display = "block"
+                    typeStatus.style.color = '#DC9E00'
                     alertModal.style.borderColor = "#DC9E00"
                     typeContent.style.backgroundColor = '#DC9E00'
                     modalBtn.style.backgroundColor = '#DC9E00'
                     typeTitle.style.color = '#DC9E00'
+                    time.style.color = '#DC9E00'
                     typeTitle.textContent = 'ALERTA!'
                     message.textContent = "Temperatura e umidade muito próximos as métricas, verifique o setor!"
+                    typeMessage.textContent = "Temperatura e umidade muito próximos as métricas!"
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(2)
@@ -354,12 +376,17 @@ function buscarCapturas() {
                 )
             ) {
                 if (modalShow == false) {
+                   typeStatus.textContent = "ALERTA"
+                   tempo.style.display = "block"
+                   typeStatus.style.color = '#DC9E00'
                     alertModal.style.borderColor = "#DC9E00"
                     typeContent.style.backgroundColor = '#DC9E00'
                     modalBtn.style.backgroundColor = '#DC9E00'
                     typeTitle.style.color = '#DC9E00'
+                    time.style.color = '#DC9E00'
                     typeTitle.textContent = 'ALERTA!'
                     message.textContent = "Temperatura muito próxima as métricas, verifique o setor!"
+                    typeMessage.textContent = "Temperatura muito próximos as métricas!"
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(2)
@@ -375,12 +402,17 @@ function buscarCapturas() {
                 )
             ) {
                 if (modalShow == false) {
+                    typeStatus.textContent = "ALERTA"
+                    typeStatus.style.color = '#DC9E00'
                     alertModal.style.borderColor = "#DC9E00"
+                    time.style.color = '#DC9E00'
                     typeContent.style.backgroundColor = '#DC9E00'
+                    tempo.style.display = "block"
                     modalBtn.style.backgroundColor = '#DC9E00'
                     typeTitle.style.color = '#DC9E00'
                     typeTitle.textContent = 'ALERTA!'
                     message.textContent = "Umidade muito próxima as métricas, verifique o setor!"
+                    typeMessage.textContent = "Umidade muito próximos as métricas!"
                     alertModal.showModal()
                     modalShow = true
                     atualizarSetor(2)

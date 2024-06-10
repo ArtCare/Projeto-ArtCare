@@ -109,12 +109,10 @@ function cadastrarSetor() {
             temperaturaMinima: tempMin,
             temperaturaMaxima: tempMax
         }),
-    }).then(()=>{
-        buscarSetores()
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
     });
-    
+    location.reload()
     modal.close()
 }
 

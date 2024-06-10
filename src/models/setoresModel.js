@@ -1,7 +1,7 @@
 var database = require("../database/config");
 
 function buscarSetores(fkMuseu) {
-    var instrucaoSql = `select idSetor, nome, statusSetor from setor where fkMuseu = ${fkMuseu} order by statusSetor DESC;`;
+    var instrucaoSql = `select idSetor, nome, statusSetor, andar from setor where fkMuseu = ${fkMuseu} order by statusSetor DESC;`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }

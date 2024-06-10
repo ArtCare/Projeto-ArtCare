@@ -327,7 +327,7 @@ canvas {
 }
 
 .status .alerta {
-    width: 60%;
+    width: 100%;
 }
 
 .titulo-status,
@@ -360,7 +360,7 @@ canvas {
     font-family: 'Caladea';
     color: #666666;
     font-size: 20px;
-    width: 200px;
+    width: 300px;
 }
 
 .titulo-tempo {
