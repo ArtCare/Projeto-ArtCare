@@ -355,3 +355,75 @@ body {
   align-items: flex-end;
   justify-content: center;
 }
+
+#modalDashboard {
+
+    width: 685px;
+    height: 350px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Caladea';
+    font-weight: bold;
+    outline: none;
+    border: none;
+}
+
+#modalDashboard::backdrop {
+
+    background-color: rgba(0, 0, 0, 0.748);
+}
+
+.tituloModalDashboard {
+
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color:  rgb(176, 128, 103);
+    margin-top: 5%;
+}
+
+.textoModalDashboard {
+
+    font-size: 18px;
+    margin-top: 5%;
+    display: flex;
+    display: flex;
+    justify-content: center;
+   width: 90%;
+   margin-left: 4%;
+
+
+}
+
+.cadastroSetor {
+    margin-left: 4%;
+    margin-top: 1%;
+    font-size: 19px;
+    display: flex;
+}
+
+.botaoCadastrarSetor {
+
+    margin-left: 35%;
+    margin-top: 6%;
+    width: 32%;
+    height: 40px;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: rgb(102, 102, 102);
+    color: white;
+    border: none;
+    font-family: 'caladea';
+    font-weight: bold;
+    transition: all .4s ease-in-out;
+    cursor: pointer;; 
+    outline: none;
+}
+
+.botaoCadastrarSetor:hover {
+
+    background-color: rgb(176, 128, 103) ;
+   
+}

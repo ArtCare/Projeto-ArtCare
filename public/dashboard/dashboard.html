@@ -21,16 +21,16 @@
                         class="menuOption onScreenColors">Dashboard</span>
                 </button>
 
-                    <button class="option" onclick="navigateToSectors()" id="navigationSetores">
-                        <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
-                    </button>
+                <button class="option" onclick="navigateToSectors()" id="navigationSetores">
+                    <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
+                </button>
 
-                    <button class="option" onclick="navigateToSupervisor()" id="navigationSupervisor">
-                        <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
-                    </button>
-                    <button class="option" onclick="navigateToRelatorio()" id="navigationRelatorio">
-                        <i class="fa-solid fa-rectangle-list fa-xl menuicon"></i> <span class="menuOption">Relatórios</span>
-                    </button>
+                <button class="option" onclick="navigateToSupervisor()" id="navigationSupervisor">
+                    <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
+                </button>
+                <button class="option" onclick="navigateToRelatorio()" id="navigationRelatorio">
+                    <i class="fa-solid fa-rectangle-list fa-xl menuicon"></i> <span class="menuOption">Relatórios</span>
+                </button>
             </div>
         </div>
 
@@ -41,6 +41,22 @@
     </div>
     </div>
     <div class="content">
+        <dialog id="modalDashboard">
+            <span class="tituloModalDashboard">
+                Bem vindo ao sistema ArtCare
+            </span>
+            <span class="textoModalDashboard">
+                Estamos entusiasmados em ter você conosco no ArtCare
+                Nossa plataforma foi projetada para simplificar sua experiência e otimizar a administração de coleções,
+                exposições e atividades culturais.
+                Explore nossas funcionalidades para descobrir como o ArtCare pode monitorar o seu museu.
+                Se precisar de assistência, nossa equipe de suporte está sempre à disposição para ajudar.
+            </span>
+            <span class="cadastroSetor">
+                Faça o cadastro dos setores para que possa monitoralá-los
+            </span>
+            <button class="botaoCadastrarSetor" onclick="irCadastrarSetor()">Cadastrar Setor</button>
+        </dialog>
         <div class="header">
             <div class="caption">
                 <span class="critico">Crítico</span>

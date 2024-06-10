@@ -10,6 +10,7 @@ const qtdCritico = document.querySelector("#qtdCritico")
 const navigationSetores = document.querySelector("#navigationSetores")
 const navigationSupervisor = document.querySelector("#navigationSupervisor")
 const navigationRelatorio = document.querySelector("#navigationRelatorio")
+const modal = document.querySelector("#modalDashboard")
 
 if (idSupervisor > 0) {
     navigationSetores.style.display = "none"
@@ -284,6 +285,7 @@ function verSetor(res) {
 }
 
 function noSector() {
+    modalDashboard.showModal()
     totalSectors.textContent = `Total de 0 setores, cadastre um setor para monitora-lo`
     qtdCritico.textContent = 0
     qtdAlerta.textContent = 0
