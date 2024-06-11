@@ -29,7 +29,6 @@ create table setor (
     nome varchar(45) not null,
     andar varchar(45) not null,
     statusSetor int,
-	dtStatus time,
     constraint fkSensorDoSetor foreign key (fkSensor) references sensor (idSensor),
     constraint fkMuseuDoSetor foreign key (fkMuseu) references museu (idMuseu)
 );
@@ -101,7 +100,6 @@ create table relatorio(
     primary key (idRelatorio, fkSetor)
     );
 
-drop table relatorio;
 insert into sensor (nome, tipo) values ("DHT11", "Temperatura e Umidade"); 
 
 SELECT idMuseu FROM museu ORDER BY idMuseu DESC LIMIT 1;
