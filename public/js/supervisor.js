@@ -6,6 +6,7 @@ const dadosSupervisoresContainer = document.querySelector("#dadosSupervisoresCon
 const nome = document.querySelector("#input_nomeSupervisor")
 const email = document.querySelector("#input_emailSupervisor")
 const senha = document.querySelector("#input_senhaSupervisor")
+const alertaSupervisor = document.querySelector("#alertaSupervisor")
 let idSupervisor = 0 
 let supervisores
 
@@ -39,6 +40,10 @@ function buscarSupervisor() {
 
 function novoSupervisor() {
     modal.showModal()
+    input_emailSupervisor.value = ""
+    input_senhaSupervisor.value = ""
+    alertaSupervisor.innerHTML = ""
+
 }
 
 function editarSupervisor(item) {
@@ -62,7 +67,7 @@ function excluirSupervisor(item) {
     modal3.showModal()
 }
 function cadastrarSupervisor() {
-
+ 
     let senhaNum = false
     console.log(email)
     console.log(nome.value)
