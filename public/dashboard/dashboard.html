@@ -13,18 +13,15 @@
 <body>
     <div class="menu">
         <img src="../assets/svg/artcareBrownLogo2.svg" class="logo">
-
         <div class="divOptions">
             <div class="PrimaryScreens">
                 <button class="option onScreen">
                     <i class="fa-solid fa-house fa-xl menuicon onScreenColors"></i> <span
                         class="menuOption onScreenColors">Dashboard</span>
                 </button>
-
                 <button class="option" onclick="navigateToSectors()" id="navigationSetores">
                     <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
                 </button>
-
                 <button class="option" onclick="navigateToSupervisor()" id="navigationSupervisor">
                     <i class="fa-solid fa-user fa-xl menuicon"></i> <span class="menuOption">Supervisores</span>
                 </button>
@@ -33,7 +30,6 @@
                 </button>
             </div>
         </div>
-
         <button class="option logout" onclick="logout()">
             <i class="fa-solid fa-power-off fa-2xl menuicon"></i> <span class="optionLogout">Sair</span>
         </button>
@@ -46,7 +42,7 @@
                 Bem vindo ao sistema ArtCare
             </span>
             <span class="textoModalDashboard">
-                Estamos entusiasmados em ter você conosco no ArtCare
+                Estamos entusiasmados em ter você conosco no ArtCare.
                 Nossa plataforma foi projetada para simplificar sua experiência e otimizar a administração de coleções,
                 exposições e atividades culturais.
                 Explore nossas funcionalidades para descobrir como o ArtCare pode monitorar o seu museu.
@@ -55,7 +51,7 @@
             <span class="cadastroSetor">
                 Faça o cadastro dos setores para que possa monitoralá-los
             </span>
-            <button class="botaoCadastrarSetor" onclick="irCadastrarSetor()">Cadastrar Setor</button>
+            <a href="/dashboard/setores.html"><button class="botaoCadastrarSetor" onclick="irCadastrarSetor()">Cadastrar Setor</button></a>
         </dialog>
         <div class="header">
             <div class="caption">
@@ -106,7 +102,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </body>
 

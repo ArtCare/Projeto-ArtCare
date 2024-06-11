@@ -427,3 +427,7 @@ body {
     background-color: rgb(176, 128, 103) ;
    
 }
+
+a {
+    outline: none;
+}
