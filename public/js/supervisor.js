@@ -7,7 +7,8 @@ const nome = document.querySelector("#input_nomeSupervisor")
 const email = document.querySelector("#input_emailSupervisor")
 const senha = document.querySelector("#input_senhaSupervisor")
 const alertaSupervisor = document.querySelector("#alertaSupervisor")
-let idSupervisor = 0 
+const alertaEditSupervisor = document.querySelector("#alertaEditSupervisor")
+let idSupervisor = 0
 let supervisores
 
 buscarSupervisor()
@@ -47,9 +48,9 @@ function novoSupervisor() {
 }
 
 function editarSupervisor(item) {
-    for(let posicao = 0; posicao < supervisores.length; posicao++) {
+    for (let posicao = 0; posicao < supervisores.length; posicao++) {
 
-        if(supervisores[posicao].idSupervisor == item.name) {
+        if (supervisores[posicao].idSupervisor == item.name) {
 
             input_alterarNomeSupervisor.value = supervisores[posicao].nome;
             input_alterarEmailSupervisor.value = supervisores[posicao].email;
@@ -60,6 +61,7 @@ function editarSupervisor(item) {
 
     }
     modal2.showModal()
+    alertaEditSupervisor.innerHTML =""
 }
 
 function excluirSupervisor(item) {
@@ -67,7 +69,7 @@ function excluirSupervisor(item) {
     modal3.showModal()
 }
 function cadastrarSupervisor() {
- 
+
     let senhaNum = false
     console.log(email)
     console.log(nome.value)
@@ -111,14 +113,14 @@ function excluirSupervisores() {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
-        }   
+        }
     }).then(function (resposta) {
 
         if (resposta.ok) {
 
             modal3.close()
             buscarSupervisor()
-            
+
         } else {
 
             console.log("Houve um erro ao tentar realizar a consulta!");
@@ -131,32 +133,52 @@ function excluirSupervisores() {
 }
 
 function alterarDadosSupervisor() {
-    fetch(`/supervisor/atualizarSupervisor/${idSupervisor}`, {
-        method: "PUT",
-        body: JSON.stringify({
-            nome: input_alterarNomeSupervisor.value,
-            email: input_alterarEmailSupervisor.value,
-            senha: input_alterarSenhaSupervisor.value
-        }),
-        headers: {
-            "Content-Type": "application/json"
-        }   
-    }).then(function (resposta) {
-
-        if (resposta.ok) {
-
-            modal2.close()
-            buscarSupervisor()
-            
+    let senhaNum = false
+    if (input_alterarNomeSupervisor.value.length <= 3) {
+        alertaEditSupervisor.innerHTML = `Seu nome precisa ter mais que 3 caracteres.`
+    } else if (input_alterarEmailSupervisor.value.indexOf('@') == -1 || input_alterarEmailSupervisor.value.indexOf('.') == -1) {
+        alertaEditSupervisor.innerHTML = "Email inválido"
+    } else if (input_alterarSenhaSupervisor.value.length <= 7) {
+        alertaEditSupervisor.innerHTML = "Sua senha precisa ter mais que 7 caracteres."
+    } else {
+        for (let numero = 0; numero <= 9; numero++) {
+            if (input_alterarSenhaSupervisor.value.indexOf(numero.toString()) != -1) {
+                senhaNum = true
+            }
+        }
+        if (senhaNum == false) {
+            alertaEditSupervisor.innerHTML = "Senha precisa de um caracter numérico"
         } else {
 
-            console.log("Houve um erro ao tentar realizar a consulta!");
+            fetch(`/supervisor/atualizarSupervisor/${idSupervisor}`, {
+                method: "PUT",
+                body: JSON.stringify({
+                    nome: input_alterarNomeSupervisor.value,
+                    email: input_alterarEmailSupervisor.value,
+                    senha: input_alterarSenhaSupervisor.value
+                }),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(function (resposta) {
+
+                if (resposta.ok) {
+
+                    modal2.close()
+                    buscarSupervisor()
+
+                } else {
+
+                    console.log("Houve um erro ao tentar realizar a consulta!");
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
         }
 
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
+    }
 }
 
 

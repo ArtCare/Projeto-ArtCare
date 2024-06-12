@@ -307,6 +307,17 @@ body {
     
 }
 
+.alertaEditSupervisor {
+
+    width: 23%;
+    font-size: 15px;
+    color: rgb(227, 55, 55);
+    font-family: 'Caladea';
+    font-weight: bold;    
+    
+}
+
+
 .flihoSupervisor {
 
     display: flex;
