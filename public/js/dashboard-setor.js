@@ -138,8 +138,8 @@ let inicioYear = new Date().getFullYear(inicio)
 let inicioFormatted = `${inicioYear}:${inicioMouth}:${inicioDay}`
 
 const ultimoRegistro = []
-getTempo()
-function getTempo(){
+function getTempo(statusSector){
+    let statusSetor = statusSector
     fetch(`/tempo/buscarTempo/`, {
         method: 'POST',
         headers: {
@@ -147,10 +147,11 @@ function getTempo(){
         },
         body: JSON.stringify({
             fkSetor: idSetor,
-            status: "Crítico"
+            status: statusSetor
         })
     }).then((res) => {
         res.json().then((res) => {
+            console.log(res)
         let inicioTime = moment(res[0].tempo)
         let endTime = moment()
         let diferenca = moment(endTime,"HH:mm:ss").diff(moment(inicioTime,"HH:mm:ss"));;
@@ -159,10 +160,11 @@ function getTempo(){
         time.textContent = s
         })
     })
-    setTimeout(()=>{
-        getTempo()
-    },1000)
-}
+
+    setTimeout(()=> {
+        getTempo(statusSector)
+    }, 1000)
+   }
 
 
 
@@ -282,6 +284,7 @@ function buscarCapturas() {
                     typeTitle.textContent = 'CRÍTICO!'
                     typeStatus.textContent = "CRÍTICO"
                     typeStatus.style.color = '#C62400'
+                    getTempo("Crítico")
                     message.textContent = "Temperatura e umidade fora das métricas, verifique o setor!"
                     typeMessage.textContent = "Temperatura e umidade fora das métricas!"
                     alertModal.showModal()
@@ -301,6 +304,7 @@ function buscarCapturas() {
                     typeTitle.textContent = 'CRÍTICO!'
                     typeStatus.textContent = "CRÍTICO"
                     typeStatus.style.color = '#C62400'
+                    getTempo("Crítico")
                     message.textContent = "Temperatura fora das métricas, verifique o setor!"
                     typeMessage.textContent = "Temperatura fora das métricas!"
                     alertModal.showModal()
@@ -318,6 +322,7 @@ function buscarCapturas() {
                 if (modalShow == false) {
                     typeTitle.textContent = 'CRÍTICO!'
                     typeStatus.textContent = "CRÍTICO"
+                    getTempo("Crítico")
                     typeStatus.style.color = '#C62400'
                     message.textContent = "Umidade fora das métricas, verifique o setor!"
                     typeMessage.textContent = "Umidade fora das métricas!"
@@ -350,6 +355,7 @@ function buscarCapturas() {
                     typeStatus.textContent = "ALERTA"
                     tempo.style.display = "block"
                     typeStatus.style.color = '#DC9E00'
+                    getTempo("Alerta")
                     alertModal.style.borderColor = "#DC9E00"
                     typeContent.style.backgroundColor = '#DC9E00'
                     modalBtn.style.backgroundColor = '#DC9E00'
@@ -379,6 +385,7 @@ function buscarCapturas() {
                    typeStatus.textContent = "ALERTA"
                    tempo.style.display = "block"
                    typeStatus.style.color = '#DC9E00'
+                   getTempo("Alerta")
                     alertModal.style.borderColor = "#DC9E00"
                     typeContent.style.backgroundColor = '#DC9E00'
                     modalBtn.style.backgroundColor = '#DC9E00'
@@ -402,6 +409,7 @@ function buscarCapturas() {
                 )
             ) {
                 if (modalShow == false) {
+                    getTempo("Alerta")
                     typeStatus.textContent = "ALERTA"
                     typeStatus.style.color = '#DC9E00'
                     alertModal.style.borderColor = "#DC9E00"

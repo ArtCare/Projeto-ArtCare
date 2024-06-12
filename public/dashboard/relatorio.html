@@ -41,10 +41,10 @@
 
     <div class="content">
         <div class="acessosSpans">
-            <span class="relatorioSetores">Relatório de setores</span> <span class="relatorioAcesso"><a>Relatório de
-                    acesso</a></span>
+            <span class="relatorioSetores" onclick="showHistorico()" id="spanHistorico">Relatório de setores</span> 
+            <span class="relatorioAcesso" onclick="showAcesso()" id="spanAcesso">Relatório de acesso</span>
         </div>
-        <div class="supervisores">
+        <div class="supervisores" id="supervisor">
             <div class="divButtonPesquisa">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input onkeyup="pesquisarPorNome()" type="text" class="iptPesquisa" id="ipt_pesquisa" placeholder="Pesquise pelo supervisor ou setor">
@@ -66,7 +66,68 @@
                 </div>
             </div>
         </div>
+
+        <div class="setores" id="setores">
+            <div class="divButtonPesquisa">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input onkeyup="pesquisarPorNome()" type="text" class="iptPesquisa" id="ipt_pesquisa" placeholder="Pesquise pelo setor">
+            </div>
+            <div class="alignDiv">
+                <span class="supervisoresTitulo">Histórico de Status</span>
+            </div>
+            <div class="dadosSetorContainer" id="dadosSetorContainer">
+                <div class="dadosSupervisores">
+                    <div class="div">
+                        <span class="legenda">Setor</span>
+                    </div>
+                    <div class="div">
+                        <span class="legenda" id>Status</span>
+                    </div>
+                    <div class="div">
+                        <span class="legenda">Data e Hora</span>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
     </div>
+
+    <dialog id="infoSector">
+        <div class="modalDiv">
+        <div class="detailsModal">
+            <div class="detailsHeader">
+                <span class="nameSector" id="nameSector">Arte Grega</span>
+                <span class="statusSector" id="statusSector">Crítico</span>
+                <span class="date" id="date">2024/06/10 12:30:10</span>
+            </div>
+            <div class="line"></div>
+            <div class="metricas">
+                <span class="modalTitle">Métricas do setor</span>
+                <div class="metricasContainer">
+                    <div class="temp">
+                        <span>Temperatura Máxima: 22%</span>
+                        <span>Temperatura Mínima 18%</span>
+                    </div>
+                    <div class="Umi">
+                        <span>Umidade Máxima: 45%</span>
+                        <span>Umidade Mínima: 40%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="medidasCapturadas">
+                <span class="modalTitle">Medidas capturadas</span>
+                <div class="medidas">
+                    <span>Temperatura capturada: <span class="temperatura">26°C</span></span>
+                    <span>Umidade capturada: <span class="umidade">49%</span></span>
+                </div>
+            </div>
+            <div class="buttonDiv">
+                <button class="btn">OK</button>
+            </div>
+        </div>
+    </div>
+    </dialog>
 </body>
 
 </html>

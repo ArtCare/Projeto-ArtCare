@@ -46,12 +46,30 @@ function buscarQuantidadeStatusPorSetor(fkSetor, status) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-
+function buscarRelatoriosCompletos() {
+    var instrucaoSql = `
+    select 
+    setor.nome as Setor, 
+    relatorio.statusSetor as Status, 
+    date_format( relatorio.dtRelatorio, '%Y/%m/%d %H:%i:%s') as DataHora,
+    verificacao.tempMax as MaximoDeTemperatura, 
+    verificacao.tempMin as MinimoDeTemperatura, 
+    verificacao.umiMax as MaximoDeUmidade, 
+    verificacao.umiMin as MinimoDeUmidade,
+    relatorio.temperatura as temperaturaCapturada, 
+    relatorio.umidade as umidadeCapturada
+    from relatorio join setor on relatorio.fkSetor = setor.idSetor 
+    join verificacao on verificacao.fkSetor = setor.idSetor;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 module.exports = {
     buscarRelatorioVisualizacao,
     inserirRelatorioVisualizacao,
     pesquisarPorNome,
     inserirRelatorioSetor,
     buscarQuantidadeStatusAlerta,
-    buscarQuantidadeStatusPorSetor
+    buscarQuantidadeStatusPorSetor,
+    buscarRelatoriosCompletos
 }

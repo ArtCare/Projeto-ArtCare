@@ -112,7 +112,7 @@ body {
     justify-content: flex-end;
 }
 
-.divButtonPesquisa  {
+.divButtonPesquisa {
     margin-left: 70%;
 }
 
@@ -159,19 +159,21 @@ body {
 
 .acessosSpans {
     width: 50%;
-    padding-right: 20%;
-    margin-bottom: 20px;
+    padding-right: 30%;
+    margin-bottom: 40%;
 }
 
 .relatorioSetores {
     font-size: 24px;
     color: #666666;
     margin-right: 30px;
+    cursor: pointer;
 }
 
 .relatorioAcesso {
     font-size: 24px;
     color: #B08067;
+    cursor: pointer;
 }
 
 .supervisores {
@@ -186,15 +188,44 @@ body {
     width: 75%;
     height: 60%;
     background-color: #fff;
+    position: absolute;
 }
+
+.setores {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: #b8b3ae 0 5px 20px;
+    border-radius: 20px;
+    color: #B08067;
+    font-weight: bold;
+    width: 75%;
+    height: 60%;
+    background-color: #fff;
+}
+
+
 
 .supervisoresTitulo {
     height: 20%;
     font-size: 50px;
-    
+
 }
 
 .dadosSupervisoresContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 80%;
+    margin-bottom: 20px;
+}
+
+.dadosSetorContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -215,9 +246,11 @@ body {
     margin-top: 20px;
     margin-left: 20px;
 }
-.div{
-    width: 300px;
+
+.div {
+    width: 250px;
 }
+
 .dadosSupervisoresContainer::-webkit-scrollbar {
     width: 8px;
 }
@@ -228,6 +261,21 @@ body {
 }
 
 .dadosSupervisoresContainer::-webkit-scrollbar-thumb {
+    background-color: #B08067;
+    border-radius: 30px;
+}
+
+
+.dadosSetorContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dadosSetorContainer::-webkit-scrollbar-track {
+    background: #F5F5F5;
+    width: 100%;
+}
+
+.dadosSetorContainer::-webkit-scrollbar-thumb {
     background-color: #B08067;
     border-radius: 30px;
 }
@@ -243,6 +291,12 @@ body {
     font-family: "Caladea";
     font-weight: 400;
 }
+
+.status {
+    font-size: 30px;
+    font-weight: 700;
+}
+
 .legenda {
     font-size: 20px;
     font-family: "Caladea";
@@ -291,3 +345,156 @@ body {
     color: #666666;
 }
 
+#infoSector {
+    outline: none;
+    border: none;
+    height: 70%;
+    width: 30%;
+    border-radius: 10px;
+   
+}
+
+.modalDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#infoSector::backdrop {
+    background-color: #000000be;
+}
+
+.detailsModal {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.detailsHeader {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+}
+
+.nameSector {
+    color: #B08067;
+    font-size: 46px;
+    font-weight: 700;
+}
+
+.statusSector {
+    color: #C8000c;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.date {
+    color: #666666;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.line {
+    background-color: #959595;
+    height: 2px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.metricas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100px;
+}
+
+.temp,
+.Umi {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.metricasContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: #666666;
+}
+
+.modalTitle {
+    color: #666666;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.medidas {
+    display: flex;
+    flex-direction: column;
+
+    color: #666666;
+    font-size: 24px;
+}
+
+.temperatura {
+    color: #C8000c;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.umidade {
+    color: #1C50E0;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.buttonDiv {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background-color: #666666;
+    border: none;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #B08067;
+}
+
+.btn:active {
+    transform: scale(.95);
+}
+.medidasCapturadas{
+    margin-top: 20px;
+}
+
+.btnRelatorio{
+    transition: all .5s ease-in-out;
+}
+.btnRelatorio:hover {
+    color: #B08067;
+}
+
+.btnRelatorio:active {
+    transform: scale(.95);
+}

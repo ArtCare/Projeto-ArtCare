@@ -35,10 +35,39 @@ function metricas() {
 function habilitarMetricas() {
     alterMetricas = true
     metricas()
+    input_umidade_minima.style.background= "none"
+    input_umidade_maxima.style.background= "none"
+    input_temperatura_minima.style.background= "none"
+    input_temperatura_maxima.style.background= "none"
+
+    input_umidade_minima.style.padding= 0
+    input_umidade_maxima.style.padding= 0
+    input_temperatura_minima.style.padding= 0
+    input_temperatura_maxima.style.padding= 0
+
+    input_umidade_minima.style.width= '160px'
+    input_umidade_maxima.style.width= '160px'
+    input_temperatura_minima.style.width= '160px'
+    input_temperatura_maxima.style.width= '160px'
 }
 function desabilitarMetricas() {
     alterMetricas = false
     metricas()
+
+    input_umidade_minima.style.background= "block"
+    input_umidade_maxima.style.background= "block"
+    input_temperatura_minima.style.background= "block"
+    input_temperatura_maxima.style.background= "block"
+
+    input_umidade_minima.style.paddingLeft= '18px'
+    input_umidade_maxima.style.paddingLeft= '18px'
+    input_temperatura_minima.style.paddingLeft= '18px'
+    input_temperatura_maxima.style.paddingLeft= '18px'
+
+    input_umidade_minima.style.width= '142px'
+    input_umidade_maxima.style.width= '142px'
+    input_temperatura_minima.style.width= '142px'
+    input_temperatura_maxima.style.width= '142px'
 }
 
 buscarSetores()

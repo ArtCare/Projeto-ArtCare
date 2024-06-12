@@ -40,4 +40,8 @@ router.get("/buscarQuantidadeStatusAlerta/:idMuseu", function (req, res) {
 router.post("/buscarQuantidadeStatusPorSetor/", function (req, res) {
     relatorioController.buscarQuantidadeStatusPorSetor(req, res);
 })
+router.get("/buscarRelatoriosCompletos/", function (req, res) {
+    relatorioController.buscarRelatoriosCompletos(req, res);
+})
+
 module.exports = router;
