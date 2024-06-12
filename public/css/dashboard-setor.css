@@ -312,7 +312,7 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 60%;
+    width: 30%;
 }
 
 .status .card {

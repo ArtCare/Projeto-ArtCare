@@ -219,7 +219,7 @@ function buscarSetores() {
                 let porcentagemNormal = 100 - (porcentagemAlerta + porcentagemCritico)
 
                 Chart.defaults.color = "#292929";
-                Chart.defaults.font.size = 20;
+                Chart.defaults.font.size = 14;
                 Chart.defaults.plugins.legend.position = 'right';
 
                 const pieData = {

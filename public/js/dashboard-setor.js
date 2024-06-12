@@ -128,49 +128,9 @@ let graficoUmidade = new Chart(
     }
 );
 
-let end = new Date()
-let inicio = new Date(end - 604800000)
-
-let inicioDay = inicio.getDate()
-let inicioMouth = (new Date().getMonth(inicio)) + 1
-let inicioYear = new Date().getFullYear(inicio)
-
-let inicioFormatted = `${inicioYear}:${inicioMouth}:${inicioDay}`
-
-const ultimoRegistro = []
-function getTempo(statusSector){
-    let statusSetor = statusSector
-    fetch(`/tempo/buscarTempo/`, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            fkSetor: idSetor,
-            status: statusSetor
-        })
-    }).then((res) => {
-        res.json().then((res) => {
-            console.log(res)
-        let inicioTime = moment(res[0].tempo)
-        let endTime = moment()
-        let diferenca = moment(endTime,"HH:mm:ss").diff(moment(inicioTime,"HH:mm:ss"));;
-        var d = moment.duration(diferenca);
-        var s = Math.floor(d.asHours()) + moment.utc(diferenca).format(":mm:ss");
-        time.textContent = s
-        })
-    })
-
-    setTimeout(()=> {
-        getTempo(statusSector)
-    }, 1000)
-   }
-
-
 
 const labels = []
 const datas = []
-
 
 fetch(`/relatorio/buscarQuantidadeStatusPorSetor/`, {
     method: 'POST',
@@ -270,7 +230,7 @@ function buscarCapturas() {
                 typeStatus.textContent = "Normal"
                 typeStatus.style.color = '#666666'
                 typeMessage.textContent = "Setor dentro das métricas"
-                tempo.style.display = "none"
+
             }
             else if (
                 (registrosTemperatura[registrosTemperatura.length - 1] > temperaturaMax[0] ||
@@ -284,7 +244,7 @@ function buscarCapturas() {
                     typeTitle.textContent = 'CRÍTICO!'
                     typeStatus.textContent = "CRÍTICO"
                     typeStatus.style.color = '#C62400'
-                    getTempo("Crítico")
+
                     message.textContent = "Temperatura e umidade fora das métricas, verifique o setor!"
                     typeMessage.textContent = "Temperatura e umidade fora das métricas!"
                     alertModal.showModal()
@@ -293,7 +253,7 @@ function buscarCapturas() {
                     novoRelatorio("Crítico", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorTemp.style.border = "4px solid #C62400"
                     indicadorUmi.style.border = "4px solid #1C50E0"
-                    tempo.style.display = "block"
+
                 }
             }
             else if (
@@ -304,7 +264,7 @@ function buscarCapturas() {
                     typeTitle.textContent = 'CRÍTICO!'
                     typeStatus.textContent = "CRÍTICO"
                     typeStatus.style.color = '#C62400'
-                    getTempo("Crítico")
+
                     message.textContent = "Temperatura fora das métricas, verifique o setor!"
                     typeMessage.textContent = "Temperatura fora das métricas!"
                     alertModal.showModal()
@@ -312,7 +272,7 @@ function buscarCapturas() {
                     atualizarSetor(3)
                     novoRelatorio("Crítico", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorTemp.style.border = "4px solid #C62400"
-                    tempo.style.display = "block"
+
                 }
             } else if (
                 registrosUmidade[registrosUmidade.length - 1] > umidadeMax[0] ||
@@ -322,7 +282,7 @@ function buscarCapturas() {
                 if (modalShow == false) {
                     typeTitle.textContent = 'CRÍTICO!'
                     typeStatus.textContent = "CRÍTICO"
-                    getTempo("Crítico")
+
                     typeStatus.style.color = '#C62400'
                     message.textContent = "Umidade fora das métricas, verifique o setor!"
                     typeMessage.textContent = "Umidade fora das métricas!"
@@ -331,7 +291,7 @@ function buscarCapturas() {
                     atualizarSetor(3)
                     novoRelatorio("Crítico", registrosTemperatura[registrosTemperatura.length - 1], registrosUmidade[registrosUmidade.length - 1])
                     indicadorUmi.style.border = "4px solid #1C50E0"
-                    tempo.style.display = "block"
+
                 }
             } else if (
                 (
@@ -353,14 +313,11 @@ function buscarCapturas() {
             ) {
                 if (modalShow == false) {
                     typeStatus.textContent = "ALERTA"
-                    tempo.style.display = "block"
                     typeStatus.style.color = '#DC9E00'
-                    getTempo("Alerta")
                     alertModal.style.borderColor = "#DC9E00"
                     typeContent.style.backgroundColor = '#DC9E00'
                     modalBtn.style.backgroundColor = '#DC9E00'
                     typeTitle.style.color = '#DC9E00'
-                    time.style.color = '#DC9E00'
                     typeTitle.textContent = 'ALERTA!'
                     message.textContent = "Temperatura e umidade muito próximos as métricas, verifique o setor!"
                     typeMessage.textContent = "Temperatura e umidade muito próximos as métricas!"
@@ -382,15 +339,14 @@ function buscarCapturas() {
                 )
             ) {
                 if (modalShow == false) {
-                   typeStatus.textContent = "ALERTA"
-                   tempo.style.display = "block"
-                   typeStatus.style.color = '#DC9E00'
-                   getTempo("Alerta")
+                    typeStatus.textContent = "ALERTA"
+
+                    typeStatus.style.color = '#DC9E00'
                     alertModal.style.borderColor = "#DC9E00"
                     typeContent.style.backgroundColor = '#DC9E00'
                     modalBtn.style.backgroundColor = '#DC9E00'
                     typeTitle.style.color = '#DC9E00'
-                    time.style.color = '#DC9E00'
+                   
                     typeTitle.textContent = 'ALERTA!'
                     message.textContent = "Temperatura muito próxima as métricas, verifique o setor!"
                     typeMessage.textContent = "Temperatura muito próximos as métricas!"
@@ -409,13 +365,11 @@ function buscarCapturas() {
                 )
             ) {
                 if (modalShow == false) {
-                    getTempo("Alerta")
                     typeStatus.textContent = "ALERTA"
                     typeStatus.style.color = '#DC9E00'
                     alertModal.style.borderColor = "#DC9E00"
-                    time.style.color = '#DC9E00'
+                   
                     typeContent.style.backgroundColor = '#DC9E00'
-                    tempo.style.display = "block"
                     modalBtn.style.backgroundColor = '#DC9E00'
                     typeTitle.style.color = '#DC9E00'
                     typeTitle.textContent = 'ALERTA!'

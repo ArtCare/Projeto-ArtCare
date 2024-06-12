@@ -16,9 +16,9 @@
 
         <div class="divOptions">
             <div class="PrimaryScreens">
-                <button class="option onScreen" onclick="navigateToHome()">
-                    <i class="fa-solid fa-house fa-xl menuicon onScreenColors"></i> <span
-                        class="menuOption onScreenColors">Dashboard</span>
+                <button class="option" onclick="navigateToHome()">
+                    <i class="fa-solid fa-house fa-xl menuicon "></i> <span
+                        class="menuOption ">Dashboard</span>
                 </button>
                 <button class="option" onclick="navigateToSectors()" id="navigationSetores">
                     <i class="fa-solid fa-vector-square fa-xl menuicon"></i> <span class="menuOption">Setores</span>
@@ -31,8 +31,8 @@
                     <i class="fa-solid fa-rectangle-list fa-xl menuicon"></i> <span class="menuOption">Relatórios</span>
                 </button>
 
-                
-                
+
+
             </div>
         </div>
     </div>
@@ -85,10 +85,6 @@
                             <span class="tipo-status" id="typeStatus"></span>
                             <p class="texto-status" id="typeMessage"></p>
                         </div>
-                        <div class="tempo" id="tempo">
-                            <span class="titulo-tempo">Tempo</span>
-                            <p class="texto-tempo" id="time">00:00:00</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -127,18 +123,18 @@
         </div>
     </div>
     <dialog id="alertModal" class="modal">
-        <div class="content" >
-          <div class="iconContainer" id="typeContent">
-            <img src="../assets/icons/alert.svg">
-          </div>
-          <div class="messageContainer" >
+        <div class="content">
+            <div class="iconContainer" id="typeContent">
+                <img src="../assets/icons/alert.svg">
+            </div>
+            <div class="messageContainer">
                 <span class="title" id="typeTitle"></span><br>
-                  <span class="message" id="message"></span>
-                    
-            <button class="btnModal" id="modalBtn" onclick="closeModal()">OK</button>
-          </div>
+                <span class="message" id="message"></span>
+
+                <button class="btnModal" id="modalBtn" onclick="closeModal()">OK</button>
+            </div>
         </div>
-      </dialog>
+    </dialog>
 </body>
 
 </html>

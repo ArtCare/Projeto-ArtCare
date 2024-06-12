@@ -11,7 +11,35 @@ const spanHistorico = document.querySelector("#spanHistorico")
 const spanAcesso = document.querySelector("#spanAcesso")
 const infoSector = document.querySelector("#infoSector")
 
+const nameSector = document.querySelector("#nameSector")
+const statusSector = document.querySelector("#statusSector")
+const date = document.querySelector("#date")
 
+const tempMax = document.querySelector("#tempMax")
+const tempMin = document.querySelector("#tempMin")
+const umiMax = document.querySelector("#umiMax")
+const umiMin = document.querySelector("#umiMin")
+
+const detalhes = []
+
+function showRelatorioCompleto(res){
+    if(detalhes[res].Status == "Alerta"){
+        statusSector.style.color = "#DC9E00"
+    }else{
+         statusSector.style.color = "#C80006"
+    }
+    nameSector.textContent = detalhes[res].Setor
+    statusSector.textContent = detalhes[res].Status
+    date.textContent = detalhes[res].DataHora
+    tempMax.textContent = `Temperatura máxima: ${detalhes[res].MaximoDeTemperatura}°C `
+    tempMin.textContent = `Temperatura mínima: ${detalhes[res].MinimoDeTemperatura}°C `
+    umiMax.textContent = `Umidade máxima: ${detalhes[res].MaximoDeUmidade}% `
+    umiMin.textContent = `Umidade mínima: ${detalhes[res].MinimoDeUmidade}% `
+    infoSector.showModal()
+}
+function closeModal(){
+    infoSector.close()
+}
 function showHistorico(){
     supervisor.style.display = "none"
     setores.style.display = "flex"
@@ -27,7 +55,6 @@ function showAcesso(){
 }
 fetch(`/relatorio/buscarRelatorioVisualizacao/${fkMuseu}`).then(res => {
     res.json().then(res => {
-        console.log(res[0].dataHora)
         for (posicao = 0; posicao < res.length; posicao++) {
             dadosSupervisoresContainer.innerHTML += `
             <div class="dadosSupervisores">
@@ -48,12 +75,12 @@ fetch(`/relatorio/buscarRelatorioVisualizacao/${fkMuseu}`).then(res => {
 
 fetch(`/relatorio/buscarRelatoriosCompletos/`).then(res => {
     res.json().then(res => {
-        console.log(res[0])
         for (posicao = 0; posicao < res.length; posicao++) {
             let color = "#C62400"
             if(res[posicao].Status == "Alerta"){
                 color = "#DC9E00"
             }
+            detalhes.push(res[posicao])
             dadosSetorContainer.innerHTML += `
             <div class="dadosSupervisores">
             <div class="div">
@@ -65,7 +92,7 @@ fetch(`/relatorio/buscarRelatoriosCompletos/`).then(res => {
             <div class="div">
             <span class="dataHora" id="dataHora">${res[posicao].DataHora}</span>
             </div>
-            <i class="fa-solid fa-rectangle-list fa-xl menuicon btnRelatorio" onclick="showRelatorioCompleto()"></i>
+            <i class="fa-solid fa-rectangle-list fa-xl menuicon btnRelatorio" onclick="showRelatorioCompleto(${posicao})"></i>
 
             </div>
             `
@@ -121,8 +148,4 @@ function pesquisarPorNome() {
     })
 
     return false
-}
-
-function showRelatorioCompleto(){
-    infoSector.showModal()
 }
