@@ -42,6 +42,9 @@ router.post("/inserirRelatorioSetor/", function (req, res) {
 router.get("/buscarQuantidadeStatusAlerta/:idMuseu", function (req, res) {
     relatorioController.buscarQuantidadeStatusAlerta(req, res);
 })
+router.get("/buscarQuantidadeStatusCritico/:idMuseu", function (req, res) {
+    relatorioController.buscarQuantidadeStatusCritico(req, res);
+})
 router.post("/buscarQuantidadeStatusPorSetor/", function (req, res) {
     relatorioController.buscarQuantidadeStatusPorSetor(req, res);
 })
