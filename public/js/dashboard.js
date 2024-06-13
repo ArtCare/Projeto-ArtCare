@@ -14,6 +14,7 @@ const modal = document.querySelector("#modalDashboard")
 const switchBtn = document.querySelector("#switchBtn")
 const critico = document.querySelector("#barChartCritico")
 const alerta = document.querySelector("#barChart")
+const barHeader = document.querySelector("#barHeader")
 
 if (idSupervisor > 0) {
     navigationSetores.style.display = "none"
@@ -423,11 +424,13 @@ function switchChart() {
         critico.style.opacity = "0"
         chart = "alerta"
         switchBtn.textContent = "Ver Crítico"
+        barHeader.textContent = "Setores com mais status alerta"
     }else{
         alerta.style.opacity = "0"
         critico.style.opacity = "1"
         chart = "critico"
          switchBtn.textContent = "Ver Alerta"
+         barHeader.textContent = "Setores com mais status críticos"
     }
 
 }
