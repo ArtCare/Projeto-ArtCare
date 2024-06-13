@@ -100,9 +100,24 @@ function pesquisarPorNome(req, res) {
         }
     }).catch(function (erro) {
         console.log(erro);
-        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        console.log("Houve um erro ao buscar os setores: ", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
+}
+function pesquisarPorSetor(req, res) {
+    const fkMuseu = req.params.fkMuseu
+    const nomePesquisado = req.body.nomeSetor
+
+    relatorioModel.pesquisarPorSetor(fkMuseu, nomePesquisado).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro)
+        console.log("Houve um erro buscar os setores: ", erro.sqlMessage)
+    })
 }
 function buscarQuantidadeStatusPorSetor(req, res) {
     const fkSetor = req.body.fkSetor
@@ -151,6 +166,7 @@ module.exports = {
     buscarRelatorioVisualizacao,
     inserirRelatorioVisualizacao,
     pesquisarPorNome,
+    pesquisarPorSetor,
     inserirRelatorioSetor,
     buscarQuantidadeStatusAlerta,
     buscarQuantidadeStatusPorSetor,

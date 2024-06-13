@@ -3,6 +3,7 @@ const nome = document.querySelector("#nome")
 const setor = document.querySelector("#setor")
 const dataHora = document.querySelector("#dataHora")
 const nomePesquisado = document.querySelector("#ipt_pesquisa")
+const nomePesquisadoSetor = document.querySelector("#ipt_pesquisa_setor")
 
 const supervisor = document.querySelector("#supervisor")
 const setores = document.querySelector("#setores")
@@ -81,7 +82,7 @@ fetch(`/relatorio/buscarRelatoriosCompletos/`).then(res => {
                 color = "#DC9E00"
             }
             detalhes.push(res[posicao])
-            dadosSetorContainer.innerHTML += `
+            dadosSetoresContainer.innerHTML += `
             <div class="dadosSupervisores">
             <div class="div">
             <span class="nameSupervisor" id="nome">${res[posicao].Setor}</span>
@@ -115,7 +116,6 @@ function pesquisarPorNome() {
             nomeSupervisor: nomePesquisado.value
         })
     }).then(function (resposta) {
-
         if (resposta.ok) {
 
             resposta.json().then(res => {
@@ -142,6 +142,56 @@ function pesquisarPorNome() {
             });
 
             dadosSupervisoresContainer.innerHTML = 'Nenhum registro foi encontrado!'
+        }
+    }).catch(function (erro) {
+        console.log(erro)
+    })
+
+    return false
+}
+
+function pesquisarPorSetor() {
+    fetch(`/relatorio/pesquisarPorSetor/${fkMuseu}` , {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            nomeSetor: nomePesquisadoSetor.value
+        })
+    }).then(function (resposta) {
+        if (resposta.ok) {
+
+            resposta.json().then(res => {
+
+                dadosSetoresContainer.innerHTML = ''
+                for (posicao = 0; posicao < res.length; posicao++) {
+                    let color = "#C62400"
+                    if(res[posicao].statusSetor == "Alerta"){
+                        color = "#DC9E00"
+                    }
+                    detalhes.push(res[posicao])
+                    dadosSetoresContainer.innerHTML += `
+                    <div class="dadosSetores">
+                    <div class="div">
+                    <span class="nomeSetor" id="nome">${res[posicao].nomeSetor}</span>
+                    </div>
+                    <div class="div">
+                    <span class="status" id="setor" style="color: ${color}">${res[posicao].statusSetor}</span>
+                    </div>
+                    <div class="div">
+                    <span class="dataHora" id="dataHora">${res[posicao].dataHora}</span>
+                    </div>
+                    </div>
+                    `
+                }
+            })
+        } else {
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+
+            dadosSetoresContainer.innerHTML = 'Nenhum registro foi encontrado!'
         }
     }).catch(function (erro) {
         console.log(erro)

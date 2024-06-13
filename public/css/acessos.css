@@ -208,7 +208,7 @@ body {
 
 
 
-.supervisoresTitulo {
+.supervisoresTitulo, .setoresTitulo {
     height: 20%;
     font-size: 50px;
 
@@ -225,7 +225,7 @@ body {
     margin-bottom: 20px;
 }
 
-.dadosSetorContainer {
+.dadosSetoresContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -236,7 +236,7 @@ body {
     margin-bottom: 20px;
 }
 
-.dadosSupervisores {
+.dadosSupervisores, .dadosSetores {
     color: #666666;
     font-size: 24px;
     width: 80%;
@@ -266,21 +266,21 @@ body {
 }
 
 
-.dadosSetorContainer::-webkit-scrollbar {
+.dadosSetoresContainer::-webkit-scrollbar {
     width: 8px;
 }
 
-.dadosSetorContainer::-webkit-scrollbar-track {
+.dadosSetoresContainer::-webkit-scrollbar-track {
     background: #F5F5F5;
     width: 100%;
 }
 
-.dadosSetorContainer::-webkit-scrollbar-thumb {
+.dadosSetoresContainer::-webkit-scrollbar-thumb {
     background-color: #B08067;
     border-radius: 30px;
 }
 
-.nameSupervisor {
+.nameSupervisor, .nomeSetor {
     font-size: 30px;
     font-weight: 700;
     font-family: "Caladea";
