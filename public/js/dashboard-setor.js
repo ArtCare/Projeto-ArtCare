@@ -194,10 +194,12 @@ function barChart() {
         },
     };
 
-    const barChart = new Chart(
-        document.getElementById('barChart'),
-        barConfig,
-    );
+    setTimeout(() => {
+        const barChart = new Chart(
+            document.getElementById('barChart'),
+            barConfig,
+        );
+    }, 500)
 
 }
 
