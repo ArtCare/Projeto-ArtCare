@@ -455,3 +455,30 @@ body {
 a {
     outline: none;
 }
+
+.switchStatus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #666666;
+    border: none;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+    width: 120px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+.switchStatus:hover {
+    background-color: #B08067;
+    border: 2px solid #fff;
+}
+
+.switchStatus:active {
+    transform: scale(.95);
+}

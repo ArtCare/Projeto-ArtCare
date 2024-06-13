@@ -11,7 +11,7 @@ const navigationSetores = document.querySelector("#navigationSetores")
 const navigationSupervisor = document.querySelector("#navigationSupervisor")
 const navigationRelatorio = document.querySelector("#navigationRelatorio")
 const modal = document.querySelector("#modalDashboard")
-
+const switchBtn = document.querySelector("#switchBtn")
 const critico = document.querySelector("#barChartCritico")
 const alerta = document.querySelector("#barChart")
 
@@ -422,10 +422,12 @@ function switchChart() {
         alerta.style.opacity = "1"
         critico.style.opacity = "0"
         chart = "alerta"
+        switchBtn.textContent = "Ver Crítico"
     }else{
         alerta.style.opacity = "0"
         critico.style.opacity = "1"
         chart = "critico"
+         switchBtn.textContent = "Ver Alerta"
     }
 
 }
