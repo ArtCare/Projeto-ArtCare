@@ -12,6 +12,9 @@ const navigationSupervisor = document.querySelector("#navigationSupervisor")
 const navigationRelatorio = document.querySelector("#navigationRelatorio")
 const modal = document.querySelector("#modalDashboard")
 
+const critico = document.querySelector("#barChartCritico")
+const alerta = document.querySelector("#barChart")
+
 if (idSupervisor > 0) {
     navigationSetores.style.display = "none"
     navigationSupervisor.style.display = "none"
@@ -333,11 +336,25 @@ fetch(`/relatorio/buscarQuantidadeStatusAlerta/${idMuseu}`).then(response => {
         barChart()
     })
 })
+
+const labelsCritico = []
+const datasCritico = []
+
+fetch(`/relatorio/buscarQuantidadeStatusCritico/${idMuseu}`).then(response => {
+    response.json().then(res => {
+        console.log(res)
+        for (posicao = 0; posicao < res.length; posicao++) {
+            labelsCritico.push(res[posicao].nome)
+            datasCritico.push(res[posicao].quantidade)
+        }
+        barChart()
+    })
+})
 function barChart() {
     const barData = {
         labels: labels,
         datasets: [{
-            label: 'Quantidade de vezes em estado de alerta',
+            label: 'Quantidade de vezes em status alerta',
             data: datas,
             backgroundColor: [
                 'rgba(255, 205, 86, 0.2)',
@@ -366,5 +383,49 @@ function barChart() {
         barConfig,
     );
 
-}
+    const barDataCritico = {
+        labels: labelsCritico,
+        datasets: [{
+            label: 'Quantidade de vezes em status Crítico',
+            data: datasCritico,
+            backgroundColor: [
+                'rgba(255, 25, 86, 0.2)',
 
+            ],
+            borderColor: [
+                'rgb(255, 25, 00)',
+            ],
+            borderWidth: 2
+        }]
+    };
+    const barConfigCritico = {
+        type: 'bar',
+        data: barDataCritico,
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                },
+            }
+        },
+    };
+
+    const barChartCritico = new Chart(
+        document.getElementById('barChartCritico'),
+        barConfigCritico,
+    );
+
+}
+let chart = "critico"
+function switchChart() {
+    if (chart == "critico") {
+        alerta.style.opacity = "1"
+        critico.style.opacity = "0"
+        chart = "alerta"
+    }else{
+        alerta.style.opacity = "0"
+        critico.style.opacity = "1"
+        chart = "critico"
+    }
+
+}

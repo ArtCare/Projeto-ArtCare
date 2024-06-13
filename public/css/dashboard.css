@@ -324,9 +324,8 @@ body {
 
 .chartTitle{
     color: #B08067;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 700;
-    position: absolute;
     margin-top: 1%;
 
     
@@ -345,6 +344,7 @@ body {
 }
 
 .pieChart{
+    margin-top: -40px;
     height: 110%;
 }
 
@@ -355,6 +355,30 @@ body {
   align-items: flex-end;
   justify-content: center;
 }
+
+#barChart{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+  }
+  #barChartCritico{
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: absolute;
+      opacity: 1
+    }
+
+    .headerChart{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 100px;        
+    }
+
 
 #modalDashboard {
 
